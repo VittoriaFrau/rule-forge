@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using ECAPrototyping.Utils;
 using UnityEngine;
 
 namespace UI
@@ -18,6 +19,15 @@ namespace UI
             return null;
         }
 
+        public static Color GetColorFromString(string s)
+        {
+            if (ECAColor.colorDict.ContainsKey(s))
+            {
+                return ECAColor.colorDict[s];
+            }
+
+            return Color.white;
+        }
         /*/*
          * Function to repositioning canvas because the PiUI component transform the canvas Idk why
          #1#

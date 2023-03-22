@@ -33,7 +33,7 @@ namespace UI
         public void ActivateEditMode()
         {
             EditMode = !EditMode;
-            ChangeEditModeButton();
+            //ChangeEditModeButton();
             UpdateInteractablesList();
             if(!EditMode) radialMenu.SetActive(false);
             /*if (EditMode) {
