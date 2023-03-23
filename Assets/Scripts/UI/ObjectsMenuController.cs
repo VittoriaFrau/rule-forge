@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UI;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -11,14 +12,19 @@ public class ObjectsMenuController : MonoBehaviour
     public GameObject interactables; //Parent of all interactable gameobjects in the scene
     
     //Getting the prefab of the object to instantiate
-    public GameObject cubePrefab, spherePrefab, capsulePrefab, cylinderPrefab;
-    public GameObject kidPrefab, foxPrefab, zombiePrefab;
-    public GameObject bananaPrefab, hamburgerPrefab, cheesePrefab, watermelonPrefab;
-    public GameObject treePrefab, mushroomPrefab, signPrefab, rockPrefab;
-    public List<GameObject> shapePrefabs = new();
-    public List<GameObject> animalPrefabs = new ();
-    public List<GameObject> foodPrefabs = new ();
-    public List<GameObject> environmentPrefabs = new ();
+    public List<GameObject> shapePrefabs;
+    public List<GameObject> animalPrefabs;
+    public List<GameObject> foodPrefabs;
+    public List<GameObject> environmentPrefabs;
+    
+    public List<GameObject> categoryButtons;
+    public GameObject textGo;
+    private TextMeshPro text;
+    public TextMeshPro Text
+    {
+        get => text;
+        set { text = value; }
+    }
 
     private Camera mainCamera;
     // Start is called before the first frame update
@@ -26,11 +32,7 @@ public class ObjectsMenuController : MonoBehaviour
     {
         objectsMenu.SetActive(false);
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        shapePrefabs = new List<GameObject>(){cubePrefab, spherePrefab, capsulePrefab, cylinderPrefab};
-        animalPrefabs = new List<GameObject>(){kidPrefab, foxPrefab, zombiePrefab};
-        foodPrefabs = new List<GameObject>(){bananaPrefab, hamburgerPrefab, cheesePrefab, watermelonPrefab};
-        environmentPrefabs = new List<GameObject>(){treePrefab, mushroomPrefab, signPrefab, rockPrefab};
-        
+        text = textGo.GetComponent<TextMeshPro>();
     }
  
 
@@ -62,5 +64,14 @@ public class ObjectsMenuController : MonoBehaviour
         var transform1 = mainCamera.transform;
         Instantiate(Utils.GetPrefabFromString(veg, environmentPrefabs),transform1.position + transform1.forward * 3, Quaternion.identity)
             .transform.parent = interactables.transform;
+    }
+    
+    public void DeActivateObjectsMenu()
+    {
+        foreach (var button in categoryButtons)
+        {
+            button.SetActive(false);
+        }
+        objectsMenu.SetActive(false);
     }
 }

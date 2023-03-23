@@ -28,20 +28,9 @@ namespace UI
 
             return Color.white;
         }
-        /*/*
-         * Function to repositioning canvas because the PiUI component transform the canvas Idk why
-         #1#
-        public static void RepositionCanvas(GameObject canvas)
-        {
-            canvas.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
-            canvas.transform.localPosition = new Vector3(0, 1.6f, 0.3f);
-        }
-
-        public static void RepositionPiMenu(GameObject piMenu)
-        {
-            piMenu.transform.localPosition = new Vector3(104, 40f, 0f);
-            piMenu.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-        }*/
+        
+        
+        
 
         
     }

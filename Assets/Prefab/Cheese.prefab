@@ -13,9 +13,6 @@ GameObject:
   - component: {fileID: 3941029079690859937}
   - component: {fileID: -141327308396210771}
   - component: {fileID: -8997047225802939328}
-  - component: {fileID: 7576503812102050622}
-  - component: {fileID: -7566123625821692856}
-  - component: {fileID: -161182404955022700}
   m_Layer: 0
   m_Name: Cheese
   m_TagString: Untagged
@@ -120,47 +117,3 @@ CapsuleCollider:
   m_Height: 0.22488499
   m_Direction: 1
   m_Center: {x: 0, y: 0.11244245, z: -0.000000014901161}
---- !u!114 &7576503812102050622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3941029079688924001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 245cf6096251df3489172ce730e83981, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isVisible:
-    choice: 0
-  isActive:
-    choice: 0
---- !u!114 &-7566123625821692856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3941029079688924001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68f73c8c1bfbb8d42b9e5c7bafabc695, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  price: 0
---- !u!114 &-161182404955022700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3941029079688924001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa0abd90942e4ad5bd983043911c8271, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 0
-  description: 
-  eaten: 0

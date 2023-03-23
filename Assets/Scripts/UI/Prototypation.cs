@@ -30,7 +30,13 @@ namespace UI
         
         public void ShowPieUIMenu()
         {
-            if(_editModeController.EditMode) _editModeController.ShowHideRadialMenu(true);
+            if (_editModeController.EditMode)
+            {
+                _editModeController.ShowHideRadialMenu(true);
+                _editModeController.SelectedObject = gameObject;
+                _editModeController.Text.text = "Selected object "+ gameObject.name;
+            }
+            
         }
         
         public void HidePieUIMenu()

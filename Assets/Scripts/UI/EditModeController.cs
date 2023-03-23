@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ECAPrototyping.RuleEngine;
+using Microsoft.MixedReality.Toolkit.SpatialManipulation;
+using Microsoft.MixedReality.Toolkit.UX;
 using TMPro;
 using UnityEngine;
 
@@ -9,49 +12,70 @@ namespace UI
     public class EditModeController : MonoBehaviour
     {
         
-        public TextMeshProUGUI editModeButtonLabel;
         internal bool EditMode { get;set; }
         private List<GameObject> interactables;
         private GameObject canvas;
         public GameObject radialMenu;
+        public GameObject textGo;
+        private TextMeshPro text;
+        public TextMeshPro Text
+        {
+            get => text;
+            set { text = value; }
+        }
+        public List<GameObject> colors;
+        public GameObject colorPalette;
+        private GameObject selectedObject;
+        public GameObject SelectedObject
+        {
+            get => selectedObject;
+            set { selectedObject = value; }
+        }
 
         private void Start()
         {
             EditMode = false;
             canvas = GameObject.FindGameObjectWithTag("Canvas");
             if(radialMenu==null) radialMenu = canvas.transform.Find("RadialMenu").gameObject;
+            text = textGo.GetComponent<TextMeshPro>();
             radialMenu.SetActive(false);
-
-        }
-
-        public void ChangeEditModeButton()
-        {
-            editModeButtonLabel.text = EditMode ? "Exit Edit Mode" : "Edit Mode";
-            
         }
 
         public void ActivateEditMode()
         {
-            EditMode = !EditMode;
-            //ChangeEditModeButton();
+            EditMode = true;
             UpdateInteractablesList();
-            if(!EditMode) radialMenu.SetActive(false);
-            /*if (EditMode) {
-                //When the edit mode is on, all the objects inside the Interactables gameobject will have the Prototupation component
-                foreach (var interactable in interactables)
-                {
-                    interactable.AddComponent<Prototypation>();
-                    
-                }
+            AddListenerToInteractables();
+        }
+        
+        public void DeActivateEditMode()
+        {
+            EditMode = false;
+            UpdateInteractablesList();
+            RemoveListenerToInteractables();
+            RemoveColorEventListener();
+            text.text = "Please, select an object to continue";
+            selectedObject = null;
+            radialMenu.SetActive(false);
+            colorPalette.SetActive(false);
+        }
+        
+        private void AddListenerToInteractables()
+        {
+            foreach (var interactable in interactables)
+            {
+                ObjectManipulator _objectManipulator = interactable.GetComponent<ObjectManipulator>();
+                _objectManipulator.OnClicked.AddListener(() => interactable.GetComponent<Prototypation>().ShowPieUIMenu());
             }
-            else {
-                //When the edit mode is off, all the objects inside the Interactables gameobject will have the Prototupation component
-                foreach (var interactable in interactables)
-                {
-                    Destroy(interactable.GetComponent<Prototypation>());
-                }
-            }*/
-            
+        }
+        
+        public void RemoveListenerToInteractables()
+        {
+            foreach (var interactable in interactables)
+            {
+                ObjectManipulator _objectManipulator = interactable.GetComponent<ObjectManipulator>();
+                _objectManipulator.OnClicked.RemoveAllListeners();
+            }
         }
 
         private void UpdateInteractablesList()
@@ -63,5 +87,31 @@ namespace UI
         {
             radialMenu.SetActive(visibility);
         }
+
+        /*
+         * Since the object is instantiated a runtime, we need to add the listener to each button of the color palette
+         * to change the right selected object
+         */
+        public void ChangeColorEventListener()
+        {
+            if(selectedObject==null) return;
+            foreach (var color in colors)
+            {
+                PressableButton button = color.GetComponent<PressableButton>();
+                button.OnClicked.AddListener(() => selectedObject.GetComponent<ECAObject>().ChangeColor(color.name));
+            }
+        }
+        
+        public void RemoveColorEventListener()
+        {
+            if(selectedObject==null) return;
+            foreach (var color in colors)
+            {
+                PressableButton button = color.GetComponent<PressableButton>();
+                button.OnClicked.RemoveAllListeners();
+            }
+        }
+       
+        
     }
 }

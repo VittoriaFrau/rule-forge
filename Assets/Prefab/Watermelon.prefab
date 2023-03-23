@@ -13,9 +13,6 @@ GameObject:
   - component: {fileID: 7370245131268866629}
   - component: {fileID: -4394789962984766287}
   - component: {fileID: -2002343271877312295}
-  - component: {fileID: 5267136266962522281}
-  - component: {fileID: 1657643184948754821}
-  - component: {fileID: 1146493093124250232}
   m_Layer: 0
   m_Name: Watermelon
   m_TagString: Untagged
@@ -122,47 +119,3 @@ CapsuleCollider:
   m_Height: 0.2954241
   m_Direction: 1
   m_Center: {x: 0.0000013411045, y: 0.14771205, z: -0.000000007450581}
---- !u!114 &5267136266962522281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7370245131271134341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 245cf6096251df3489172ce730e83981, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isVisible:
-    choice: 0
-  isActive:
-    choice: 0
---- !u!114 &1657643184948754821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7370245131271134341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68f73c8c1bfbb8d42b9e5c7bafabc695, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  price: 0
---- !u!114 &1146493093124250232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7370245131271134341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa0abd90942e4ad5bd983043911c8271, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 0
-  description: 
-  eaten: 0
