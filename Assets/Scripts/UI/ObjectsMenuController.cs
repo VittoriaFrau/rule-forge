@@ -18,13 +18,7 @@ public class ObjectsMenuController : MonoBehaviour
     public List<GameObject> environmentPrefabs;
     
     public List<GameObject> categoryButtons;
-    public GameObject textGo;
-    private TextMeshPro text;
-    public TextMeshPro Text
-    {
-        get => text;
-        set { text = value; }
-    }
+    private GeneralUIController generalUIController;
 
     private Camera mainCamera;
     // Start is called before the first frame update
@@ -32,7 +26,7 @@ public class ObjectsMenuController : MonoBehaviour
     {
         objectsMenu.SetActive(false);
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        text = textGo.GetComponent<TextMeshPro>();
+        generalUIController = this.gameObject.GetComponent<GeneralUIController>();
     }
  
 
@@ -73,5 +67,11 @@ public class ObjectsMenuController : MonoBehaviour
             button.SetActive(false);
         }
         objectsMenu.SetActive(false);
+    }
+
+    public void ActivateObjectsMenu()
+    {
+        objectsMenu.SetActive(true);
+        generalUIController.NewObjectState();
     }
 }

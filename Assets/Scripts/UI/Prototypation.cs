@@ -10,11 +10,15 @@ namespace UI
     {
         private EditModeController _editModeController;
         private ObjectManipulator _objectManipulator;
-        
+        private GeneralUIController _generalUIController;
+        private GameObject eventHandler;
+
         private void Start()
         {
-            _editModeController = GameObject.Find("EventHandler").GetComponent<EditModeController>();
+            eventHandler = GameObject.Find("EventHandler");
+            _editModeController = eventHandler.GetComponent<EditModeController>();
             _objectManipulator = GetComponent<ObjectManipulator>();
+            _generalUIController = eventHandler.GetComponent<GeneralUIController>();
             /*if (_editModeController.EditMode)
             {
                 //Show the PiMenu when the object is selected
@@ -34,7 +38,7 @@ namespace UI
             {
                 _editModeController.ShowHideRadialMenu(true);
                 _editModeController.SelectedObject = gameObject;
-                _editModeController.Text.text = "Selected object "+ gameObject.name;
+                _generalUIController.SelectedObject(gameObject.name);
             }
             
         }

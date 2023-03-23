@@ -16,13 +16,14 @@ namespace UI
         private List<GameObject> interactables;
         private GameObject canvas;
         public GameObject radialMenu;
-        public GameObject textGo;
+        /*public GameObject textGo;
         private TextMeshPro text;
         public TextMeshPro Text
         {
             get => text;
             set { text = value; }
-        }
+        }*/
+        private GeneralUIController generalUIController;
         public List<GameObject> colors;
         public GameObject colorPalette;
         private GameObject selectedObject;
@@ -37,7 +38,8 @@ namespace UI
             EditMode = false;
             canvas = GameObject.FindGameObjectWithTag("Canvas");
             if(radialMenu==null) radialMenu = canvas.transform.Find("RadialMenu").gameObject;
-            text = textGo.GetComponent<TextMeshPro>();
+            /*text = textGo.GetComponent<TextMeshPro>();*/
+            generalUIController = this.gameObject.GetComponent<GeneralUIController>();
             radialMenu.SetActive(false);
         }
 
@@ -46,6 +48,7 @@ namespace UI
             EditMode = true;
             UpdateInteractablesList();
             AddListenerToInteractables();
+            generalUIController.EditModeState();
         }
         
         public void DeActivateEditMode()
@@ -54,7 +57,7 @@ namespace UI
             UpdateInteractablesList();
             RemoveListenerToInteractables();
             RemoveColorEventListener();
-            text.text = "Please, select an object to continue";
+            /*text.text = "Please, select an object to continue";*/
             selectedObject = null;
             radialMenu.SetActive(false);
             colorPalette.SetActive(false);

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -5,7 +6,8 @@ namespace UI
 {
     public class GeneralUIController: MonoBehaviour
     {
-        public GameObject textGo;
+        private GameObject textGo;
+        public List<GameObject> optionButtons;
         public enum UIState
         {
             Default,
@@ -18,8 +20,8 @@ namespace UI
             get => _uiState;
             set { _uiState = value; }
         }
-        private TextMeshPro text;
-        public TextMeshPro Text
+        private TextMeshProUGUI text;
+        public TextMeshProUGUI Text
         {
             get => text;
             set { text = value; }
@@ -28,9 +30,42 @@ namespace UI
         private void Start()
         {
             _uiState = UIState.Default;
-            text = textGo.GetComponent<TextMeshPro>();
+            textGo = GameObject.FindGameObjectWithTag("debugText");
+            text = textGo.GetComponent<TextMeshProUGUI>();
+            DefaultState();
+        }
+
+        public void DefaultState()
+        {
+            text.text = "Choose if you want to create an object, modify an existing one or create a rule";
+        }
+        
+        public void EditModeState()
+        {
+            _uiState = UIState.EditMode;
+            text.text = "Please, select an object to continue";
+            HideOptionsMenu();
+        }
+
+        public void SelectedObject(string name)
+        {
+            text.text = "Selected object " + name;
         }
         
         
+        public void NewObjectState()
+        {
+            _uiState = UIState.NewObject;
+            text.text = "Please, select the object you want to create";
+            HideOptionsMenu();
+        }
+
+        private void HideOptionsMenu()
+        {
+            foreach (var button in optionButtons)
+            {
+                button.SetActive(false);
+            }
+        }
     }
 }
