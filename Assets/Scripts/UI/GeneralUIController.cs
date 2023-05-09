@@ -8,6 +8,11 @@ namespace UI
     {
         private GameObject textGo;
         public List<GameObject> optionButtons;
+        public GameObject closeButton;
+        public GameObject eventHandler;
+        private EditModeController _editModeController;
+        private ObjectsMenuController _objectsMenuController;
+        
         public enum UIState
         {
             Default,
@@ -32,7 +37,26 @@ namespace UI
             _uiState = UIState.Default;
             textGo = GameObject.FindGameObjectWithTag("debugText");
             text = textGo.GetComponent<TextMeshProUGUI>();
+            _editModeController = eventHandler.GetComponent<EditModeController>();
+            _objectsMenuController = eventHandler.GetComponent<ObjectsMenuController>();
             DefaultState();
+        }
+
+        public void Close()
+        {
+            var previousState = _uiState;
+            DefaultState();
+            ShowOptionsMenu();
+            switch (previousState)
+            {
+                case UIState.EditMode:
+                    _editModeController.DeActivateEditMode();
+                    break;
+                case UIState.NewObject:
+                    _objectsMenuController.DeActivateObjectsMenu();
+                    break;
+            }
+            closeButton.SetActive(false);
         }
 
         public void DefaultState()
@@ -65,6 +89,14 @@ namespace UI
             foreach (var button in optionButtons)
             {
                 button.SetActive(false);
+            }
+        }
+        
+        private void ShowOptionsMenu()
+        {
+            foreach (var button in optionButtons)
+            {
+                button.SetActive(true);
             }
         }
     }
