@@ -12,12 +12,14 @@ namespace UI
         public GameObject eventHandler;
         private EditModeController _editModeController;
         private ObjectsMenuController _objectsMenuController;
+        private RuleCreationController _ruleCreationController;
         
         public enum UIState
         {
             Default,
             EditMode,
             NewObject,
+            NewRule
         }
         private UIState _uiState;
         public UIState State
@@ -39,6 +41,7 @@ namespace UI
             text = textGo.GetComponent<TextMeshProUGUI>();
             _editModeController = eventHandler.GetComponent<EditModeController>();
             _objectsMenuController = eventHandler.GetComponent<ObjectsMenuController>();
+            _ruleCreationController = eventHandler.GetComponent<RuleCreationController>();
             DefaultState();
         }
 
@@ -55,6 +58,9 @@ namespace UI
                 case UIState.NewObject:
                     _objectsMenuController.DeActivateObjectsMenu();
                     break;
+                case UIState.NewRule:
+                    _ruleCreationController.DeActivateNewRule();
+                    break;
             }
             closeButton.SetActive(false);
         }
@@ -70,10 +76,22 @@ namespace UI
             text.text = "Please, select an object to continue";
             HideOptionsMenu();
         }
+        
+        public void NewRuleState()
+        {
+            _uiState = UIState.NewRule;
+            text.text = "Please, grab the modality you want to use to create the rule";
+            HideOptionsMenu();
+        }
 
         public void SelectedObject(string name)
         {
             text.text = "Selected object " + name;
+        }
+
+        public void SetDebugText(string text)
+        {
+            this.text.text = text;
         }
         
         
