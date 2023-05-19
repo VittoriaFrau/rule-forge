@@ -303,6 +303,70 @@ namespace ECAPrototyping.RuleEngine
             return actions;
         }
 
+        //TODO: Overload dei metodi ListActions
+
+        ///<summary>
+        ///<c>ListActions</c> returns all the ActionAttribute tagged variables. 
+        ///<para/>
+        ///<strong>Parameters:</strong> 
+        ///<list type="bullet">
+        ///<item><description><paramref name="o"/>: The GameObject to check</description></item>
+        ///</list>
+        ///<para/>
+        ///<strong>Returns:</strong> A list of ActionAttribute with the action names
+        ///</summary>
+        public List<ActionAttribute> ListActionsAttribute(GameObject o)
+        {
+            return this.ListActionsAttribute(o.GetComponent<MonoBehaviour>());
+        }
+
+        ///<summary>
+        ///<c>ListActions</c> returns all the ActionAttribute tagged variables. 
+        ///<para/>
+        ///<strong>Parameters:</strong> 
+        ///<list type="bullet">
+        ///<item><description><paramref name="c"/>: The component to check</description></item>
+        ///</list>
+        ///<para/>
+        ///<strong>Returns:</strong> A list of ActionAttribute with the action names
+        ///</summary>
+        public List<ActionAttribute> ListActionsAttribute(Component c)
+        {
+            return this.ListActionsAttribute(c.GetType());
+        }
+
+        ///<summary>
+        ///<c>ListActions</c> returns all the ActionAttribute tagged variables. 
+        ///<para/>
+        ///<strong>Parameters:</strong> 
+        ///<list type="bullet">
+        ///<item><description><paramref name="c"/>: The Type to check</description></item>
+        ///</list>
+        ///<para/>
+        ///<strong>Returns:</strong> A list of ActionAttribute with the action names
+        ///</summary>
+        public List<ActionAttribute> ListActionsAttribute(Type c)
+        {
+            List<ActionAttribute> actions = new List<ActionAttribute>();
+            foreach (MethodInfo m in c.GetMethods())
+            {
+                object[] a = m.GetCustomAttributes(typeof(ActionAttribute), true);
+                if (a.Length > 0)
+                {
+                    foreach (var item in a)
+                    {
+                        actions.Add((ActionAttribute)item);
+                    }
+                }
+            }
+            //DEBUG 
+            for(int i = 0; i < actions.Count; i++)
+            {
+                Debug.Log(actions[i]);
+            }
+
+            return actions;
+        }
 
         /*
                 public Dictionary<GameObject, ECARuleInfo> CreateDescriptors(GameObject[] objects)

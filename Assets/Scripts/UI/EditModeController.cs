@@ -98,11 +98,14 @@ namespace UI
          */
         public void ChangeColorEventListener()
         {
-            if(selectedObject==null) return;
+            if (selectedObject == null) return;
+            
             foreach (var color in colors)
             {
+                
                 PressableButton button = color.GetComponent<PressableButton>();
                 button.OnClicked.AddListener(() => selectedObject.GetComponent<ECAObject>().ChangeColor(color.name));
+                
             }
         }
         
