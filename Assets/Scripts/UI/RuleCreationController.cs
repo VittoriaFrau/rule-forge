@@ -5,6 +5,7 @@ using Microsoft.MixedReality.OpenXR;
 using Microsoft.MixedReality.Toolkit;
 using Microsoft.MixedReality.Toolkit.Input;
 using Microsoft.MixedReality.Toolkit.SpatialManipulation;
+using Microsoft.MixedReality.Toolkit.UX;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -24,11 +25,10 @@ namespace UI
         private Modalities _modality;
         private GeneralUIController generalUIController;
         public List<GameObject> modalitiesBubbles;
-        public GameObject ruleMenu;
-        /*public List<Material> normalMaterials;
-        public List<Material> shiningMaterials;*/
+        public GameObject BackButton, RecordButton, StopButton;
+       
+        //Touch modality attributes
         private GameObject OpenXRRightHandController, OpenXRLeftHandController;
-        /*public GameObject shiningLeft;*/
         private GameObject RightHand, LeftHand;
         private Material normalMaterial;
         public Material shiningMaterial;
@@ -41,8 +41,6 @@ namespace UI
                 == "MRTK RightHand Controller");
             OpenXRLeftHandController = GameObject.FindGameObjectsWithTag("handController").FirstOrDefault(obj => obj.name 
                 == "MRTK LeftHand Controller");
-
-            
         }
 
         public void SelectModality(string modality)
@@ -112,7 +110,7 @@ namespace UI
         {
             generalUIController.NewRuleState();
             ShowModalitiesBubbles();
-            ruleMenu.SetActive(true);
+            //ruleMenu.SetActive(true);
         }
 
         public void StopRecording()
@@ -122,6 +120,9 @@ namespace UI
 
         public void StartRecording()
         {
+            //Make the record button not interactable
+            RecordButton.GetComponent<PressableButton>().enabled = false;
+            
             //TODO all the objects in the scene
             GameObject cube = GameObject.Find("Cube");
             ObjectManipulator objectManipulator = cube.GetComponent<ObjectManipulator>();
@@ -159,7 +160,12 @@ namespace UI
         //TODO: per chiudere il menu
         public void DeActivateNewRule()
         {
-            
+            // Nascondere bolle se presenti
+            HideModalitiesBubbles();
+            // Nascondere opzioni menu
+            BackButton.SetActive(false);
+            RecordButton.SetActive(false);
+            StopButton.SetActive(false);
         }
     }
 }
