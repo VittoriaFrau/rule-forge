@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class RadialMenu : MonoBehaviour
 {
     [SerializeField]
-    public List<PressableButton> pressableButtons;
+    public  List<GameObject> pressableButtons;
 
     public Image highlight;
 
@@ -28,12 +28,13 @@ public class RadialMenu : MonoBehaviour
     public bool outline;
     public Color outlineColor;
 
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        slices = new List<Image>();
-        Open();
+        //slices = new List<Image>();
+        //Open();
     }
 
     // Update is called once per frame
@@ -51,10 +52,9 @@ public class RadialMenu : MonoBehaviour
 
     public void Open()
     {
-        
-        foreach (PressableButton button in pressableButtons)
+        slices = new List<Image>();
+        foreach (GameObject button in pressableButtons)
         {
-            Debug.Log("Pulsanti attivati");
             button.gameObject.SetActive(true);
         }
         Rearrange();
@@ -63,11 +63,6 @@ public class RadialMenu : MonoBehaviour
 
     public void Close()
     {
-        foreach (PressableButton button in pressableButtons)
-        {
-            button.gameObject.SetActive(false);
-        }
-
         foreach (Image spicchi in slices)
         {
             spicchi.gameObject.SetActive(false);
@@ -120,6 +115,7 @@ public class RadialMenu : MonoBehaviour
 
     public void InstanceHighlight()
     {
+        
         highlight.fillAmount = 1.0f / pressableButtons.Count; //calcolo la grandezza dello spicchio 
         
         int sliceCount = pressableButtons.Count;
@@ -161,5 +157,12 @@ public class RadialMenu : MonoBehaviour
         
     }
 
+    
+    public void getListButtons(List<GameObject> buttons)
+    {
+        Close();
+        pressableButtons = buttons;
+        Open();
+    }
     
 }

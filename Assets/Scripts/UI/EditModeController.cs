@@ -118,6 +118,18 @@ namespace UI
                 button.OnClicked.RemoveAllListeners();
             }
         }
+
+        //Funzione showHide
+        public void ShowObject()
+        {
+            selectedObject.SetActive(true);
+        }
+
+        public void HideObject()
+        {
+            selectedObject.SetActive(false);
+        }
+
        
         
     }

@@ -8,11 +8,16 @@ namespace UI
     {
         private GameObject textGo;
         public List<GameObject> optionButtons;
+        public List<GameObject> creationButtons;
+        public List<GameObject> editingButtons;
+        public List<GameObject> ruleButtons;
         public GameObject closeButton;
         public GameObject eventHandler;
         private EditModeController _editModeController;
         private ObjectsMenuController _objectsMenuController;
         private RuleCreationController _ruleCreationController;
+        public RadialMenu radialMenu;
+        //public GameObject rm;
         
         public enum UIState
         {
@@ -43,6 +48,9 @@ namespace UI
             _objectsMenuController = eventHandler.GetComponent<ObjectsMenuController>();
             _ruleCreationController = eventHandler.GetComponent<RuleCreationController>();
             DefaultState();
+            radialMenu.getListButtons(optionButtons);
+            //rm.SetActive(true);
+            radialMenu.gameObject.SetActive(true);
         }
 
         public void Close()
@@ -75,6 +83,7 @@ namespace UI
             _uiState = UIState.EditMode;
             text.text = "Please, select an object to continue";
             HideOptionsMenu();
+            radialMenu.getListButtons(editingButtons);
         }
         
         public void NewRuleState()
@@ -82,6 +91,7 @@ namespace UI
             _uiState = UIState.NewRule;
             text.text = "Please, grab the modality you want to use to create the rule";
             HideOptionsMenu();
+            radialMenu.getListButtons(ruleButtons);
         }
 
         public void SelectedObject(string name)
@@ -100,6 +110,7 @@ namespace UI
             _uiState = UIState.NewObject;
             text.text = "Please, select the object you want to create";
             HideOptionsMenu();
+            radialMenu.getListButtons(creationButtons);
         }
 
         private void HideOptionsMenu()
@@ -109,13 +120,49 @@ namespace UI
                 button.SetActive(false);
             }
         }
+
         
+
         private void ShowOptionsMenu()
         {
             foreach (var button in optionButtons)
             {
                 button.SetActive(true);
             }
+        }
+
+        //Funzioni nuove
+        private void HideCreationMenu()
+        {
+            foreach (var button in creationButtons)
+            {
+                button.SetActive(false);
+            }
+        }
+
+        private void HideRuleMenu()
+        {
+            foreach (var button in ruleButtons)
+            {
+                button.SetActive(false);
+            }
+        }
+
+        private void HideEditMenu()
+        {
+            foreach (var button in editingButtons)
+            {
+                button.SetActive(false);
+            }
+        }
+
+        public void DefaultRM()
+        {
+            HideOptionsMenu();
+            HideCreationMenu();
+            HideEditMenu();
+            HideRuleMenu();
+            radialMenu.getListButtons(optionButtons);
         }
     }
 }
