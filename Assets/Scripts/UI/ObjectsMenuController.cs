@@ -35,6 +35,8 @@ public class ObjectsMenuController : MonoBehaviour
         var transform1 = mainCamera.transform;
         Instantiate(Utils.GetPrefabFromString(type, shapePrefabs), transform1.position + transform1.forward*3, 
             transform1.rotation).transform.parent = interactables.transform;
+            //Instantiate(Utils.GetPrefabFromString(type, shapePrefabs), 
+            
     }
 
     public void NewCharacter(string characterString)

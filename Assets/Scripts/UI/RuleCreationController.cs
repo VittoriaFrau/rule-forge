@@ -32,6 +32,7 @@ namespace UI
         private GameObject RightHand, LeftHand;
         private Material normalMaterial;
         public Material shiningMaterial;
+        public GameObject interactables;
         
         private void Start()
         {
@@ -46,7 +47,8 @@ namespace UI
         public void SelectModality(string modality)
         {
             _modality = (Modalities) System.Enum.Parse(typeof(Modalities), modality);
-            generalUIController.SetDebugText("Selected modality: " + _modality);
+            generalUIController.SetDebugText("Selected modality: " + _modality 
+                                                                   + " use your modality to interact with any object in the scene");
             HideModalitiesBubbles();
             switch (_modality)
             {
@@ -60,10 +62,13 @@ namespace UI
                    ActivateTouchModality();
                    break;
             }
+            //TODO show buttons in radial menu
+            
         }
         
         private void ActivateTouchModality()
         {
+            //Color of the hands to the shining
             GameObject modelParentRight = OpenXRRightHandController.transform
                 .Find("[MRTK RightHand Controller] Model Parent").gameObject;
             GameObject modelParentLeft = OpenXRLeftHandController.transform
@@ -79,6 +84,8 @@ namespace UI
             
             RightHand.GetComponent<SkinnedMeshRenderer>().material = shiningMaterial;
             LeftHand.GetComponent<SkinnedMeshRenderer>().material = shiningMaterial;
+            
+            
         }
 
         private void DeActivateTouchModality()
@@ -110,52 +117,71 @@ namespace UI
         {
             generalUIController.NewRuleState();
             ShowModalitiesBubbles();
+            StopButton.GetComponent<PressableButton>().enabled = false;
             //ruleMenu.SetActive(true);
         }
 
         public void StopRecording()
         {
             //TODO 
+            StopButton.GetComponent<PressableButton>().enabled = false;
+            RecordButton.GetComponent<PressableButton>().enabled = true;
+            
         }
 
         public void StartRecording()
         {
             //Make the record button not interactable
             RecordButton.GetComponent<PressableButton>().enabled = false;
-            
-            //TODO all the objects in the scene
-            GameObject cube = GameObject.Find("Cube");
-            ObjectManipulator objectManipulator = cube.GetComponent<ObjectManipulator>();
+            StopButton.GetComponent<PressableButton>().enabled = true;
 
+            foreach (var go in interactables.transform.GetComponentsInChildren<ObjectManipulator>())
+            {
+                AddListener(go);
+            }
+
+        }
+
+        private void AddListener(ObjectManipulator manipulator)
+        {
             switch (_modality)
             {
                 case Modalities.Eyegaze:
                     //TODO fare prove controllando interactor su oculus
-                    objectManipulator.onHoverEntered.AddListener(interactor =>
+                    manipulator.onHoverEntered.AddListener(interactor =>
                     {
-                        Debug.Log(interactor); Debug.Log("Hover entered");
+                        Debug.Log(manipulator.gameObject.name + " Hover entered");
                     });
-                    objectManipulator.onHoverExited.AddListener(interactor => { Debug.Log(interactor); Debug.Log("Hover exited"); });
+                    manipulator.onHoverExited.AddListener(interactor => { Debug.Log(manipulator.gameObject.name + " Hover exited"); });
                     break;
                 case Modalities.Laser:
                     //TODO fare prove controllando interactor su oculus
-                    objectManipulator.onHoverEntered.AddListener(interactor =>
+                    manipulator.onHoverEntered.AddListener(interactor =>
                     {
-                        Debug.Log(interactor); Debug.Log("Hover entered");
+                        Debug.Log("Hover entered");
                     });
-                    objectManipulator.onHoverExited.AddListener(interactor => { Debug.Log(interactor); Debug.Log("Hover exited"); });
+                    manipulator.onHoverExited.AddListener(interactor => { Debug.Log(manipulator.gameObject.name +" Hover exited"); });
                     break;
                 case Modalities.Touch:
                     //attach listener to object manipulator manipulation started event
-                    UnityAction manipulationStarted = () => { Debug.Log("On clicked"); };
-                    objectManipulator.OnClicked.AddListener(manipulationStarted);
-                    objectManipulator.onSelectEntered.AddListener(interactor => { Debug.Log(interactor); Debug.Log("Select entered"); });
-                    objectManipulator.onSelectExited.AddListener(interactor => { Debug.Log(interactor); Debug.Log("Select exited"); });
+                    UnityAction manipulationStarted = () =>
+                    {
+                        Debug.Log(manipulator.gameObject.name + " On clicked");
+                    };
+                    manipulator.OnClicked.AddListener(manipulationStarted);
+                    manipulator.onSelectEntered.AddListener(interactor =>
+                    {
+                       Debug.Log(manipulator.gameObject.name + " Select entered");
+                    });
+                    manipulator.onSelectExited.AddListener(interactor =>
+                    {
+                        Debug.Log(manipulator.gameObject.name + " Select exited");
+                    });
                     break;
                 
             }
-
         }
+        
 
         //TODO: per chiudere il menu
         public void DeActivateNewRule()
