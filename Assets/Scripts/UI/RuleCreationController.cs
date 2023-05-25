@@ -34,6 +34,7 @@ namespace UI
         public Material shiningMaterial;
         public GameObject interactables;
         
+        
         private void Start()
         {
             generalUIController = this.gameObject.GetComponent<GeneralUIController>();
@@ -102,8 +103,6 @@ namespace UI
                 go.SetActive(false);
             }
         }
-        
-        
         
         public void ShowModalitiesBubbles()
         {

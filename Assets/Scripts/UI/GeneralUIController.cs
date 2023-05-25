@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace UI
@@ -49,8 +50,7 @@ namespace UI
             _ruleCreationController = eventHandler.GetComponent<RuleCreationController>();
             DefaultState();
             radialMenu.getListButtons(optionButtons);
-            //rm.SetActive(true);
-            radialMenu.gameObject.SetActive(true);
+            //radialMenu.gameObject.SetActive(true);
         }
 
         public void Close()
@@ -91,7 +91,7 @@ namespace UI
             _uiState = UIState.NewRule;
             text.text = "Please, grab the modality you want to use to create the rule";
             HideOptionsMenu();
-            radialMenu.getListButtons(ruleButtons);
+            //radialMenu.getListButtons(ruleButtons);
         }
 
         public void SelectedObject(string name)
