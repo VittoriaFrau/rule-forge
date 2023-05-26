@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8549fefb-f71a-4278-af6b-67427dad7c5d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RuleCreationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleCreationController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XR/XRGeneralSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XR/XRGeneralSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +92,8 @@
       <workItem from="1684776103703" duration="83000" />
       <workItem from="1684835534556" duration="771000" />
       <workItem from="1684916479510" duration="4614000" />
-      <workItem from="1685000217739" duration="3643000" />
+      <workItem from="1685000217739" duration="4237000" />
+      <workItem from="1685104813075" duration="16000" />
     </task>
     <servers />
   </component>
