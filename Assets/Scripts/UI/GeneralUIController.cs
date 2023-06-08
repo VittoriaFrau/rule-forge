@@ -18,7 +18,7 @@ namespace UI
         private ObjectsMenuController _objectsMenuController;
         private RuleCreationController _ruleCreationController;
         public RadialMenu radialMenu;
-        //public GameObject rm;
+        
         
         public enum UIState
         {

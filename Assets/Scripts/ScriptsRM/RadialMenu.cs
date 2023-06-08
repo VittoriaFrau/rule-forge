@@ -33,8 +33,7 @@ public class RadialMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //slices = new List<Image>();
-        //Open();
+        
     }
 
     // Update is called once per frame
@@ -152,9 +151,13 @@ public class RadialMenu : MonoBehaviour
             float y = transform.position.y;
             float z = transform.position.z + 0.01f;
             slices[i].transform.position = new Vector3(x, y, z);
+            
             slices[i].gameObject.SetActive(true);
+            
         }
+
         
+
     }
 
     
