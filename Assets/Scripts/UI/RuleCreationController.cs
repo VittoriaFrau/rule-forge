@@ -30,10 +30,14 @@ namespace UI
         //Touch modality attributes
         private GameObject OpenXRRightHandController, OpenXRLeftHandController;
         private GameObject RightHand, LeftHand;
-        private Material normalMaterial;
-        public Material shiningMaterial;
+        private Material normalTouchMaterial;
+        public Material shiningTouchMaterial;
         public GameObject interactables;
         
+        //Laser modality attributes
+        private GameObject rightHandLaserPointer, leftHandLaserPointer;
+        private Material normalLaserMaterial;
+        public Material shiningLaserMaterial;
         
         private void Start()
         {
@@ -47,24 +51,46 @@ namespace UI
 
         public void SelectModality(string modality)
         {
-            _modality = (Modalities) System.Enum.Parse(typeof(Modalities), modality);
+            if(_modality != Modalities.None) DeActivateCurrentModality();
+                _modality = (Modalities) System.Enum.Parse(typeof(Modalities), modality);
             generalUIController.SetDebugText("Selected modality: " + _modality 
                                                                    + " use your modality to interact with any object in the scene");
-            HideModalitiesBubbles();
+            //HideModalitiesBubbles();
+            
+            
             switch (_modality)
             {
                case Modalities.Eyegaze:
                    //TODO
                    break;
                case Modalities.Laser:
-                   //TODO
+                   ActivateLaserModality();
                      break;
                case Modalities.Touch:
                    ActivateTouchModality();
                    break;
             }
-            //TODO show buttons in radial menu
             
+            
+        }
+
+        private void DeActivateCurrentModality()
+        {
+            switch (_modality)
+            {
+                case Modalities.Eyegaze:
+                    //TODO
+                    break;
+                case Modalities.Laser:
+                    DeActivateLaserModality();
+                    break;
+                case Modalities.Touch:
+                    DeActivateTouchModality();
+                    break;
+            }
+            ShowModalitiesBubbles();
+            generalUIController.SetDebugText("Selected modality: " + _modality 
+                                                                   + " use your modality to interact with any object in the scene");
         }
         
         private void ActivateTouchModality()
@@ -81,19 +107,58 @@ namespace UI
             LeftHand = L_R_Hand.transform.Find("R_Hand").gameObject;
             RightHand = R_R_Hand.transform.Find("R_Hand").gameObject;
             
-            normalMaterial = LeftHand.GetComponent<SkinnedMeshRenderer>().material;
+            normalTouchMaterial = LeftHand.GetComponent<SkinnedMeshRenderer>().material;
             
-            RightHand.GetComponent<SkinnedMeshRenderer>().material = shiningMaterial;
-            LeftHand.GetComponent<SkinnedMeshRenderer>().material = shiningMaterial;
+            RightHand.GetComponent<SkinnedMeshRenderer>().material = shiningTouchMaterial;
+            LeftHand.GetComponent<SkinnedMeshRenderer>().material = shiningTouchMaterial;
             
+            //Disappear the Bubble of the modality
+            HideModalitiesBubble("Touch");
+        }
+        
+        private void ActivateLaserModality()
+        {
+            rightHandLaserPointer = OpenXRRightHandController.transform.Find("Far Ray").gameObject.transform.Find("BendyRay").gameObject;
+            leftHandLaserPointer = OpenXRLeftHandController.transform.Find("Far Ray").gameObject.transform.Find("BendyRay").gameObject;
+
+            normalLaserMaterial = rightHandLaserPointer.GetComponent<LineRenderer>().material;
+            
+            //Assign the new material to both laser hands
+            rightHandLaserPointer.GetComponent<LineRenderer>().material = shiningLaserMaterial;
+            leftHandLaserPointer.GetComponent<LineRenderer>().material = shiningLaserMaterial;
+            
+            //Disappear the Bubble of the modality
+            HideModalitiesBubble("Laser");
+        }
+
+        private void DeActivateLaserModality()
+        {
+            //Color of the laser back to the normal
+            rightHandLaserPointer.GetComponent<LineRenderer>().material = normalLaserMaterial;
+            leftHandLaserPointer.GetComponent<LineRenderer>().material = normalLaserMaterial;
+            
+            //Remove the listeners
+            foreach (var go in interactables.transform.GetComponentsInChildren<ObjectManipulator>())
+            {
+                RemoveListener(go);
+            }
             
         }
+        
+        
+        
 
         private void DeActivateTouchModality()
         {
             //Color of the hands back to the normal
-            RightHand.GetComponent<SkinnedMeshRenderer>().material = normalMaterial;
-            LeftHand.GetComponent<SkinnedMeshRenderer>().material = normalMaterial;
+            RightHand.GetComponent<SkinnedMeshRenderer>().material = normalTouchMaterial;
+            LeftHand.GetComponent<SkinnedMeshRenderer>().material = normalTouchMaterial;
+            
+            //Remove the listeners
+            foreach (var go in interactables.transform.GetComponentsInChildren<ObjectManipulator>())
+            {
+                RemoveListener(go);
+            }
         }
 
         public void HideModalitiesBubbles()
@@ -102,6 +167,12 @@ namespace UI
             {
                 go.SetActive(false);
             }
+        }
+        
+        private void HideModalitiesBubble(string modality)
+        {
+            GameObject go = modalitiesBubbles.FirstOrDefault(obj => obj.name == modality);
+            go.SetActive(false);
         }
         
         public void ShowModalitiesBubbles()
@@ -117,7 +188,6 @@ namespace UI
             generalUIController.NewRuleState();
             ShowModalitiesBubbles();
             StopButton.GetComponent<PressableButton>().enabled = false;
-            //ruleMenu.SetActive(true);
         }
 
         public void StopRecording()
@@ -150,6 +220,7 @@ namespace UI
                     manipulator.onHoverEntered.AddListener(interactor =>
                     {
                         Debug.Log(manipulator.gameObject.name + " Hover entered");
+                        generalUIController.SetDebugText(manipulator.gameObject.name + " Hover entered");
                     });
                     manipulator.onHoverExited.AddListener(interactor => { Debug.Log(manipulator.gameObject.name + " Hover exited"); });
                     break;
@@ -158,6 +229,7 @@ namespace UI
                     manipulator.onHoverEntered.AddListener(interactor =>
                     {
                         Debug.Log("Hover entered");
+                        generalUIController.SetDebugText(manipulator.gameObject.name + " Hover entered");
                     });
                     manipulator.onHoverExited.AddListener(interactor => { Debug.Log(manipulator.gameObject.name +" Hover exited"); });
                     break;
@@ -166,15 +238,63 @@ namespace UI
                     UnityAction manipulationStarted = () =>
                     {
                         Debug.Log(manipulator.gameObject.name + " On clicked");
+                        generalUIController.SetDebugText(manipulator.gameObject.name + " On clicked");
                     };
                     manipulator.OnClicked.AddListener(manipulationStarted);
                     manipulator.onSelectEntered.AddListener(interactor =>
                     {
                        Debug.Log(manipulator.gameObject.name + " Select entered");
+                       generalUIController.SetDebugText(manipulator.gameObject.name + " Select entered");
                     });
                     manipulator.onSelectExited.AddListener(interactor =>
                     {
                         Debug.Log(manipulator.gameObject.name + " Select exited");
+                        generalUIController.SetDebugText(manipulator.gameObject.name + " Select exited");
+                    });
+                    break;
+                
+            }
+        }
+
+        private void RemoveListener(ObjectManipulator manipulator)
+        {
+             switch (_modality)
+            {
+                case Modalities.Eyegaze:
+                    //TODO fare prove controllando interactor su oculus
+                    manipulator.onHoverEntered.RemoveListener(interactor =>
+                    {
+                        Debug.Log(manipulator.gameObject.name + " Hover entered");
+                        generalUIController.SetDebugText(manipulator.gameObject.name + " Hover entered");
+                    });
+                    manipulator.onHoverExited.RemoveListener(interactor => { Debug.Log(manipulator.gameObject.name + " Hover exited"); });
+                    break;
+                case Modalities.Laser:
+                    //TODO fare prove controllando interactor su oculus
+                    manipulator.onHoverEntered.RemoveListener(interactor =>
+                    {
+                        Debug.Log("Hover entered");
+                        generalUIController.SetDebugText(manipulator.gameObject.name + " Hover entered");
+                    });
+                    manipulator.onHoverExited.RemoveListener(interactor => { Debug.Log(manipulator.gameObject.name +" Hover exited"); });
+                    break;
+                case Modalities.Touch:
+                    //attach listener to object manipulator manipulation started event
+                    UnityAction manipulationStarted = () =>
+                    {
+                        Debug.Log(manipulator.gameObject.name + " On clicked");
+                        generalUIController.SetDebugText(manipulator.gameObject.name + " On clicked");
+                    };
+                    manipulator.OnClicked.RemoveListener(manipulationStarted);
+                    manipulator.onSelectEntered.RemoveListener(interactor =>
+                    {
+                       Debug.Log(manipulator.gameObject.name + " Select entered");
+                       generalUIController.SetDebugText(manipulator.gameObject.name + " Select entered");
+                    });
+                    manipulator.onSelectExited.RemoveListener(interactor =>
+                    {
+                        Debug.Log(manipulator.gameObject.name + " Select exited");
+                        generalUIController.SetDebugText(manipulator.gameObject.name + " Select exited");
                     });
                     break;
                 
