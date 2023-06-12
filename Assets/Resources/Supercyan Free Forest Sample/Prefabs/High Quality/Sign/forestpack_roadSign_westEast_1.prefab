@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 33968574912416820}
   - component: {fileID: 23757994219508936}
   - component: {fileID: 64542318748531676}
+  - component: {fileID: 7620969224229995553}
+  - component: {fileID: 2166671124883430839}
   m_Layer: 0
   m_Name: forestpack_roadSign_westEast_1
   m_TagString: Untagged
@@ -98,3 +100,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 5b51913d07f805546855136f7b5feb44, type: 3}
+--- !u!114 &7620969224229995553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252687729517630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0893de2268f397d419a14e9c424610b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 0}
+  isVisible:
+    choice: 0
+--- !u!114 &2166671124883430839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252687729517630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8caa83b9a3e4d219bddac8d00d0a6b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

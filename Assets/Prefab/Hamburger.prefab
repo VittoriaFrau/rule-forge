@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: -2064731499476211054}
   - component: {fileID: -1096061023494818084}
   - component: {fileID: 900588186146411117}
+  - component: {fileID: 1796483604483565212}
+  - component: {fileID: 6914335211911831355}
   m_Layer: 0
   m_Name: Hamburger
   m_TagString: Untagged
@@ -327,7 +329,7 @@ MonoBehaviour:
   <OnDisabled>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
-  hostTransform: {fileID: 0}
+  hostTransform: {fileID: 1865691263047730732}
   allowedManipulations: 7
   allowedInteractionTypes: -2147483641
   applyTorque: 1
@@ -356,3 +358,30 @@ MonoBehaviour:
         Microsoft.MixedReality.Toolkit.SpatialManipulation
     scaleLogicType:
       reference: Microsoft.MixedReality.Toolkit.SpatialManipulation.ScaleLogic, Microsoft.MixedReality.Toolkit.SpatialManipulation
+--- !u!114 &1796483604483565212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865691263047899660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0893de2268f397d419a14e9c424610b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 0}
+  isVisible:
+    choice: 0
+--- !u!114 &6914335211911831355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865691263047899660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5199a130b9e2458fb51eee29cee14abe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

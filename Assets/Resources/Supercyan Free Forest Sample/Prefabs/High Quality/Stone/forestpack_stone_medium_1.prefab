@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 205323559755165634}
   - component: {fileID: -7119614854170514003}
   - component: {fileID: -2807724100045356693}
+  - component: {fileID: 5360697626527172185}
+  - component: {fileID: 3664544087810534239}
   m_Layer: 0
   m_Name: forestpack_stone_medium_1
   m_TagString: Untagged
@@ -325,7 +327,7 @@ MonoBehaviour:
   <OnDisabled>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
-  hostTransform: {fileID: 0}
+  hostTransform: {fileID: 4075937848129010}
   allowedManipulations: 7
   allowedInteractionTypes: -2147483641
   applyTorque: 1
@@ -354,3 +356,30 @@ MonoBehaviour:
         Microsoft.MixedReality.Toolkit.SpatialManipulation
     scaleLogicType:
       reference: Microsoft.MixedReality.Toolkit.SpatialManipulation.ScaleLogic, Microsoft.MixedReality.Toolkit.SpatialManipulation
+--- !u!114 &5360697626527172185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451074748068950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0893de2268f397d419a14e9c424610b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 0}
+  isVisible:
+    choice: 0
+--- !u!114 &3664544087810534239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451074748068950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8caa83b9a3e4d219bddac8d00d0a6b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

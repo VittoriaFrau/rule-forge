@@ -315,8 +315,8 @@ GameObject:
   - component: {fileID: 95394820208651578}
   - component: {fileID: 687971062352654430}
   - component: {fileID: 1410506404124919315}
-  - component: {fileID: 14156257546719582}
-  - component: {fileID: 4006625061624347034}
+  - component: {fileID: 1191221290652623058}
+  - component: {fileID: 4486833008434549570}
   m_Layer: 0
   m_Name: FreeZombie
   m_TagString: Untagged
@@ -391,7 +391,7 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &14156257546719582
+--- !u!114 &1191221290652623058
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -400,14 +400,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1391888216552696}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 245cf6096251df3489172ce730e83981, type: 3}
+  m_Script: {fileID: 11500000, guid: 0893de2268f397d419a14e9c424610b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 0}
   isVisible:
     choice: 0
-  isActive:
-    choice: 0
---- !u!114 &4006625061624347034
+--- !u!114 &4486833008434549570
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -416,12 +415,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1391888216552696}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 264dba804a0029a4290837aa00b51110, type: 3}
+  m_Script: {fileID: 11500000, guid: 98216f16334e432b9bbfe9eff725d163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
-  playing:
-    choice: 0
 --- !u!1 &1412685104993132
 GameObject:
   m_ObjectHideFlags: 0

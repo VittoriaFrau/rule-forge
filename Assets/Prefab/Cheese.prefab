@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: -8997047225802939328}
   - component: {fileID: 8889289670246861031}
   - component: {fileID: -1739644258605383483}
+  - component: {fileID: 628948971235609254}
+  - component: {fileID: 8055041392334280759}
   m_Layer: 0
   m_Name: Cheese
   m_TagString: Untagged
@@ -324,7 +326,7 @@ MonoBehaviour:
   <OnDisabled>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
-  hostTransform: {fileID: 0}
+  hostTransform: {fileID: 3941029079688435521}
   allowedManipulations: 7
   allowedInteractionTypes: -2147483641
   applyTorque: 1
@@ -353,3 +355,30 @@ MonoBehaviour:
         Microsoft.MixedReality.Toolkit.SpatialManipulation
     scaleLogicType:
       reference: Microsoft.MixedReality.Toolkit.SpatialManipulation.ScaleLogic, Microsoft.MixedReality.Toolkit.SpatialManipulation
+--- !u!114 &628948971235609254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3941029079688924001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0893de2268f397d419a14e9c424610b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 0}
+  isVisible:
+    choice: 0
+--- !u!114 &8055041392334280759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3941029079688924001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5199a130b9e2458fb51eee29cee14abe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: -4866347298764472916}
   - component: {fileID: -1758839060640549466}
   - component: {fileID: 1391611055161495250}
+  - component: {fileID: 1782927801496264643}
+  - component: {fileID: 5108522742821183223}
   m_Layer: 0
   m_Name: Banana
   m_TagString: Untagged
@@ -324,7 +326,7 @@ MonoBehaviour:
   <OnDisabled>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
-  hostTransform: {fileID: 0}
+  hostTransform: {fileID: 4439331266001731338}
   allowedManipulations: 7
   allowedInteractionTypes: -2147483641
   applyTorque: 1
@@ -353,3 +355,30 @@ MonoBehaviour:
         Microsoft.MixedReality.Toolkit.SpatialManipulation
     scaleLogicType:
       reference: Microsoft.MixedReality.Toolkit.SpatialManipulation.ScaleLogic, Microsoft.MixedReality.Toolkit.SpatialManipulation
+--- !u!114 &1782927801496264643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4439331266002084650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0893de2268f397d419a14e9c424610b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 0}
+  isVisible:
+    choice: 0
+--- !u!114 &5108522742821183223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4439331266002084650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5199a130b9e2458fb51eee29cee14abe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
