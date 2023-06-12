@@ -187,22 +187,23 @@ namespace UI
         {
             generalUIController.NewRuleState();
             ShowModalitiesBubbles();
-            StopButton.GetComponent<PressableButton>().enabled = false;
         }
 
         public void StopRecording()
         {
             //TODO 
-            StopButton.GetComponent<PressableButton>().enabled = false;
-            RecordButton.GetComponent<PressableButton>().enabled = true;
+            StopButton.SetActive(false);
+            RecordButton.SetActive(true);
             
         }
 
         public void StartRecording()
         {
+            generalUIController.SetDebugText("Recording started. Please, interact with an object");
+            
             //Make the record button not interactable
-            RecordButton.GetComponent<PressableButton>().enabled = false;
-            StopButton.GetComponent<PressableButton>().enabled = true;
+            StopButton.SetActive(true);
+            RecordButton.SetActive(false);
 
             foreach (var go in interactables.transform.GetComponentsInChildren<ObjectManipulator>())
             {
