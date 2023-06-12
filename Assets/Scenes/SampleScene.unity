@@ -56801,7 +56801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c97e32f86e9fe9447923572a40de3ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 0, g: 0.074855804, b: 1, a: 1}
+  hoverColor: {r: 0, g: 0.074855804, b: 1, a: 0}
   image: {fileID: 2871053796881688088}
 --- !u!222 &2871053796881688095
 CanvasRenderer:
