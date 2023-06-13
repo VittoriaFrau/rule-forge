@@ -17,9 +17,9 @@ namespace UI
         private enum Modalities
         {
             None, 
-            Eyegaze,
+            Headgaze,
             Touch,
-            Laser
+            Laser,
         }
         
         private Modalities _modality;
@@ -38,6 +38,13 @@ namespace UI
         private GameObject rightHandLaserPointer, leftHandLaserPointer;
         private Material normalLaserMaterial;
         public Material shiningLaserMaterial;
+        
+        //Headgaze modality attributes
+        public GameObject headGazePointer;
+        public GameObject gazeInteractor;
+        private GameObject headGazePointerInstance;
+        public Material normalHeadGazeMaterial;
+        public Material shiningHeadGazeMaterial;
         
         private void Start()
         {
@@ -60,8 +67,8 @@ namespace UI
             
             switch (_modality)
             {
-               case Modalities.Eyegaze:
-                   //TODO
+               case Modalities.Headgaze:
+                   ActivateHeadGazeModality();
                    break;
                case Modalities.Laser:
                    ActivateLaserModality();
@@ -70,16 +77,42 @@ namespace UI
                    ActivateTouchModality();
                    break;
             }
+        }
+        
+        private void ActivateHeadGazeModality()
+        {
+            //Instantiate the headgaze pointer inside the gaze interactor object
+            headGazePointerInstance = Instantiate(headGazePointer, gazeInteractor.transform);
+            //Set z axes to 0.33
+            headGazePointerInstance.transform.localPosition = new Vector3(0,0,0.33f);
             
+            //Change the material of the gaze pointer everytime the user looks at an object
             
+            gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverEntered.AddListener((GameObject) =>
+            {
+                headGazePointerInstance.GetComponent<Renderer>().material = shiningLaserMaterial;
+            });
+            
+            gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverExited.AddListener((GameObject) =>
+            {
+                headGazePointerInstance.GetComponent<Renderer>().material = normalLaserMaterial;
+            });
+            
+            //Disappear the Bubble of the modality
+            HideModalitiesBubble("Headgaze");
+        }
+
+        private void DeActivateHeadGazeModality()
+        {
+            Destroy(headGazePointerInstance);
         }
 
         private void DeActivateCurrentModality()
         {
             switch (_modality)
             {
-                case Modalities.Eyegaze:
-                    //TODO
+                case Modalities.Headgaze:
+                    DeActivateHeadGazeModality();
                     break;
                 case Modalities.Laser:
                     DeActivateLaserModality();
@@ -216,7 +249,7 @@ namespace UI
         {
             switch (_modality)
             {
-                case Modalities.Eyegaze:
+                case Modalities.Headgaze:
                     //TODO fare prove controllando interactor su oculus
                     manipulator.onHoverEntered.AddListener(interactor =>
                     {
@@ -226,7 +259,6 @@ namespace UI
                     manipulator.onHoverExited.AddListener(interactor => { Debug.Log(manipulator.gameObject.name + " Hover exited"); });
                     break;
                 case Modalities.Laser:
-                    //TODO fare prove controllando interactor su oculus
                     manipulator.onHoverEntered.AddListener(interactor =>
                     {
                         Debug.Log("Hover entered");
@@ -261,7 +293,7 @@ namespace UI
         {
              switch (_modality)
             {
-                case Modalities.Eyegaze:
+                case Modalities.Headgaze:
                     //TODO fare prove controllando interactor su oculus
                     manipulator.onHoverEntered.RemoveListener(interactor =>
                     {
@@ -306,6 +338,7 @@ namespace UI
         //TODO: per chiudere il menu
         public void DeActivateNewRule()
         {
+            DeActivateCurrentModality();
             // Nascondere bolle se presenti
             HideModalitiesBubbles();
             // Nascondere opzioni menu

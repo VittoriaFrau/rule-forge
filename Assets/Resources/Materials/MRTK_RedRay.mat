@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MRTK_DefaultRay
+  m_Name: MRTK_RedRay
   m_Shader: {fileID: 4800000, guid: a3e1dddc96616ef4991f6d7101d161ca, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:

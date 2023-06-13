@@ -2605,6 +2605,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107385748}
   m_CullTransparentMesh: 1
+--- !u!1 &129076095 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6419905015336536147, guid: 4f36e26f0b419d043abd902a49abe837, type: 3}
+  m_PrefabInstance: {fileID: 1694490146}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &139380812 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2828958436599032273, guid: b85e005d231192249b7077b40a4d4e45, type: 3}
@@ -12134,6 +12139,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: MRTK XR Rig
       objectReference: {fileID: 0}
+    - target: {fileID: 4102833070697430761, guid: 4d7e2f87fefe0ba468719b15288b46e7, type: 3}
+      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102833070697430761, guid: 4d7e2f87fefe0ba468719b15288b46e7, type: 3}
+      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102833070697430761, guid: 4d7e2f87fefe0ba468719b15288b46e7, type: 3}
+      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 129076095}
+    - target: {fileID: 4102833070697430761, guid: 4d7e2f87fefe0ba468719b15288b46e7, type: 3}
+      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102833070697430761, guid: 4d7e2f87fefe0ba468719b15288b46e7, type: 3}
+      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102833070697430761, guid: 4d7e2f87fefe0ba468719b15288b46e7, type: 3}
+      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102833070697430761, guid: 4d7e2f87fefe0ba468719b15288b46e7, type: 3}
+      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5727148871348114051, guid: 4d7e2f87fefe0ba468719b15288b46e7, type: 3}
       propertyPath: m_TagString
       value: handController
@@ -12466,6 +12499,10 @@ MonoBehaviour:
   shiningTouchMaterial: {fileID: 2100000, guid: 35d364361cde318409f388164d1423e0, type: 2}
   interactables: {fileID: 622747063}
   shiningLaserMaterial: {fileID: 2100000, guid: b4350e793c911ef42b713253409efbea, type: 2}
+  headGazePointer: {fileID: 1118873523602857700, guid: 0b646ae7bb992ec4a822be75dc921132, type: 3}
+  gazeInteractor: {fileID: 669829500}
+  normalHeadGazeMaterial: {fileID: 2100006, guid: bd232805ec57aa245a81c2df3f69f66a, type: 3}
+  shiningHeadGazeMaterial: {fileID: 2100004, guid: bd232805ec57aa245a81c2df3f69f66a, type: 3}
 --- !u!114 &514665899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17063,6 +17100,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666693206}
   m_CullTransparentMesh: 1
+--- !u!1 &669829500 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 750466666026763655, guid: 4d7e2f87fefe0ba468719b15288b46e7, type: 3}
+  m_PrefabInstance: {fileID: 501901185}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &671286101 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3705378105823492738, guid: b85e005d231192249b7077b40a4d4e45, type: 3}
@@ -22354,7 +22396,7 @@ GameObject:
   - component: {fileID: 960969071}
   - component: {fileID: 960969073}
   m_Layer: 0
-  m_Name: Eyegaze
+  m_Name: Headgaze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22490,7 +22532,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Eyegaze
+          m_StringArgument: Headgaze
           m_BoolArgument: 0
         m_CallState: 2
   m_LastSelectExited:
@@ -73344,7 +73386,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8822247151522350874}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e78d485e80d1105448cc092fce32e088, type: 3}
   m_Name: 
