@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 722664243494004141}
   - component: {fileID: 3042389827781171448}
   - component: {fileID: 332272591879841063}
+  - component: {fileID: -5851922374098261867}
   m_Layer: 0
   m_Name: forestpack_tree_fir_tall
   m_TagString: Untagged
@@ -396,5 +397,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8caa83b9a3e4d219bddac8d00d0a6b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-5851922374098261867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210459693873458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aff43d2471064442acf19818299fce5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

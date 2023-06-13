@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 64542318748531676}
   - component: {fileID: 7620969224229995553}
   - component: {fileID: 2166671124883430839}
+  - component: {fileID: -8816944095108556581}
   m_Layer: 0
   m_Name: forestpack_roadSign_westEast_1
   m_TagString: Untagged
@@ -125,5 +126,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8caa83b9a3e4d219bddac8d00d0a6b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8816944095108556581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252687729517630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aff43d2471064442acf19818299fce5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
