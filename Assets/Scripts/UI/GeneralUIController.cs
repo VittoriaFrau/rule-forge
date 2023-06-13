@@ -16,7 +16,7 @@ namespace UI
         public GameObject eventHandler;
         private EditModeController _editModeController;
         private ObjectsMenuController _objectsMenuController;
-        private RuleCreationController _ruleCreationController;
+        private InteractionCreationController _interactionCreationController;
         public RadialMenu radialMenu;
         
         
@@ -25,7 +25,8 @@ namespace UI
             Default,
             EditMode,
             NewObject,
-            NewRule
+            NewRule,
+            RuleComposition
         }
         private UIState _uiState;
         public UIState State
@@ -47,7 +48,7 @@ namespace UI
             text = textGo.GetComponent<TextMeshProUGUI>();
             _editModeController = eventHandler.GetComponent<EditModeController>();
             _objectsMenuController = eventHandler.GetComponent<ObjectsMenuController>();
-            _ruleCreationController = eventHandler.GetComponent<RuleCreationController>();
+            _interactionCreationController = eventHandler.GetComponent<InteractionCreationController>();
             DefaultState();
             radialMenu.getListButtons(optionButtons);
             radialMenu.gameObject.SetActive(true);
@@ -67,7 +68,7 @@ namespace UI
                     _objectsMenuController.DeActivateObjectsMenu();
                     break;
                 case UIState.NewRule:
-                    _ruleCreationController.DeActivateNewRule();
+                    _interactionCreationController.DeActivateNewRule();
                     break;
             }
             closeButton.SetActive(false);
@@ -120,7 +121,6 @@ namespace UI
                 button.SetActive(false);
             }
         }
-
         
 
         private void ShowOptionsMenu()
@@ -163,6 +163,12 @@ namespace UI
             HideEditMenu();
             HideRuleMenu();
             radialMenu.getListButtons(optionButtons);
+        }
+
+        public void RuleComposeStopRecording()
+        {
+            _uiState = UIState.RuleComposition;
+            _interactionCreationController.StopRecording();
         }
     }
 }

@@ -12,9 +12,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 namespace UI
 {
-    public class RuleCreationController:MonoBehaviour
+    public class InteractionCreationController:MonoBehaviour
     {
-        private enum Modalities
+        public enum Modalities
         {
             None, 
             Headgaze,
@@ -45,6 +45,10 @@ namespace UI
         private GameObject headGazePointerInstance;
         public Material normalHeadGazeMaterial;
         public Material shiningHeadGazeMaterial;
+        
+        
+        //Recording
+        private List<ECAEvent> _events;
         
         private void Start()
         {
@@ -90,12 +94,12 @@ namespace UI
             
             gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverEntered.AddListener((GameObject) =>
             {
-                headGazePointerInstance.GetComponent<Renderer>().material = shiningLaserMaterial;
+                headGazePointerInstance.GetComponent<Renderer>().material = shiningHeadGazeMaterial;
             });
             
             gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverExited.AddListener((GameObject) =>
             {
-                headGazePointerInstance.GetComponent<Renderer>().material = normalLaserMaterial;
+                headGazePointerInstance.GetComponent<Renderer>().material = normalHeadGazeMaterial;
             });
             
             //Disappear the Bubble of the modality
@@ -228,6 +232,7 @@ namespace UI
             StopButton.SetActive(false);
             RecordButton.SetActive(true);
             
+            generalUIController.SetDebugText("Recording stopped.");
         }
 
         public void StartRecording()
@@ -250,21 +255,35 @@ namespace UI
             switch (_modality)
             {
                 case Modalities.Headgaze:
-                    //TODO fare prove controllando interactor su oculus
-                    manipulator.onHoverEntered.AddListener(interactor =>
+                    gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverEntered.AddListener((GameObject) =>
                     {
                         Debug.Log(manipulator.gameObject.name + " Hover entered");
-                        generalUIController.SetDebugText(manipulator.gameObject.name + " Hover entered");
+                        generalUIController.SetDebugText(manipulator.gameObject.name + " Hover Entered");
+                        
+                        _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Headgaze, "HoverEntered"));
                     });
-                    manipulator.onHoverExited.AddListener(interactor => { Debug.Log(manipulator.gameObject.name + " Hover exited"); });
+            
+                    gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverExited.AddListener((GameObject) =>
+                    {
+                        Debug.Log(manipulator.gameObject.name + " Hover exited");
+                        generalUIController.SetDebugText(manipulator.gameObject.name + " Hover exited");
+                        _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Headgaze, "Hover Exited"));
+                    });
+                    
                     break;
                 case Modalities.Laser:
                     manipulator.onHoverEntered.AddListener(interactor =>
                     {
                         Debug.Log("Hover entered");
                         generalUIController.SetDebugText(manipulator.gameObject.name + " Hover entered");
+                        _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Entered"));
                     });
-                    manipulator.onHoverExited.AddListener(interactor => { Debug.Log(manipulator.gameObject.name +" Hover exited"); });
+                    manipulator.onHoverExited.AddListener(interactor =>
+                    {
+                        Debug.Log(manipulator.gameObject.name +" Hover exited"); 
+                        _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Exited"));
+
+                    });
                     break;
                 case Modalities.Touch:
                     //attach listener to object manipulator manipulation started event
@@ -272,17 +291,23 @@ namespace UI
                     {
                         Debug.Log(manipulator.gameObject.name + " On clicked");
                         generalUIController.SetDebugText(manipulator.gameObject.name + " On clicked");
+                        _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Clicked"));
+
                     };
                     manipulator.OnClicked.AddListener(manipulationStarted);
                     manipulator.onSelectEntered.AddListener(interactor =>
                     {
                        Debug.Log(manipulator.gameObject.name + " Select entered");
                        generalUIController.SetDebugText(manipulator.gameObject.name + " Select entered");
+                       _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Clicked"));
+
                     });
                     manipulator.onSelectExited.AddListener(interactor =>
                     {
                         Debug.Log(manipulator.gameObject.name + " Select exited");
                         generalUIController.SetDebugText(manipulator.gameObject.name + " Select exited");
+                        _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Select exited"));
+
                     });
                     break;
                 
@@ -294,16 +319,18 @@ namespace UI
              switch (_modality)
             {
                 case Modalities.Headgaze:
-                    //TODO fare prove controllando interactor su oculus
-                    manipulator.onHoverEntered.RemoveListener(interactor =>
+                    gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverEntered.RemoveListener((GameObject) =>
                     {
                         Debug.Log(manipulator.gameObject.name + " Hover entered");
-                        generalUIController.SetDebugText(manipulator.gameObject.name + " Hover entered");
+                        generalUIController.SetDebugText(manipulator.gameObject.name + " Hover entered");                    });
+            
+                    gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverExited.RemoveListener((GameObject) =>
+                    {
+                        Debug.Log(manipulator.gameObject.name + " Hover exited");
+                        generalUIController.SetDebugText(manipulator.gameObject.name + " Hover exited");
                     });
-                    manipulator.onHoverExited.RemoveListener(interactor => { Debug.Log(manipulator.gameObject.name + " Hover exited"); });
                     break;
                 case Modalities.Laser:
-                    //TODO fare prove controllando interactor su oculus
                     manipulator.onHoverEntered.RemoveListener(interactor =>
                     {
                         Debug.Log("Hover entered");
