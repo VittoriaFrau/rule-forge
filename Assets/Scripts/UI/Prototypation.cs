@@ -25,7 +25,7 @@ namespace UI
             _generalUIController = eventHandler.GetComponent<GeneralUIController>();
             _ruleEngine = RuleEngine.GetInstance();
             
-            CheckInteractable(GameObject.Find("animal_people_wolf_1"));
+            //CheckInteractable(GameObject.Find("animal_people_wolf_1"));
             /*if (_editModeController.EditMode)
             {
                 //Show the PiMenu when the object is selected

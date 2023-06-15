@@ -20,6 +20,7 @@ namespace UI
         public RadialMenu radialMenu;
         
         
+        
         public enum UIState
         {
             Default,
@@ -170,5 +171,6 @@ namespace UI
             _uiState = UIState.RuleComposition;
             _interactionCreationController.StopRecording();
         }
+        
     }
 }

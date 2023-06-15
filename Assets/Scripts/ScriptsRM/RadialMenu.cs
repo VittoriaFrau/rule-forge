@@ -163,7 +163,8 @@ public class RadialMenu : MonoBehaviour
     
     public void getListButtons(List<GameObject> buttons)
     {
-        Close();
+        //TODO ripristinare insieme agli spicchi
+        //Close();
         pressableButtons = buttons;
         Open();
     }

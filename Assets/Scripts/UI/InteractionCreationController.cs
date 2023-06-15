@@ -48,7 +48,10 @@ namespace UI
         
         
         //Recording
-        private List<ECAEvent> _events;
+        private List<ECAEvent> _events = new();
+        
+        //Category choice
+        public GameObject categoryMenu;
         
         private void Start()
         {
@@ -92,6 +95,7 @@ namespace UI
             
             //Change the material of the gaze pointer everytime the user looks at an object
             
+            //TODO MissingReferenceException: The object of type 'GameObject' has been destroyed but you are still trying to access it.
             gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverEntered.AddListener((GameObject) =>
             {
                 headGazePointerInstance.GetComponent<Renderer>().material = shiningHeadGazeMaterial;
@@ -128,6 +132,7 @@ namespace UI
             ShowModalitiesBubbles();
             generalUIController.SetDebugText("Selected modality: " + _modality 
                                                                    + " use your modality to interact with any object in the scene");
+            categoryMenu.SetActive(false);
         }
         
         private void ActivateTouchModality()
@@ -233,11 +238,20 @@ namespace UI
             RecordButton.SetActive(true);
             
             generalUIController.SetDebugText("Recording stopped.");
+            if(categoryMenu.activeSelf)
+                categoryMenu.SetActive(false);
         }
 
         public void StartRecording()
         {
             generalUIController.SetDebugText("Recording started. Please, interact with an object");
+            
+            if (_modality == Modalities.None)
+            {
+                Debug.Log("No modality selected");
+                generalUIController.SetDebugText("No modality selected, please select one");
+                return;
+            }
             
             //Make the record button not interactable
             StopButton.SetActive(true);
@@ -255,63 +269,16 @@ namespace UI
             switch (_modality)
             {
                 case Modalities.Headgaze:
-                    gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverEntered.AddListener((GameObject) =>
-                    {
-                        Debug.Log(manipulator.gameObject.name + " Hover entered");
-                        generalUIController.SetDebugText(manipulator.gameObject.name + " Hover Entered");
-                        
-                        _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Headgaze, "HoverEntered"));
-                    });
-            
-                    gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverExited.AddListener((GameObject) =>
-                    {
-                        Debug.Log(manipulator.gameObject.name + " Hover exited");
-                        generalUIController.SetDebugText(manipulator.gameObject.name + " Hover exited");
-                        _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Headgaze, "Hover Exited"));
-                    });
-                    
+                    AddHeadGazeListener(manipulator);
                     break;
                 case Modalities.Laser:
-                    manipulator.onHoverEntered.AddListener(interactor =>
-                    {
-                        Debug.Log("Hover entered");
-                        generalUIController.SetDebugText(manipulator.gameObject.name + " Hover entered");
-                        _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Entered"));
-                    });
-                    manipulator.onHoverExited.AddListener(interactor =>
-                    {
-                        Debug.Log(manipulator.gameObject.name +" Hover exited"); 
-                        _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Exited"));
-
-                    });
+                    AddLaserListener(manipulator);
                     break;
                 case Modalities.Touch:
-                    //attach listener to object manipulator manipulation started event
-                    UnityAction manipulationStarted = () =>
-                    {
-                        Debug.Log(manipulator.gameObject.name + " On clicked");
-                        generalUIController.SetDebugText(manipulator.gameObject.name + " On clicked");
-                        _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Clicked"));
-
-                    };
-                    manipulator.OnClicked.AddListener(manipulationStarted);
-                    manipulator.onSelectEntered.AddListener(interactor =>
-                    {
-                       Debug.Log(manipulator.gameObject.name + " Select entered");
-                       generalUIController.SetDebugText(manipulator.gameObject.name + " Select entered");
-                       _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Clicked"));
-
-                    });
-                    manipulator.onSelectExited.AddListener(interactor =>
-                    {
-                        Debug.Log(manipulator.gameObject.name + " Select exited");
-                        generalUIController.SetDebugText(manipulator.gameObject.name + " Select exited");
-                        _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Select exited"));
-
-                    });
+                    AddTouchListener(manipulator);
                     break;
-                
             }
+            
         }
 
         private void RemoveListener(ObjectManipulator manipulator)
@@ -372,6 +339,83 @@ namespace UI
             BackButton.SetActive(false);
             RecordButton.SetActive(false);
             StopButton.SetActive(false);
+        }
+
+        private void AddHeadGazeListener(ObjectManipulator manipulator)
+        {
+            gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverEntered.AddListener((GameObject) =>
+            {
+                Debug.Log(manipulator.gameObject.name + " Hover entered");
+                //generalUIController.SetDebugText(manipulator.gameObject.name + " Hover Entered" );
+                //TODO non farlo hard coded ma dandogli i nomi giusti (cubo, ...)
+                categoryMenu.SetActive(true);
+                _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Headgaze, "HoverEntered"));
+                generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
+                //TODO metti un meccanismo che modifica il tipo di evento dandogli la tipologia di oggetto una volta selezionato (cubo, oggetto generico, ...)
+                        
+            });
+            
+            gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverExited.AddListener((GameObject) =>
+            {
+                Debug.Log(manipulator.gameObject.name + " Hover exited");
+                //generalUIController.SetDebugText(manipulator.gameObject.name + " Hover exited");
+                _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Headgaze, "Hover Exited"));
+                //categoryMenu.SetActive(false);
+
+            });
+        }
+
+        private void AddLaserListener(ObjectManipulator manipulator)
+        {
+            manipulator.onHoverEntered.AddListener(interactor =>
+            {
+                Debug.Log("Hover entered");
+                //generalUIController.SetDebugText(manipulator.gameObject.name + " Hover entered");
+                _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Entered"));
+                generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
+                categoryMenu.SetActive(true);
+
+            });
+            manipulator.onHoverExited.AddListener(interactor =>
+            {
+                Debug.Log(manipulator.gameObject.name +" Hover exited"); 
+                _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Exited"));
+                //categoryMenu.SetActive(false);
+
+            });
+        }
+
+        private void AddTouchListener(ObjectManipulator manipulator)
+        {
+            //attach listener to object manipulator manipulation started event
+            UnityAction manipulationStarted = () =>
+            {
+                Debug.Log(manipulator.gameObject.name + " On clicked");
+                //generalUIController.SetDebugText(manipulator.gameObject.name + " On clicked");
+                _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Clicked"));
+                generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
+                categoryMenu.SetActive(true);
+
+            };
+            manipulator.OnClicked.AddListener(manipulationStarted);
+            manipulator.onSelectEntered.AddListener(interactor =>
+            {
+                Debug.Log(manipulator.gameObject.name + " Select entered");
+                //generalUIController.SetDebugText(manipulator.gameObject.name + " Select entered");
+                generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
+                _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Clicked"));
+                categoryMenu.SetActive(true);
+
+
+            });
+            manipulator.onSelectExited.AddListener(interactor =>
+            {
+                Debug.Log(manipulator.gameObject.name + " Select exited");
+                //generalUIController.SetDebugText(manipulator.gameObject.name + " Select exited");
+                _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Select exited"));
+                //categoryMenu.SetActive(false);
+
+            });
         }
     }
 }

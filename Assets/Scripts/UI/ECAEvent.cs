@@ -7,6 +7,8 @@ namespace UI
         private GameObject _gameObject;
         private InteractionCreationController.Modalities modality;
         private string _event;
+        //TODO: sto selezionando cubo, shape o un qualsiasi oggetto?
+        private string typeOfObject;
         
         public ECAEvent(GameObject gameObject, InteractionCreationController.Modalities modality, string _event)
         {
