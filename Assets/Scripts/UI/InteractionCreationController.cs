@@ -21,6 +21,13 @@ namespace UI
             Touch,
             Laser,
         }
+
+        public enum CategoryObjectSelected
+        {
+            GameObject,
+            Category,
+            AllObject
+        }
         
         private Modalities _modality;
         private GeneralUIController generalUIController;
@@ -33,6 +40,9 @@ namespace UI
         private Material normalTouchMaterial;
         public Material shiningTouchMaterial;
         public GameObject interactables;
+        
+        //Microgesture
+        private WsClient _wsClient;
         
         //Laser modality attributes
         private GameObject rightHandLaserPointer, leftHandLaserPointer;
@@ -61,6 +71,7 @@ namespace UI
                 == "MRTK RightHand Controller");
             OpenXRLeftHandController = GameObject.FindGameObjectsWithTag("handController").FirstOrDefault(obj => obj.name 
                 == "MRTK LeftHand Controller");
+            _wsClient = new WsClient();
         }
 
         public void SelectModality(string modality)
@@ -69,9 +80,7 @@ namespace UI
                 _modality = (Modalities) System.Enum.Parse(typeof(Modalities), modality);
             generalUIController.SetDebugText("Selected modality: " + _modality 
                                                                    + " use your modality to interact with any object in the scene");
-            //HideModalitiesBubbles();
-            
-            
+
             switch (_modality)
             {
                case Modalities.Headgaze:
@@ -158,7 +167,7 @@ namespace UI
             HideModalitiesBubble("Touch");
             
             //Microgesture listener
-            
+            _wsClient.StartSocket(_events);
         }
         
         private void ActivateLaserModality()
@@ -204,6 +213,7 @@ namespace UI
             {
                 RemoveListener(go);
             }
+            _wsClient.StopSocket();
         }
 
         public void HideModalitiesBubbles()
@@ -243,6 +253,7 @@ namespace UI
             generalUIController.SetDebugText("Recording stopped.");
             if(categoryMenu.activeSelf)
                 categoryMenu.SetActive(false);
+            _wsClient.isRecording = false;
         }
 
         public void StartRecording()
@@ -255,6 +266,12 @@ namespace UI
                 generalUIController.SetDebugText("No modality selected, please select one");
                 return;
             }
+            
+            //Clean the event list
+            _events.Clear();
+            
+            //Alert WsClient that we are recording
+            _wsClient.isRecording = true;
             
             //Make the record button not interactable
             StopButton.SetActive(true);
@@ -398,7 +415,6 @@ namespace UI
                 _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Clicked"));
                 generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
                 categoryMenu.SetActive(true);
-
             };
             manipulator.OnClicked.AddListener(manipulationStarted);
             manipulator.onSelectEntered.AddListener(interactor =>
@@ -417,8 +433,9 @@ namespace UI
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Select exited");
                 _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Select exited"));
                 //categoryMenu.SetActive(false);
-
             });
+            
         }
+        
     }
 }
