@@ -5,12 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8549fefb-f71a-4278-af6b-67427dad7c5d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/NuGet.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NuGet.config.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NuGet.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NuGet/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NuGet/Editor/NugetForUnity.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NuGet/Editor/NugetForUnity.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NuGet/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NuGet/LICENSE.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NuGet/README.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NuGet/README.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NuGet/Resources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NuGet/Resources/defaultIcon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NuGet/Resources/defaultIcon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Packages.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Packages/WebSocketSharp-netstandard.1.0.1.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Packages/WebSocketSharp-netstandard.1.0.1/.signature.p7s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Packages/WebSocketSharp-netstandard.1.0.1/WebSocketSharp-netstandard.1.0.1.nupkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Packages/WebSocketSharp-netstandard.1.0.1/WebSocketSharp-netstandard.1.0.1.nupkg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Packages/WebSocketSharp-netstandard.1.0.1/lib.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Packages/WebSocketSharp-netstandard.1.0.1/lib/net45.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Packages/WebSocketSharp-netstandard.1.0.1/lib/net45/websocket-sharp.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Packages/WebSocketSharp-netstandard.1.0.1/lib/net45/websocket-sharp.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Packages/WebSocketSharp-netstandard.1.0.1/lib/net45/websocket-sharp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Packages/WebSocketSharp-netstandard.1.0.1/lib/net45/websocket-sharp.xml.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/packages.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/packages.config.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptsRM/RadialMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptsRM/RadialMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InteractionCreationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InteractionCreationController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,39 +41,50 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/Batcaverna/RiderProjects/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.core@8d3eae7b2801/Interactables/StatefulInteractable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.input@146a0d16a9f3/Interactors/Gaze/FuzzyGazeInteractor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.spatialmanipulation@a80535c64d68/ObjectManipulator/MoveLogics/ScaleLogic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.spatialmanipulation@a80535c64d68/Solvers/HandConstraintPalmUp.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.uxcore@246ca5810751/Button/PressableButton.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.uxcore@246ca5810751/StateVisualizer/StateVisualizer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/Interactors/XRBaseInteractor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/XRInteractionManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Batcaverna/RiderProjects/rule-forge/ProjectSettings/ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Q9pclvtRc7CEDoHEiOA8cN1AL6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Discover.Launch.Via.Unity": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "rider.run.widget.enabled.cache": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;rider.run.widget.enabled.cache&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\gador\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\gador\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\gador\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\gador\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\gador\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\gador\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.16f1\Editor\Unity.exe" />
@@ -111,7 +145,73 @@
       <workItem from="1684916479510" duration="4614000" />
       <workItem from="1685000217739" duration="4237000" />
       <workItem from="1685104813075" duration="16000" />
+      <workItem from="1686210916706" duration="485000" />
+      <workItem from="1686211992602" duration="248000" />
+      <workItem from="1686556404061" duration="5472000" />
+      <workItem from="1686563915741" duration="102000" />
+      <workItem from="1686564334460" duration="4176000" />
+      <workItem from="1686644477364" duration="11261000" />
+      <workItem from="1686815520610" duration="9460000" />
+      <workItem from="1686838565138" duration="938000" />
+      <workItem from="1687166840266" duration="1469000" />
     </task>
+    <task id="LOCAL-00001" summary="Update">
+      <created>1686211065847</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686211065847</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Update">
+      <created>1686211239658</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686211239658</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Pressable buttons in radial">
+      <created>1686558594289</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686558594289</updated>
+    </task>
+    <task id="LOCAL-00004" summary="change material">
+      <created>1686560205511</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686560205511</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Hide radial menu plate and improvement of Rule creation">
+      <created>1686566685524</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686566685524</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Head gaze interaction">
+      <created>1686651877689</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686651877689</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Basis for rule personalization">
+      <created>1686665743200</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686665743200</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Recording improved">
+      <created>1686826348416</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686826348416</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +232,60 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Update" />
+    <MESSAGE value="Pressable buttons in radial" />
+    <MESSAGE value="change material" />
+    <MESSAGE value="Hide radial menu plate and improvement of Rule creation" />
+    <MESSAGE value="Head gaze interaction" />
+    <MESSAGE value="Basis for rule personalization" />
+    <MESSAGE value="Recording improved" />
+    <option name="LAST_COMMIT_MESSAGE" value="Recording improved" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIController.cs</url>
+          <line>59</line>
+          <properties documentPath="C:\Users\Batcaverna\RiderProjects\rule-forge\Assets\Scripts\UI\GeneralUIController.cs" initialLine="57" containingFunctionPresentation="method 'Close'">
+            <startOffsets>
+              <option value="1885" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1914" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/InteractionCreationController.cs</url>
+          <line>98</line>
+          <properties documentPath="C:\Users\Batcaverna\RiderProjects\rule-forge\Assets\Scripts\UI\InteractionCreationController.cs" initialLine="98" containingFunctionPresentation="method 'ActivateHeadGazeModality'">
+            <startOffsets>
+              <option value="3864" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4086" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/InteractionCreationController.cs</url>
+          <line>271</line>
+          <properties documentPath="C:\Users\Batcaverna\RiderProjects\rule-forge\Assets\Scripts\UI\InteractionCreationController.cs" initialLine="261" containingFunctionPresentation="method 'AddListener'">
+            <startOffsets>
+              <option value="10372" />
+            </startOffsets>
+            <endOffsets>
+              <option value="10390" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

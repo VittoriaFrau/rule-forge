@@ -156,6 +156,9 @@ namespace UI
             
             //Disappear the Bubble of the modality
             HideModalitiesBubble("Touch");
+            
+            //Microgesture listener
+            
         }
         
         private void ActivateLaserModality()
