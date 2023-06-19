@@ -16,6 +16,14 @@ namespace ECAPrototyping.RuleEngine
 
     public class ECACharacter : MonoBehaviour
     {
+        [StateVariable("rotation", ECARules4AllType.Rotation)] 
+        public Rotation rotation;
         
+        
+        [Action(typeof(ECAObject), "life")]
+        public void Life()
+        {
+            Debug.Log("life function");
+        }
     }
 }

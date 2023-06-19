@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using ECAPrototyping.RuleEngine;
 using Microsoft.MixedReality.Toolkit.SpatialManipulation;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -25,7 +26,9 @@ namespace UI
             _generalUIController = eventHandler.GetComponent<GeneralUIController>();
             _ruleEngine = RuleEngine.GetInstance();
             
+            //TODO: DEBUG
             //CheckInteractable(GameObject.Find("animal_people_wolf_1"));
+            
             /*if (_editModeController.EditMode)
             {
                 //Show the PiMenu when the object is selected
@@ -51,18 +54,16 @@ namespace UI
             
         }
         
+        
         public void CheckInteractable(GameObject gameObject)
         {
             List<ActionAttribute> list = new List<ActionAttribute>();
             if (gameObject.GetComponents<ECAObject>() != null)
             {
-                Debug.Log("ECA object");
-                
                 Component [] components = gameObject.GetComponents(typeof(MonoBehaviour));
                 foreach (Component component in components)
                 {
-                    Debug.Log(component);
-                    list = _ruleEngine.ListActionsAttribute(component);
+                    list.AddRange(_ruleEngine.ListActionsAttribute(component));
                 }
                 
             }
