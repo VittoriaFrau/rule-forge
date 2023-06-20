@@ -13620,10 +13620,9 @@ GameObject:
   - component: {fileID: 514665898}
   - component: {fileID: 514665899}
   - component: {fileID: 514665900}
-  - component: {fileID: 514665901}
   m_Layer: 5
   m_Name: EventHandler
-  m_TagString: Untagged
+  m_TagString: EventHandler
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13780,19 +13779,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 514665893}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d2a0273eb01ade4c9e0cbf4aa7a7bf6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &514665901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 514665893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddc4cb2e303946bc91c86c2e85949e53, type: 3}
+  m_Script: {fileID: 11500000, guid: aff43d2471064442acf19818299fce5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &523512763
