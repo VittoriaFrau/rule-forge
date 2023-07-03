@@ -166,7 +166,7 @@ namespace UI
             HideModalitiesBubble("Touch");
             
             //Microgesture listener
-            WsClient.StartSocket(_events, generalUIController);
+            WsClient.StartSocket(_events);
         }
 
         private void ActivateLaserModality()
