@@ -1,15 +1,11 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.MixedReality.OpenXR;
-using Microsoft.MixedReality.Toolkit;
 using Microsoft.MixedReality.Toolkit.Input;
 using Microsoft.MixedReality.Toolkit.SpatialManipulation;
-using Microsoft.MixedReality.Toolkit.UX;
 using UnityEngine;
 using UnityEngine.Events;
-using WebSocketSharp;
-using UnityEngine.XR.Interaction.Toolkit;
+using Object = UnityEngine.Object;
 
 namespace UI
 {
@@ -21,6 +17,7 @@ namespace UI
             Headgaze,
             Touch,
             Laser,
+            Microgesture
         }
 
         public enum CategoryObjectSelected
@@ -60,6 +57,9 @@ namespace UI
         
         //Recording
         private List<ECAEvent> _events = new();
+        public GameObject ruleEditorPlate;
+        public GameObject ruleCubePrefab;
+        public GameObject cubePlate;
 
         //Category choice
         public GameObject categoryMenu;
@@ -92,6 +92,14 @@ namespace UI
                    ActivateTouchModality();
                    break;
             }
+
+            if (WsClient.IsRecording)
+            {
+                foreach (var go in interactables.transform.GetComponentsInChildren<ObjectManipulator>())
+                {
+                    AddListener(go);
+                }
+            }
         }
         
         private void ActivateHeadGazeModality()
@@ -102,8 +110,6 @@ namespace UI
             headGazePointerInstance.transform.localPosition = new Vector3(0,0,0.33f);
             
             //Change the material of the gaze pointer everytime the user looks at an object
-            
-            //TODO MissingReferenceException: The object of type 'GameObject' has been destroyed but you are still trying to access it.
             gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverEntered.AddListener((GameObject) =>
             {
                 headGazePointerInstance.GetComponent<Renderer>().material = shiningHeadGazeMaterial;
@@ -137,6 +143,12 @@ namespace UI
                     DeActivateTouchModality();
                     break;
             }
+            //Remove the listeners
+            foreach (var go in interactables.transform.GetComponentsInChildren<ObjectManipulator>())
+            {
+                RemoveListener(go);
+            }
+            
             ShowModalitiesBubbles();
             generalUIController.SetDebugText("Selected modality: " + _modality 
                                                                    + " use your modality to interact with any object in the scene");
@@ -190,11 +202,7 @@ namespace UI
             rightHandLaserPointer.GetComponent<LineRenderer>().material = normalLaserMaterial;
             leftHandLaserPointer.GetComponent<LineRenderer>().material = normalLaserMaterial;
             
-            //Remove the listeners
-            foreach (var go in interactables.transform.GetComponentsInChildren<ObjectManipulator>())
-            {
-                RemoveListener(go);
-            }
+            
             
         }
         
@@ -204,11 +212,7 @@ namespace UI
             RightHand.GetComponent<SkinnedMeshRenderer>().material = normalTouchMaterial;
             LeftHand.GetComponent<SkinnedMeshRenderer>().material = normalTouchMaterial;
             
-            //Remove the listeners
-            foreach (var go in interactables.transform.GetComponentsInChildren<ObjectManipulator>())
-            {
-                RemoveListener(go);
-            }
+            
             WsClient.StopSocket();
         }
 
@@ -250,6 +254,15 @@ namespace UI
             if(categoryMenu.activeSelf)
                 categoryMenu.SetActive(false);
             WsClient.IsRecording= false;
+            
+            
+            
+            //Set the rule plate visible
+            ruleEditorPlate.SetActive(true);
+
+            //Generate the cubes using the list of events
+            Utils.GenerateCubesFromEventList(_events, ruleCubePrefab, cubePlate);
+
         }
 
         public void StartRecording()
@@ -302,45 +315,18 @@ namespace UI
              switch (_modality)
             {
                 case Modalities.Headgaze:
-                    gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverEntered.RemoveListener((GameObject) =>
-                    {
-                        Debug.Log(manipulator.gameObject.name + " Hover entered");
-                        generalUIController.SetDebugText(manipulator.gameObject.name + " Hover entered");                    });
-            
-                    gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverExited.RemoveListener((GameObject) =>
-                    {
-                        Debug.Log(manipulator.gameObject.name + " Hover exited");
-                        generalUIController.SetDebugText(manipulator.gameObject.name + " Hover exited");
-                    });
+                    gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverEntered.RemoveAllListeners();
+                    gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverExited.RemoveAllListeners();
                     break;
                 case Modalities.Laser:
-                    manipulator.onHoverEntered.RemoveListener(interactor =>
-                    {
-                        Debug.Log("Hover entered");
-                        generalUIController.SetDebugText(manipulator.gameObject.name + " Hover entered");
-                    });
-                    manipulator.onHoverExited.RemoveListener(interactor => { Debug.Log(manipulator.gameObject.name +" Hover exited"); });
+                    manipulator.onHoverEntered.RemoveAllListeners();
+                    manipulator.onHoverExited.RemoveAllListeners();
                     break;
                 case Modalities.Touch:
-                    //attach listener to object manipulator manipulation started event
-                    UnityAction manipulationStarted = () =>
-                    {
-                        Debug.Log(manipulator.gameObject.name + " On clicked");
-                        generalUIController.SetDebugText(manipulator.gameObject.name + " On clicked");
-                    };
-                    manipulator.OnClicked.RemoveListener(manipulationStarted);
-                    manipulator.onSelectEntered.RemoveListener(interactor =>
-                    {
-                       Debug.Log(manipulator.gameObject.name + " Select entered");
-                       generalUIController.SetDebugText(manipulator.gameObject.name + " Select entered");
-                    });
-                    manipulator.onSelectExited.RemoveListener(interactor =>
-                    {
-                        Debug.Log(manipulator.gameObject.name + " Select exited");
-                        generalUIController.SetDebugText(manipulator.gameObject.name + " Select exited");
-                    });
+                    manipulator.OnClicked.RemoveAllListeners();
+                    manipulator.onSelectEntered.RemoveAllListeners();
+                    manipulator.onSelectExited.RemoveAllListeners();
                     break;
-                
             }
         }
         
@@ -357,6 +343,14 @@ namespace UI
             StopButton.SetActive(false);
         }
 
+        IEnumerator TakeScreenShot()
+        {
+            yield return new WaitForEndOfFrame();
+            var texture = ScreenCapture.CaptureScreenshotAsTexture();
+            //Set the texture of the last events in the list to the screenshot
+            _events.Last().Texture = texture;
+        }
+        
         private void AddHeadGazeListener(ObjectManipulator manipulator)
         {
             gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverEntered.AddListener((GameObject) =>
@@ -365,7 +359,10 @@ namespace UI
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Hover Entered" );
                 //TODO non farlo hard coded ma dandogli i nomi giusti (cubo, ...)
                 categoryMenu.SetActive(true);
+                
+                //Note: event should be added before starting the coroutine
                 _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Headgaze, "HoverEntered"));
+                StartCoroutine(TakeScreenShot());
                 generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
                 //TODO metti un meccanismo che modifica il tipo di evento dandogli la tipologia di oggetto una volta selezionato (cubo, oggetto generico, ...)
                         
@@ -375,19 +372,23 @@ namespace UI
             {
                 Debug.Log(manipulator.gameObject.name + " Hover exited");
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Hover exited");
-                _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Headgaze, "Hover Exited"));
-                //categoryMenu.SetActive(false);
+                _events.Add(new ECAEvent(manipulator.gameObject, _modality, "HoverEntered"));
+                StartCoroutine(TakeScreenShot());
 
             });
         }
-
+        
         private void AddLaserListener(ObjectManipulator manipulator)
         {
             manipulator.onHoverEntered.AddListener(interactor =>
             {
                 Debug.Log("Hover entered");
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Hover entered");
+                
+                //Note: event should be added before starting the coroutine
                 _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Entered"));
+                StartCoroutine(TakeScreenShot());
+                
                 generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
                 categoryMenu.SetActive(true);
 
@@ -395,7 +396,10 @@ namespace UI
             manipulator.onHoverExited.AddListener(interactor =>
             {
                 Debug.Log(manipulator.gameObject.name +" Hover exited"); 
+                
+                //Note: event should be added before starting the coroutine
                 _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Exited"));
+                StartCoroutine(TakeScreenShot());
                 //categoryMenu.SetActive(false);
 
             });
@@ -408,7 +412,11 @@ namespace UI
             {
                 Debug.Log(manipulator.gameObject.name + " On clicked");
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " On clicked");
+                
+                //Note: event should be added before starting the coroutine
                 _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Clicked"));
+                StartCoroutine(TakeScreenShot());
+                
                 generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
                 categoryMenu.SetActive(true);
             };
@@ -418,7 +426,10 @@ namespace UI
                 Debug.Log(manipulator.gameObject.name + " Select entered");
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Select entered");
                 generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
+                
+                //Note: event should be added before starting the coroutine
                 _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Clicked"));
+                StartCoroutine(TakeScreenShot());
                 categoryMenu.SetActive(true);
 
 
@@ -427,7 +438,9 @@ namespace UI
             {
                 Debug.Log(manipulator.gameObject.name + " Select exited");
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Select exited");
+                //Note: event should be added before starting the coroutine
                 _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Select exited"));
+                StartCoroutine(TakeScreenShot());
                 //categoryMenu.SetActive(false);
             });
             

@@ -51,10 +51,12 @@ namespace UI.RuleEditor
                 
                 //Position the cube in the right position
                 Vector3 positionContainer = gameObject.transform.position;
-                Vector3 positionCube = collision.gameObject.transform.position;
-                //TODO: position the cube in the right position+
-                /*collision.gameObject.transform.position = new Vector3(positionContainer.x,  
-                    positionContainer.y,positionCube.z);*/
+                collision.gameObject.transform.position = new Vector3(positionContainer.x, positionContainer.y + 0.1f ,positionContainer.z);
+
+                //Set the collision transform velocities to 0
+                collision.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                collision.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                
                 collision.gameObject.transform.rotation = gameObject.transform.rotation;
                 
                 

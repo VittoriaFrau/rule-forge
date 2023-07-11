@@ -46,7 +46,15 @@ namespace UI
 
                 if (isRecording)
                 {
-                    _events.Add(new ECAEvent(null, InteractionCreationController.Modalities.Touch, data.Contact));
+                    Texture2D image = null;
+                    //TODO : check when glove if fixed
+                    if(data.Contact.Contains("middle"))
+                        image = Utils.LoadPNG("Assets/Resources/Icons/Modalities/middle.jpeg");
+                    else if(data.Contact.Contains("tip"))
+                        image = Utils.LoadPNG("Assets/Resources/Icons/Modalities/tip.jpeg");
+                    //TODO ask Laurence a new base image 
+                    else image = Utils.LoadPNG("Assets/Resources/Icons/Modalities/base.jpeg");
+                        _events.Add(new ECAEvent(null, InteractionCreationController.Modalities.Microgesture, data.Contact, image));
                 }
                 
                 canvasStatusUpdate = "Microgesture: " + data.Contact;
