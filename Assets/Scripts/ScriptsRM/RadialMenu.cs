@@ -17,18 +17,11 @@ public class RadialMenu : MonoBehaviour
     [SerializeField]
     public float radius = 2.0f;
 
-    public float sliceRadius;
-
     public float startingAngle = 0.0f;
 
     [SerializeField]
     [HideInInspector]
     private float[] angleList;
-
-    public bool outline;
-    public Color outlineColor;
-
-    
 
     // Start is called before the first frame update
     void Start()

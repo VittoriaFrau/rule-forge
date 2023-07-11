@@ -42,9 +42,10 @@ namespace UI
             generalUIController = this.gameObject.GetComponent<GeneralUIController>();
             radialMenu.SetActive(false);
         }
-
+        
         public void ActivateEditMode()
         {
+            Debug.Log("edit mode activated");
             EditMode = true;
             UpdateInteractablesList();
             AddListenerToInteractables();
@@ -53,14 +54,16 @@ namespace UI
         
         public void DeActivateEditMode()
         {
+            Debug.Log("deactivate edit mode");
             EditMode = false;
             UpdateInteractablesList();
             RemoveListenerToInteractables();
             RemoveColorEventListener();
             /*text.text = "Please, select an object to continue";*/
             selectedObject = null;
-            radialMenu.SetActive(false);
+            radialMenu.SetActive(true);
             colorPalette.SetActive(false);
+            generalUIController.resetEditButtons();
         }
         
         private void AddListenerToInteractables()
@@ -86,7 +89,7 @@ namespace UI
         {
             interactables = (from Transform child in GameObject.Find("Interactables").transform select child.gameObject).ToList();
         }
-
+        
         public void ShowHideRadialMenu(bool visibility)
         {
             radialMenu.SetActive(visibility);
@@ -129,8 +132,6 @@ namespace UI
         {
             selectedObject.SetActive(false);
         }
-
-       
         
     }
 }

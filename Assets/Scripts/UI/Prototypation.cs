@@ -25,9 +25,8 @@ namespace UI
             _objectManipulator = GetComponent<ObjectManipulator>();
             _generalUIController = eventHandler.GetComponent<GeneralUIController>();
             _ruleEngine = RuleEngine.GetInstance();
+            //CheckActionsAttribute(GameObject.Find("animal_people_wolf_1"));
             
-            //TODO: DEBUG
-            //CheckInteractable(GameObject.Find("animal_people_wolf_1"));
             
             /*if (_editModeController.EditMode)
             {
@@ -49,13 +48,13 @@ namespace UI
                 _editModeController.ShowHideRadialMenu(true);
                 _editModeController.SelectedObject = gameObject;
                 _generalUIController.SelectedObject(gameObject.name);
-                CheckInteractable(_editModeController.SelectedObject);
+                CheckActionsAttribute(_editModeController.SelectedObject);
+                _generalUIController.radialMenu.getListButtons(CheckECAObject(_editModeController.SelectedObject));
             }
-            
         }
         
-        
-        public void CheckInteractable(GameObject gameObject)
+        //Function to check all the Action attributes of the selected object 
+        public void CheckActionsAttribute(GameObject gameObject)
         {
             List<ActionAttribute> list = new List<ActionAttribute>();
             if (gameObject.GetComponents<ECAObject>() != null)
@@ -65,8 +64,28 @@ namespace UI
                 {
                     list.AddRange(_ruleEngine.ListActionsAttribute(component));
                 }
-                
             }
+        }
+
+        //Function to check if the object is ECA Food/Character/Environment
+        public List<GameObject> CheckECAObject(GameObject gameObject)
+        {
+            if (gameObject.GetComponent<ECACharacter>() != null)
+            {
+                _generalUIController.editingButtonsTMP.AddRange(_generalUIController.characterButtons);
+            }
+
+            if (gameObject.GetComponent<ECAEnvironment>())
+            {
+                _generalUIController.editingButtonsTMP.AddRange(_generalUIController.environmentButtons);
+            }
+            
+            if (gameObject.GetComponent<ECAFood>())
+            {
+                _generalUIController.editingButtonsTMP.AddRange(_generalUIController.foodButtons);
+            }
+
+            return _generalUIController.editingButtonsTMP;
         }
         
         public void HidePieUIMenu()

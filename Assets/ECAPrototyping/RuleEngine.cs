@@ -358,13 +358,7 @@ namespace ECAPrototyping.RuleEngine
                         actions.Add((ActionAttribute)item);
                     }
                 }
-            }
-            //DEBUG 
-            for(int i = 0; i < actions.Count; i++)
-            {
-                Debug.Log(actions[i]);
-            }
-
+            } 
             return actions;
         }
 

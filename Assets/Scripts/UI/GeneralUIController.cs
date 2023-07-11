@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using ECAPrototyping.RuleEngine;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -11,16 +12,19 @@ namespace UI
         public List<GameObject> optionButtons;
         public List<GameObject> creationButtons;
         public List<GameObject> editingButtons;
+        public List<GameObject> editingButtonsTMP;
         public List<GameObject> ruleButtons;
+        public List<GameObject> foodButtons;
+        public List<GameObject> characterButtons;
+        public List<GameObject> environmentButtons;
         public GameObject closeButton;
         public GameObject eventHandler;
         private EditModeController _editModeController;
         private ObjectsMenuController _objectsMenuController;
         private InteractionCreationController _interactionCreationController;
         public RadialMenu radialMenu;
-        
-        
-        
+        private Prototypation _prototypation;
+
         public enum UIState
         {
             Default,
@@ -87,7 +91,7 @@ namespace UI
             HideOptionsMenu();
             radialMenu.getListButtons(editingButtons);
         }
-        
+
         public void NewRuleState()
         {
             _uiState = UIState.NewRule;
@@ -106,7 +110,6 @@ namespace UI
             this.text.text = text;
         }
         
-        
         public void NewObjectState()
         {
             _uiState = UIState.NewObject;
@@ -123,7 +126,6 @@ namespace UI
             }
         }
         
-
         private void ShowOptionsMenu()
         {
             foreach (var button in optionButtons)
@@ -131,8 +133,7 @@ namespace UI
                 button.SetActive(true);
             }
         }
-
-        //Funzioni nuove
+        
         private void HideCreationMenu()
         {
             foreach (var button in creationButtons)
@@ -155,8 +156,28 @@ namespace UI
             {
                 button.SetActive(false);
             }
+            
+            foreach (var button in foodButtons)
+            {
+                button.SetActive(false);
+            }
+            
+            foreach (var button in characterButtons)
+            {
+                button.SetActive(false);
+            }
+            
+            foreach (var button in environmentButtons)
+            {
+                button.SetActive(false);
+            }
         }
 
+        public void resetEditButtons()
+        {
+            editingButtonsTMP.Clear();
+            editingButtonsTMP.AddRange(editingButtons);
+        }
         public void DefaultRM()
         {
             HideOptionsMenu();

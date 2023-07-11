@@ -16,6 +16,14 @@ namespace ECAPrototyping.RuleEngine
 
     public class ECAEnvironment : MonoBehaviour
     {
+        [StateVariable("rotation", ECARules4AllType.Rotation)] 
+        public Rotation rotation;
         
+        
+        [Action(typeof(ECAObject), "grow")]
+        public void Grow()
+        {
+            Debug.Log("grow function");
+        }
     }
 }
