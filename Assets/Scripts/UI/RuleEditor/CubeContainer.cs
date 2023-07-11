@@ -28,10 +28,13 @@ namespace UI.RuleEditor
 
                 parent = parent.parent;
             }
+            
+            parent = gameObject.transform.parent;
 
-            foreach (Transform child in transform){
+            foreach (Transform child in parent.parent){
                 if (child.name == "ParallelRow"){
                     parallelContainer = child.gameObject;
+                    break;
                 }
             }
         }
@@ -47,7 +50,11 @@ namespace UI.RuleEditor
                 collision.gameObject.GetComponent<ObjectManipulator>().enabled = false;
                 
                 //Position the cube in the right position
-                collision.gameObject.transform.position = gameObject.transform.position;
+                Vector3 positionContainer = gameObject.transform.position;
+                Vector3 positionCube = collision.gameObject.transform.position;
+                //TODO: position the cube in the right position+
+                /*collision.gameObject.transform.position = new Vector3(positionContainer.x,  
+                    positionContainer.y,positionCube.z);*/
                 collision.gameObject.transform.rotation = gameObject.transform.rotation;
                 
                 
@@ -64,8 +71,8 @@ namespace UI.RuleEditor
                 instantiatedParallel.transform.parent = parallelContainer.transform;
                 instantiatedParallel.transform.rotation = gameObject.transform.rotation;
                 instantiatedParallel.transform.localScale = transform.localScale;
-                /*instantiatedParallel.transform.localPosition = new Vector3(instantiatedParallel.transform.localPosition.x,  
-                    instantiatedParallel.transform.localPosition.y,3.99f);*/
+                instantiatedParallel.transform.localPosition = new Vector3(instantiatedParallel.transform.localPosition.x,  
+                    instantiatedParallel.transform.localPosition.y,3.99f);
                 
                 //Update text
             
