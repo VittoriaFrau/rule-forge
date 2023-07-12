@@ -7,6 +7,12 @@ TagManager:
   - Canvas
   - debugText
   - handController
+  - EventHandler
+  - MetalicCube1
+  - MetalicCube2
+  - MagneticTrap
+  - RuleCubes
+  - RuleText
   layers:
   - Default
   - TransparentFX

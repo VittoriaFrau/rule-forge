@@ -115,5 +115,15 @@ namespace UI
                 text.text = e.ToString();
             }
         }
+
+
+        public static void GenerateTextFromCubePosition(GameObject textLabel, string previousString, string cubeDescription)
+        {
+            if(previousString == "WHEN" || previousString == "THEN")
+                textLabel.GetComponent<TextMeshProUGUI>().text = previousString +" " + cubeDescription;
+            else
+                textLabel.GetComponent<TextMeshProUGUI>().text = previousString + " AND " + cubeDescription;
+            
+        }
     }
 }

@@ -1,5 +1,7 @@
 using System;
+using System.Linq;
 using Microsoft.MixedReality.Toolkit.SpatialManipulation;
+using TMPro;
 using UnityEngine;
 
 namespace UI.RuleEditor
@@ -11,7 +13,8 @@ namespace UI.RuleEditor
         private bool isInstantiating = false;
         private string trigger; //when or then
         private GameObject parallelContainer;
-        //public GameObject sequenceContainer;
+        private GameObject whenText, thenText;
+        private string whenString, thenString;
         
         private void Start()
         {
@@ -37,6 +40,9 @@ namespace UI.RuleEditor
                     break;
                 }
             }
+            
+            whenText = GameObject.FindGameObjectsWithTag("RuleText").FirstOrDefault(o => o.name == "WhenText");
+            thenText = GameObject.FindGameObjectsWithTag("RuleText").FirstOrDefault(o => o.name == "ThenText");
         }
 
         
@@ -79,8 +85,11 @@ namespace UI.RuleEditor
                 collision.gameObject.GetComponent<ObjectManipulator>().enabled = true;
                 
                 //Update text
-                
-                
+                GetPresentRule();
+                string cubeDescription = collision.gameObject.transform.Find("Image").gameObject.transform.Find("Text").GetComponent<TextMeshPro>().text;
+                Utils.GenerateTextFromCubePosition(trigger.Equals("When") ? whenText : thenText, trigger.Equals("When") ? 
+                    whenString : thenString, cubeDescription);
+
                 /*StartCoroutine(ResetInstantiation());*/
             }
         }
@@ -91,6 +100,10 @@ namespace UI.RuleEditor
             isInstantiating = false;
         }
 
-        
+        private void GetPresentRule()
+        {
+            whenString = whenText.GetComponent<TextMeshProUGUI>().text;
+            thenString = thenText.GetComponent<TextMeshProUGUI>().text;
+        }
     }
 }
