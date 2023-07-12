@@ -82,25 +82,36 @@ namespace UI
             //Filter events 
             List<ECAEvent> filteredEvents = RemoveDuplicates(events);
             
+            //Obtain plate position
+            Vector3 platePosition = cubePlate.transform.position;
+            //Obtain area limits
+            Vector3 minPosition = platePosition  / 2f;
+            Vector3 maxPosition = platePosition / 2f;
+            
             //Generate cubes
             foreach (var e in filteredEvents)
             {
-                GameObject cube = Object.Instantiate(cubePrefab, cubePlate.transform, true);
-                /*cube.transform.position = new Vector3(0, 0, 0);
-                cube.transform.localScale = new Vector3(1, 1, 1);*/
+                //Random position inside the plate
+                Vector3 randomPosition = new Vector3(
+                    Random.Range(minPosition.x, maxPosition.x),
+                    Random.Range(minPosition.y, maxPosition.y),
+                    Random.Range(minPosition.z, maxPosition.z)
+                );
                 
-                cube.transform.localScale = new Vector3(25, 25, 25);
-                
-                //Change FaceFront image looking for a child named FaceFront
-                SpriteRenderer faceFront = cube.transform.Find("FaceFront").GetComponent<SpriteRenderer>();
-                Sprite NewSprite = Sprite.Create(e.Texture, new Rect(0, 0, e.Texture.width, e.Texture.height), new Vector2(0, 0), 100.0f);
+                GameObject cube = Object.Instantiate(cubePrefab, randomPosition, Quaternion.Euler(0f,0f,0f), cubePlate.transform);
 
-                faceFront.sprite = NewSprite;
-                
-                //TODO faceleft & faceright
-                
-                //TODO change text
-                TextMeshProUGUI text = cube.transform.Find("Image").gameObject.transform.Find("Text").GetComponent<TextMeshProUGUI>();
+                cube.transform.localScale = new Vector3(25, 25, 25);
+                //TODO check why the rotation is always wrong
+                cube.transform.rotation = Quaternion.Euler(0f,0f,0f);
+
+                Material material = new Material(Shader.Find("Standard"));
+                material.mainTexture = e.Texture;
+                Renderer renderer = cube.GetComponent<Renderer>();
+                renderer.material = material;
+                material.mainTextureScale = new Vector2(0.5f, 0.5f);
+                material.mainTextureOffset = new Vector2(0.25f, 0.25f);
+
+                TextMeshPro text = cube.transform.Find("Image").gameObject.transform.Find("Text").GetComponent<TextMeshPro>();
                 text.text = e.ToString();
             }
         }

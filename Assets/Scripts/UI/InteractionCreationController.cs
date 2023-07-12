@@ -246,7 +246,6 @@ namespace UI
 
         public void StopRecording()
         {
-            //TODO 
             StopButton.SetActive(false);
             RecordButton.SetActive(true);
             
@@ -254,8 +253,9 @@ namespace UI
             if(categoryMenu.activeSelf)
                 categoryMenu.SetActive(false);
             WsClient.IsRecording= false;
-            
-            
+
+            DeActivateCurrentModality();
+            HideModalitiesBubbles();
             
             //Set the rule plate visible
             ruleEditorPlate.SetActive(true);

@@ -75,10 +75,11 @@ namespace UI.RuleEditor
                 instantiatedParallel.transform.localScale = transform.localScale;
                 instantiatedParallel.transform.localPosition = new Vector3(instantiatedParallel.transform.localPosition.x,  
                     instantiatedParallel.transform.localPosition.y,3.99f);
+
+                collision.gameObject.GetComponent<ObjectManipulator>().enabled = true;
                 
                 //Update text
-            
-                collision.gameObject.GetComponent<ObjectManipulator>().enabled = true;
+                
                 
                 /*StartCoroutine(ResetInstantiation());*/
             }
