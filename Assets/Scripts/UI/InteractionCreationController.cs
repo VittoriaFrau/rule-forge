@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.MixedReality.Toolkit.Input;
 using Microsoft.MixedReality.Toolkit.SpatialManipulation;
+using UI.RuleEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using Object = UnityEngine.Object;
@@ -60,6 +61,8 @@ namespace UI
         public GameObject ruleEditorPlate;
         public GameObject ruleCubePrefab;
         public GameObject cubePlate;
+        public GameObject screenshotCamera;
+        private ScreenshotCamera _screenshotCamera;
 
         //Category choice
         public GameObject categoryMenu;
@@ -72,6 +75,7 @@ namespace UI
                 == "MRTK RightHand Controller");
             OpenXRLeftHandController = GameObject.FindGameObjectsWithTag("handController").FirstOrDefault(obj => obj.name 
                 == "MRTK LeftHand Controller");
+            _screenshotCamera =screenshotCamera.GetComponent<ScreenshotCamera>();
         }
 
         public void SelectModality(string modality)
@@ -201,9 +205,6 @@ namespace UI
             //Color of the laser back to the normal
             rightHandLaserPointer.GetComponent<LineRenderer>().material = normalLaserMaterial;
             leftHandLaserPointer.GetComponent<LineRenderer>().material = normalLaserMaterial;
-            
-            
-            
         }
         
         private void DeActivateTouchModality()
@@ -211,8 +212,7 @@ namespace UI
             //Color of the hands back to the normal
             RightHand.GetComponent<SkinnedMeshRenderer>().material = normalTouchMaterial;
             LeftHand.GetComponent<SkinnedMeshRenderer>().material = normalTouchMaterial;
-            
-            
+
             WsClient.StopSocket();
         }
 
@@ -248,6 +248,7 @@ namespace UI
         {
             StopButton.SetActive(false);
             RecordButton.SetActive(true);
+            screenshotCamera.SetActive(false);
             
             generalUIController.SetDebugText("Recording stopped.");
             if(categoryMenu.activeSelf)
@@ -285,6 +286,9 @@ namespace UI
             //Make the record button not interactable
             StopButton.SetActive(true);
             RecordButton.SetActive(false);
+            
+            //Activate screenshot camera
+            screenshotCamera.SetActive(true);
 
             foreach (var go in interactables.transform.GetComponentsInChildren<ObjectManipulator>())
             {
@@ -362,7 +366,8 @@ namespace UI
                 
                 //Note: event should be added before starting the coroutine
                 _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Headgaze, "HoverEntered"));
-                StartCoroutine(TakeScreenShot());
+                _screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Headgaze);
+                //StartCoroutine(TakeScreenShot());
                 generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
                 //TODO metti un meccanismo che modifica il tipo di evento dandogli la tipologia di oggetto una volta selezionato (cubo, oggetto generico, ...)
                         
@@ -373,13 +378,14 @@ namespace UI
                 Debug.Log(manipulator.gameObject.name + " Hover exited");
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Hover exited");
                 _events.Add(new ECAEvent(manipulator.gameObject, _modality, "HoverEntered"));
-                StartCoroutine(TakeScreenShot());
-
+                //StartCoroutine(TakeScreenShot());
+                _screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Headgaze);
             });
         }
         
         private void AddLaserListener(ObjectManipulator manipulator)
         {
+
             manipulator.onHoverEntered.AddListener(interactor =>
             {
                 Debug.Log("Hover entered");
@@ -387,8 +393,8 @@ namespace UI
                 
                 //Note: event should be added before starting the coroutine
                 _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Entered"));
-                StartCoroutine(TakeScreenShot());
-                
+                _screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Laser);
+
                 generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
                 categoryMenu.SetActive(true);
 
@@ -399,7 +405,8 @@ namespace UI
                 
                 //Note: event should be added before starting the coroutine
                 _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Exited"));
-                StartCoroutine(TakeScreenShot());
+                _screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Laser);
+
                 //categoryMenu.SetActive(false);
 
             });
@@ -407,6 +414,8 @@ namespace UI
 
         private void AddTouchListener(ObjectManipulator manipulator)
         {
+           
+            
             //attach listener to object manipulator manipulation started event
             UnityAction manipulationStarted = () =>
             {
@@ -415,7 +424,8 @@ namespace UI
                 
                 //Note: event should be added before starting the coroutine
                 _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Clicked"));
-                StartCoroutine(TakeScreenShot());
+                _screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Touch);
+
                 
                 generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
                 categoryMenu.SetActive(true);
@@ -429,7 +439,8 @@ namespace UI
                 
                 //Note: event should be added before starting the coroutine
                 _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Clicked"));
-                StartCoroutine(TakeScreenShot());
+                _screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Touch);
+
                 categoryMenu.SetActive(true);
 
 
@@ -440,7 +451,7 @@ namespace UI
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Select exited");
                 //Note: event should be added before starting the coroutine
                 _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Select exited"));
-                StartCoroutine(TakeScreenShot());
+                _screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Touch);
                 //categoryMenu.SetActive(false);
             });
             
