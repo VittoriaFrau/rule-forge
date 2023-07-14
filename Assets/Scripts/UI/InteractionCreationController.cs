@@ -67,6 +67,9 @@ namespace UI
         //Category choice
         public GameObject categoryMenu;
         
+        //Rule composition
+        public GameObject removableBarrier;
+        
         private void Start()
         {
             generalUIController = this.gameObject.GetComponent<GeneralUIController>();
@@ -76,6 +79,7 @@ namespace UI
             OpenXRLeftHandController = GameObject.FindGameObjectsWithTag("handController").FirstOrDefault(obj => obj.name 
                 == "MRTK LeftHand Controller");
             _screenshotCamera =screenshotCamera.GetComponent<ScreenshotCamera>();
+            
         }
 
         public void SelectModality(string modality)
@@ -260,10 +264,14 @@ namespace UI
             
             //Set the rule plate visible
             ruleEditorPlate.SetActive(true);
+            
+            //Barrier to prevent the cubes from falling
+            removableBarrier.SetActive(true);
 
             //Generate the cubes using the list of events
             Utils.GenerateCubesFromEventList(_events, ruleCubePrefab, cubePlate);
 
+            removableBarrier.SetActive(false);
         }
 
         public void StartRecording()
@@ -366,7 +374,7 @@ namespace UI
                 
                 //Note: event should be added before starting the coroutine
                 _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Headgaze, "HoverEntered"));
-                _screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Headgaze);
+               // _screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Headgaze);
                 //StartCoroutine(TakeScreenShot());
                 generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
                 //TODO metti un meccanismo che modifica il tipo di evento dandogli la tipologia di oggetto una volta selezionato (cubo, oggetto generico, ...)
@@ -379,7 +387,7 @@ namespace UI
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Hover exited");
                 _events.Add(new ECAEvent(manipulator.gameObject, _modality, "HoverEntered"));
                 //StartCoroutine(TakeScreenShot());
-                _screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Headgaze);
+                //_screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Headgaze);
             });
         }
         
@@ -393,7 +401,7 @@ namespace UI
                 
                 //Note: event should be added before starting the coroutine
                 _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Entered"));
-                _screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Laser);
+                //_screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Laser);
 
                 generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
                 categoryMenu.SetActive(true);
@@ -405,7 +413,7 @@ namespace UI
                 
                 //Note: event should be added before starting the coroutine
                 _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Exited"));
-                _screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Laser);
+                //_screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Laser);
 
                 //categoryMenu.SetActive(false);
 
@@ -424,7 +432,7 @@ namespace UI
                 
                 //Note: event should be added before starting the coroutine
                 _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Clicked"));
-                _screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Touch);
+               // _screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Touch);
 
                 
                 generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
@@ -439,7 +447,7 @@ namespace UI
                 
                 //Note: event should be added before starting the coroutine
                 _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Clicked"));
-                _screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Touch);
+               // _screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Touch);
 
                 categoryMenu.SetActive(true);
 
@@ -451,7 +459,7 @@ namespace UI
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Select exited");
                 //Note: event should be added before starting the coroutine
                 _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Select exited"));
-                _screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Touch);
+                //_screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Touch);
                 //categoryMenu.SetActive(false);
             });
             

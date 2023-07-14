@@ -18,7 +18,7 @@ namespace UI.RuleEditor
         
         private void Start()
         {
-            //find if this istance is a child of a then or when
+            //find if this instance is a child of a then or when
             Transform parent = gameObject.transform.parent;
 
             while (parent != null)
@@ -79,8 +79,10 @@ namespace UI.RuleEditor
                 instantiatedParallel.transform.parent = parallelContainer.transform;
                 instantiatedParallel.transform.rotation = gameObject.transform.rotation;
                 instantiatedParallel.transform.localScale = transform.localScale;
-                instantiatedParallel.transform.localPosition = new Vector3(instantiatedParallel.transform.localPosition.x,  
-                    instantiatedParallel.transform.localPosition.y,3.99f);
+                var localPosition = instantiatedParallel.transform.localPosition;
+                localPosition = new Vector3(localPosition.x,  
+                    localPosition.y,3.99f);
+                instantiatedParallel.transform.localPosition = localPosition;
 
                 collision.gameObject.GetComponent<ObjectManipulator>().enabled = true;
                 

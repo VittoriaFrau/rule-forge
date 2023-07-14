@@ -68,7 +68,7 @@ namespace UI
             List<ECAEvent> filteredEvents = new List<ECAEvent>();
             foreach (var e in events)
             {
-                if (!filteredEvents.Contains(e) && e.Texture != null)
+                if (!filteredEvents.Contains(e))// && e.Texture != null)
                 {
                     filteredEvents.Add(e);
                 }
@@ -76,46 +76,42 @@ namespace UI
 
             return filteredEvents;
         }
+        
+        
 
         public static void GenerateCubesFromEventList(List<ECAEvent> events, GameObject cubePrefab, GameObject cubePlate)
         {
             //Filter events 
             List<ECAEvent> filteredEvents = RemoveDuplicates(events);
-            
-            //Obtain plate position
-            Vector3 platePosition = cubePlate.transform.position;
-            //Obtain area limits
-            Vector3 minPosition = platePosition  / 2f;
-            Vector3 maxPosition = platePosition / 2f;
-            
+
+            float previousZ = 0.63f;
             //Generate cubes
             foreach (var e in filteredEvents)
             {
-                //Random position inside the plate
-                Vector3 randomPosition = new Vector3(
-                    Random.Range(minPosition.x, maxPosition.x),
-                    Random.Range(minPosition.y, maxPosition.y),
-                    Random.Range(minPosition.z, maxPosition.z)
-                );
-                
-                GameObject cube = Object.Instantiate(cubePrefab, randomPosition, Quaternion.Euler(0f,0f,0f), cubePlate.transform);
-
+                //Adjust cube transform
+                float zPosition;
+                if (filteredEvents.IndexOf(e) == 6)
+                    previousZ = 0.63f;
+                zPosition=previousZ - 0.13f;
+                previousZ = zPosition;
+                float xPosition = filteredEvents.IndexOf(e) < 6 ? -0.37f : -0.25f; //One or more rows
+                Vector3 position = new Vector3(xPosition, -0.19f, zPosition);
+                GameObject cube = Object.Instantiate(cubePrefab, position, Quaternion.Euler(0f,0f,0f), cubePlate.transform);
+                cube.transform.rotation = Quaternion.identity;
                 cube.transform.localScale = new Vector3(25, 25, 25);
-                //TODO check why the rotation is always wrong
-                cube.transform.rotation = Quaternion.Euler(0f,0f,0f);
-
+                
+                //Material using screenshot
                 Material material = new Material(Shader.Find("Standard"));
                 material.mainTexture = e.Texture;
                 Renderer renderer = cube.GetComponent<Renderer>();
                 renderer.material = material;
                 material.mainTextureScale = new Vector2(0.5f, 0.5f);
                 material.mainTextureOffset = new Vector2(0.25f, 0.25f);
+                
+                FillTextLabelsInCube(e, cube);
 
-                TextMeshPro text = cube.transform.Find("Image").gameObject.transform.Find("Text").GetComponent<TextMeshPro>();
-                text.text = e.ToString();
             }
         }
-
 
         public static void GenerateTextFromCubePosition(GameObject textLabel, string previousString, string cubeDescription)
         {
@@ -123,7 +119,31 @@ namespace UI
                 textLabel.GetComponent<TextMeshProUGUI>().text = previousString +" " + cubeDescription;
             else
                 textLabel.GetComponent<TextMeshProUGUI>().text = previousString + " AND " + cubeDescription;
-            
+        }
+
+        public static void FillTextLabelsInCube(ECAEvent e, GameObject cube)
+        {
+            //Front face
+            GameObject frontFace = cube.transform.Find("FrontFaceRule").gameObject;
+            TextMeshProUGUI subjectFront = frontFace.transform.Find("Subject").transform.Find("Image").GetComponent<TextMeshProUGUI>();
+            subjectFront.text = e.Subject;
+                
+            TextMeshProUGUI verbFront = frontFace.transform.Find("Verb").transform.Find("Image").GetComponent<TextMeshProUGUI>();
+            verbFront.text = e.Verb;
+                
+            TextMeshProUGUI objectFront = frontFace.transform.Find("Object").transform.Find("Image").GetComponent<TextMeshProUGUI>();
+            objectFront.text = e.Object;
+                
+            //Top face 
+            GameObject topFace = cube.transform.Find("TopFaceRule").gameObject;
+            TextMeshProUGUI subjectTop = topFace.transform.Find("Subject").transform.Find("Image").GetComponent<TextMeshProUGUI>();
+            subjectTop.text = e.Subject;
+                
+            TextMeshProUGUI verbTop = topFace.transform.Find("Verb").transform.Find("Image").GetComponent<TextMeshProUGUI>();
+            verbTop.text = e.Verb;
+                
+            TextMeshProUGUI objectTop = topFace.transform.Find("Object").transform.Find("Image").GetComponent<TextMeshProUGUI>();
+            objectTop.text = e.Object;
         }
     }
 }
