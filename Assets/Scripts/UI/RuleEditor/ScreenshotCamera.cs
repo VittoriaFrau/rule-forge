@@ -11,6 +11,8 @@ namespace UI.RuleEditor
         public int resWidth = 2550; 
         public int resHeight = 2550;
         
+        //TODO ottimizzare: 1) usare unity recorder package 2) creare solo uno screenshot per tipo di cubo
+        
         private void Start()
         {
             camera = this.GetComponent<Camera>();

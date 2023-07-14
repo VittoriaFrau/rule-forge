@@ -10,6 +10,7 @@ namespace UI
         //TODO: sto selezionando cubo, shape o un qualsiasi oggetto?
         private InteractionCreationController.CategoryObjectSelected typeOfObject;
         private Texture2D _texture;
+        private string _subject, _verb, _object;
         
         public ECAEvent(GameObject gameObject, InteractionCreationController.Modalities modality, string _event, 
             Texture2D screenshot)
@@ -19,6 +20,7 @@ namespace UI
             this._event = _event;
             typeOfObject = InteractionCreationController.CategoryObjectSelected.GameObject; //By default
             _texture = screenshot;
+            SetRule();
         }
         
         public ECAEvent(GameObject gameObject, InteractionCreationController.Modalities modality, string _event)
@@ -27,19 +29,10 @@ namespace UI
             this.modality = modality;
             this._event = _event;
             typeOfObject = InteractionCreationController.CategoryObjectSelected.GameObject; //By default
+            _texture = null;
+            SetRule();
         }
-        
-        public GameObject GameObject
-        {
-            get => _gameObject;
-            set => _gameObject = value;
-        }
-        
-        public Texture2D Texture
-        {
-            get => _texture;
-            set => _texture = value;
-        }
+
 
         public override bool Equals(object obj)
         {
@@ -55,5 +48,43 @@ namespace UI
         {
             return "The user " + modality + " the " + _gameObject.name + " object";
         }
+
+        private void SetRule()
+        {
+            _subject = "user";
+            _verb = modality.ToString();
+            _object = _gameObject.name;
+        }
+        
+        public string Subject
+        {
+            get => _subject;
+            set => _subject = value;
+        }
+        
+        public string Verb
+        {
+            get => _verb;
+            set => _verb = value;
+        }
+        
+        public string Object
+        {
+            get => _object;
+            set => _object = value;
+        }
+        
+        public GameObject GameObject
+        {
+            get => _gameObject;
+            set => _gameObject = value;
+        }
+        
+        public Texture2D Texture
+        {
+            get => _texture;
+            set => _texture = value;
+        }
+
     }
 }
