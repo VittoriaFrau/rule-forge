@@ -68,7 +68,7 @@ namespace UI
             List<ECAEvent> filteredEvents = new List<ECAEvent>();
             foreach (var e in events)
             {
-                if (!filteredEvents.Contains(e))// && e.Texture != null)
+                if (!filteredEvents.Contains(e) && e.Texture != null)
                 {
                     filteredEvents.Add(e);
                 }

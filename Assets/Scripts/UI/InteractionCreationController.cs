@@ -241,6 +241,16 @@ namespace UI
                 go.SetActive(true);
             }
         }
+
+        public void ShowModalitiesBubblesExceptModality()
+        {
+            GameObject go = modalitiesBubbles.FirstOrDefault(obj => obj.name == _modality.ToString());
+            foreach (var bubble in modalitiesBubbles)
+            {
+                if(bubble != go)
+                    bubble.SetActive(true);
+            }
+        }
         
         public void ActivateNewRuleMode()
         {
@@ -373,9 +383,13 @@ namespace UI
                 categoryMenu.SetActive(true);
                 
                 //Note: event should be added before starting the coroutine
-                _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Headgaze, "HoverEntered"));
-               // _screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Headgaze);
-                //StartCoroutine(TakeScreenShot());
+                ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Headgaze, "Hover Entered");
+                if (!_events.Contains(ecaEvent))
+                {
+                    _events.Add(ecaEvent);
+                    PrepareForScreenshot(manipulator.gameObject, Modalities.Headgaze);
+                }
+                
                 generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
                 //TODO metti un meccanismo che modifica il tipo di evento dandogli la tipologia di oggetto una volta selezionato (cubo, oggetto generico, ...)
                         
@@ -385,9 +399,12 @@ namespace UI
             {
                 Debug.Log(manipulator.gameObject.name + " Hover exited");
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Hover exited");
-                _events.Add(new ECAEvent(manipulator.gameObject, _modality, "HoverEntered"));
-                //StartCoroutine(TakeScreenShot());
-                //_screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Headgaze);
+                ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Headgaze, "Hover Exited");
+                if (!_events.Contains(ecaEvent))
+                {
+                    _events.Add(ecaEvent);
+                    PrepareForScreenshot(manipulator.gameObject, Modalities.Headgaze);
+                }
             });
         }
         
@@ -400,8 +417,12 @@ namespace UI
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Hover entered");
                 
                 //Note: event should be added before starting the coroutine
-                _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Entered"));
-                //_screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Laser);
+                ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Entered");
+                if (!_events.Contains(ecaEvent))
+                {
+                    _events.Add(ecaEvent);
+                    PrepareForScreenshot(manipulator.gameObject, Modalities.Laser);
+                }
 
                 generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
                 categoryMenu.SetActive(true);
@@ -412,8 +433,12 @@ namespace UI
                 Debug.Log(manipulator.gameObject.name +" Hover exited"); 
                 
                 //Note: event should be added before starting the coroutine
-                _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Exited"));
-                //_screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Laser);
+                ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Exited");
+                if (!_events.Contains(ecaEvent))
+                {
+                    _events.Add(ecaEvent);
+                    PrepareForScreenshot(manipulator.gameObject, Modalities.Laser);
+                }
 
                 //categoryMenu.SetActive(false);
 
@@ -422,8 +447,6 @@ namespace UI
 
         private void AddTouchListener(ObjectManipulator manipulator)
         {
-           
-            
             //attach listener to object manipulator manipulation started event
             UnityAction manipulationStarted = () =>
             {
@@ -431,10 +454,13 @@ namespace UI
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " On clicked");
                 
                 //Note: event should be added before starting the coroutine
-                _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Clicked"));
-               // _screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Touch);
+                ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Touch, "Clicked");
+                if (!_events.Contains(ecaEvent))
+                {
+                    _events.Add(ecaEvent);
+                    PrepareForScreenshot(manipulator.gameObject, Modalities.Touch);
+                }
 
-                
                 generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
                 categoryMenu.SetActive(true);
             };
@@ -446,9 +472,13 @@ namespace UI
                 generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
                 
                 //Note: event should be added before starting the coroutine
-                _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Clicked"));
-               // _screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Touch);
-
+                ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Touch, "Select entered");
+                if (!_events.Contains(ecaEvent))
+                {
+                    _events.Add(ecaEvent);
+                    PrepareForScreenshot(manipulator.gameObject, Modalities.Touch);
+                }
+                
                 categoryMenu.SetActive(true);
 
 
@@ -458,12 +488,23 @@ namespace UI
                 Debug.Log(manipulator.gameObject.name + " Select exited");
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Select exited");
                 //Note: event should be added before starting the coroutine
-                _events.Add(new ECAEvent(manipulator.gameObject, Modalities.Touch, "Select exited"));
-                //_screenshotCamera.TakeScreenshot(manipulator.gameObject, Modalities.Touch);
+                //Add the event only if it doesn't exist already
+                ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Touch, "Select exited");
+                if (!_events.Contains(ecaEvent))
+                {
+                    _events.Add(ecaEvent);
+                    PrepareForScreenshot(manipulator.gameObject, Modalities.Touch);
+                }
                 //categoryMenu.SetActive(false);
             });
-            
         }
-        
+
+        public void PrepareForScreenshot(GameObject gameObject, Modalities modality)
+        {
+            HideModalitiesBubbles();
+            _screenshotCamera.TakeScreenshot(gameObject, modality, _events.Last());
+            ShowModalitiesBubblesExceptModality();
+        }
+
     }
 }
