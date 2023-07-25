@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ECAPrototyping.RuleEngine;
 using Microsoft.MixedReality.Toolkit.SpatialManipulation;
 using Unity.VisualScripting;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -17,6 +18,7 @@ namespace UI
         private GeneralUIController _generalUIController;
         private GameObject eventHandler;
         private RuleEngine _ruleEngine;
+        bool action_executed;
 
         private void Start()
         {
@@ -67,27 +69,21 @@ namespace UI
             }
         }
 
-        //Function to check if the object is ECA Food/Character/Environment
+        //Function to check if the object is ECA Food/Character/Environment (only for the fist time I select the object)
         public List<GameObject> CheckECAObject(GameObject gameObject)
         {
-            if (gameObject.GetComponent<ECACharacter>() != null)
+            while (!action_executed)
             {
-                _generalUIController.editingButtonsTMP.AddRange(_generalUIController.characterButtons);
+                if (gameObject.GetComponent<ECACharacter>() != null)
+                {
+                    _generalUIController.editingButtonsTMP.AddRange(_generalUIController.characterButtons);
+                    
+                }   
+                action_executed = true;
             }
-
-            if (gameObject.GetComponent<ECAEnvironment>())
-            {
-                _generalUIController.editingButtonsTMP.AddRange(_generalUIController.environmentButtons);
-            }
-            
-            if (gameObject.GetComponent<ECAFood>())
-            {
-                _generalUIController.editingButtonsTMP.AddRange(_generalUIController.foodButtons);
-            }
-
             return _generalUIController.editingButtonsTMP;
         }
-        
+
         public void HidePieUIMenu()
         {
             if(!_editModeController.EditMode) _editModeController.ShowHideRadialMenu(false);

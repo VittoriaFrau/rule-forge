@@ -27,6 +27,7 @@ namespace UI
         public List<GameObject> colors;
         public GameObject colorPalette;
         private GameObject selectedObject;
+        private Animator _animator;
         public GameObject SelectedObject
         {
             get => selectedObject;
@@ -45,7 +46,6 @@ namespace UI
         
         public void ActivateEditMode()
         {
-            Debug.Log("edit mode activated");
             EditMode = true;
             UpdateInteractablesList();
             AddListenerToInteractables();
@@ -54,7 +54,6 @@ namespace UI
         
         public void DeActivateEditMode()
         {
-            Debug.Log("deactivate edit mode");
             EditMode = false;
             UpdateInteractablesList();
             RemoveListenerToInteractables();
@@ -131,6 +130,59 @@ namespace UI
         public void HideObject()
         {
             selectedObject.SetActive(false);
+        }
+
+        public void WaveHand()
+        {
+            if (selectedObject.GetComponent<Animator>() != null)
+            {
+                _animator = selectedObject.GetComponent<Animator>();
+                _animator.SetBool("isWaving", true);
+                if (_animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !_animator.IsInTransition(0))
+                {
+                    _animator.SetBool("isWaving", false);
+                }
+            }
+            
+        }
+        
+        public void Dancing()
+        {
+            if (selectedObject.GetComponent<Animator>() != null)
+            {
+                _animator = selectedObject.GetComponent<Animator>();
+                _animator.SetBool("isDancing", true);
+                //if the animation isDancing has finished, set the boolean to false
+                if (_animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !_animator.IsInTransition(0))
+                {
+                    _animator.SetBool("isDancing", false);
+                }
+            }
+            
+        }
+        
+        public void addAccessories(String accessory)
+        {
+            if (selectedObject.GetComponent<ECACharacter>() != null)
+            {
+                GameObject accessoryObject = selectedObject.transform.Find(accessory).gameObject;
+                if (!accessoryObject.activeInHierarchy)
+                {
+                    accessoryObject.SetActive(true);
+                }
+            }
+        }
+        
+        public void removeAccessories(String accessory)
+        {
+            if (selectedObject.GetComponent<ECACharacter>() != null)
+            {
+                GameObject accessoryObject = selectedObject.transform.Find(accessory).gameObject;
+                if (accessoryObject.activeInHierarchy)
+                {
+                    accessoryObject.SetActive(false);
+                }
+            }
         }
         
     }

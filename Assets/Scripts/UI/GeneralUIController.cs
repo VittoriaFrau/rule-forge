@@ -14,9 +14,7 @@ namespace UI
         public List<GameObject> editingButtons;
         public List<GameObject> editingButtonsTMP;
         public List<GameObject> ruleButtons;
-        public List<GameObject> foodButtons;
         public List<GameObject> characterButtons;
-        public List<GameObject> environmentButtons;
         public GameObject closeButton;
         public GameObject eventHandler;
         private EditModeController _editModeController;
@@ -156,21 +154,12 @@ namespace UI
             {
                 button.SetActive(false);
             }
-            
-            foreach (var button in foodButtons)
-            {
-                button.SetActive(false);
-            }
-            
+
             foreach (var button in characterButtons)
             {
                 button.SetActive(false);
             }
             
-            foreach (var button in environmentButtons)
-            {
-                button.SetActive(false);
-            }
         }
 
         public void resetEditButtons()

@@ -5,14 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8549fefb-f71a-4278-af6b-67427dad7c5d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/shelf/Uncommitted_changes_before_Update_at_13_06_2023_12_54_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/shelf/Uncommitted_changes_before_Update_at_13_06_2023_12_54__Changes_.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/backpack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/backpack.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/beanie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/beanie.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/clothes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/clothes.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/live-music.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/live-music.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/no-bag.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/no-bag.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/shelf/Uncommitted_changes_before_Update_at_13_06_2023_12_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/shelf/Uncommitted_changes_before_Update_at_13_06_2023_12_54__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAEnvironment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAEnvironment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECACharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECACharacter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/Ghostly Hands For Built-In Renderer.unitypackage.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/URP/Ghostly Hands For URP.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Models/animal_people_wolf_1.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Models/animal_people_wolf_1.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Prefabs/Base/High Quality/animal_people_wolf_1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Prefabs/Base/High Quality/animal_people_wolf_1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Models/free_male_1.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Models/free_male_1.FBX.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Prefabs/Base/High Quality/MaleFree1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Prefabs/Base/High Quality/MaleFree1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Zombie Sample/Models/Character_Pack_Zombie_Sample.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Zombie Sample/Models/Character_Pack_Zombie_Sample.FBX.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Zombie Sample/Prefabs/Base/High Quality/FreeZombie.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Zombie Sample/Prefabs/Base/High Quality/FreeZombie.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptsRM/RadialMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptsRM/RadialMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/EditModeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/EditModeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Prototypation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Prototypation.cs" afterDir="false" />
@@ -25,21 +40,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="f4134722-8cba-4728-b81e-fe36917e6c4a" />
+        <option name="url" value="https://github.com/VittoriaFrau/rule-forge.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/7e/eed5d777/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/a1/012332c3/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/c2/f240eee7/InvokableCall.cs" root0="SKIP_HIGHLIGHTING" />
@@ -49,6 +63,54 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75633565436c42f0a6426b33f0132ade46a800/ba/d1b1ae3e/NullReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75633565436c42f0a6426b33f0132ade46a800/bd/dfc796a0/Delegate.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75633565436c42f0a6426b33f0132ade46a800/bf/e8db45a6/Exception.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/ECAPrototyping/ECACharacter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Resources/Icons/backpack.png.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/ScriptsRM/RadialMenu.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/ScriptsRM/RadialMenu.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/ScriptsRM/RadialMenu.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/ScriptsRM/RadialMenu.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/ScriptsRM/RadialMenu.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/UI/EditModeController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/UI/EditModeController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/UI/EditModeController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/UI/EditModeController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/UI/EditModeController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/UI/EditModeController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/UI/GeneralUIController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/UI/GeneralUIController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/UI/GeneralUIController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/UI/ObjectsMenuController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/UI/ObjectsMenuController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/UI/ObjectsMenuController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/UI/ObjectsMenuController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/UI/ObjectsMenuController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/UI/ObjectsMenuController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/UI/Prototypation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/UI/Prototypation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/UI/Prototypation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/UI/Prototypation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scripts/UI/Prototypation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.core@8d3eae7b2801/Interactables/StatefulInteractable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.spatialmanipulation@a80535c64d68/ObjectManipulator/MoveLogics/ScaleLogic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.spatialmanipulation@a80535c64d68/Solvers/HandConstraintPalmUp.cs" root0="SKIP_HIGHLIGHTING" />
@@ -61,6 +123,9 @@
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2Q9pclvtRc7CEDoHEiOA8cN1AL6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -124,10 +189,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="20284">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="20284" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -250,58 +315,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Prototypation.cs</url>
-          <line>51</line>
-          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\Scripts\UI\Prototypation.cs" initialLine="51" containingFunctionPresentation="Method 'ShowPieUIMenu'">
-            <startOffsets>
-              <option value="2070" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2169" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Prototypation.cs</url>
-          <line>87</line>
-          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\Scripts\UI\Prototypation.cs" initialLine="87" containingFunctionPresentation="Method 'CheckECAObject'">
-            <startOffsets>
-              <option value="3547" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3593" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/EditModeController.cs</url>
-          <line>51</line>
-          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\Scripts\UI\EditModeController.cs" initialLine="51" containingFunctionPresentation="Method 'ActivateEditMode'">
-            <startOffsets>
-              <option value="1634" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1670" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIController.cs</url>
-          <line>91</line>
-          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\Scripts\UI\GeneralUIController.cs" initialLine="91" containingFunctionPresentation="Method 'EditModeState'">
-            <startOffsets>
-              <option value="3106" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3148" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

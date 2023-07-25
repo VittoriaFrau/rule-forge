@@ -1,5 +1,127 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2307013489569992979
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5862077421946812769}
+    m_Modifications:
+    - target: {fileID: 8108339070808963241, guid: 12318cbff4065d342a786caeb2c4e568, type: 3}
+      propertyPath: m_Name
+      value: animal_people_beanie_wolf_1_onWear
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108339070808963241, guid: 12318cbff4065d342a786caeb2c4e568, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920869726159987219, guid: 12318cbff4065d342a786caeb2c4e568, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920869726159987219, guid: 12318cbff4065d342a786caeb2c4e568, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920869726159987219, guid: 12318cbff4065d342a786caeb2c4e568, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920869726159987219, guid: 12318cbff4065d342a786caeb2c4e568, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920869726159987219, guid: 12318cbff4065d342a786caeb2c4e568, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920869726159987219, guid: 12318cbff4065d342a786caeb2c4e568, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920869726159987219, guid: 12318cbff4065d342a786caeb2c4e568, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920869726159987219, guid: 12318cbff4065d342a786caeb2c4e568, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920869726159987219, guid: 12318cbff4065d342a786caeb2c4e568, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920869726159987219, guid: 12318cbff4065d342a786caeb2c4e568, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920869726159987219, guid: 12318cbff4065d342a786caeb2c4e568, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 12318cbff4065d342a786caeb2c4e568, type: 3}
+--- !u!1001 &5263389606313241789
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5862077421946812769}
+    m_Modifications:
+    - target: {fileID: 5111508070880938774, guid: d8cb8658819f03d4189f2ae35a5bac2a, type: 3}
+      propertyPath: m_Name
+      value: animal_people_backpack_1_freeSample_onWear
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111508070880938774, guid: d8cb8658819f03d4189f2ae35a5bac2a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594712286441165228, guid: d8cb8658819f03d4189f2ae35a5bac2a, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594712286441165228, guid: d8cb8658819f03d4189f2ae35a5bac2a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594712286441165228, guid: d8cb8658819f03d4189f2ae35a5bac2a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594712286441165228, guid: d8cb8658819f03d4189f2ae35a5bac2a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.013
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594712286441165228, guid: d8cb8658819f03d4189f2ae35a5bac2a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594712286441165228, guid: d8cb8658819f03d4189f2ae35a5bac2a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594712286441165228, guid: d8cb8658819f03d4189f2ae35a5bac2a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594712286441165228, guid: d8cb8658819f03d4189f2ae35a5bac2a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594712286441165228, guid: d8cb8658819f03d4189f2ae35a5bac2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594712286441165228, guid: d8cb8658819f03d4189f2ae35a5bac2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594712286441165228, guid: d8cb8658819f03d4189f2ae35a5bac2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d8cb8658819f03d4189f2ae35a5bac2a, type: 3}
 --- !u!1001 &6255765028772208266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140,8 +262,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6490136728237138907}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 66cc588757521114c8d3a234571dc909, type: 3}
-  m_Controller: {fileID: 9100000, guid: d196d39411c9c1240940bbcee1f08238, type: 2}
+  m_Avatar: {fileID: 9000000, guid: 9312126e574e97047b72657b5431e12a, type: 3}
+  m_Controller: {fileID: 9100000, guid: 4a9c2192e77869542a589c30bdab5851, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -424,3 +546,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98216f16334e432b9bbfe9eff725d163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 0}
+  isVisible:
+    choice: 0

@@ -15,7 +15,7 @@ public class RadialMenu : MonoBehaviour
     [SerializeField]
     List<Image> slices;
     [SerializeField]
-    public float radius = 2.0f;
+    public float radius = 3.0f;
 
     public float startingAngle = 0.0f;
 
@@ -75,6 +75,8 @@ public class RadialMenu : MonoBehaviour
         int numberOfObjects = pressableButtons.Count;
         float angleStep = 360f / numberOfObjects;
         float angle = startingAngle;
+        //Da attivare, in caso di utilizzo dell'Highlight
+        /*
         if (numberOfObjects == 1) angle = startingAngle;
          
         else if (numberOfObjects % 2 == 0)
@@ -92,7 +94,7 @@ public class RadialMenu : MonoBehaviour
             {
                 angle += 180 / numberOfObjects;
             }
-        }
+        }*/
 
         for (int i = 0; i < numberOfObjects; i++)
         {
@@ -157,7 +159,7 @@ public class RadialMenu : MonoBehaviour
     public void getListButtons(List<GameObject> buttons)
     {
         //TODO ripristinare insieme agli spicchi
-        //Close();
+        Close();
         pressableButtons = buttons;
         Open();
     }
