@@ -9,6 +9,7 @@ namespace UI
     public class GeneralUIController: MonoBehaviour
     {
         private GameObject textGo;
+        public GameObject debugWindow;
         public List<GameObject> optionButtons;
         public List<GameObject> creationButtons;
         public List<GameObject> editingButtons;
@@ -181,6 +182,15 @@ namespace UI
             _uiState = UIState.RuleComposition;
             _interactionCreationController.StopRecording();
         }
+
+        public void HideDebugPanel()
+        {
+            debugWindow.SetActive(false);
+        }
         
+        public void ShowDebugPanel()
+        {
+            debugWindow.SetActive(true);
+        }
     }
 }

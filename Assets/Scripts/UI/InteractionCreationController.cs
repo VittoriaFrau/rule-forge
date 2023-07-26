@@ -275,8 +275,10 @@ namespace UI
             StopButton.SetActive(false);
             RecordButton.SetActive(true);
             screenshotCamera.SetActive(false);
-            
+
             generalUIController.SetDebugText("Recording stopped.");
+            generalUIController.HideDebugPanel();
+            
             if(categoryMenu.activeSelf)
                 categoryMenu.SetActive(false);
             WsClient.IsRecording= false;

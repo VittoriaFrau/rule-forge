@@ -84,14 +84,14 @@ namespace UI
             //Filter events 
             List<ECAEvent> filteredEvents = RemoveDuplicates(events);
 
-            float previousZ = 0.63f;
+            float previousZ = 1.41f;
             //Generate cubes
             foreach (var e in filteredEvents)
             {
                 //Adjust cube transform
                 float zPosition;
                 if (filteredEvents.IndexOf(e) == 6)
-                    previousZ = 0.63f;
+                    previousZ = 1.41f;
                 zPosition=previousZ - 0.13f;
                 previousZ = zPosition;
                 float xPosition = filteredEvents.IndexOf(e) < 6 ? -0.37f : -0.25f; //One or more rows
