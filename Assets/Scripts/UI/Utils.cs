@@ -129,7 +129,7 @@ namespace UI
             subjectFront.text = e.Subject;
                 
             TextMeshProUGUI verbFront = frontFace.transform.Find("Verb").transform.Find("Image").GetComponent<TextMeshProUGUI>();
-            verbFront.text = e.Verb;
+            verbFront.text = e.Verb + " " + e.Event;
                 
             TextMeshProUGUI objectFront = frontFace.transform.Find("Object").transform.Find("Image").GetComponent<TextMeshProUGUI>();
             objectFront.text = e.Object;
@@ -144,6 +144,22 @@ namespace UI
                 
             TextMeshProUGUI objectTop = topFace.transform.Find("Object").transform.Find("Image").GetComponent<TextMeshProUGUI>();
             objectTop.text = e.Object;
+        }
+
+        public static string GetRuleDescriptionFromCubePrefab(GameObject cube)
+        {
+            string ruleDescription = "";
+            //Front face
+            GameObject frontFace = cube.transform.Find("FrontFaceRule").gameObject;
+            GameObject Subject = frontFace.transform.Find("Subject").gameObject;
+            GameObject Verb = frontFace.transform.Find("Verb").gameObject;
+            GameObject Object = frontFace.transform.Find("Object").gameObject;
+            
+            ruleDescription += "the " + Subject.transform.Find("Image").GetComponent<TextMeshProUGUI>().text + " ";
+            ruleDescription += Verb.transform.Find("Image").GetComponent<TextMeshProUGUI>().text + " ";
+            ruleDescription += "the " + Object.transform.Find("Image").GetComponent<TextMeshProUGUI>().text + " ";
+
+            return ruleDescription;
         }
     }
 }

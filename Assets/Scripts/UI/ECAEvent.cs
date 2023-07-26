@@ -85,6 +85,12 @@ namespace UI
             get => _texture;
             set => _texture = value;
         }
+        
+        public string Event
+        {
+            get => _event;
+            set => _event = value;
+        }
 
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,6 +46,7 @@ namespace UI
         
         //Laser modality attributes
         private GameObject rightHandLaserPointer, leftHandLaserPointer;
+        private LineRenderer rightHandLaserPointerLineRenderer, leftHandLaserPointerLineRenderer;
         private Material normalLaserMaterial;
         public Material shiningLaserMaterial;
         
@@ -69,6 +71,7 @@ namespace UI
         
         //Rule composition
         public GameObject removableBarrier;
+        
         
         private void Start()
         {
@@ -193,15 +196,24 @@ namespace UI
         {
             rightHandLaserPointer = OpenXRRightHandController.transform.Find("Far Ray").gameObject.transform.Find("BendyRay").gameObject;
             leftHandLaserPointer = OpenXRLeftHandController.transform.Find("Far Ray").gameObject.transform.Find("BendyRay").gameObject;
+            
+            rightHandLaserPointerLineRenderer = rightHandLaserPointer.GetComponent<LineRenderer>();
+            leftHandLaserPointerLineRenderer = leftHandLaserPointer.GetComponent<LineRenderer>();
 
             normalLaserMaterial = rightHandLaserPointer.GetComponent<LineRenderer>().material;
             
             //Assign the new material to both laser hands
-            rightHandLaserPointer.GetComponent<LineRenderer>().material = shiningLaserMaterial;
-            leftHandLaserPointer.GetComponent<LineRenderer>().material = shiningLaserMaterial;
-            
+            rightHandLaserPointerLineRenderer.material = shiningLaserMaterial;
+            leftHandLaserPointerLineRenderer.material = shiningLaserMaterial;
+
             //Disappear the Bubble of the modality
             HideModalitiesBubble("Laser");
+        }
+        
+        public void SetLaserPointLineWidth(float width)
+        {
+            leftHandLaserPointerLineRenderer.widthMultiplier = width;
+            rightHandLaserPointerLineRenderer.widthMultiplier = width;
         }
 
         private void DeActivateLaserModality()
@@ -416,6 +428,9 @@ namespace UI
                 Debug.Log("Hover entered");
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Hover entered");
                 
+                //Set the laser pointer line width for the screenshot
+                SetLaserPointLineWidth(5.0f);
+                
                 //Note: event should be added before starting the coroutine
                 ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Entered");
                 if (!_events.Contains(ecaEvent))
@@ -426,6 +441,8 @@ namespace UI
 
                 generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
                 categoryMenu.SetActive(true);
+                
+                
 
             });
             manipulator.onHoverExited.AddListener(interactor =>
@@ -441,7 +458,6 @@ namespace UI
                 }
 
                 //categoryMenu.SetActive(false);
-
             });
         }
 

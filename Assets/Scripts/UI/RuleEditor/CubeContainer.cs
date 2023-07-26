@@ -88,7 +88,7 @@ namespace UI.RuleEditor
                 
                 //Update text
                 GetPresentRule();
-                string cubeDescription = collision.gameObject.transform.Find("Image").gameObject.transform.Find("Text").GetComponent<TextMeshPro>().text;
+                string cubeDescription = Utils.GetRuleDescriptionFromCubePrefab(collision.gameObject);
                 Utils.GenerateTextFromCubePosition(trigger.Equals("When") ? whenText : thenText, trigger.Equals("When") ? 
                     whenString : thenString, cubeDescription);
 
