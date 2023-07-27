@@ -8,14 +8,15 @@ namespace UI.RuleEditor
 {
     public class CubeContainer:MonoBehaviour
     {
-        //private Transform cubePosition;
-        public GameObject cubeContainerPrefab;
-        private bool isInstantiating = false;
-        private string trigger; //when or then
-        private GameObject parallelContainer;
-        private GameObject whenText, thenText;
-        private string whenString, thenString;
-        
+        public GameObject cubeContainerPrefab;  // Prefab of the cube container to be instantiated
+        private bool isInstantiating = false;   // Flag to prevent multiple instantiations on collision
+        private string trigger;                 // Indicates whether the container belongs to "when" or "then" branch
+        private GameObject equivalenceContainer;   // Reference to the equivalence container for each cube container
+        private GameObject whenText, thenText;  // References to the "when" and "then" text objects
+        private string whenString, thenString;  // Current text contents of the "when" and "then" text objects
+        private enum ContainerType { Equivalence, Sequential }
+        private ContainerType containerType;    // Indicates whether the container is equivalence (OR) or sequential
+
         private void Start()
         {
             //find if this instance is a child of a then or when
@@ -33,22 +34,32 @@ namespace UI.RuleEditor
             }
             
             parent = gameObject.transform.parent;
-
+            // Find the parent EquivalenceRow container
             foreach (Transform child in parent.parent){
-                if (child.name == "ParallelRow"){
-                    parallelContainer = child.gameObject;
+                if (child.name == "EquivalenceRow"){
+                    equivalenceContainer = child.gameObject;
                     break;
                 }
             }
             
+            // Find the "when" and "then" text objects with appropriate tags
             whenText = GameObject.FindGameObjectsWithTag("RuleText").FirstOrDefault(o => o.name == "WhenText");
             thenText = GameObject.FindGameObjectsWithTag("RuleText").FirstOrDefault(o => o.name == "ThenText");
+            
+            containerType = transform.parent.name switch
+            {
+                //Check if the parent of collision.gameobject is an equivalence or sequential container
+                "EquivalenceRow" => ContainerType.Equivalence,
+                "SequentialRow" => ContainerType.Sequential,
+                _ => containerType
+            };
         }
 
         
 
         private void OnCollisionEnter(Collision collision)
         {
+            // Check if collision occurred with a RuleCube and not already instantiating
             if (collision.gameObject.CompareTag("RuleCubes") && !isInstantiating)
             {
                 isInstantiating = true;
@@ -74,9 +85,9 @@ namespace UI.RuleEditor
                 instantiated.transform.localPosition = new Vector3(instantiated.transform.localPosition.x,  
                     instantiated.transform.localPosition.y,3.99f);
                 
-                //Create a new instance of the container in the parallel position
+                //Create a new instance of the container in the equivalence position
                 GameObject instantiatedParallel = Instantiate(cubeContainerPrefab);
-                instantiatedParallel.transform.parent = parallelContainer.transform;
+                instantiatedParallel.transform.parent = equivalenceContainer.transform;
                 instantiatedParallel.transform.rotation = gameObject.transform.rotation;
                 instantiatedParallel.transform.localScale = transform.localScale;
                 var localPosition = instantiatedParallel.transform.localPosition;
@@ -89,8 +100,9 @@ namespace UI.RuleEditor
                 //Update text
                 GetPresentRule();
                 string cubeDescription = Utils.GetRuleDescriptionFromCubePrefab(collision.gameObject);
+                string logicalOperator= containerType == ContainerType.Equivalence ? "OR" : "THEN";
                 Utils.GenerateTextFromCubePosition(trigger.Equals("When") ? whenText : thenText, trigger.Equals("When") ? 
-                    whenString : thenString, cubeDescription);
+                    whenString : thenString, cubeDescription, logicalOperator);
 
                 /*StartCoroutine(ResetInstantiation());*/
             }

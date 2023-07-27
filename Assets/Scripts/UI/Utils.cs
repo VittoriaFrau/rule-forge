@@ -113,12 +113,12 @@ namespace UI
             }
         }
 
-        public static void GenerateTextFromCubePosition(GameObject textLabel, string previousString, string cubeDescription)
+        public static void GenerateTextFromCubePosition(GameObject textLabel, string previousString, string cubeDescription, string logicalOperator)
         {
             if(previousString == "WHEN" || previousString == "THEN")
                 textLabel.GetComponent<TextMeshProUGUI>().text = previousString +" " + cubeDescription;
             else
-                textLabel.GetComponent<TextMeshProUGUI>().text = previousString + " AND " + cubeDescription;
+                textLabel.GetComponent<TextMeshProUGUI>().text = previousString + " "+ logicalOperator + " " + cubeDescription;
         }
 
         public static void FillTextLabelsInCube(ECAEvent e, GameObject cube)
