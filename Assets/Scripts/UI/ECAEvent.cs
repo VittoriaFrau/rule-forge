@@ -33,6 +33,11 @@ namespace UI
             SetRule();
         }
 
+        public ECAEvent(GameObject gameObject)
+        {
+            _gameObject = gameObject;
+        }
+
 
         public override bool Equals(object obj)
         {

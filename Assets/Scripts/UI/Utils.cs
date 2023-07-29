@@ -4,6 +4,7 @@ using ECAPrototyping.Utils;
 using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI
 {
@@ -89,28 +90,93 @@ namespace UI
             foreach (var e in filteredEvents)
             {
                 //Adjust cube transform
-                float zPosition;
-                if (filteredEvents.IndexOf(e) == 6)
-                    previousZ = 1.41f;
-                zPosition=previousZ - 0.13f;
-                previousZ = zPosition;
-                float xPosition = filteredEvents.IndexOf(e) < 6 ? -0.37f : -0.25f; //One or more rows
-                Vector3 position = new Vector3(xPosition, -0.19f, zPosition);
-                GameObject cube = Object.Instantiate(cubePrefab, position, Quaternion.Euler(0f,0f,0f), cubePlate.transform);
-                cube.transform.rotation = Quaternion.identity;
-                cube.transform.localScale = new Vector3(25, 25, 25);
+                Vector3 position = CalculatePositionInPlate(previousZ, filteredEvents.IndexOf(e));
+                previousZ = position.z;
+
+                GameObject cube = InstantiateRuleCube(cubePrefab, 1, position, cubePlate.transform, new Texture[]{e.Texture});
                 
-                //Material using screenshot
+                FillTextLabelsInCube(e, cube);
+            }
+        }
+        
+        public static ECAEvent GetEventFromCube(GameObject cube)
+        {
+            ECAEvent e = new ECAEvent(cube);
+            
+            GameObject frontFace = cube.transform.Find("FrontFaceRule").gameObject;
+            TextMeshProUGUI subjectFront = frontFace.transform.Find("Subject").transform.Find("Image").GetComponent<TextMeshProUGUI>();
+            e.Subject = subjectFront.text;
+                
+            TextMeshProUGUI verbFront = frontFace.transform.Find("Verb").transform.Find("Image").GetComponent<TextMeshProUGUI>();
+            string[] verbAndEvent = verbFront.text.Split(' ');
+            e.Verb = verbAndEvent[0];
+            e.Event = verbAndEvent[1];
+                
+            TextMeshProUGUI objectFront = frontFace.transform.Find("Object").transform.Find("Image").GetComponent<TextMeshProUGUI>();
+            e.Object = objectFront.text;
+            
+            e.Texture = (Texture2D)cube.GetComponent<Renderer>().material.mainTexture;
+
+            return e;
+        }
+
+        /*
+         * Instantiate a cube with a rule description
+         * @params: cubeLevel: 1, 2, 3 is the number of joint cubes
+         */
+        public static GameObject InstantiateRuleCube(GameObject cubePrefab, int cubeLevel, Vector3 position, Transform parent, Texture[] texture )
+        {
+            GameObject cube = Object.Instantiate(cubePrefab, position, Quaternion.Euler(0f,0f,0f), parent);
+            cube.transform.rotation = Quaternion.identity;
+            cube.transform.localScale = new Vector3(25, 25, 25);
+                
+            //Material using screenshot
+            
+            if (cubeLevel < 2)
+            {
                 Material material = new Material(Shader.Find("Standard"));
-                material.mainTexture = e.Texture;
+                material.mainTexture = texture[0];
                 Renderer renderer = cube.GetComponent<Renderer>();
                 renderer.material = material;
                 material.mainTextureScale = new Vector2(0.5f, 0.5f);
                 material.mainTextureOffset = new Vector2(0.25f, 0.25f);
-                
-                FillTextLabelsInCube(e, cube);
+            }
+            else
+            {
+                //TODO capire perchè non funziona
+                GameObject cubeLeft = cubePrefab.transform.Find("CubeLeft").gameObject;
+                GameObject cubeRight = cubePrefab.transform.Find("CubeRight").gameObject;
+
+                Material materialLeft = new Material(Shader.Find("Standard"));
+                materialLeft.mainTexture = texture[0];
+                Renderer rendererLeft = cubeLeft.GetComponent<Renderer>();
+                rendererLeft.material = materialLeft;
+                materialLeft.mainTextureScale = new Vector2(0.5f, 0.5f);
+                materialLeft.mainTextureOffset = new Vector2(0.25f, 0.25f);
+
+                Material materialRight = new Material(Shader.Find("Standard"));
+                materialRight.mainTexture = texture[1]; // Fix the assignment to materialRight
+                Renderer rendererRight = cubeRight.GetComponent<Renderer>();
+                rendererRight.material = materialRight;
+                materialRight.mainTextureScale = new Vector2(0.5f, 0.5f);
+                materialRight.mainTextureOffset = new Vector2(0.25f, 0.25f);
 
             }
+
+            return cube;
+        }
+        
+
+        public static Vector3 CalculatePositionInPlate(float previousZ, int eventIndex)
+        {
+            float zPosition;
+            if (eventIndex == 6)
+                previousZ = 1.41f;
+            zPosition=previousZ - 0.13f;
+            
+            float xPosition = eventIndex < 6 ? -0.37f : -0.25f; //One or more rows
+            Vector3 position = new Vector3(xPosition, -0.19f, zPosition);
+            return position;
         }
 
         public static void GenerateTextFromCubePosition(GameObject textLabel, string previousString, string cubeDescription, string logicalOperator)
@@ -123,41 +189,64 @@ namespace UI
 
         public static void FillTextLabelsInCube(ECAEvent e, GameObject cube)
         {
-            //Front face
-            GameObject frontFace = cube.transform.Find("FrontFaceRule").gameObject;
-            TextMeshProUGUI subjectFront = frontFace.transform.Find("Subject").transform.Find("Image").GetComponent<TextMeshProUGUI>();
-            subjectFront.text = e.Subject;
-                
-            TextMeshProUGUI verbFront = frontFace.transform.Find("Verb").transform.Find("Image").GetComponent<TextMeshProUGUI>();
-            verbFront.text = e.Verb + " " + e.Event;
-                
-            TextMeshProUGUI objectFront = frontFace.transform.Find("Object").transform.Find("Image").GetComponent<TextMeshProUGUI>();
-            objectFront.text = e.Object;
-                
-            //Top face 
-            GameObject topFace = cube.transform.Find("TopFaceRule").gameObject;
-            TextMeshProUGUI subjectTop = topFace.transform.Find("Subject").transform.Find("Image").GetComponent<TextMeshProUGUI>();
-            subjectTop.text = e.Subject;
-                
-            TextMeshProUGUI verbTop = topFace.transform.Find("Verb").transform.Find("Image").GetComponent<TextMeshProUGUI>();
-            verbTop.text = e.Verb;
-                
-            TextMeshProUGUI objectTop = topFace.transform.Find("Object").transform.Find("Image").GetComponent<TextMeshProUGUI>();
-            objectTop.text = e.Object;
+            // Define the face names and text labels
+            string[] faceNames = { "FrontFaceRule", "TopFaceRule" };
+            string[] labelTexts = { e.Subject, e.Verb + " " + e.Event, e.Object };
+
+            // Loop through each face and fill the text labels
+            foreach (string faceName in faceNames)
+            {
+                TextMeshProUGUI[] faceLabels = GetTextLabelsInCube(cube, faceName);
+
+                // Fill the text labels with the appropriate text
+                for (int i = 0; i < faceLabels.Length; i++)
+                {
+                    faceLabels[i].text = labelTexts[i];
+                }
+            }
+        }
+
+        public static TextMeshProUGUI[] GetTextLabelsInCube(GameObject cube, string face)
+        {
+            
+            GameObject faceGameObject = cube.transform.Find(face).gameObject;
+            TextMeshProUGUI subject = faceGameObject.transform.Find("Subject").transform.Find("Image").GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI verb = faceGameObject.transform.Find("Verb").transform.Find("Image").GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI obj = faceGameObject.transform.Find("Object").transform.Find("Image").GetComponent<TextMeshProUGUI>();
+
+            Transform secondVerb = faceGameObject.transform.Find("SecondVerb");
+            if (secondVerb == null) return new[] { subject, verb, obj };
+            
+            TextMeshProUGUI secondVerbText = secondVerb.transform.Find("Image").GetComponent<TextMeshProUGUI>();
+            return new []{subject, verb, obj, secondVerbText};
+
+        }
+        
+        public static void FillTextLabelsInMergedCubes(GameObject newCube, ECAEvent [] events)
+        {
+            // Define the face names and text labels
+            string[] faceNames = { "FrontFaceRule", "TopFaceRule" };
+            string[] labelTexts = { events[0].Subject, events[0].Verb + " " + events[0].Event, events[0].Object, events[1].Verb + " " + events[1].Event };
+
+            // Loop through each face and fill the text labels
+            foreach (string faceName in faceNames)
+            {
+                TextMeshProUGUI[] faceLabels = GetTextLabelsInCube(newCube, faceName);
+
+                // Fill the text labels with the appropriate text
+                for (int i = 0; i < faceLabels.Length; i++)
+                {
+                    faceLabels[i].text = labelTexts[i];
+                }
+            }
         }
 
         public static string GetRuleDescriptionFromCubePrefab(GameObject cube)
         {
             string ruleDescription = "";
             //Front face
-            GameObject frontFace = cube.transform.Find("FrontFaceRule").gameObject;
-            GameObject Subject = frontFace.transform.Find("Subject").gameObject;
-            GameObject Verb = frontFace.transform.Find("Verb").gameObject;
-            GameObject Object = frontFace.transform.Find("Object").gameObject;
-            
-            ruleDescription += "the " + Subject.transform.Find("Image").GetComponent<TextMeshProUGUI>().text + " ";
-            ruleDescription += Verb.transform.Find("Image").GetComponent<TextMeshProUGUI>().text + " ";
-            ruleDescription += "the " + Object.transform.Find("Image").GetComponent<TextMeshProUGUI>().text + " ";
+            TextMeshProUGUI [] frontFaceR = GetTextLabelsInCube(cube, "FrontFaceRule");
+            ruleDescription +=  "the " + frontFaceR[0].text + " " + frontFaceR[1].text + " " + frontFaceR[2].text + " " + frontFaceR[2].text + " ";
 
             return ruleDescription;
         }
