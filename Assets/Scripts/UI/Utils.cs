@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using ECAPrototyping.Utils;
 using Newtonsoft.Json;
 using TMPro;
@@ -80,8 +81,9 @@ namespace UI
         
         
 
-        public static void GenerateCubesFromEventList(List<ECAEvent> events, GameObject cubePrefab, GameObject cubePlate)
+        public static Dictionary<GameObject, Vector3> GenerateCubesFromEventList(List<ECAEvent> events, GameObject cubePrefab, GameObject cubePlate)
         {
+            Dictionary<GameObject, Vector3> result = new Dictionary<GameObject, Vector3>();
             //Filter events 
             List<ECAEvent> filteredEvents = RemoveDuplicates(events);
 
@@ -94,9 +96,11 @@ namespace UI
                 previousZ = position.z;
 
                 GameObject cube = InstantiateRuleCube(cubePrefab, 1, position, cubePlate.transform, new Texture[]{e.Texture});
-                
+                result.Add(cube, position);
                 FillTextLabelsInCube(e, cube);
             }
+
+            return result;
         }
         
         public static ECAEvent GetEventFromCube(GameObject cube)
@@ -143,7 +147,6 @@ namespace UI
             }
             else
             {
-                //TODO capire perchè non funziona
                 GameObject cubeLeft = cubePrefab.transform.Find("CubeLeft").gameObject;
                 GameObject cubeRight = cubePrefab.transform.Find("CubeRight").gameObject;
 
@@ -250,5 +253,46 @@ namespace UI
 
             return ruleDescription;
         }
+
+        public static void ClearTextDescription(TextMeshProUGUI whenText, TextMeshProUGUI thenText)
+        {
+            whenText.text = "WHEN";
+            thenText.text = "THEN";
+        }
+
+        //Delete all the unnecessary containers
+        public static void ResetCubeContainers()
+        {
+            Transform whenContainer = GameObject.FindGameObjectsWithTag("RuleUtils").FirstOrDefault(x => x.name == "When").transform;
+            Transform whenFrontplate = whenContainer.Find("Frontplate");
+            GameObject whenSequentialRow = whenFrontplate.Find("SequentialRow").gameObject;
+            GameObject whenEquivalenceRow = whenFrontplate.Find("EquivalenceRow").gameObject;
+            //Delete all the gameobject that are called "Cube Container (Clone)"
+            foreach (Transform child in whenSequentialRow.transform)
+            {
+                if (child.name.StartsWith("CubeContainer(Clone)")) Object.Destroy(child.gameObject);
+            }
+
+            foreach (Transform child in whenEquivalenceRow.transform)
+            {
+                if (child.name.StartsWith("CubeContainer(Clone)")) Object.Destroy(child.gameObject);
+            }
+            
+            Transform thenContainer = GameObject.FindGameObjectsWithTag("RuleUtils").FirstOrDefault(x => x.name == "Then").transform;
+            Transform thenFrontplate = thenContainer.Find("Frontplate");
+            GameObject thenSequentialRow = thenFrontplate.Find("SequentialRow").gameObject;
+            GameObject thenEquivalenceRow = thenFrontplate.Find("EquivalenceRow").gameObject;
+            //Delete all the gameobject that are called "Cube Container (Clone)"
+            foreach (Transform child in thenSequentialRow.transform)
+            {
+                if (child.name.StartsWith("CubeContainer(Clone)")) Object.Destroy(child.gameObject);
+            }
+            
+            foreach (Transform child in thenEquivalenceRow.transform)
+            {
+                if (child.name.StartsWith("CubeContainer(Clone)")) Object.Destroy(child.gameObject);
+            }
+        }
+        
     }
 }

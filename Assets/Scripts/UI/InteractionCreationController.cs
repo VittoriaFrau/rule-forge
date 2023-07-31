@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.MixedReality.Toolkit.Input;
 using Microsoft.MixedReality.Toolkit.SpatialManipulation;
+using TMPro;
 using UI.RuleEditor;
 using UnityEngine;
 using UnityEngine.Events;
@@ -71,8 +72,9 @@ namespace UI
         
         //Rule composition
         public GameObject removableBarrier;
-        
-        
+        private Dictionary<GameObject, Vector3> _originalPositions = new(); //positions of the cubes to easily revert it
+        private TextMeshProUGUI whenText, thenText;
+
         private void Start()
         {
             generalUIController = this.gameObject.GetComponent<GeneralUIController>();
@@ -82,7 +84,12 @@ namespace UI
             OpenXRLeftHandController = GameObject.FindGameObjectsWithTag("handController").FirstOrDefault(obj => obj.name 
                 == "MRTK LeftHand Controller");
             _screenshotCamera =screenshotCamera.GetComponent<ScreenshotCamera>();
-            
+            // Find the "when" and "then" text objects with appropriate tags
+            whenText = GameObject.FindGameObjectsWithTag("RuleText").FirstOrDefault(o => o.name == "WhenText")
+                .GetComponent<TextMeshProUGUI>();
+            thenText = GameObject.FindGameObjectsWithTag("RuleText").FirstOrDefault(o => o.name == "ThenText")
+                .GetComponent<TextMeshProUGUI>();
+
         }
 
         public void SelectModality(string modality)
@@ -278,6 +285,7 @@ namespace UI
 
             generalUIController.SetDebugText("Recording stopped.");
             generalUIController.HideDebugPanel();
+            generalUIController.HideRadialMenu();
             
             if(categoryMenu.activeSelf)
                 categoryMenu.SetActive(false);
@@ -293,7 +301,8 @@ namespace UI
             removableBarrier.SetActive(true);
 
             //Generate the cubes using the list of events
-            Utils.GenerateCubesFromEventList(_events, ruleCubePrefab, cubePlate);
+            _originalPositions.Clear();
+            _originalPositions = Utils.GenerateCubesFromEventList(_events, ruleCubePrefab, cubePlate);
 
             removableBarrier.SetActive(false);
         }
@@ -523,6 +532,22 @@ namespace UI
             _screenshotCamera.TakeScreenshot(gameObject, modality, _events.Last());
             ShowModalitiesBubblesExceptModality();
         }
+
+        public void ResetCubePositions()
+        {
+            //Repositioning the plate in case the user has moved it
+            ruleEditorPlate.transform.localPosition= new Vector3(-14.4f, -119.0f, 774.0f);
+            // Using the original position of the cube, position it again there
+            foreach (var k in _originalPositions)
+            {
+                k.Key.transform.position = k.Value;
+            }
+            Utils.ClearTextDescription(whenText, thenText);
+
+            Utils.ResetCubeContainers();
+        }
+        
+        
 
     }
 }

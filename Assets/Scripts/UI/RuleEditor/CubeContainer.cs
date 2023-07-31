@@ -55,8 +55,6 @@ namespace UI.RuleEditor
             };
         }
 
-        
-
         private void OnCollisionEnter(Collision collision)
         {
             // Check if collision occurred with a RuleCube and not already instantiating
@@ -103,8 +101,7 @@ namespace UI.RuleEditor
                 string logicalOperator= containerType == ContainerType.Equivalence ? "OR" : "THEN";
                 Utils.GenerateTextFromCubePosition(trigger.Equals("When") ? whenText : thenText, trigger.Equals("When") ? 
                     whenString : thenString, cubeDescription, logicalOperator);
-
-                /*StartCoroutine(ResetInstantiation());*/
+                
             }
         }
         

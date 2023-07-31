@@ -192,5 +192,10 @@ namespace UI
         {
             debugWindow.SetActive(true);
         }
+
+        public void HideRadialMenu()
+        {
+            radialMenu.gameObject.SetActive(false);
+        }
     }
 }

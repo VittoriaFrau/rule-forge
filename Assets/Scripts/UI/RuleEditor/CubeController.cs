@@ -29,6 +29,7 @@ public class CubeController : MonoBehaviour
     private float joinStartTime;
     public GameObject mergedCubePrefab;
     private TextMeshProUGUI countdownText;
+    private ObjectManipulator objectManipulator;
     
     private void Start()
     {
@@ -47,6 +48,10 @@ public class CubeController : MonoBehaviour
                 Debug.LogWarning("L'oggetto con tag 'debugText' è inattivo.");
             }
         }
+        
+        objectManipulator = GetComponent<ObjectManipulator>();
+        
+        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -106,8 +111,7 @@ public class CubeController : MonoBehaviour
 
         // Position and merge the cubes
         Vector3 mergedPosition = (transform.position + otherCube.transform.position) / 2f;
-        Quaternion mergedRotation = transform.rotation;
-                
+
         // Finding the cubeplate by tag and then filtering the results by name
         GameObject cubePlate = GameObject.FindGameObjectsWithTag("RuleUtils").FirstOrDefault(x => x.name == "CubePlate");
                 
@@ -130,17 +134,40 @@ public class CubeController : MonoBehaviour
         if (countdownText != null) countdownText.text = "Cubes merged!"; ;
     }
 
-    private void DetachCubes()
+    /*public void DetachCubes()
     {
         // Remove the joint to detach the cubes
-
-        // Enable the Rigidbody components to allow cubes to move independently
-        Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();
-        foreach (var rb in rigidbodies)
+        if (isAttached)
         {
-            rb.isKinematic = false;
+            if (!timerStarted && countdownText != null)
+            {
+                // Start the countdown timer when collision starts
+                StartCoroutine(StartCountdownDetaching());
+            }
+            
+            if (Time.time - joinStartTime >= minimumJoinTime)
+            {
+                // Merge the cubes if the minimum join time has passed
+                Debug.Log("Detach cubes");
+            }
         }
-
+        
         isAttached = false;
     }
+
+    private IEnumerator StartCountdownDetaching()
+    {
+        timerStarted = true;
+        float countdownTime = minimumJoinTime;
+        while (countdownTime > 0)
+        {
+            // Update the UI Text to show the countdown
+            countdownText.text = "Detaching in " + Mathf.CeilToInt(countdownTime) + " seconds";
+            yield return null;
+            countdownTime -= Time.deltaTime;
+        }
+
+        // Reset the countdown
+        timerStarted = false;
+    }*/
 }
