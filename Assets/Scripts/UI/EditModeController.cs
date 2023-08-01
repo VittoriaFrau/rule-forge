@@ -41,7 +41,7 @@ namespace UI
             if(radialMenu==null) radialMenu = canvas.transform.Find("RadialMenu").gameObject;
             /*text = textGo.GetComponent<TextMeshPro>();*/
             generalUIController = this.gameObject.GetComponent<GeneralUIController>();
-            radialMenu.SetActive(false);
+            radialMenu.SetActive(true);
         }
         
         public void ActivateEditMode()
@@ -130,6 +130,13 @@ namespace UI
         public void HideObject()
         {
             selectedObject.SetActive(false);
+        }
+
+        public void DeleteObject()
+        {
+            Destroy(selectedObject);
+            generalUIController.SetDebugText(selectedObject.name + " has been deleted");
+            selectedObject = null;
         }
 
         public void WaveHand()

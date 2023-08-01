@@ -226,7 +226,7 @@ CapsuleCollider:
   m_Radius: 0.3
   m_Height: 0.96579504
   m_Direction: 1
-  m_Center: {x: 0, y: 0.5171025, z: 0}
+  m_Center: {x: 0, y: 0.476107, z: 0}
 --- !u!23 &6712789933885994379
 MeshRenderer:
   m_ObjectHideFlags: 0

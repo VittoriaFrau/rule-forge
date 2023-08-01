@@ -13,6 +13,7 @@ TagManager:
   - MagneticTrap
   - RuleCubes
   - RuleText
+  - Plane
   layers:
   - Default
   - TransparentFX

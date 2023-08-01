@@ -16,10 +16,20 @@ public class ObjectsMenuController : MonoBehaviour
     public List<GameObject> animalPrefabs;
     public List<GameObject> foodPrefabs;
     public List<GameObject> environmentPrefabs;
+    public List<GameObject> musicPrefabs;
     
     public List<GameObject> categoryButtons;
     private GeneralUIController generalUIController;
+    [Header("Skybox")]
+    public Material daySkybox;
+    public Material nightSkybox;
+    public Material sunsetSkybox;
 
+    [Header("Floor")] 
+    public Material grassFloor;
+    public Material rocksFloor; 
+    public Material woodFLoor;
+    
     private Camera mainCamera;
     // Start is called before the first frame update
     void Start()
@@ -61,7 +71,47 @@ public class ObjectsMenuController : MonoBehaviour
         Instantiate(Utils.GetPrefabFromString(veg, environmentPrefabs),transform1.position + transform1.forward * 3, Quaternion.identity)
             .transform.parent = interactables.transform;
     }
-    
+
+    public void NewSkybox(string skybox)
+    {
+        //RenderSettings.skybox = Resources.Load<Material>(path);
+        switch (skybox)
+        {
+            case "Day":
+                RenderSettings.skybox = daySkybox;
+                break;
+            case "Sunset":
+                RenderSettings.skybox = sunsetSkybox;
+                break;
+            case "Night":
+                RenderSettings.skybox = nightSkybox;
+                break;
+        }
+    }
+
+    public void NewPlane(string plane)
+    {
+        Renderer planeRenderer = GameObject.FindGameObjectWithTag("Plane").GetComponent<Renderer>();
+        switch (plane)
+        {
+            case "Grass":
+                planeRenderer.material = grassFloor;
+                break;
+            case "Rocks":
+                planeRenderer.material = rocksFloor;
+                break;
+            case "Wood":
+                planeRenderer.material = woodFLoor;
+                break;
+        }
+    }
+
+    public void NewMusic(string music)
+    {
+        var transform1 = mainCamera.transform;
+        Instantiate(Utils.GetPrefabFromString(music, musicPrefabs),transform1.position + transform1.forward*2, Quaternion.identity)
+            .transform.parent = interactables.transform;
+    }
     public void DeActivateObjectsMenu()
     {
         foreach (var button in categoryButtons)

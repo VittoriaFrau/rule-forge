@@ -378,7 +378,7 @@ CapsuleCollider:
   m_Radius: 0.24326757
   m_Height: 0.9912817
   m_Direction: 1
-  m_Center: {x: 0.0019483864, y: 0.47610703, z: 0}
+  m_Center: {x: 0.0019483864, y: 0.51, z: 0}
 --- !u!54 &4715714151599717126
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -445,7 +445,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 53145e7ac99905b4d96c80bf9eb32b71, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class RadialMenu : MonoBehaviour
 {
     [SerializeField]
-    public  List<GameObject> pressableButtons;
+    private  List<GameObject> pressableButtons;
 
     public Image highlight;
 
