@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,6 +7,7 @@ using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 namespace UI
 {
@@ -147,8 +149,17 @@ namespace UI
             }
             else
             {
-                GameObject cubeLeft = cubePrefab.transform.Find("CubeLeft").gameObject;
-                GameObject cubeRight = cubePrefab.transform.Find("CubeRight").gameObject;
+                
+                // Check if the texture array contains valid textures
+                if (texture == null || texture.Length < 2 || texture[0] == null || texture[1] == null)
+                {
+                    Debug.LogError("Invalid texture array or missing textures!");
+                    return cube;
+                }
+                
+                
+                GameObject cubeLeft = cube.transform.Find("CubeLeft").gameObject;
+                GameObject cubeRight = cube.transform.Find("CubeRight").gameObject;
 
                 Material materialLeft = new Material(Shader.Find("Standard"));
                 materialLeft.mainTexture = texture[0];
@@ -182,12 +193,90 @@ namespace UI
             return position;
         }
 
-        public static void GenerateTextFromCubePosition(GameObject textLabel, string previousString, string cubeDescription, string logicalOperator)
+        public static void GenerateTextFromCubePosition(TextMeshProUGUI textLabel, string cubeDescription, string logicalOperator)
         {
-            if(previousString == "WHEN" || previousString == "THEN")
-                textLabel.GetComponent<TextMeshProUGUI>().text = previousString +" " + cubeDescription;
+            string previousString = textLabel.text;
+            if(previousString == "..." || previousString=="") //if it's the first cube
+                textLabel.text = cubeDescription;
             else
-                textLabel.GetComponent<TextMeshProUGUI>().text = previousString + " "+ logicalOperator + " " + cubeDescription;
+                textLabel.text = previousString + " "+ logicalOperator + " " + cubeDescription;
+        }
+        
+        public static void RemoveTextFromCubePosition(TextMeshProUGUI textLabel, string cubeDescription, string locution)
+        {
+            string input = textLabel.text;
+
+            /*int index = input.IndexOf(locutionToRemove, StringComparison.OrdinalIgnoreCase);
+
+            if (index != -1)
+            {
+                // Trova l'indice della locuzione da eliminare
+                int phraseIndex = input.IndexOf(cubeDescription, StringComparison.OrdinalIgnoreCase);
+
+                if (phraseIndex != -1)
+                {
+                    if (phraseIndex < index)
+                    {
+                        // Se la locuzione da eliminare è presente prima della locuzione da rimuovere,
+                        // rimuoviamo entrambe le locuzioni dalla stringa di input
+                        input = input.Remove(phraseIndex, cubeDescription.Length).TrimStart(' ');
+                        input = input.Remove(0, index + locutionToRemove.Length).TrimStart(' ');
+                        textLabel.text = input;
+                    }
+                    else
+                    {
+                        // Se la locuzione da rimuovere viene trovata prima della locuzione da eliminare,
+                        // rimuoviamo solo la locuzione da rimuovere dalla stringa di input
+                        input = input.Remove(index, locutionToRemove.Length).TrimStart(' ');
+                        textLabel.text = input;
+                    }
+                }
+            }
+            else
+            {
+                // Se la locuzione da rimuovere non viene trovata, ma la frase da eliminare è presente nella stringa di input,
+                // restituiamo una stringa vuota
+                int phraseIndex = input.IndexOf(cubeDescription, StringComparison.OrdinalIgnoreCase);
+                if (phraseIndex != -1)
+                {
+                    input = "...";
+                    textLabel.text = input;
+                }
+            }*/
+            
+            int locutionIndex = input.IndexOf(locution, StringComparison.OrdinalIgnoreCase);
+            int phraseIndex = input.IndexOf(cubeDescription, StringComparison.OrdinalIgnoreCase);
+
+            if (phraseIndex != -1)
+            {
+                if (locutionIndex != -1 && locutionIndex < phraseIndex)
+                {
+                    // Se la locuzione viene trovata prima della frase da eliminare,
+                    // rimuoviamo entrambe dalla stringa di input
+                    input = input.Remove(locutionIndex, locution.Length).TrimStart(' ');
+                    input = input.Remove(phraseIndex - locution.Length, cubeDescription.Length).TrimStart(' ');
+                    textLabel.text = input;
+                }
+                else
+                {
+                    // Altrimenti, rimuoviamo solo la frase da eliminare
+                    input = input.Remove(phraseIndex, cubeDescription.Length).TrimStart(' ');
+                    textLabel.text = input;
+                }
+            }
+
+            /*int index = previousString.IndexOf(cubeDescription);
+            if (index >= 0)
+            {
+                //Remove the cube description
+                previousString = previousString.Remove(index, cubeDescription.Length);
+                //Remove the logical operator AND or OR
+                int indexOfLogicalOperator = previousString.IndexOf(logicalOperator);
+                if (indexOfLogicalOperator >= 0)
+                    previousString = previousString.Remove(indexOfLogicalOperator - 1, logicalOperator.Length + 1);
+                /*previousString = previousString.Remove(index - 3, logicalOperator.Length + 3);#1#
+                textLabel.text = previousString;
+            }*/
         }
 
         public static void FillTextLabelsInCube(ECAEvent e, GameObject cube)
@@ -256,8 +345,8 @@ namespace UI
 
         public static void ClearTextDescription(TextMeshProUGUI whenText, TextMeshProUGUI thenText)
         {
-            whenText.text = "WHEN";
-            thenText.text = "THEN";
+            whenText.text = "...";
+            thenText.text = "...";
         }
 
         //Delete all the unnecessary containers

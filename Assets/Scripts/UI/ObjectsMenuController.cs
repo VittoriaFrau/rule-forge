@@ -43,33 +43,46 @@ public class ObjectsMenuController : MonoBehaviour
     public void NewShape(string type)
     {
         var transform1 = mainCamera.transform;
-        Instantiate(Utils.GetPrefabFromString(type, shapePrefabs), transform1.position + transform1.forward*3, 
-            transform1.rotation).transform.parent = interactables.transform;
-            //Instantiate(Utils.GetPrefabFromString(type, shapePrefabs), 
-            
+        var go = Instantiate(Utils.GetPrefabFromString(type, shapePrefabs),
+            transform1.position + transform1.forward * 3,
+            transform1.rotation);
+        go.transform.parent = interactables.transform;
+        //Set the collision transform velocities to 0
+        go.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        go.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;    
     }
 
     public void NewCharacter(string characterString)
     {
         var transform1 = mainCamera.transform;
-        Instantiate(Utils.GetPrefabFromString(characterString, animalPrefabs), transform1.position + transform1.forward * 3, 
-            transform1.rotation * Quaternion.Euler (0f, 180f, 0f)).transform.parent = interactables.transform;
+        var go = Instantiate(Utils.GetPrefabFromString(characterString, animalPrefabs),
+            transform1.position + transform1.forward * 3,
+            transform1.rotation * Quaternion.Euler(0f, 180f, 0f));
+        go.transform.parent = interactables.transform;
+        go.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        go.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;  
     }
 
     public void NewFood(string food)
     {
         
         var transform1 = mainCamera.transform;
-        Instantiate(Utils.GetPrefabFromString(food, foodPrefabs),transform1.position + transform1.forward * 3, Quaternion.identity)
-            .transform.parent = interactables.transform;
-
+        var go = Instantiate(Utils.GetPrefabFromString(food, foodPrefabs),
+            transform1.position + transform1.forward * 3, 
+            Quaternion.identity);
+        go.transform.parent = interactables.transform;
+        go.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        go.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;  
     }
 
     public void NewVegetation(string veg)
     {
         var transform1 = mainCamera.transform;
-        Instantiate(Utils.GetPrefabFromString(veg, environmentPrefabs),transform1.position + transform1.forward * 3, Quaternion.identity)
-            .transform.parent = interactables.transform;
+        var go = Instantiate(Utils.GetPrefabFromString(veg, environmentPrefabs),
+                transform1.position + transform1.forward * 3, Quaternion.identity);
+        go.transform.parent = interactables.transform;
+        go.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        go.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;  
     }
 
     public void NewSkybox(string skybox)

@@ -8,15 +8,17 @@ namespace UI.RuleEditor
 {
     public class CubeContainer:MonoBehaviour
     {
+        public int id; // Unique identifier of the container
         public GameObject cubeContainerPrefab;  // Prefab of the cube container to be instantiated
-        private bool isInstantiating = false;   // Flag to prevent multiple instantiations on collision
-        private string trigger;                 // Indicates whether the container belongs to "when" or "then" branch
-        private GameObject equivalenceContainer;   // Reference to the equivalence container for each cube container
-        private GameObject whenText, thenText;  // References to the "when" and "then" text objects
+        private bool isInstantiating, isRemoving;   // Flag to prevent multiple instantiations on collision
+        private RuleManager.RulePhase rulePhase;    // Indicates whether the container belongs to "when" or "then" branch
+        private GameObject equivalenceCubeContainer;   // Reference to the equivalence container for each cube container
         private string whenString, thenString;  // Current text contents of the "when" and "then" text objects
-        private enum ContainerType { Equivalence, Sequential }
-        private ContainerType containerType;    // Indicates whether the container is equivalence (OR) or sequential
-
+        public RuleManager.ContainerType containerType;    // Indicates whether the container is equivalence (OR) or sequential
+        private GameObject sequenceInstantiated, equivalenceInstantiated; // References to the instantiated containers
+        private RuleManager ruleManager;        // Reference to the RuleManager script
+        public GameObject currentCube=null; //reference to the cube the gameobject contains
+        
         private void Start()
         {
             //find if this instance is a child of a then or when
@@ -24,10 +26,13 @@ namespace UI.RuleEditor
 
             while (parent != null)
             {
-                if (parent.name == "When" || parent.name == "Then")
+                if (parent.name == "When")
                 {
-                    trigger = parent.name;
+                    rulePhase = RuleManager.RulePhase.When;
                     break;
+                } if (parent.name == "Then")
+                {
+                    rulePhase = RuleManager.RulePhase.Then; 
                 }
 
                 parent = parent.parent;
@@ -37,22 +42,20 @@ namespace UI.RuleEditor
             // Find the parent EquivalenceRow container
             foreach (Transform child in parent.parent){
                 if (child.name == "EquivalenceRow"){
-                    equivalenceContainer = child.gameObject;
+                    equivalenceCubeContainer = child.gameObject;
                     break;
                 }
             }
-            
-            // Find the "when" and "then" text objects with appropriate tags
-            whenText = GameObject.FindGameObjectsWithTag("RuleText").FirstOrDefault(o => o.name == "WhenText");
-            thenText = GameObject.FindGameObjectsWithTag("RuleText").FirstOrDefault(o => o.name == "ThenText");
-            
+
             containerType = transform.parent.name switch
             {
                 //Check if the parent of collision.gameobject is an equivalence or sequential container
-                "EquivalenceRow" => ContainerType.Equivalence,
-                "SequentialRow" => ContainerType.Sequential,
+                "EquivalenceRow" => RuleManager.ContainerType.Equivalence,
+                "SequentialRow" => RuleManager.ContainerType.Sequential,
                 _ => containerType
             };
+
+            ruleManager = GameObject.FindGameObjectWithTag("EventHandler").GetComponent<RuleManager>();
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -61,60 +64,93 @@ namespace UI.RuleEditor
             if (collision.gameObject.CompareTag("RuleCubes") && !isInstantiating)
             {
                 isInstantiating = true;
-                //Deactivate object manipulator from object
-                collision.gameObject.GetComponent<ObjectManipulator>().enabled = false;
+                PositionGameObjectInContainer(collision);
                 
-                //Position the cube in the right position
-                Vector3 positionContainer = gameObject.transform.position;
-                collision.gameObject.transform.position = new Vector3(positionContainer.x, positionContainer.y + 0.1f ,positionContainer.z);
+                CreateSequenceContainer();
+                ruleManager.AddContainer(rulePhase, this.gameObject);
 
-                //Set the collision transform velocities to 0
-                collision.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                collision.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-                
-                collision.gameObject.transform.rotation = gameObject.transform.rotation;
-                
-                
-                //Create a new instance of the container in the sequence position
-                GameObject instantiated = Instantiate(cubeContainerPrefab);
-                instantiated.transform.parent = transform.parent;
-                instantiated.transform.rotation = gameObject.transform.rotation;
-                instantiated.transform.localScale = transform.localScale;
-                instantiated.transform.localPosition = new Vector3(instantiated.transform.localPosition.x,  
-                    instantiated.transform.localPosition.y,3.99f);
-                
-                //Create a new instance of the container in the equivalence position
-                GameObject instantiatedParallel = Instantiate(cubeContainerPrefab);
-                instantiatedParallel.transform.parent = equivalenceContainer.transform;
-                instantiatedParallel.transform.rotation = gameObject.transform.rotation;
-                instantiatedParallel.transform.localScale = transform.localScale;
-                var localPosition = instantiatedParallel.transform.localPosition;
-                localPosition = new Vector3(localPosition.x,  
-                    localPosition.y,3.99f);
-                instantiatedParallel.transform.localPosition = localPosition;
+                CreateEquivalenceContainer();
+                ruleManager.AddContainer(rulePhase, gameObject);
+
+                currentCube = collision.gameObject;
 
                 collision.gameObject.GetComponent<ObjectManipulator>().enabled = true;
                 
                 //Update text
-                GetPresentRule();
-                string cubeDescription = Utils.GetRuleDescriptionFromCubePrefab(collision.gameObject);
-                string logicalOperator= containerType == ContainerType.Equivalence ? "OR" : "THEN";
-                Utils.GenerateTextFromCubePosition(trigger.Equals("When") ? whenText : thenText, trigger.Equals("When") ? 
-                    whenString : thenString, cubeDescription, logicalOperator);
+                ruleManager.CalculateRuleText(collision.gameObject, rulePhase, true, containerType, id );
+                
+                StartCoroutine(ResetInstantiation());
                 
             }
+            
+            
         }
         
         private System.Collections.IEnumerator ResetInstantiation()
         {
             yield return new WaitForSeconds(1f);
+            isRemoving = false;
             isInstantiating = false;
         }
 
-        private void GetPresentRule()
+        
+
+        private void OnCollisionExit(Collision collision)
         {
-            whenString = whenText.GetComponent<TextMeshProUGUI>().text;
-            thenString = thenText.GetComponent<TextMeshProUGUI>().text;
+            if (collision.gameObject.CompareTag("RuleCubes") && !isInstantiating && !isRemoving)
+            {
+                isRemoving = true;
+                Destroy(equivalenceInstantiated);
+                Destroy(sequenceInstantiated);
+                ruleManager.RemoveContainer(rulePhase);
+                ruleManager.RemoveContainer(rulePhase);
+                currentCube = null;
+                ruleManager.CalculateRuleText(collision.gameObject, rulePhase, false, containerType, id);
+            }
+
+            StartCoroutine(ResetInstantiation());
+            //CalculateRuleText();
+        }
+
+        private void PositionGameObjectInContainer(Collision collision)
+        {
+            //Deactivate object manipulator from object
+            collision.gameObject.GetComponent<ObjectManipulator>().enabled = false;
+                
+            //Position the cube in the right position
+            Vector3 positionContainer = gameObject.transform.position;
+            collision.gameObject.transform.position = new Vector3(positionContainer.x, positionContainer.y + 0.1f ,positionContainer.z);
+
+            //Set the collision transform velocities to 0
+            collision.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            collision.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                
+            collision.gameObject.transform.rotation = gameObject.transform.rotation;
+        }
+
+        private void CreateSequenceContainer()
+        {
+            //Create a new instance of the container in the sequence position
+            sequenceInstantiated = Instantiate(cubeContainerPrefab);
+            sequenceInstantiated.transform.parent = transform.parent;
+            sequenceInstantiated.transform.rotation = gameObject.transform.rotation;
+            sequenceInstantiated.transform.localScale = transform.localScale;
+            sequenceInstantiated.transform.localPosition = new Vector3(sequenceInstantiated.transform.localPosition.x,  
+                sequenceInstantiated.transform.localPosition.y,3.99f);
+        }
+
+        private void CreateEquivalenceContainer()
+        {
+            //Create a new instance of the container in the equivalence position
+            equivalenceInstantiated = Instantiate(cubeContainerPrefab);
+            equivalenceInstantiated.transform.parent = equivalenceCubeContainer.transform;
+            equivalenceInstantiated.transform.rotation = gameObject.transform.rotation;
+            equivalenceInstantiated.transform.localScale = transform.localScale;
+            var localPosition = equivalenceInstantiated.transform.localPosition;
+            localPosition = new Vector3(localPosition.x,  
+                localPosition.y,3.99f);
+            equivalenceInstantiated.transform.localPosition = localPosition;
+
         }
     }
 }

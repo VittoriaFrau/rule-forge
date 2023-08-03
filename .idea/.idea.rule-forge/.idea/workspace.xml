@@ -5,130 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8549fefb-f71a-4278-af6b-67427dad7c5d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAScene.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAScene.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Materials/Stylize_Grass.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Materials/Stylize_Grass.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Materials/Stylize_Grass_diffuse.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Materials/Stylize_Grass_diffuse.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Textures.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Textures/Vol_42_1_Ambient_Occlusion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Textures/Vol_42_1_Ambient_Occlusion.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Textures/Vol_42_1_Base_Color.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Textures/Vol_42_1_Base_Color.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Textures/Vol_42_1_Height.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Textures/Vol_42_1_Height.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Textures/Vol_42_1_Normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Textures/Vol_42_1_Normal.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Textures/Vol_42_1_Roughness.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Textures/Vol_42_1_Roughness.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/background.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/block.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/block.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/floor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/floor.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/grass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/grass.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/guitar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/guitar.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/lightbulb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/lightbulb.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/night-mode.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/night-mode.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/piano.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/piano.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/radio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/radio.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/sun.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/sun.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/sunset-.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/sunset-.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/wood.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/wood.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Rocks_planeTexture.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Rocks_planeTexture/Hand Painted Rocks Road (Blocky).mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Rocks_planeTexture/Hand Painted Rocks Road (Blocky).mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Rocks_planeTexture/road_rocks_blocky.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Rocks_planeTexture/road_rocks_blocky_NRM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Rocks_planeTexture/road_rocks_blocky_NRM.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Material.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Material/Skybox_5.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Material/Skybox_5.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Material/Skybox_8.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Material/Skybox_8.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Material/sky-1.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Material/sky-1.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Material/sky-2.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Material/sky-2.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Texture.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Texture/Sky-1.hdr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Texture/Sky-1.hdr.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Texture/Sky-2.hdr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Texture/Sky-2.hdr.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Texture/Skybox_5.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Texture/Skybox_5.psd.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Texture/Skybox_8.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Texture/Skybox_8.psd.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat/Materials/Propeller_hat_BaseColor.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat/Materials/Propeller_hat_BaseColor.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat/source.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat/source/Propeller hat.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat/source/Propeller hat.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat/textures.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat/textures/Propeller_hat_BaseColor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat/textures/Propeller_hat_BaseColor.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat/textures/Propeller_hat_Normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat/textures/Propeller_hat_Normal.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat/textures/Propeller_hat_Roughness.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat/textures/Propeller_hat_Roughness.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Materials/Planks.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Materials/Planks/Planks.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Materials/Planks/Planks.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks/Wood_Planks_ambientocclusion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks/Wood_Planks_ambientocclusion.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks/Wood_Planks_basecolor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks/Wood_Planks_basecolor.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks/Wood_Planks_height.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks/Wood_Planks_height.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks/Wood_Planks_metallic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks/Wood_Planks_metallic.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks/Wood_Planks_normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks/Wood_Planks_normal.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/plane.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/plane.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/scenaGador.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/scenaGador.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/shelf/Uncommitted_changes_before_Update_at_13_06_2023_12_54_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/shelf/Uncommitted_changes_before_Update_at_13_06_2023_12_54__Changes_.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/DebugHelp.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/DebugHelp.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RuleManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RuleManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.rule-forge.dir/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.rule-forge.dir/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/backpack.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/backpack.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/beanie.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/beanie.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Rocks_planeTexture/road_rocks_blocky.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/clothes.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/clothes.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/live-music.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/live-music.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/no-bag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/no-bag.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Prefabs/Base/High Quality/wolf.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Prefabs/Base/High Quality/wolf.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Prefabs/Base/High Quality/boy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Prefabs/Base/High Quality/boy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Zombie Sample/Prefabs/Base/High Quality/zombie.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Zombie Sample/Prefabs/Base/High Quality/zombie.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/RuleCubeLevelTwo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/RuleCubeLevelTwo.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptsRM/RadialMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptsRM/RadialMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/EditModeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/EditModeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InteractionCreationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InteractionCreationController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ObjectsMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ObjectsMenuController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/CubeContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/CubeContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/CubeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/CubeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RepositionRulePlate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RepositionRulePlate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,27 +45,23 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/7e/eed5d777/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/a1/012332c3/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/c2/f240eee7/InvokableCall.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/e2/b5fb9db0/Component.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75633565436c42f0a6426b33f0132ade46a800/0b/0f332719/SystemException.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75633565436c42f0a6426b33f0132ade46a800/50/4bff7216/List`1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75633565436c42f0a6426b33f0132ade46a800/ba/d1b1ae3e/NullReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75633565436c42f0a6426b33f0132ade46a800/bd/dfc796a0/Delegate.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75633565436c42f0a6426b33f0132ade46a800/bf/e8db45a6/Exception.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/ECAPrototyping/ECAMusic.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/gador/Desktop/UniCa/Tirocinio/rule-forge/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Vittoria/RiderProjects/rule-forge/Assets/Scripts/UI/RuleEditor/CubeContainer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RepositionRulePlate.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Vittoria/RiderProjects/rule-forge/Assets/XR/Settings/OpenXR Package Settings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Vittoria/RiderProjects/rule-forge/Assets/XR/Settings/OpenXR Package Settings.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.core@8d3eae7b2801/Interactables/StatefulInteractable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.core@8d3eae7b2801/Subsystems/MRTKLifecycleManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.spatialmanipulation@a80535c64d68/BoundsControl/Visuals/SqueezableBoxVisuals.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.spatialmanipulation@a80535c64d68/ObjectManipulator/MoveLogics/ScaleLogic.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.spatialmanipulation@a80535c64d68/ObjectManipulator/ObjectManipulator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.spatialmanipulation@a80535c64d68/Solvers/HandConstraintPalmUp.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.uxcore@246ca5810751/FontIcons/FontIconSet.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/Interactables/XRBaseInteractable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/Interactors/XRRayInteractor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/XRInteractionManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.openxr@1.5.3/Runtime/OpenXRRestarter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Vittoria/RiderProjects/rule-forge/ProjectSettings/TagManager.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -189,25 +77,27 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.2791798&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.31478262&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\gador\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\gador\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\gador\\AppData\\Local\\Symbols\\src&quot;
+      &quot;C:\\Users\\Vittoria\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Vittoria\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Vittoria\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
 }</component>
@@ -285,12 +175,15 @@
       <workItem from="1688823880027" duration="8972000" />
       <workItem from="1688975587758" duration="11542000" />
       <workItem from="1689061550205" duration="4010000" />
-      <workItem from="1690367497448" duration="2626000" />
-      <workItem from="1690443538578" duration="988000" />
-      <workItem from="1690536078272" duration="2846000" />
-      <workItem from="1690550909785" duration="6759000" />
-      <workItem from="1690638397858" duration="3596000" />
-      <workItem from="1690877461750" duration="1339000" />
+      <workItem from="1690446556217" duration="2189000" />
+      <workItem from="1690470984089" duration="4505000" />
+      <workItem from="1690532631444" duration="11019000" />
+      <workItem from="1690553560260" duration="826000" />
+      <workItem from="1690619801922" duration="5362000" />
+      <workItem from="1690793042430" duration="8597000" />
+      <workItem from="1690879009482" duration="8032000" />
+      <workItem from="1690962454388" duration="18101000" />
+      <workItem from="1691052005423" duration="5037000" />
     </task>
     <task id="LOCAL-00001" summary="checkComponents added">
       <created>1686653774676</created>
@@ -299,7 +192,55 @@
       <option name="project" value="LOCAL" />
       <updated>1686653774676</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fixed rule bug and renamed assets">
+      <option name="closed" value="true" />
+      <created>1690363853311</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1690363853311</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Bug fixing and reposition of the plate">
+      <option name="closed" value="true" />
+      <created>1690379102203</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1690379102203</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Equivalence and fixed assets">
+      <option name="closed" value="true" />
+      <created>1690447724452</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1690447724452</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Merging cubes">
+      <option name="closed" value="true" />
+      <created>1690626241751</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1690626241751</updated>
+    </task>
+    <task id="LOCAL-00006" summary="separation material">
+      <option name="closed" value="true" />
+      <created>1690626260317</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1690626260317</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Rule editor changes">
+      <option name="closed" value="true" />
+      <created>1690817050616</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1690817050616</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,9 +261,16 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="checkComponents added" />
-    <option name="LAST_COMMIT_MESSAGE" value="checkComponents added" />
+    <MESSAGE value="Fixed rule bug and renamed assets" />
+    <MESSAGE value="Bug fixing and reposition of the plate" />
+    <MESSAGE value="Equivalence and fixed assets" />
+    <MESSAGE value="Merging cubes" />
+    <MESSAGE value="separation material" />
+    <MESSAGE value="Rule editor changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rule editor changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -330,54 +278,65 @@
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
           <line>334</line>
-          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="334" containingFunctionPresentation="Method 'ListActionsAttribute'">
-            <startOffsets>
-              <option value="12624" />
-            </startOffsets>
-            <endOffsets>
-              <option value="12670" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="334" containingFunctionPresentation="Method 'ListActionsAttribute'" />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
           <line>361</line>
-          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="367" containingFunctionPresentation="Method 'ListActionsAttribute'">
-            <startOffsets>
-              <option value="13656" />
-            </startOffsets>
-            <endOffsets>
-              <option value="13671" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="367" containingFunctionPresentation="Method 'ListActionsAttribute'" />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
           <line>349</line>
-          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="349" containingFunctionPresentation="Method 'ListActionsAttribute'">
-            <startOffsets>
-              <option value="13200" />
-            </startOffsets>
-            <endOffsets>
-              <option value="13260" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="349" containingFunctionPresentation="Method 'ListActionsAttribute'" />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
           <line>357</line>
-          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="357" containingFunctionPresentation="Method 'ListActionsAttribute'">
+          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="357" containingFunctionPresentation="Method 'ListActionsAttribute'" />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/MergedCubeController.cs</url>
+          <line>63</line>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\RuleEditor\MergedCubeController.cs" initialLine="63" containingFunctionPresentation="Method 'DetachCubes'">
             <startOffsets>
-              <option value="13553" />
+              <option value="1937" />
             </startOffsets>
             <endOffsets>
-              <option value="13588" />
+              <option value="1963" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="21" />
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs</url>
+          <line>281</line>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="205" containingFunctionPresentation="Method 'RemoveTextFromCubePosition'">
+            <startOffsets>
+              <option value="11523" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11618" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/CubeController.cs</url>
+          <line>133</line>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\RuleEditor\CubeController.cs" initialLine="132" containingFunctionPresentation="Method 'MergeCubes'">
+            <startOffsets>
+              <option value="4637" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4790" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="61" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.MixedReality.Toolkit.SpatialManipulation;
 using TMPro;
 using UI;
+using UI.RuleEditor;
 using UnityEngine;
 
 public class RepositionRulePlate : MonoBehaviour
@@ -14,17 +15,20 @@ public class RepositionRulePlate : MonoBehaviour
     }
     
     private PlateState _plateState;
-    public TextMeshProUGUI debugPlateText;
     public ObjectManipulator rulePlateManipulator;
-    private string previousDebugText;
-    private BoundsControl _boundsController;
     
+    private BoundsControl _boundsController;
+    private RuleManager _ruleManager;
+
     // Start is called before the first frame update
     void Start()
     {
         _plateState = PlateState.Default;
-        if(debugPlateText==null) debugPlateText = GameObject.FindGameObjectsWithTag("RuleUtils")
-            .ToList().Find(x=>x.name=="RuleDebugText").GetComponent<TextMeshProUGUI>();
+        
+        _ruleManager = GameObject.FindGameObjectWithTag("EventHandler").GetComponent<RuleManager>();
+        
+        _ruleManager.DeactivateDebugText();
+        
         GameObject ruleEditorPlate = GameObject.FindGameObjectsWithTag("RuleUtils")
             .ToList().Find(x=>x.name=="RuleEditorPlate");
         _boundsController = ruleEditorPlate.GetComponent<BoundsControl>();
@@ -39,8 +43,7 @@ public class RepositionRulePlate : MonoBehaviour
             rulePlateManipulator.enabled = true;
             _boundsController.enabled = true;
             _plateState = PlateState.Moving;
-            previousDebugText = debugPlateText.text;
-            debugPlateText.text = "Moving the plate, click again the moving button to stop moving.";
+            _ruleManager.ActivateDebugTextWithMessage("Moving the plate, click again the moving button to stop moving.");
         }
         else
         {
@@ -55,7 +58,8 @@ public class RepositionRulePlate : MonoBehaviour
             rulePlateManipulator.enabled = false;
             _boundsController.enabled = false;
             _plateState = PlateState.Default;
-            debugPlateText.text = previousDebugText;
+
+            _ruleManager.DeactivateDebugText();
         }
        
     }

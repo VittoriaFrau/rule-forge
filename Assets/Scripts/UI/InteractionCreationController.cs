@@ -32,6 +32,7 @@ namespace UI
         
         private Modalities _modality;
         private GeneralUIController generalUIController;
+        private EditModeController editModeController;
         public List<GameObject> modalitiesBubbles;
         public GameObject BackButton, RecordButton, StopButton;
        
@@ -73,23 +74,20 @@ namespace UI
         //Rule composition
         public GameObject removableBarrier;
         private Dictionary<GameObject, Vector3> _originalPositions = new(); //positions of the cubes to easily revert it
-        private TextMeshProUGUI whenText, thenText;
+        public TextMeshProUGUI whenText, thenText;
+        private RuleManager _ruleManager;
 
         private void Start()
         {
             generalUIController = this.gameObject.GetComponent<GeneralUIController>();
+            editModeController = this.gameObject.GetComponent<EditModeController>();
             //find the gameobject looking for the tag and then filtering by name
             OpenXRRightHandController = GameObject.FindGameObjectsWithTag("handController").FirstOrDefault(obj => obj.name 
                 == "MRTK RightHand Controller");
             OpenXRLeftHandController = GameObject.FindGameObjectsWithTag("handController").FirstOrDefault(obj => obj.name 
                 == "MRTK LeftHand Controller");
             _screenshotCamera =screenshotCamera.GetComponent<ScreenshotCamera>();
-            // Find the "when" and "then" text objects with appropriate tags
-            whenText = GameObject.FindGameObjectsWithTag("RuleText").FirstOrDefault(o => o.name == "WhenText")
-                .GetComponent<TextMeshProUGUI>();
-            thenText = GameObject.FindGameObjectsWithTag("RuleText").FirstOrDefault(o => o.name == "ThenText")
-                .GetComponent<TextMeshProUGUI>();
-
+            _ruleManager = this.gameObject.GetComponent<RuleManager>();
         }
 
         public void SelectModality(string modality)
@@ -305,6 +303,10 @@ namespace UI
             _originalPositions = Utils.GenerateCubesFromEventList(_events, ruleCubePrefab, cubePlate);
 
             removableBarrier.SetActive(false);
+            
+            _ruleManager.InitializeVariables();
+            
+            editModeController.ShowHideRadialMenu(false);
         }
 
         public void StartRecording()
@@ -388,7 +390,7 @@ namespace UI
             StopButton.SetActive(false);
         }
 
-        IEnumerator TakeScreenShot()
+        IEnumerator TakeScreenShot(List<ECAEvent> _events)
         {
             yield return new WaitForEndOfFrame();
             var texture = ScreenCapture.CaptureScreenshotAsTexture();
@@ -529,8 +531,11 @@ namespace UI
         public void PrepareForScreenshot(GameObject gameObject, Modalities modality)
         {
             HideModalitiesBubbles();
+            editModeController.ShowHideRadialMenu(false);
             _screenshotCamera.TakeScreenshot(gameObject, modality, _events.Last());
             ShowModalitiesBubblesExceptModality();
+            editModeController.ShowHideRadialMenu(true);
+
         }
 
         public void ResetCubePositions()

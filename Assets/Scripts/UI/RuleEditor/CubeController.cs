@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.MixedReality.Toolkit.SpatialManipulation;
 using TMPro;
 using UI;
+using UI.RuleEditor;
 using UnityEngine;
 using UnityEngine.Diagnostics;
 using Utils = UI.Utils;
@@ -28,26 +29,28 @@ public class CubeController : MonoBehaviour
     public float minimumJoinTime = 2.0f; // Minimum time (in seconds) for the cubes to stay attached
     private float joinStartTime;
     public GameObject mergedCubePrefab;
-    private TextMeshProUGUI countdownText;
+    private RuleManager _ruleManager;
     private ObjectManipulator objectManipulator;
     
     private void Start()
     {
-        GameObject debugTextObject = GameObject.FindGameObjectWithTag("debugText");
+        _ruleManager = GameObject.FindGameObjectWithTag("EventHandler").GetComponent<RuleManager>();
+        
+        /*GameObject debugTextObject = GameObject.FindGameObjectWithTag("debugText");
         // Verifica se l'oggetto è stato trovato e non è null
         if (debugTextObject != null)
         {
             // Ottieni il componente TextMeshProUGUI solo se l'oggetto è attivo
             if (debugTextObject.activeSelf)
             {
-                countdownText = debugTextObject.GetComponent<TextMeshProUGUI>();
+                ruleDebugText = debugTextObject.GetComponent<TextMeshProUGUI>();
             }
             else
             {
                 // L'oggetto è inattivo, puoi gestire questo caso qui se necessario
                 Debug.LogWarning("L'oggetto con tag 'debugText' è inattivo.");
             }
-        }
+        }*/
         
         objectManipulator = GetComponent<ObjectManipulator>();
         
@@ -69,7 +72,7 @@ public class CubeController : MonoBehaviour
         
         if (!isAttached && collision.gameObject.CompareTag("RuleCubes") && numberOfCollidingObjects == 1)
         {
-            if (!timerStarted && countdownText != null)
+            if (!timerStarted)
             {
                 // Start the countdown timer when collision starts
                 StartCoroutine(StartCountdown(collision.gameObject));
@@ -91,7 +94,8 @@ public class CubeController : MonoBehaviour
         while (countdownTime > 0)
         {
             // Update the UI Text to show the countdown
-            countdownText.text = "Merging in " + Mathf.CeilToInt(countdownTime) + " seconds";
+            _ruleManager.ActivateDebugTextWithMessage("Merging in " + Mathf.CeilToInt(countdownTime) + " seconds");
+            //ruleDebugText.text = "Merging in " + Mathf.CeilToInt(countdownTime) + " seconds";
             yield return null;
             countdownTime -= Time.deltaTime;
         }
@@ -118,20 +122,39 @@ public class CubeController : MonoBehaviour
         // Get the texture of a gameobject
         Texture textureLeftCube = gameObject.GetComponent<Renderer>().material.mainTexture;
         Texture textureRightCube = otherCube.GetComponent<Renderer>().material.mainTexture;
+        
+        Texture copyTextureLeftCube = CopyTexture(textureLeftCube);
+        Texture copyTextureRightCube = CopyTexture(textureRightCube);
+
                 
         // Mark the other cube as attached to prevent double merge
         otherCube.GetComponent<CubeController>().IsAttached = true;
+        
                 
-        // Destroy both original cubes and instantiate the merged one
-        Destroy(gameObject);
-        Destroy(otherCube);
-                
-        GameObject cube = Utils.InstantiateRuleCube(mergedCubePrefab, 2, mergedPosition, cubePlate.transform, new []{textureLeftCube, textureRightCube});
+        GameObject cube = Utils.InstantiateRuleCube(mergedCubePrefab, 2, mergedPosition, cubePlate.transform, new []{copyTextureLeftCube, copyTextureRightCube});
         ECAEvent cubeLeftEcaEvent = Utils.GetEventFromCube(gameObject);
         ECAEvent cubeRightEcaEvent = Utils.GetEventFromCube(otherCube);
         
         Utils.FillTextLabelsInMergedCubes(cube, new []{cubeLeftEcaEvent, cubeRightEcaEvent});
-        if (countdownText != null) countdownText.text = "Cubes merged!"; ;
+        _ruleManager.DeactivateDebugText();
+        
+        // Destroy both original cubes 
+        Destroy(gameObject);
+        Destroy(otherCube);
+    }
+    
+    // Helper method to copy a texture
+    private Texture CopyTexture(Texture originalTexture)
+    {
+        RenderTexture tempRT = RenderTexture.GetTemporary(originalTexture.width, originalTexture.height, 0, RenderTextureFormat.Default, RenderTextureReadWrite.Linear);
+        Graphics.Blit(originalTexture, tempRT);
+        Texture2D copyTexture = new Texture2D(originalTexture.width, originalTexture.height, TextureFormat.RGBA32, false);
+        RenderTexture.active = tempRT;
+        copyTexture.ReadPixels(new Rect(0, 0, tempRT.width, tempRT.height), 0, 0);
+        copyTexture.Apply();
+        RenderTexture.active = null;
+        RenderTexture.ReleaseTemporary(tempRT);
+        return copyTexture;
     }
 
     /*public void DetachCubes()
