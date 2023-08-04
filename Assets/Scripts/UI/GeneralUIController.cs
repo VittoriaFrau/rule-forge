@@ -33,6 +33,13 @@ namespace UI
             RuleComposition
         }
         private UIState _uiState;
+
+        public UIState UIstate
+        {
+            get => _uiState;
+            set => _uiState = value;
+        }
+
         public UIState State
         {
             get => _uiState;
@@ -63,6 +70,7 @@ namespace UI
             var previousState = _uiState;
             DefaultState();
             ShowOptionsMenu();
+            
             switch (previousState)
             {
                 case UIState.EditMode:
@@ -196,6 +204,19 @@ namespace UI
         public void HideRadialMenu()
         {
             radialMenu.gameObject.SetActive(false);
+        }
+
+        public List<GameObject> GetActiveButtons()
+        {
+            return radialMenu.PressableButtons;
+        }
+
+        public void AddCombineRulesButtonToRadialMenu()
+        {
+            GameObject combineButton = optionButtons[optionButtons.Count - 1];
+            if(combineButton.name.Equals("CombineRules"))
+                radialMenu.AddSingleButtonToList(combineButton);
+            else Debug.LogError("Combine button not found");
         }
     }
 }

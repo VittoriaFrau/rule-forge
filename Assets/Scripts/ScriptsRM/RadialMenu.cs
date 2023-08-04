@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Microsoft.MixedReality.Toolkit.UX;
+using UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,13 @@ using UnityEngine.UI;
 public class RadialMenu : MonoBehaviour
 {
     [SerializeField]
-    private  List<GameObject> pressableButtons;
+    private List<GameObject> pressableButtons;
+
+    public List<GameObject> PressableButtons
+    {
+        get => pressableButtons;
+        set => pressableButtons = value;
+    }
 
     public Image highlight;
 
@@ -30,7 +37,7 @@ public class RadialMenu : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         //Scalo la dimensione degli spicchi 
         foreach (Image spicchi in slices)
@@ -41,6 +48,7 @@ public class RadialMenu : MonoBehaviour
             }
         }
     }
+    */
 
     public void Open()
     {
@@ -156,11 +164,23 @@ public class RadialMenu : MonoBehaviour
     }
 
     
-    public void getListButtons(List<GameObject> buttons)
+    public void getListButtons(List<GameObject> buttons, GameObject recordButton = null)
     {
         //TODO ripristinare insieme agli spicchi
         Close();
         pressableButtons = buttons;
+        if (recordButton != null)
+        {
+            pressableButtons.Add(recordButton);
+        }
+        Open();
+        
+    }
+
+    public void AddSingleButtonToList(GameObject button)
+    {
+        Close();
+        pressableButtons.Add(button);
         Open();
     }
     

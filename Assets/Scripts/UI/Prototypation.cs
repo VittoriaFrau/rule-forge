@@ -16,16 +16,18 @@ namespace UI
         private EditModeController _editModeController;
         private ObjectManipulator _objectManipulator;
         private GeneralUIController _generalUIController;
+        private InteractionCreationController _interactionCreationController;
         private GameObject eventHandler;
         private RuleEngine _ruleEngine;
         bool action_executed;
-
+        
         private void Start()
         {
             eventHandler = GameObject.Find("EventHandler");
             _editModeController = eventHandler.GetComponent<EditModeController>();
             _objectManipulator = GetComponent<ObjectManipulator>();
             _generalUIController = eventHandler.GetComponent<GeneralUIController>();
+            _interactionCreationController = eventHandler.GetComponent<InteractionCreationController>();
             _ruleEngine = RuleEngine.GetInstance();
             //CheckActionsAttribute(GameObject.Find("animal_people_wolf_1"));
             
@@ -51,7 +53,13 @@ namespace UI
                 _editModeController.SelectedObject = gameObject;
                 _generalUIController.SelectedObject(gameObject.name);
                 CheckActionsAttribute(_editModeController.SelectedObject);
-                _generalUIController.radialMenu.getListButtons(CheckECAObject(_editModeController.SelectedObject));
+                if (_generalUIController.UIstate == GeneralUIController.UIState.EditMode)
+                {
+                    _generalUIController.radialMenu.getListButtons(CheckECAObject(_editModeController.SelectedObject), 
+                        _interactionCreationController.RecordButton);
+                }
+                else _generalUIController.radialMenu.getListButtons(CheckECAObject(_editModeController.SelectedObject));
+                _generalUIController.radialMenu.gameObject.SetActive(true);
             }
         }
         

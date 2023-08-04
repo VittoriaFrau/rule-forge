@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using ECAPrototyping.Utils;
+using Microsoft.MixedReality.Toolkit.UX;
 using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
@@ -80,21 +81,20 @@ namespace UI
 
             return filteredEvents;
         }
-        
-        
 
-        public static Dictionary<GameObject, Vector3> GenerateCubesFromEventList(List<ECAEvent> events, GameObject cubePrefab, GameObject cubePlate)
+        /*public static Dictionary<GameObject, Vector3> GenerateCubesFromEventList(List<ECAEvent> _modalityEvents, List<ECAEvent>
+            _actionEvents, GameObject cubePrefab, GameObject prefabVariant, GameObject cubePlate)
         {
             Dictionary<GameObject, Vector3> result = new Dictionary<GameObject, Vector3>();
             //Filter events 
-            List<ECAEvent> filteredEvents = RemoveDuplicates(events);
+            List<ECAEvent> filteredModalityEvents = RemoveDuplicates(_modalityEvents);
 
             float previousZ = 1.41f;
             //Generate cubes
-            foreach (var e in filteredEvents)
+            foreach (var e in filteredModalityEvents)
             {
                 //Adjust cube transform
-                Vector3 position = CalculatePositionInPlate(previousZ, filteredEvents.IndexOf(e));
+                Vector3 position = CalculatePositionInPlate(previousZ, filteredModalityEvents.IndexOf(e));
                 previousZ = position.z;
 
                 GameObject cube = InstantiateRuleCube(cubePrefab, 1, position, cubePlate.transform, new Texture[]{e.Texture});
@@ -102,8 +102,70 @@ namespace UI
                 FillTextLabelsInCube(e, cube);
             }
 
+            List<ECAEvent> filteredActionsEvents = RemoveDuplicates(_actionEvents);
+            
+            foreach (var e in filteredActionsEvents)
+            {
+                //Adjust cube transform
+                Vector3 position = CalculatePositionInPlate(previousZ, filteredActionsEvents.IndexOf(e));
+                previousZ = position.z;
+                GameObject cube;
+                if (e.Object != "")
+                {
+                    cube = InstantiateRuleCube(cubePrefab, 1, position, cubePlate.transform, 
+                        new Texture[]{e.Texture});
+                }
+                else
+                {
+                    cube = InstantiateRuleCube(prefabVariant, 1, position, cubePlate.transform, 
+                        new Texture[]{e.Texture});
+                }
+
+                cube.tag = "ActionRuleCube";
+                
+                result.Add(cube, position);
+                FillTextLabelsInCube(e, cube);
+            }
+            
+            return result;
+        }*/
+        
+        public static Dictionary<GameObject, Vector3> GenerateCubesFromEventList(List<ECAEvent> _modalityEvents, 
+            List<ECAEvent> _actionEvents, GameObject modalityCubePrefab, GameObject actionCubePrefab, 
+            GameObject actionCubePrefabVariant, GameObject cubePlate)
+        {
+            Dictionary<GameObject, Vector3> result = new Dictionary<GameObject, Vector3>();
+
+            // Combine the two lists
+            List<ECAEvent> allEvents = new List<ECAEvent>();
+            allEvents.AddRange(RemoveDuplicates(_modalityEvents));
+            allEvents.AddRange(RemoveDuplicates(_actionEvents));
+
+            // Generate cubes for all events
+            float previousZ = 1.41f;
+            foreach (var e in allEvents)
+            {
+                Vector3 position = CalculatePositionInPlate(previousZ, allEvents.IndexOf(e));
+                previousZ = position.z;
+                GameObject cube;
+
+                bool isModality = e.Event != null;
+
+                if (isModality)
+                {
+                    cube = InstantiateRuleCube(modalityCubePrefab, 1, 
+                        position, cubePlate.transform, new Texture[] { e.Texture });
+                }
+                else cube = InstantiateRuleCube(e.Object == null ? actionCubePrefabVariant : actionCubePrefab, 1, 
+                    position, cubePlate.transform, new Texture[] { e.Texture });
+
+                result.Add(cube, position);
+                FillTextLabelsInCube(e, cube);
+            }
+
             return result;
         }
+
         
         public static ECAEvent GetEventFromCube(GameObject cube)
         {
@@ -298,13 +360,42 @@ namespace UI
             }
         }
 
+        /*public static void FillTextLabelsInActionCubes(ECAEvent e, GameObject cube)
+        {
+            // Define the face names and text labels
+            string[] faceNames = { "FrontFaceRule", "TopFaceRule" };
+            string[] labelTexts = { e.Subject, e.Verb + e.Object };
+
+            if (e.Object.Equals(String.Empty))
+            {
+                // Loop through each face and fill the text labels
+                foreach (string faceName in faceNames)
+                {
+                    TextMeshProUGUI[] faceLabels = GetTextLabelsInCube(cube, faceName);
+
+                    // Fill the text labels with the appropriate text
+                    for (int i = 0; i < faceLabels.Length; i++)
+                    {
+                        faceLabels[i].text = labelTexts[i];
+                    }
+                }
+            }
+            else
+            {
+                
+            }
+        }*/
+
         public static TextMeshProUGUI[] GetTextLabelsInCube(GameObject cube, string face)
         {
             
             GameObject faceGameObject = cube.transform.Find(face).gameObject;
             TextMeshProUGUI subject = faceGameObject.transform.Find("Subject").transform.Find("Image").GetComponent<TextMeshProUGUI>();
             TextMeshProUGUI verb = faceGameObject.transform.Find("Verb").transform.Find("Image").GetComponent<TextMeshProUGUI>();
-            TextMeshProUGUI obj = faceGameObject.transform.Find("Object").transform.Find("Image").GetComponent<TextMeshProUGUI>();
+            Transform objTransform = faceGameObject.transform.Find("Object");
+            if(objTransform == null) return new[] { subject, verb };
+            
+            TextMeshProUGUI obj = objTransform.transform.Find("Image").GetComponent<TextMeshProUGUI>();
 
             Transform secondVerb = faceGameObject.transform.Find("SecondVerb");
             if (secondVerb == null) return new[] { subject, verb, obj };
@@ -381,6 +472,14 @@ namespace UI
             {
                 if (child.name.StartsWith("CubeContainer(Clone)")) Object.Destroy(child.gameObject);
             }
+        }
+
+        public static ECAEvent GetActionFromButton(GameObject button, GameObject selectedGameobject)
+        {
+            //TODO non usare il nome del pulsante hard coded appena gador finisce
+            ECAEvent e = new ECAEvent(selectedGameobject, button.name);
+
+            return e;
         }
         
     }

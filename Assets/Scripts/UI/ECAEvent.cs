@@ -11,6 +11,33 @@ namespace UI
         private InteractionCreationController.CategoryObjectSelected typeOfObject;
         private Texture2D _texture;
         private string _subject, _verb, _object;
+
+        public ECAEvent(GameObject gameObject, string _verb, string _object)
+        {
+            _gameObject = gameObject;
+            this._verb = _verb;
+            this._object = _object;
+            this._subject = gameObject.name;
+        }
+        
+        public ECAEvent(GameObject gameObject, string _verb, string _object, Texture2D screenshot)
+        {
+            _gameObject = gameObject;
+            this._verb = _verb;
+            this._object = _object;
+            this._subject = gameObject.name;
+            _texture = screenshot;
+
+        }
+        
+        public ECAEvent(GameObject gameObject, string _verb, Texture2D screenshot)
+        {
+            _gameObject = gameObject;
+            this._verb = _verb;
+            this._subject = gameObject.name;
+            _texture = screenshot;
+
+        }
         
         public ECAEvent(GameObject gameObject, InteractionCreationController.Modalities modality, string _event, 
             Texture2D screenshot)
@@ -20,7 +47,7 @@ namespace UI
             this._event = _event;
             typeOfObject = InteractionCreationController.CategoryObjectSelected.GameObject; //By default
             _texture = screenshot;
-            SetRule();
+            SetModalityRule();
         }
         
         public ECAEvent(GameObject gameObject, InteractionCreationController.Modalities modality, string _event)
@@ -30,12 +57,19 @@ namespace UI
             this._event = _event;
             typeOfObject = InteractionCreationController.CategoryObjectSelected.GameObject; //By default
             _texture = null;
-            SetRule();
+            SetModalityRule();
         }
 
         public ECAEvent(GameObject gameObject)
         {
             _gameObject = gameObject;
+        }
+        
+        public ECAEvent(GameObject gameObject, string verb)
+        {
+            _gameObject = gameObject;
+            _verb = verb;
+            _subject = gameObject.name;
         }
 
 
@@ -51,10 +85,12 @@ namespace UI
 
         public override string ToString()
         {
-            return "The user " + modality + " the " + _gameObject.name + " object";
+            if(modality!=InteractionCreationController.Modalities.None)
+                return "The user " + modality + " the " + _gameObject.name + " object";
+            return _gameObject.name + " " + _verb + " " + _object;
         }
 
-        private void SetRule()
+        private void SetModalityRule()
         {
             _subject = "user";
             _verb = modality.ToString();

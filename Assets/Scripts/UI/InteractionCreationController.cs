@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.MixedReality.Toolkit.Input;
 using Microsoft.MixedReality.Toolkit.SpatialManipulation;
+using Microsoft.MixedReality.Toolkit.UX;
 using TMPro;
 using UI.RuleEditor;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 using Object = UnityEngine.Object;
 
 namespace UI
@@ -61,9 +63,12 @@ namespace UI
         
         
         //Recording
-        private List<ECAEvent> _events = new();
+        private List<ECAEvent> _modalityEvents = new();
+        private List<ECAEvent> _actionEvents = new();
         public GameObject ruleEditorPlate;
-        public GameObject ruleCubePrefab;
+        public GameObject modalityRuleCubePrefab;
+        public GameObject actionRuleCubePrefab;
+        public GameObject actionRuleCubePrefabVariant;
         public GameObject cubePlate;
         public GameObject screenshotCamera;
         private ScreenshotCamera _screenshotCamera;
@@ -194,7 +199,7 @@ namespace UI
             HideModalitiesBubble("Touch");
             
             //Microgesture listener
-            WsClient.StartSocket(_events);
+            WsClient.StartSocket(_modalityEvents);
         }
 
         private void ActivateLaserModality()
@@ -282,8 +287,8 @@ namespace UI
             screenshotCamera.SetActive(false);
 
             generalUIController.SetDebugText("Recording stopped.");
-            generalUIController.HideDebugPanel();
-            generalUIController.HideRadialMenu();
+            
+            generalUIController.AddCombineRulesButtonToRadialMenu();
             
             if(categoryMenu.activeSelf)
                 categoryMenu.SetActive(false);
@@ -291,6 +296,19 @@ namespace UI
 
             DeActivateCurrentModality();
             HideModalitiesBubbles();
+
+        }
+
+        public void ActivateCombineRulesMode()
+        {
+            if (_modalityEvents.Count == 0 && _actionEvents.Count == 0)
+            {
+                generalUIController.SetDebugText("No recorded actions, please use the record button to record actions");
+                return;
+            }
+                
+            generalUIController.HideDebugPanel();
+            generalUIController.HideRadialMenu();
             
             //Set the rule plate visible
             ruleEditorPlate.SetActive(true);
@@ -300,7 +318,8 @@ namespace UI
 
             //Generate the cubes using the list of events
             _originalPositions.Clear();
-            _originalPositions = Utils.GenerateCubesFromEventList(_events, ruleCubePrefab, cubePlate);
+            _originalPositions = Utils.GenerateCubesFromEventList(_modalityEvents, _actionEvents, 
+                modalityRuleCubePrefab, actionRuleCubePrefab, actionRuleCubePrefabVariant, cubePlate);
 
             removableBarrier.SetActive(false);
             
@@ -310,6 +329,86 @@ namespace UI
         }
 
         public void StartRecording()
+        {
+            //Make the record button not interactable
+            StopButton.SetActive(true);
+            RecordButton.SetActive(false);
+            
+            switch (generalUIController.UIstate)
+            {
+                case GeneralUIController.UIState.NewRule:
+                    RecordRule();
+                    break;
+                case GeneralUIController.UIState.EditMode:
+                    RecordAction();
+                    break;
+            }
+        }
+
+        public void RecordAction()
+        {
+            generalUIController.SetDebugText("Recording started.");
+
+            List<GameObject> activeButtons = generalUIController.GetActiveButtons();
+            //Remove the record button from this list
+            activeButtons.Remove(activeButtons.FirstOrDefault(x => x.name == "RecordButton"));
+            
+            _actionEvents.Clear();
+            
+            screenshotCamera.SetActive(true);
+            
+            //For each other button, add a listener
+            foreach (var button in activeButtons)
+            {
+                AddButtonsListener(button);
+            }
+            
+            AddButtonsListenerToPaintButtons();
+        }
+
+        public void AddButtonsListenerToPaintButtons()
+        {
+            List<GameObject> colors = editModeController.colors;
+            foreach (var color in colors)
+            {
+                PressableButton pressableButton = color.GetComponent<PressableButton>();
+                
+                pressableButton.OnClicked.AddListener( ()=>
+                {
+                    GameObject selectedObject = editModeController.SelectedObject;
+                    ECAEvent ecaEvent = new ECAEvent(selectedObject, "change color", color.name);
+                    if (!_actionEvents.Contains(ecaEvent))
+                    {
+                        _actionEvents.Add(ecaEvent);
+                        Debug.Log(ecaEvent);
+                        PrepareForActionScreenShot(selectedObject);
+                    }
+                });
+            }
+        }
+        public void AddButtonsListener(GameObject button)
+        {
+            PressableButton pressableButton = button.GetComponent<PressableButton>();
+            //TODO rimuovere questa oscenità
+            if (button.name != "Paint Button")
+            {
+                pressableButton.OnClicked.AddListener( ()=>
+                {
+                    GameObject selectedObject = editModeController.SelectedObject;
+                    ECAEvent ecaEvent = Utils.GetActionFromButton(button, selectedObject);
+                    if (!_actionEvents.Contains(ecaEvent))
+                    {
+                        _actionEvents.Add(ecaEvent);
+                        Debug.Log(ecaEvent);
+                        generalUIController.SetDebugText(ecaEvent.ToString());
+                        PrepareForActionScreenShot(selectedObject);
+                    }
+                });
+            }
+            
+        }
+
+        public void RecordRule()
         {
             generalUIController.SetDebugText("Recording started. Please, interact with an object");
             
@@ -321,15 +420,11 @@ namespace UI
             }
             
             //Clean the event list
-            _events.Clear();
+            _modalityEvents.Clear();
             
             //Alert WsClient that we are recording
             WsClient.IsRecording = true;
-            
-            //Make the record button not interactable
-            StopButton.SetActive(true);
-            RecordButton.SetActive(false);
-            
+
             //Activate screenshot camera
             screenshotCamera.SetActive(true);
 
@@ -337,7 +432,6 @@ namespace UI
             {
                 AddListener(go);
             }
-
         }
 
         private void AddListener(ObjectManipulator manipulator)
@@ -409,10 +503,10 @@ namespace UI
                 
                 //Note: event should be added before starting the coroutine
                 ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Headgaze, "Hover Entered");
-                if (!_events.Contains(ecaEvent))
+                if (!_modalityEvents.Contains(ecaEvent))
                 {
-                    _events.Add(ecaEvent);
-                    PrepareForScreenshot(manipulator.gameObject, Modalities.Headgaze);
+                    _modalityEvents.Add(ecaEvent);
+                    PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Headgaze);
                 }
                 
                 generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
@@ -425,10 +519,10 @@ namespace UI
                 Debug.Log(manipulator.gameObject.name + " Hover exited");
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Hover exited");
                 ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Headgaze, "Hover Exited");
-                if (!_events.Contains(ecaEvent))
+                if (!_modalityEvents.Contains(ecaEvent))
                 {
-                    _events.Add(ecaEvent);
-                    PrepareForScreenshot(manipulator.gameObject, Modalities.Headgaze);
+                    _modalityEvents.Add(ecaEvent);
+                    PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Headgaze);
                 }
             });
         }
@@ -446,10 +540,10 @@ namespace UI
                 
                 //Note: event should be added before starting the coroutine
                 ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Entered");
-                if (!_events.Contains(ecaEvent))
+                if (!_modalityEvents.Contains(ecaEvent))
                 {
-                    _events.Add(ecaEvent);
-                    PrepareForScreenshot(manipulator.gameObject, Modalities.Laser);
+                    _modalityEvents.Add(ecaEvent);
+                    PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Laser);
                 }
 
                 generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
@@ -464,10 +558,10 @@ namespace UI
                 
                 //Note: event should be added before starting the coroutine
                 ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Exited");
-                if (!_events.Contains(ecaEvent))
+                if (!_modalityEvents.Contains(ecaEvent))
                 {
-                    _events.Add(ecaEvent);
-                    PrepareForScreenshot(manipulator.gameObject, Modalities.Laser);
+                    _modalityEvents.Add(ecaEvent);
+                    PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Laser);
                 }
 
                 //categoryMenu.SetActive(false);
@@ -484,10 +578,10 @@ namespace UI
                 
                 //Note: event should be added before starting the coroutine
                 ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Touch, "Clicked");
-                if (!_events.Contains(ecaEvent))
+                if (!_modalityEvents.Contains(ecaEvent))
                 {
-                    _events.Add(ecaEvent);
-                    PrepareForScreenshot(manipulator.gameObject, Modalities.Touch);
+                    _modalityEvents.Add(ecaEvent);
+                    PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Touch);
                 }
 
                 generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
@@ -502,10 +596,10 @@ namespace UI
                 
                 //Note: event should be added before starting the coroutine
                 ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Touch, "Select entered");
-                if (!_events.Contains(ecaEvent))
+                if (!_modalityEvents.Contains(ecaEvent))
                 {
-                    _events.Add(ecaEvent);
-                    PrepareForScreenshot(manipulator.gameObject, Modalities.Touch);
+                    _modalityEvents.Add(ecaEvent);
+                    PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Touch);
                 }
                 
                 categoryMenu.SetActive(true);
@@ -519,20 +613,20 @@ namespace UI
                 //Note: event should be added before starting the coroutine
                 //Add the event only if it doesn't exist already
                 ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Touch, "Select exited");
-                if (!_events.Contains(ecaEvent))
+                if (!_modalityEvents.Contains(ecaEvent))
                 {
-                    _events.Add(ecaEvent);
-                    PrepareForScreenshot(manipulator.gameObject, Modalities.Touch);
+                    _modalityEvents.Add(ecaEvent);
+                    PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Touch);
                 }
                 //categoryMenu.SetActive(false);
             });
         }
 
-        public void PrepareForScreenshot(GameObject gameObject, Modalities modality)
+        public void PrepareForModalityScreenshot(GameObject gameObject, Modalities modality)
         {
             HideModalitiesBubbles();
             editModeController.ShowHideRadialMenu(false);
-            _screenshotCamera.TakeScreenshot(gameObject, modality, _events.Last());
+            _screenshotCamera.TakeModalityScreenshot(gameObject, modality, _modalityEvents.Last());
             ShowModalitiesBubblesExceptModality();
             editModeController.ShowHideRadialMenu(true);
 
@@ -551,8 +645,13 @@ namespace UI
 
             Utils.ResetCubeContainers();
         }
-        
-        
+
+        public void PrepareForActionScreenShot(GameObject gameObject)
+        {
+            editModeController.ShowHideRadialMenu(false);
+            _screenshotCamera.TakeActionScreenshot(gameObject, _actionEvents.Last());
+            editModeController.ShowHideRadialMenu(true);
+        }
 
     }
 }

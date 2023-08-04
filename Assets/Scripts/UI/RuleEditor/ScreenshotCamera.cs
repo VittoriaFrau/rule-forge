@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UI.RuleEditor
@@ -10,15 +11,19 @@ namespace UI.RuleEditor
         public GameObject interactablesContainer;
         public int resWidth = 2550; 
         public int resHeight = 2550;
+        private List<GameObject> interactableGameObjects;
 
         private void Start()
         {
             secondaryCamera = this.GetComponent<Camera>();
             mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+            interactableGameObjects = new List<GameObject>();
         }
 
-        public void TakeScreenshot(GameObject gameObject, InteractionCreationController.Modalities modality, ECAEvent ecaEvent)
+        public void TakeModalityScreenshot(GameObject gameObject, InteractionCreationController.Modalities modality, ECAEvent ecaEvent)
         {
+            GetInteractableGameObjects();
+            
             HideOtherGameobjects(gameObject);
             
             switch (modality)
@@ -36,6 +41,15 @@ namespace UI.RuleEditor
                     break;
             }
 
+            ShowGameobjects(gameObject);
+        }
+
+        public void TakeActionScreenshot(GameObject gameObject, ECAEvent ecaEvent)
+        {
+            GetInteractableGameObjects();
+            HideOtherGameobjects(gameObject);
+            PositionSecondaryCameraInFrontOfObject(gameObject, secondaryCamera, mainCamera);
+            CaptureImageFromCamera(secondaryCamera, ecaEvent);
             ShowGameobjects(gameObject);
         }
 
@@ -65,9 +79,9 @@ namespace UI.RuleEditor
         private void HideOtherGameobjects(GameObject gameObject)
         {
             //Hide all the other objects except the one we are capturing to take the screenshot
-            for (int i = 0; i < interactablesContainer.transform.childCount; i++)
+            for (int i = 0; i < interactableGameObjects.Count; i++)
             {
-                GameObject child = interactablesContainer.transform.GetChild(i).gameObject;
+                GameObject child = interactableGameObjects[i];
                 if (child != gameObject)
                 {
                     child.SetActive(false);
@@ -77,9 +91,9 @@ namespace UI.RuleEditor
 
         private void ShowGameobjects(GameObject gameObject)
         {
-            for (int i = 0; i < interactablesContainer.transform.childCount; i++)
+            for (int i = 0; i < interactableGameObjects.Count; i++)
             {
-                GameObject child = interactablesContainer.transform.GetChild(i).gameObject;
+                GameObject child = interactableGameObjects[i];
                 if(child != gameObject)
                     child.SetActive(true);
             }
@@ -119,6 +133,19 @@ namespace UI.RuleEditor
             RenderTexture.active = null;
             Destroy(rt);
             ecaEvent.Texture = screenShot;
+        }
+
+        /**
+         * Updates the list of the current interactable gameobjects
+         */
+        public void GetInteractableGameObjects()
+        {
+            interactableGameObjects.Clear();
+            for (int i = 0; i < interactablesContainer.transform.childCount; i++)
+            {
+                GameObject child = interactablesContainer.transform.GetChild(i).gameObject;
+                interactableGameObjects.Add(child);
+            }
         }
     }
 }
