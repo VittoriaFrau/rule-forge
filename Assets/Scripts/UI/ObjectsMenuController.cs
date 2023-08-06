@@ -119,11 +119,15 @@ public class ObjectsMenuController : MonoBehaviour
         }
     }
 
-    public void NewMusic(string music)
+    public void NewMusic(string musicString)
     {
         var transform1 = mainCamera.transform;
-        Instantiate(Utils.GetPrefabFromString(music, musicPrefabs),transform1.position + transform1.forward*2, Quaternion.identity)
-            .transform.parent = interactables.transform;
+        var go = Instantiate(Utils.GetPrefabFromString(musicString, musicPrefabs),
+            transform1.position + transform1.forward * 2,
+            transform1.rotation * Quaternion.Euler(0f, 180f, 0f));
+        go.transform.parent = interactables.transform;
+        //go.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        //go.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
     }
     public void DeActivateObjectsMenu()
     {

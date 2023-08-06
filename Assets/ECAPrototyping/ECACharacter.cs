@@ -93,17 +93,11 @@ namespace ECAPrototyping.RuleEngine
         {
             animator.SetBool("isWaving", true);
         }
-        
+
         [Action(typeof(ECAObject), "dance", typeof(YesNo))]
         public void Dancing(Animator animator)
         {
             animator.SetBool("isDancing", true);
-        }
-        
-        [Action(typeof(ECAObject), "get dressed", typeof(YesNo))]
-        public void getDressed()
-        {
-            
         }
 
 

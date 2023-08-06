@@ -5,23 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8549fefb-f71a-4278-af6b-67427dad7c5d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/DebugHelp.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/DebugHelp.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RuleManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RuleManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.rule-forge.dir/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.rule-forge.dir/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/Image_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/Image_0.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/Image_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/Image_1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/Image_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/Image_2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/piano.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/piano.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/piano.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/piano.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/RuleCubeLevelTwo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/RuleCubeLevelTwo.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InteractionCreationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InteractionCreationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECACharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECACharacter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Prefabs/High Quality/Foliage/Mushroom/mushroom.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Prefabs/High Quality/Foliage/Mushroom/mushroom.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Prefabs/High Quality/Sign/sign.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Prefabs/High Quality/Sign/sign.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Prefabs/High Quality/Stone/forestpack_stone_large_1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Prefabs/High Quality/Stone/forestpack_stone_large_1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Prefabs/High Quality/Stone/stone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Prefabs/High Quality/Stone/stone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Prefabs/High Quality/Tree/Fir/tree.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Prefabs/High Quality/Tree/Fir/tree.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/scenaGador.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/scenaGador.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ObjectsMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ObjectsMenuController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/CubeContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/CubeContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/CubeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/CubeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RepositionRulePlate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RepositionRulePlate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Prototypation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Prototypation.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,9 +99,9 @@
   },
   &quot;keyToStringList&quot;: {
     &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Vittoria\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Vittoria\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Vittoria\\AppData\\Local\\Symbols\\src&quot;
+      &quot;C:\\Users\\gador\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\gador\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\gador\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
 }</component>
@@ -184,6 +188,8 @@
       <workItem from="1690879009482" duration="8032000" />
       <workItem from="1690962454388" duration="18101000" />
       <workItem from="1691052005423" duration="5037000" />
+      <workItem from="1691135771612" duration="7803000" />
+      <workItem from="1691311225376" duration="2679000" />
     </task>
     <task id="LOCAL-00001" summary="checkComponents added">
       <created>1686653774676</created>
@@ -302,40 +308,19 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/MergedCubeController.cs</url>
           <line>63</line>
-          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\RuleEditor\MergedCubeController.cs" initialLine="63" containingFunctionPresentation="Method 'DetachCubes'">
-            <startOffsets>
-              <option value="1937" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1963" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\RuleEditor\MergedCubeController.cs" initialLine="63" containingFunctionPresentation="Method 'DetachCubes'" />
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs</url>
           <line>281</line>
-          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="205" containingFunctionPresentation="Method 'RemoveTextFromCubePosition'">
-            <startOffsets>
-              <option value="11523" />
-            </startOffsets>
-            <endOffsets>
-              <option value="11618" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="205" containingFunctionPresentation="Method 'RemoveTextFromCubePosition'" />
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/CubeController.cs</url>
           <line>133</line>
-          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\RuleEditor\CubeController.cs" initialLine="132" containingFunctionPresentation="Method 'MergeCubes'">
-            <startOffsets>
-              <option value="4637" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4790" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\RuleEditor\CubeController.cs" initialLine="132" containingFunctionPresentation="Method 'MergeCubes'" />
           <option name="timeStamp" value="61" />
         </line-breakpoint>
       </breakpoints>

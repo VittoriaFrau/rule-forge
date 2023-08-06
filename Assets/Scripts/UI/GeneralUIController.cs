@@ -16,6 +16,7 @@ namespace UI
         public List<GameObject> editingButtonsTMP;
         public List<GameObject> ruleButtons;
         public List<GameObject> characterButtons;
+        public List<GameObject> musicButtons;
         public GameObject closeButton;
         public GameObject eventHandler;
         private EditModeController _editModeController;

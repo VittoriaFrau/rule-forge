@@ -85,8 +85,12 @@ namespace UI
                 if (gameObject.GetComponent<ECACharacter>() != null)
                 {
                     _generalUIController.editingButtonsTMP.AddRange(_generalUIController.characterButtons);
-                    
-                }   
+                }
+
+                if (gameObject.GetComponent<ECAMusic>() != null)
+                {
+                    _generalUIController.editingButtonsTMP.AddRange(_generalUIController.musicButtons);
+                }
                 action_executed = true;
             }
             return _generalUIController.editingButtonsTMP;
