@@ -303,8 +303,6 @@ namespace ECAPrototyping.RuleEngine
             return actions;
         }
 
-        //TODO: Overload dei metodi ListActions
-
         ///<summary>
         ///<c>ListActions</c> returns all the ActionAttribute tagged variables. 
         ///<para/>

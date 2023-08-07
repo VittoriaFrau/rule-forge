@@ -5,23 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8549fefb-f71a-4278-af6b-67427dad7c5d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAFloor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAFloor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECALight.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECALight.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECASkybox.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECASkybox.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECACharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECACharacter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAEnvironment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAEnvironment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAFood.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAMusic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAMusic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAScene.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/Utils/ECARules4AllType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/Utils/ECARules4AllType.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/scenaGador.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/scenaGador.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ObjectsMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ObjectsMenuController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/EditModeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/EditModeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Prototypation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Prototypation.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,8 +34,10 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/11d97693183d4a6bb35c29ae7882c66b81b600/ab/d19500ee/EditorApplication.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/e2/b5fb9db0/Component.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75633565436c42f0a6426b33f0132ade46a800/50/4bff7216/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f8507cae17da4a048c26c1ad6a304248574b88/3b/eb16d276/AttributeTargets.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RepositionRulePlate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.core@8d3eae7b2801/Interactables/StatefulInteractable.cs" root0="SKIP_HIGHLIGHTING" />
@@ -186,7 +176,7 @@
       <workItem from="1691052005423" duration="5037000" />
       <workItem from="1691135771612" duration="7803000" />
       <workItem from="1691311225376" duration="2679000" />
-      <workItem from="1691394722159" duration="3645000" />
+      <workItem from="1691394722159" duration="11768000" />
     </task>
     <task id="LOCAL-00001" summary="checkComponents added">
       <created>1686653774676</created>
@@ -298,47 +288,48 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
-          <line>321</line>
-          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="321" containingFunctionPresentation="Method 'ListActionsAttribute'">
-            <startOffsets>
-              <option value="12166" />
-            </startOffsets>
-            <endOffsets>
-              <option value="12209" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
-          <line>323</line>
-          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="323" containingFunctionPresentation="Method 'ListActionsAttribute'">
-            <startOffsets>
-              <option value="12240" />
-            </startOffsets>
-            <endOffsets>
-              <option value="12292" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
-          <line>368</line>
+          <line>366</line>
           <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="368" containingFunctionPresentation="Method 'ListActionsAttribute'">
             <startOffsets>
-              <option value="13927" />
+              <option value="13878" />
             </startOffsets>
             <endOffsets>
-              <option value="13928" />
+              <option value="13879" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/EditModeController.cs</url>
+          <line>204</line>
+          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\Scripts\UI\EditModeController.cs" initialLine="203" containingFunctionPresentation="Method 'CreateAndPublishAction'">
+            <startOffsets>
+              <option value="7018" />
+            </startOffsets>
+            <endOffsets>
+              <option value="7019" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/EditModeController.cs</url>
+          <line>205</line>
+          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\Scripts\UI\EditModeController.cs" initialLine="204" containingFunctionPresentation="Method 'CreateAndPublishAction'">
+            <startOffsets>
+              <option value="7032" />
+            </startOffsets>
+            <endOffsets>
+              <option value="7051" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="93" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="Type#UnityEngine.Object" memberName="name" />
         <PinnedItemInfo parentTag="Type#System.Collections.Generic.List`1" memberName="Count" />
       </pinned-members>
     </pin-to-top-manager>

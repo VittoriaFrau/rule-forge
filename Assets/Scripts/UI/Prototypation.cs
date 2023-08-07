@@ -7,7 +7,6 @@ using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
-using Action = ECAPrototyping.RuleEngine.Action;
 
 namespace UI
 {
@@ -18,8 +17,7 @@ namespace UI
         private GeneralUIController _generalUIController;
         private InteractionCreationController _interactionCreationController;
         private GameObject eventHandler;
-        private RuleEngine _ruleEngine;
-        bool action_executed;
+        private bool action_executed;
         
         private void Start()
         {
@@ -28,9 +26,6 @@ namespace UI
             _objectManipulator = GetComponent<ObjectManipulator>();
             _generalUIController = eventHandler.GetComponent<GeneralUIController>();
             _interactionCreationController = eventHandler.GetComponent<InteractionCreationController>();
-            _ruleEngine = RuleEngine.GetInstance();
-            //CheckActionsAttribute(GameObject.Find("animal_people_wolf_1"));
-            _ruleEngine.ListActionsAttribute(GameObject.Find("wolf"));
 
             /*if (_editModeController.EditMode)
             {
@@ -63,16 +58,6 @@ namespace UI
             }
         }
         
-        //Function to check all the Action attributes of the selected object 
-        public List<ActionAttribute> CheckActionsAttribute(GameObject gameObject)
-        {
-            List<ActionAttribute> list = new List<ActionAttribute>();
-            if (gameObject.GetComponents<ECAObject>() != null)
-            {
-                list.AddRange(_ruleEngine.ListActionsAttribute(gameObject));
-            }
-            return list;
-        }
 
         //Function to check if the object is ECA Food/Character/Environment (only for the fist time I select the object)
         public List<GameObject> CheckECAObject(GameObject gameObject)

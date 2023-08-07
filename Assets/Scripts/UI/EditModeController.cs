@@ -6,6 +6,7 @@ using Microsoft.MixedReality.Toolkit.SpatialManipulation;
 using Microsoft.MixedReality.Toolkit.UX;
 using TMPro;
 using UnityEngine;
+using Action = ECAPrototyping.RuleEngine.Action;
 
 namespace UI
 {
@@ -28,6 +29,8 @@ namespace UI
         public GameObject colorPalette;
         private GameObject selectedObject;
         private Animator _animator;
+        private EventBus eventBus;
+        private RuleEngine _ruleEngine;
         public GameObject SelectedObject
         {
             get => selectedObject;
@@ -37,11 +40,14 @@ namespace UI
         private void Start()
         {
             EditMode = false;
+            
             canvas = GameObject.FindGameObjectWithTag("Canvas");
             if(radialMenu==null) radialMenu = canvas.transform.Find("RadialMenu").gameObject;
             /*text = textGo.GetComponent<TextMeshPro>();*/
             generalUIController = this.gameObject.GetComponent<GeneralUIController>();
             radialMenu.SetActive(true);
+            _ruleEngine = RuleEngine.GetInstance();
+            eventBus = EventBus.GetInstance();
         }
         
         public void ActivateEditMode()
@@ -120,8 +126,7 @@ namespace UI
                 button.OnClicked.RemoveAllListeners();
             }
         }
-
-        //Funzione showHide
+        
         public void ShowObject()
         {
             selectedObject.SetActive(true);
@@ -192,5 +197,39 @@ namespace UI
             }
         }
         
+        /// <summary>
+        /// <b> CreateAndPublishAction </b> creates an action and publishes it to the event bus
+        /// </summary>
+        /// <param name="actionName"></param>
+        public void CreateAndPublishAction(string actionName)
+        {
+            switch (actionName)
+            {
+                case "Show":
+                    eventBus.Publish(new Action(SelectedObject, "shows"));
+                    break;
+                
+                case "Hide":
+                    eventBus.Publish(new Action(SelectedObject, "hide"));
+                    break;
+                
+                case "Delete":
+                    eventBus.Publish(new Action(SelectedObject, "delete"));
+                    break;
+                
+                case "Gravity":
+                    eventBus.Publish(new Action(SelectedObject, "gravityON"));
+                    break;
+                
+                case "WaveHand":
+                    eventBus.Publish(new Action(SelectedObject, "wave", "hand", "to", typeof(Boolean)));
+                    break;
+                
+                case "Dance":
+                    eventBus.Publish(new Action(SelectedObject, "dance"));
+                    break;
+                    
+            }
+        }
     }
 }

@@ -111,7 +111,7 @@ namespace ECAPrototyping.RuleEngine
         
         /// <summary>
         /// <b>GravityON</b> sets to true the gravity.
-        [Action(typeof(ECAObject), "gravityON", typeof(YesNo))]
+        [Action(typeof(ECAObject), "gravityON")]
         public void GravityON()
         {
             isUsingGravity = ECABoolean.YES;
@@ -120,7 +120,7 @@ namespace ECAPrototyping.RuleEngine
         
         /// <summary>
         /// <b>GravityOFF</b> sets to false the gravity.
-        [Action(typeof(ECAObject), "gravityOFF", typeof(YesNo))]
+        [Action(typeof(ECAObject), "gravityOFF")]
         public void GravityOFF()
         {
             isUsingGravity = ECABoolean.NO;
@@ -135,6 +135,7 @@ namespace ECAPrototyping.RuleEngine
             this.gameObject.GetComponent<Rigidbody>().useGravity = isUsingGravity;
         }
 
+        [Action(typeof(ECAObject), "delete")]
         
         /// <summary>
         /// <b>delete_object</b> deletes the object from the scene.
