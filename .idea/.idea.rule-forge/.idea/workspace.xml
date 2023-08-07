@@ -5,25 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8549fefb-f71a-4278-af6b-67427dad7c5d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/Image_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/Image_0.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/Image_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/Image_1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/Image_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/Image_2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/piano.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/piano.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/piano.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/piano.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAFloor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAFloor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECALight.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECALight.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECASkybox.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECASkybox.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECACharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECACharacter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Prefabs/High Quality/Foliage/Mushroom/mushroom.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Prefabs/High Quality/Foliage/Mushroom/mushroom.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Prefabs/High Quality/Sign/sign.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Prefabs/High Quality/Sign/sign.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Prefabs/High Quality/Stone/forestpack_stone_large_1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Prefabs/High Quality/Stone/forestpack_stone_large_1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Prefabs/High Quality/Stone/stone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Prefabs/High Quality/Stone/stone.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Prefabs/High Quality/Tree/Fir/tree.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Prefabs/High Quality/Tree/Fir/tree.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAEnvironment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAEnvironment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAFood.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAMusic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAMusic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/Utils/ECARules4AllType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/Utils/ECARules4AllType.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/scenaGador.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/scenaGador.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ObjectsMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ObjectsMenuController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Prototypation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Prototypation.cs" afterDir="false" />
     </list>
@@ -49,10 +46,10 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/Vittoria/RiderProjects/rule-forge/Assets/Scripts/UI/RuleEditor/CubeContainer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/11d97693183d4a6bb35c29ae7882c66b81b600/ab/d19500ee/EditorApplication.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/e2/b5fb9db0/Component.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f8507cae17da4a048c26c1ad6a304248574b88/3b/eb16d276/AttributeTargets.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RepositionRulePlate.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Vittoria/RiderProjects/rule-forge/Assets/XR/Settings/OpenXR Package Settings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Vittoria/RiderProjects/rule-forge/Assets/XR/Settings/OpenXR Package Settings.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.core@8d3eae7b2801/Interactables/StatefulInteractable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.core@8d3eae7b2801/Subsystems/MRTKLifecycleManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.spatialmanipulation@a80535c64d68/BoundsControl/Visuals/SqueezableBoxVisuals.cs" root0="SKIP_HIGHLIGHTING" />
@@ -65,7 +62,6 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/Interactors/XRRayInteractor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/XRInteractionManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.openxr@1.5.3/Runtime/OpenXRRestarter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Vittoria/RiderProjects/rule-forge/ProjectSettings/TagManager.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -140,10 +136,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="28368">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="28368" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -190,6 +186,7 @@
       <workItem from="1691052005423" duration="5037000" />
       <workItem from="1691135771612" duration="7803000" />
       <workItem from="1691311225376" duration="2679000" />
+      <workItem from="1691394722159" duration="3645000" />
     </task>
     <task id="LOCAL-00001" summary="checkComponents added">
       <created>1686653774676</created>
@@ -281,30 +278,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
-          <line>334</line>
-          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="334" containingFunctionPresentation="Method 'ListActionsAttribute'" />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
-          <line>361</line>
-          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="367" containingFunctionPresentation="Method 'ListActionsAttribute'" />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
-          <line>349</line>
-          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="349" containingFunctionPresentation="Method 'ListActionsAttribute'" />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
-          <line>357</line>
-          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="357" containingFunctionPresentation="Method 'ListActionsAttribute'" />
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/MergedCubeController.cs</url>
           <line>63</line>
@@ -323,7 +296,51 @@
           <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\RuleEditor\CubeController.cs" initialLine="132" containingFunctionPresentation="Method 'MergeCubes'" />
           <option name="timeStamp" value="61" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
+          <line>321</line>
+          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="321" containingFunctionPresentation="Method 'ListActionsAttribute'">
+            <startOffsets>
+              <option value="12166" />
+            </startOffsets>
+            <endOffsets>
+              <option value="12209" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
+          <line>323</line>
+          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="323" containingFunctionPresentation="Method 'ListActionsAttribute'">
+            <startOffsets>
+              <option value="12240" />
+            </startOffsets>
+            <endOffsets>
+              <option value="12292" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
+          <line>368</line>
+          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="368" containingFunctionPresentation="Method 'ListActionsAttribute'">
+            <startOffsets>
+              <option value="13927" />
+            </startOffsets>
+            <endOffsets>
+              <option value="13928" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Type#System.Collections.Generic.List`1" memberName="Count" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

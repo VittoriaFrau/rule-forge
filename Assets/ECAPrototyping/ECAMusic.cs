@@ -21,29 +21,46 @@ namespace ECAPrototyping.RuleEngine
         /// </summary>
         private Renderer[] gameRenderer;
         
+        /// <summary>
+        /// <b> Color </b> is the color of the object 
+        /// </summary>
+        [StateVariable("color", ECARules4AllType.Color)] 
+        public Color color;
         
         /// <summary>
         /// <b>isPlaying</b> is a boolean that indicates if the object is reproducing music.
         /// </summary>
         [StateVariable("onOff", ECARules4AllType.Boolean)] 
-        public ECABoolean isPlaying = new ECABoolean(ECABoolean.BoolType.YES);
+        public ECABoolean isPlaying = new ECABoolean(ECABoolean.BoolType.ON);
         
 
         private void Awake()
         {
             gameRenderer = this.gameObject.GetComponents<Renderer>();
-            UpdateModality();
+            color = gameRenderer[0].material.color;
+            UpdateMode();
+            UpdateVolume();
         }
         
 
         /// <summary>
-        /// <b>onOff</b> turns on and off the object. 
+        /// <b>ModeON</b> turns on the music. 
         /// </summary>
         [Action(typeof(ECAObject), "on/off")]
-        public void onOff()
+        public void ModeON()
         {
-            isPlaying.Assign(ECABoolean.BoolType.YES);
-            UpdateModality();
+            isPlaying.Assign(ECABoolean.BoolType.ON);
+            UpdateMode();
+        }
+        
+        /// <summary>
+        /// <b>ModeOFF</b> turns off the music. 
+        /// </summary>
+        [Action(typeof(ECAObject), "on/off")]
+        public void ModeOFF()
+        {
+            isPlaying.Assign(ECABoolean.BoolType.OFF);
+            UpdateMode();
         }
         
         /// <summary>
@@ -57,7 +74,7 @@ namespace ECAPrototyping.RuleEngine
         }
 
 
-        private void UpdateModality()
+        private void UpdateMode()
         {
             this.gameObject.SetActive(isPlaying);
         }

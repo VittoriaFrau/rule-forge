@@ -30,8 +30,8 @@ namespace UI
             _interactionCreationController = eventHandler.GetComponent<InteractionCreationController>();
             _ruleEngine = RuleEngine.GetInstance();
             //CheckActionsAttribute(GameObject.Find("animal_people_wolf_1"));
-            
-            
+            _ruleEngine.ListActionsAttribute(GameObject.Find("wolf"));
+
             /*if (_editModeController.EditMode)
             {
                 //Show the PiMenu when the object is selected
@@ -52,7 +52,7 @@ namespace UI
                 _editModeController.ShowHideRadialMenu(true);
                 _editModeController.SelectedObject = gameObject;
                 _generalUIController.SelectedObject(gameObject.name);
-                CheckActionsAttribute(_editModeController.SelectedObject);
+                
                 if (_generalUIController.UIstate == GeneralUIController.UIState.EditMode)
                 {
                     _generalUIController.radialMenu.getListButtons(CheckECAObject(_editModeController.SelectedObject), 
@@ -64,17 +64,14 @@ namespace UI
         }
         
         //Function to check all the Action attributes of the selected object 
-        public void CheckActionsAttribute(GameObject gameObject)
+        public List<ActionAttribute> CheckActionsAttribute(GameObject gameObject)
         {
             List<ActionAttribute> list = new List<ActionAttribute>();
             if (gameObject.GetComponents<ECAObject>() != null)
             {
-                Component [] components = gameObject.GetComponents(typeof(MonoBehaviour));
-                foreach (Component component in components)
-                {
-                    list.AddRange(_ruleEngine.ListActionsAttribute(component));
-                }
+                list.AddRange(_ruleEngine.ListActionsAttribute(gameObject));
             }
+            return list;
         }
 
         //Function to check if the object is ECA Food/Character/Environment (only for the fist time I select the object)

@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Security.Cryptography;
 using ECAPrototyping.Utils;
+using Microsoft.MixedReality.Toolkit.UX;
+using UI;
 using UnityEngine;
 
 namespace ECAPrototyping.RuleEngine
@@ -33,12 +35,19 @@ namespace ECAPrototyping.RuleEngine
         [StateVariable("visible", ECARules4AllType.Boolean)] 
         public ECABoolean isVisible = new ECABoolean(ECABoolean.BoolType.YES);
         
+        /// <summary>
+        /// <b> Gravity </b> is a boolean that indicates if the object is affected by gravity.
+        /// </summary>
+        [StateVariable("gravity", ECARules4AllType.Boolean)] 
+        public ECABoolean isUsingGravity = new ECABoolean(ECABoolean.BoolType.NO);
+        
 
         private void Awake()
         {
             gameRenderer = this.gameObject.GetComponents<Renderer>();
             color = gameRenderer[0].material.color;
             UpdateVisibility();
+            UpdateGravity();
         }
         
 
@@ -52,6 +61,7 @@ namespace ECAPrototyping.RuleEngine
             UpdateVisibility();
         }
         
+        
         /// <summary>
         /// <b>Hides</b> makes the object invisible. It makes it invisible if it is not already.
         /// </summary>
@@ -61,7 +71,6 @@ namespace ECAPrototyping.RuleEngine
             isVisible.Assign(ECABoolean.BoolType.NO);
             UpdateVisibility();
         }
-        
         
         
         /// <summary>
@@ -75,6 +84,12 @@ namespace ECAPrototyping.RuleEngine
             UpdateVisibility();
         }
         
+        private void UpdateVisibility()
+        {
+            this.gameObject.SetActive(isVisible);
+        }
+        
+        
         /// <summary>
         /// <b>SetsColor</b> sets the color of the light source to the given value.
         /// </summary>
@@ -87,12 +102,6 @@ namespace ECAPrototyping.RuleEngine
         }
         
         
-        private void UpdateVisibility()
-        {
-            this.gameObject.SetActive(isVisible);
-        }
-        
-        
         public void ChangeColor(string newColor)
         {
             //convert string to color
@@ -100,6 +109,40 @@ namespace ECAPrototyping.RuleEngine
             gameRenderer[0].material.color = color;
         }
         
+        /// <summary>
+        /// <b>GravityON</b> sets to true the gravity.
+        [Action(typeof(ECAObject), "gravityON", typeof(YesNo))]
+        public void GravityON()
+        {
+            isUsingGravity = ECABoolean.YES;
+            UpdateGravity();
+        }
+        
+        /// <summary>
+        /// <b>GravityOFF</b> sets to false the gravity.
+        [Action(typeof(ECAObject), "gravityOFF", typeof(YesNo))]
+        public void GravityOFF()
+        {
+            isUsingGravity = ECABoolean.NO;
+            UpdateGravity();
+        }
 
+        /// <summary>
+        /// <b>UpdateGravity</b> updates the gravity of the object.
+        /// </summary>
+        public void UpdateGravity()
+        {
+            this.gameObject.GetComponent<Rigidbody>().useGravity = isUsingGravity;
+        }
+
+        
+        /// <summary>
+        /// <b>delete_object</b> deletes the object from the scene.
+        /// </summary>
+        /// <param name="obj"> is the object to delete from the scene </param>
+        public void DeleteObject(GameObject obj)
+        {
+            Destroy(obj);
+        }
     }
 }

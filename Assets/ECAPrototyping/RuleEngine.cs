@@ -317,7 +317,13 @@ namespace ECAPrototyping.RuleEngine
         ///</summary>
         public List<ActionAttribute> ListActionsAttribute(GameObject o)
         {
-            return this.ListActionsAttribute(o.GetComponent<MonoBehaviour>());
+            List<ActionAttribute> list = new List<ActionAttribute>();
+            Component [] components = o.GetComponents(typeof(MonoBehaviour));
+            foreach (Component component in components)
+            {
+                list.AddRange(this.ListActionsAttribute(component));
+            }
+            return list;
         }
 
         ///<summary>

@@ -16,14 +16,21 @@ namespace ECAPrototyping.RuleEngine
 
     public class ECAEnvironment : MonoBehaviour
     {
-        [StateVariable("rotation", ECARules4AllType.Rotation)] 
-        public Rotation rotation;
+        /// <summary>
+        /// <b>GameRender</b> is the renderer of the object.
+        /// </summary>
+        private Renderer[] gameRenderer;
         
+        /// <summary>
+        /// <b> Color </b> is the color of the object 
+        /// </summary>
+        [StateVariable("color", ECARules4AllType.Color)] 
+        public Color color;
         
-        [Action(typeof(ECAObject), "grow")]
-        public void Grow()
+        private void Awake()
         {
-            Debug.Log("grow function");
+            gameRenderer = this.gameObject.GetComponents<Renderer>();
+            color = gameRenderer[0].material.color;
         }
     }
 }

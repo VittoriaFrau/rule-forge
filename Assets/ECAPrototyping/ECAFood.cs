@@ -15,6 +15,21 @@ namespace ECAPrototyping.RuleEngine
     [ECARules4All("food")]
     public class ECAFood : MonoBehaviour
     {
-
+        /// <summary>
+        /// <b>GameRender</b> is the renderer of the object.
+        /// </summary>
+        private Renderer[] gameRenderer;
+        
+        /// <summary>
+        /// <b> Color </b> is the color of the object 
+        /// </summary>
+        [StateVariable("color", ECARules4AllType.Color)] 
+        public Color color;
+        
+        private void Awake()
+        {
+            gameRenderer = this.gameObject.GetComponents<Renderer>();
+            color = gameRenderer[0].material.color;
+        }
     }
 }

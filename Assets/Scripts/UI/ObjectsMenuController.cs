@@ -118,7 +118,7 @@ public class ObjectsMenuController : MonoBehaviour
                 break;
         }
     }
-
+    
     public void NewMusic(string musicString)
     {
         var transform1 = mainCamera.transform;
@@ -129,6 +129,7 @@ public class ObjectsMenuController : MonoBehaviour
         //go.GetComponent<Rigidbody>().velocity = Vector3.zero;
         //go.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
     }
+    
     public void DeActivateObjectsMenu()
     {
         foreach (var button in categoryButtons)
