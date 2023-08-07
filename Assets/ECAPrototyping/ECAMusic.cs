@@ -30,7 +30,7 @@ namespace ECAPrototyping.RuleEngine
         /// <summary>
         /// <b>isPlaying</b> is a boolean that indicates if the object is reproducing music.
         /// </summary>
-        [StateVariable("onOff", ECARules4AllType.Boolean)] 
+        [StateVariable("mode", ECARules4AllType.Boolean)] 
         public ECABoolean isPlaying = new ECABoolean(ECABoolean.BoolType.ON);
         
 
@@ -46,8 +46,8 @@ namespace ECAPrototyping.RuleEngine
         /// <summary>
         /// <b>ModeON</b> turns on the music. 
         /// </summary>
-        [Action(typeof(ECAObject), "on/off")]
-        public void ModeON()
+        [Action(typeof(ECAObject), "turnOn")]
+        public void TurnON()
         {
             isPlaying.Assign(ECABoolean.BoolType.ON);
             UpdateMode();
@@ -56,8 +56,8 @@ namespace ECAPrototyping.RuleEngine
         /// <summary>
         /// <b>ModeOFF</b> turns off the music. 
         /// </summary>
-        [Action(typeof(ECAObject), "on/off")]
-        public void ModeOFF()
+        [Action(typeof(ECAObject), "turnOff")]
+        public void TurnOFF()
         {
             isPlaying.Assign(ECABoolean.BoolType.OFF);
             UpdateMode();

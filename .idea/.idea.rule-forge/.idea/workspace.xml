@@ -6,11 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="8549fefb-f71a-4278-af6b-67427dad7c5d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAFloor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAFloor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECALight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECALight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAMusic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAMusic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/scenaGador.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/scenaGador.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/EditModeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/EditModeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Prototypation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Prototypation.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +40,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/e2/b5fb9db0/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75633565436c42f0a6426b33f0132ade46a800/50/4bff7216/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f8507cae17da4a048c26c1ad6a304248574b88/3b/eb16d276/AttributeTargets.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DirectionalLightController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RepositionRulePlate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.core@8d3eae7b2801/Interactables/StatefulInteractable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.core@8d3eae7b2801/Subsystems/MRTKLifecycleManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -176,7 +178,7 @@
       <workItem from="1691052005423" duration="5037000" />
       <workItem from="1691135771612" duration="7803000" />
       <workItem from="1691311225376" duration="2679000" />
-      <workItem from="1691394722159" duration="11768000" />
+      <workItem from="1691394722159" duration="17605000" />
     </task>
     <task id="LOCAL-00001" summary="checkComponents added">
       <created>1686653774676</created>
@@ -298,32 +300,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="80" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/EditModeController.cs</url>
-          <line>204</line>
-          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\Scripts\UI\EditModeController.cs" initialLine="203" containingFunctionPresentation="Method 'CreateAndPublishAction'">
-            <startOffsets>
-              <option value="7018" />
-            </startOffsets>
-            <endOffsets>
-              <option value="7019" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/EditModeController.cs</url>
-          <line>205</line>
-          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\Scripts\UI\EditModeController.cs" initialLine="204" containingFunctionPresentation="Method 'CreateAndPublishAction'">
-            <startOffsets>
-              <option value="7032" />
-            </startOffsets>
-            <endOffsets>
-              <option value="7051" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="93" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

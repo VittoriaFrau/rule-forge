@@ -18,22 +18,22 @@ namespace ECAPrototyping.RuleEngine
         /// <summary>
         /// <b>Renderer</b> is the material of the plane.
         /// </summary>
-        private Renderer planeRenderer;
+        private Renderer renderer;
 
         private void Awake()
         {
-            planeRenderer = GameObject.FindGameObjectWithTag("Plane").GetComponent<Renderer>();
+            renderer = GameObject.FindGameObjectWithTag("Plane").GetComponent<Renderer>();
             
         }
         
-        // <summary>
+        /// <summary>
         /// <b>PlaneMaterial</b> sets the material of the plane, defined by a parameter.
         /// </summary>
         /// <param name="material">The new material to set for the skybox. </param>
-        [Action(typeof(ECAObject), "changes", "material", "to", typeof(Material))]
+        [Action(typeof(ECAObject), "changes", "floor", "to", typeof(Material))]
         public void PlaneMaterial(Material material)
         {
-            planeRenderer.material = material;
+            renderer.material = material;
         }
         
     }

@@ -206,29 +206,115 @@ namespace UI
             switch (actionName)
             {
                 case "Show":
-                    eventBus.Publish(new Action(SelectedObject, "shows"));
+                    _ruleEngine.Add(new Rule(
+                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
+                        new List<Action>
+                        {
+                            new Action(SelectedObject, "shows")
+                        }
+                    ));
                     break;
                 
                 case "Hide":
-                    eventBus.Publish(new Action(SelectedObject, "hide"));
+                    _ruleEngine.Add(new Rule(
+                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
+                        new List<Action>
+                        {
+                            new Action(SelectedObject, "hides")
+                        }
+                    ));
                     break;
                 
                 case "Delete":
-                    eventBus.Publish(new Action(SelectedObject, "delete"));
+                    _ruleEngine.Add(new Rule(
+                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
+                        new List<Action>
+                        {
+                            new Action(SelectedObject, "delete")
+                        }
+                    ));
                     break;
                 
                 case "Gravity":
-                    eventBus.Publish(new Action(SelectedObject, "gravityON"));
+                    _ruleEngine.Add(new Rule(
+                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
+                        new List<Action>
+                        {
+                            new Action(SelectedObject, "gravityON")
+                        }
+                    ));
                     break;
                 
                 case "WaveHand":
-                    eventBus.Publish(new Action(SelectedObject, "wave", "hand", "to", typeof(Boolean)));
+                    _ruleEngine.Add(new Rule(
+                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
+                        new List<Action>
+                        {
+                            new Action(SelectedObject, "waves","hand", "to", SelectedObject)
+                        }
+                    ));
                     break;
                 
                 case "Dance":
-                    eventBus.Publish(new Action(SelectedObject, "dance"));
+                    _ruleEngine.Add(new Rule(
+                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
+                        new List<Action>
+                        {
+                            new Action(SelectedObject, "dance")
+                        }
+                    ));
                     break;
-                    
+                
+                case "TurnOn":
+                    _ruleEngine.Add(new Rule(
+                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
+                        new List<Action>
+                        {
+                            new Action(SelectedObject, "modeON")
+                        }
+                    ));
+                    break;
+                
+                case "TurnOff":
+                    _ruleEngine.Add(new Rule(
+                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
+                        new List<Action>
+                        {
+                            new Action(SelectedObject, "modeOFF")
+                        }
+                    ));
+                    break;
+                
+                case "Volume":
+                    _ruleEngine.Add(new Rule(
+                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
+                        new List<Action>
+                        {
+                            new Action(SelectedObject, "volume")
+                        }
+                    ));
+                    break;
+                
+                case "Skyboxes":
+                    _ruleEngine.Add(new Rule(
+                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
+                        new List<Action>
+                        {
+                            new Action(SelectedObject, "changes", "skybox", "to", SelectedObject)
+                        }
+                    ));
+                    break;
+                
+                case "Floors":
+                    _ruleEngine.Add(new Rule(
+                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
+                        new List<Action>
+                        {
+                            new Action(SelectedObject, "changes", "floor", "to", SelectedObject)
+                        }
+                    ));
+                    break;
+                
             }
         }
     }
