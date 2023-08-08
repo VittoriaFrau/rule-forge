@@ -17,6 +17,14 @@ namespace UI
         private static string canvasStatusUpdate;
         TextMeshProUGUI textMeshPro;
         private static bool serverOpen = false;
+        private static Texture2D[] images = new Texture2D[3];
+        private static List<ECAEvent> microgestureEvents = new List<ECAEvent>();
+
+        public static List<ECAEvent> MicrogestureEvents
+        {
+            get => microgestureEvents;
+            set => microgestureEvents = value;
+        }
 
         public static bool IsRecording
         {
@@ -29,13 +37,17 @@ namespace UI
             canvasStatusUpdate = "";
             debugText = GameObject.FindGameObjectWithTag("debugText");
             textMeshPro = debugText.GetComponent<TextMeshProUGUI>();
+            images[0] = Utils.LoadPNG("Assets/Resources/Icons/Modalities/middle.png");
+            images[1] = Utils.LoadPNG("Assets/Resources/Icons/Modalities/tip.png");
+            images[2] = Utils.LoadPNG("Assets/Resources/Icons/Modalities/base.png");
         }
 
 
-        public static void StartSocket(List<ECAEvent> _events)
+        public static void StartSocket()
         {
             serverOpen = true;
-            
+            MicrogestureEvents.Clear();
+
             ws = new WebSocket("ws://localhost:9000");
             ws.Connect();
             
@@ -48,13 +60,14 @@ namespace UI
                 {
                     Texture2D image = null;
                     //TODO : check when glove if fixed
-                    if(data.Contact.Contains("middle"))
-                        image = Utils.LoadPNG("Assets/Resources/Icons/Modalities/middle.jpeg");
-                    else if(data.Contact.Contains("tip"))
-                        image = Utils.LoadPNG("Assets/Resources/Icons/Modalities/tip.jpeg");
+                    if (data.Contact.Contains("middle"))
+                        image = images[0];
+                    else if (data.Contact.Contains("tip"))
+                        image = images[1];
                     //TODO ask Laurence a new base image 
-                    else image = Utils.LoadPNG("Assets/Resources/Icons/Modalities/base.jpeg");
-                        _events.Add(new ECAEvent(null, InteractionCreationController.Modalities.Microgesture, data.Contact, image));
+                    else image = images[2];
+                    
+                    microgestureEvents.Add(new ECAEvent(null, InteractionCreationController.Modalities.Microgesture, data.Contact, image));
                 }
                 
                 canvasStatusUpdate = "Microgesture: " + data.Contact;

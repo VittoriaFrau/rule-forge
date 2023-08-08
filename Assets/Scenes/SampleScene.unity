@@ -14574,6 +14574,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 514665897}
+        m_TargetAssemblyTypeName: UI.EditModeController, Assembly-CSharp
+        m_MethodName: CreateAndPublishAction
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Show
+          m_BoolArgument: 0
+        m_CallState: 2
   <OnEnabled>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
@@ -21597,6 +21609,7 @@ MonoBehaviour:
   - {fileID: 487743219}
   - {fileID: 22450507}
   - {fileID: 1553845989}
+  musicButtons: []
   closeButton: {fileID: 44437405}
   eventHandler: {fileID: 514665893}
   radialMenu: {fileID: 2871053795529563752}
@@ -21645,7 +21658,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514665893}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e160342e3de42b896c67dd8cc6ad611, type: 3}
   m_Name: 

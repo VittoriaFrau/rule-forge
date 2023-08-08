@@ -93,8 +93,16 @@ namespace UI
         private void SetModalityRule()
         {
             _subject = "user";
-            _verb = modality.ToString();
-            _object = _gameObject.name;
+            if (modality == InteractionCreationController.Modalities.Microgesture)
+            {
+                _verb = "performs";
+                _object = _event;
+            }
+            else
+            {
+                _verb = modality.ToString();
+                _object = _gameObject.name;
+            }
         }
         
         public string Subject
