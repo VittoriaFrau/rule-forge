@@ -136,7 +136,6 @@ namespace ECAPrototyping.RuleEngine
         }
 
         [Action(typeof(ECAObject), "delete")]
-        
         /// <summary>
         /// <b>delete_object</b> deletes the object from the scene.
         /// </summary>

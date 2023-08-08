@@ -22,7 +22,12 @@ namespace ECAPrototyping.RuleEngine
         {
             _intensity = directionalLight.intensity;
         }
-        
+
+        [Action(typeof(ECAObject), "add", "intensity", "to", typeof(float))]
+        public void AddIntensity()
+        {
+            
+        }
         public void UpdateIntensity(float intensity)
         {
             //TODO
