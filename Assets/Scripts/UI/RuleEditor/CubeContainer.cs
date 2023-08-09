@@ -61,7 +61,7 @@ namespace UI.RuleEditor
         private void OnCollisionEnter(Collision collision)
         {
             // Check if collision occurred with a RuleCube and not already instantiating
-            if (collision.gameObject.CompareTag("RuleCubes") && !isInstantiating)
+            if ((collision.gameObject.CompareTag("RuleCubes") || collision.gameObject.CompareTag("ActionRuleCube")) && !isInstantiating)
             {
                 isInstantiating = true;
                 PositionGameObjectInContainer(collision);
@@ -97,7 +97,8 @@ namespace UI.RuleEditor
 
         private void OnCollisionExit(Collision collision)
         {
-            if (collision.gameObject.CompareTag("RuleCubes") && !isInstantiating && !isRemoving)
+            if ((collision.gameObject.CompareTag("RuleCubes") || collision.gameObject.CompareTag("ActionRuleCube"))
+                && !isInstantiating && !isRemoving)
             {
                 isRemoving = true;
                 Destroy(equivalenceInstantiated);

@@ -17,6 +17,13 @@ namespace UI
         private static string canvasStatusUpdate;
         TextMeshProUGUI textMeshPro;
         private static bool serverOpen = false;
+
+        public static bool ServerOpen
+        {
+            get => serverOpen;
+            set => serverOpen = value;
+        }
+
         private static Texture2D[] images = new Texture2D[3];
         private static List<ECAEvent> microgestureEvents = new List<ECAEvent>();
 

@@ -7,7 +7,7 @@ using Microsoft.MixedReality.Toolkit.UX;
 using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using UI;
 using Object = UnityEngine.Object;
 
 namespace UI
@@ -166,7 +166,21 @@ namespace UI
             return result;
         }
 
-        
+        public static void InstantiateObject(string prefabType, List<GameObject> prefabList, Camera mainCamera, Transform interactableTransform)
+        {
+            var transform1 = mainCamera.transform;
+            var go = Object.Instantiate(Utils.GetPrefabFromString(prefabType, prefabList),
+                transform1.position + transform1.forward * 3,
+                Quaternion.identity);
+    
+            go.transform.parent = interactableTransform;
+    
+            Rigidbody rigidbody = go.GetComponent<Rigidbody>();
+            rigidbody.velocity = Vector3.zero;
+            rigidbody.angularVelocity = Vector3.zero;
+            rigidbody.useGravity = true;
+        }
+
         public static ECAEvent GetEventFromCube(GameObject cube)
         {
             ECAEvent e = new ECAEvent(cube);
@@ -346,6 +360,10 @@ namespace UI
             // Define the face names and text labels
             string[] faceNames = { "FrontFaceRule", "TopFaceRule" };
             string[] labelTexts = { e.Subject, e.Verb + " " + e.Event, e.Object };
+            if (e.Modality == InteractionCreationController.Modalities.Microgesture)
+            {
+                labelTexts[1] = e.Verb;
+            }
 
             // Loop through each face and fill the text labels
             foreach (string faceName in faceNames)
@@ -429,7 +447,8 @@ namespace UI
             string ruleDescription = "";
             //Front face
             TextMeshProUGUI [] frontFaceR = GetTextLabelsInCube(cube, "FrontFaceRule");
-            ruleDescription +=  "the " + frontFaceR[0].text + " " + frontFaceR[1].text + " " + frontFaceR[2].text + " " + frontFaceR[2].text + " ";
+            ruleDescription +=  "the " + frontFaceR[0].text + " " + frontFaceR[1].text + " " + frontFaceR[2].text; 
+            // + " " + frontFaceR[2].text + " "
 
             return ruleDescription;
         }

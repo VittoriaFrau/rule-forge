@@ -70,7 +70,7 @@ public class CubeController : MonoBehaviour
     {
         int numberOfCollidingObjects = collision.contactCount;
         
-        if (!isAttached && collision.gameObject.CompareTag("RuleCubes") && numberOfCollidingObjects == 1)
+        if (!isAttached && CheckTags(collision.gameObject) && numberOfCollidingObjects == 1)
         {
             if (!timerStarted)
             {
@@ -84,6 +84,17 @@ public class CubeController : MonoBehaviour
                 MergeCubes(collision.gameObject);
             }
         }
+    }
+
+    //Returns true if the tags are compatibles
+    bool CheckTags(GameObject g1)
+    {
+        if (gameObject.CompareTag("RuleCubes") && g1.gameObject.CompareTag("RuleCubes"))
+        {
+            return true;
+        }
+
+        return false;
     }
     
     private IEnumerator StartCountdown(GameObject otherCube)
