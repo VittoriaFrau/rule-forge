@@ -41,19 +41,24 @@ namespace UI.RuleEditor
             cubePlate = _interactionCreationController.cubePlate;
             
             //Modality events
-            ECAEvent ecaEvent1 = new ECAEvent(obj1, InteractionCreationController.Modalities.Headgaze, "Hover Entered", Texture2D.blackTexture);
+            /*ECAEvent ecaEvent1 = new ECAEvent(obj1, InteractionCreationController.Modalities.Headgaze, "Hover Entered", Texture2D.blackTexture);
             _modalityEvents.Add(ecaEvent1);
 
             ECAEvent ecaEvent2 = new ECAEvent(cheese, InteractionCreationController.Modalities.Touch, "Click", Texture2D.redTexture);
-            _modalityEvents.Add(ecaEvent2);
+            _modalityEvents.Add(ecaEvent2);*/
             
             //Action events
             
-            ECAEvent ecaEvent3 = new ECAEvent(obj1, "change color", "blue", Texture2D.grayTexture);
+            /*ECAEvent ecaEvent3 = new ECAEvent(obj1, "change color", "blue", Texture2D.grayTexture);
             _actionEvents.Add(ecaEvent3);
 
             ECAEvent ecaEvent4 = new ECAEvent(cheese, "Hides", Texture2D.whiteTexture);
-            _actionEvents.Add(ecaEvent4);
+            _actionEvents.Add(ecaEvent4);*/
+            
+            //Microgesture events
+            ECAEvent ecaEvent5 = new ECAEvent(null, InteractionCreationController.Modalities.Microgesture,
+                "middle tip", Utils.LoadPNG("Assets/Resources/Icons/Modalities/middle.png"));
+            _modalityEvents.Add(ecaEvent5);
 
             Utils.GenerateCubesFromEventList(_modalityEvents, _actionEvents, modalityRuleCubePrefab, 
                 actionRuleCubePrefab, actionRuleCubePrefabVariant, cubePlate);

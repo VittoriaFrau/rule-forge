@@ -293,7 +293,10 @@ namespace UI
             if(categoryMenu.activeSelf)
                 categoryMenu.SetActive(false);
             WsClient.IsRecording= false;
-            WsClient.StopSocket();
+            if (WsClient.ServerOpen)
+            {
+                WsClient.StopSocket();
+            }
             
             _modalityEvents.AddRange(WsClient.MicrogestureEvents);
 

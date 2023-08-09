@@ -39,7 +39,7 @@ namespace ECAPrototyping.RuleEngine
         /// <b> Gravity </b> is a boolean that indicates if the object is affected by gravity.
         /// </summary>
         [StateVariable("gravity", ECARules4AllType.Boolean)] 
-        public ECABoolean isUsingGravity = new ECABoolean(ECABoolean.BoolType.NO);
+        public ECABoolean isUsingGravity = new ECABoolean(ECABoolean.BoolType.YES);
         
 
         private void Awake()

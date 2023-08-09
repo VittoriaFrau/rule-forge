@@ -72,6 +72,12 @@ namespace UI
             _subject = gameObject.name;
         }
 
+        
+        public InteractionCreationController.Modalities Modality
+        {
+            get => modality;
+            set => modality = value;
+        }
 
         public override bool Equals(object obj)
         {
