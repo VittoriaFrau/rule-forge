@@ -31,6 +31,8 @@ namespace UI
         private Animator _animator;
         private EventBus eventBus;
         private RuleEngine _ruleEngine;
+        public Light light;
+        public Slider _slider;
         public GameObject SelectedObject
         {
             get => selectedObject;
@@ -40,7 +42,6 @@ namespace UI
         private void Start()
         {
             EditMode = false;
-            
             canvas = GameObject.FindGameObjectWithTag("Canvas");
             if(radialMenu==null) radialMenu = canvas.transform.Find("RadialMenu").gameObject;
             /*text = textGo.GetComponent<TextMeshPro>();*/
@@ -49,7 +50,12 @@ namespace UI
             _ruleEngine = RuleEngine.GetInstance();
             eventBus = EventBus.GetInstance();
         }
-        
+
+        private void Update()
+        {
+            UpdateBrightness();
+        }
+
         public void ActivateEditMode()
         {
             EditMode = true;
@@ -196,7 +202,13 @@ namespace UI
                 }
             }
         }
-        
+
+        //TODO: da spostare in ECALight
+        private void UpdateBrightness()
+        {
+            light.intensity = _slider.Value;
+        }
+
         /// <summary>
         /// <b> CreateAndPublishAction </b> creates an action and publishes it to the event bus
         /// </summary>
