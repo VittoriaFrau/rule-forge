@@ -169,7 +169,7 @@ namespace UI
         public static void InstantiateObject(string prefabType, List<GameObject> prefabList, Camera mainCamera, Transform interactableTransform)
         {
             var transform1 = mainCamera.transform;
-            var go = Object.Instantiate(Utils.GetPrefabFromString(prefabType, prefabList),
+            var go = Object.Instantiate(GetPrefabFromString(prefabType, prefabList),
                 transform1.position + transform1.forward * 3,
                 Quaternion.identity);
     
@@ -179,6 +179,8 @@ namespace UI
             rigidbody.velocity = Vector3.zero;
             rigidbody.angularVelocity = Vector3.zero;
             rigidbody.useGravity = true;
+            
+            go.name = prefabType;
         }
 
         public static ECAEvent GetEventFromCube(GameObject cube)
@@ -272,10 +274,12 @@ namespace UI
         public static void GenerateTextFromCubePosition(TextMeshProUGUI textLabel, string cubeDescription, string logicalOperator)
         {
             string previousString = textLabel.text;
+            //Remove the new line
+            string formattedText = cubeDescription.Replace("\n", " "); 
             if(previousString == "..." || previousString=="") //if it's the first cube
-                textLabel.text = cubeDescription;
+                textLabel.text = formattedText;
             else
-                textLabel.text = previousString + " "+ logicalOperator + " " + cubeDescription;
+                textLabel.text = previousString + " "+ logicalOperator + " " + formattedText;
         }
         
         public static void RemoveTextFromCubePosition(TextMeshProUGUI textLabel, string cubeDescription, string locution)
@@ -373,7 +377,9 @@ namespace UI
                 // Fill the text labels with the appropriate text
                 for (int i = 0; i < faceLabels.Length; i++)
                 {
-                    faceLabels[i].text = labelTexts[i];
+                    //To read the text better we replace the spaces with new lines
+                    string formattedText = labelTexts[i].Replace(" ", "\n"); 
+                    faceLabels[i].text =formattedText;
                 }
             }
         }

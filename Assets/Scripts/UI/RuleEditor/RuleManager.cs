@@ -85,10 +85,11 @@ namespace UI.RuleEditor
         {
             UpdatePresentRule(); //Updates the textmeshpro variables with the current rule text
             string cubeDescription = Utils.GetRuleDescriptionFromCubePrefab(cube.gameObject);
+            string formattedCubeDescription = cubeDescription.Replace("\n", " ");
             if (isAdded)
             {
                 string logicalOperator= containerType == ContainerType.Equivalence ? "OR" : "THEN";
-                Utils.GenerateTextFromCubePosition(rulePhase == RulePhase.When ? whenText : thenText, cubeDescription, logicalOperator);
+                Utils.GenerateTextFromCubePosition(rulePhase == RulePhase.When ? whenText : thenText, formattedCubeDescription, logicalOperator);
             }
             else
             {
@@ -98,11 +99,11 @@ namespace UI.RuleEditor
                     case RulePhase.When:
                         CubeContainerClass whenContainer = FindContainerById(id, whenContainers);
                         //Look in the when text for the cube description and remove it
-                        Utils.RemoveTextFromCubePosition(whenText, cubeDescription, logicalOperator);
+                        Utils.RemoveTextFromCubePosition(whenText, formattedCubeDescription, logicalOperator);
                         break;
                     case RulePhase.Then:
                         CubeContainerClass thenContainer = FindContainerById(id, thenContainers);
-                        Utils.RemoveTextFromCubePosition(thenText, cubeDescription, logicalOperator);
+                        Utils.RemoveTextFromCubePosition(thenText, formattedCubeDescription, logicalOperator);
                         break;
                 }
                 /*string ruleToRemove = */

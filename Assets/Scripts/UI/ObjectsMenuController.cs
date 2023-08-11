@@ -94,6 +94,7 @@ public class ObjectsMenuController : MonoBehaviour
         }
     }
     
+    //TODO: Gador, usa la stessa funzione di NewShape
     public void NewMusic(string musicString)
     {
         var transform1 = mainCamera.transform;
@@ -101,6 +102,7 @@ public class ObjectsMenuController : MonoBehaviour
             transform1.position + transform1.forward * 2,
             transform1.rotation * Quaternion.Euler(0f, 180f, 0f));
         go.transform.parent = interactables.transform;
+        
         //go.GetComponent<Rigidbody>().velocity = Vector3.zero;
         //go.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
     }
