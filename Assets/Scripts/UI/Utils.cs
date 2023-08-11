@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using ECAPrototyping.RuleEngine;
 using ECAPrototyping.Utils;
 using Microsoft.MixedReality.Toolkit.UX;
 using Newtonsoft.Json;
@@ -166,7 +167,7 @@ namespace UI
             return result;
         }
 
-        public static void InstantiateObject(string prefabType, List<GameObject> prefabList, Camera mainCamera, Transform interactableTransform)
+        public static GameObject InstantiateObject(string prefabType, List<GameObject> prefabList, Camera mainCamera, Transform interactableTransform)
         {
             var transform1 = mainCamera.transform;
             var go = Object.Instantiate(GetPrefabFromString(prefabType, prefabList),
@@ -176,11 +177,17 @@ namespace UI
             go.transform.parent = interactableTransform;
     
             Rigidbody rigidbody = go.GetComponent<Rigidbody>();
-            rigidbody.velocity = Vector3.zero;
-            rigidbody.angularVelocity = Vector3.zero;
+            
             rigidbody.useGravity = true;
             
             go.name = prefabType;
+
+            ECAObject ecaObject = go.GetComponent<ECAObject>();
+            ecaObject.isUsingGravity = ECABoolean.YES;
+            
+            rigidbody.velocity = Vector3.zero;
+            rigidbody.angularVelocity = Vector3.zero;
+            return go;
         }
 
         public static ECAEvent GetEventFromCube(GameObject cube)

@@ -135,11 +135,11 @@ namespace ECAPrototyping.RuleEngine
             this.gameObject.GetComponent<Rigidbody>().useGravity = isUsingGravity;
         }
 
-        [Action(typeof(ECAObject), "delete")]
         /// <summary>
         /// <b>delete_object</b> deletes the object from the scene.
         /// </summary>
         /// <param name="obj"> is the object to delete from the scene </param>
+        [Action(typeof(ECAObject), "deleted")]
         public void DeleteObject(GameObject obj)
         {
             Destroy(obj);

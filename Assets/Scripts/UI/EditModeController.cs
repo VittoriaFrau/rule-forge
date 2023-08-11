@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ECAPrototyping.RuleEngine;
+using ECAPrototyping.Utils;
 using Microsoft.MixedReality.Toolkit.SpatialManipulation;
 using Microsoft.MixedReality.Toolkit.UX;
 using TMPro;
@@ -51,10 +52,10 @@ namespace UI
             eventBus = EventBus.GetInstance();
         }
 
-        private void Update()
+        /*private void Update()
         {
             UpdateBrightness();
-        }
+        }*/
 
         public void ActivateEditMode()
         {
@@ -69,7 +70,7 @@ namespace UI
             EditMode = false;
             UpdateInteractablesList();
             RemoveListenerToInteractables();
-            RemoveColorEventListener();
+            //RemoveColorEventListener();
             /*text.text = "Please, select an object to continue";*/
             selectedObject = null;
             radialMenu.SetActive(true);
@@ -110,7 +111,7 @@ namespace UI
          * Since the object is instantiated a runtime, we need to add the listener to each button of the color palette
          * to change the right selected object
          */
-        public void ChangeColorEventListener()
+        /*public void ChangeColorEventListener()
         {
             if (selectedObject == null) return;
             
@@ -131,7 +132,7 @@ namespace UI
                 PressableButton button = color.GetComponent<PressableButton>();
                 button.OnClicked.RemoveAllListeners();
             }
-        }
+        }*/
         
         public void ShowObject()
         {
@@ -218,113 +219,96 @@ namespace UI
             switch (actionName)
             {
                 case "Show":
-                    _ruleEngine.Add(new Rule(
-                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
-                        new List<Action>
-                        {
-                            new Action(SelectedObject, "shows")
-                        }
-                    ));
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "shows"));
                     break;
                 
                 case "Hide":
-                    _ruleEngine.Add(new Rule(
-                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
-                        new List<Action>
-                        {
-                            new Action(SelectedObject, "hides")
-                        }
-                    ));
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "hides"));
                     break;
                 
                 case "Delete":
-                    _ruleEngine.Add(new Rule(
-                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
-                        new List<Action>
-                        {
-                            new Action(SelectedObject, "delete")
-                        }
-                    ));
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "deleted"));
                     break;
                 
-                case "Gravity":
-                    _ruleEngine.Add(new Rule(
-                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
-                        new List<Action>
-                        {
-                            new Action(SelectedObject, "gravityON")
-                        }
-                    ));
+                case "GravityON":
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "gravityON"));
                     break;
                 
+                case "GravityOFF":
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "gravityOFF"));
+                    break;
+                
+                case "ColorRed":
+                    ECAColor red = new ECAColor("red");
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "color", "to", red));
+                    break;
+                
+                case "ColorBlue":
+                    ECAColor blue = new ECAColor("blue");
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "color", "to", blue));
+                    break;
+
+                case "ColorGreen":
+                    ECAColor green = new ECAColor("green");
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "color", "to", green));
+                    break;
+
+                case "ColorPurple":
+                    ECAColor purple = new ECAColor("purple");
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "color", "to", purple));
+                    break;
+
+                case "ColorGray":
+                case "ColorGrey":
+                    ECAColor gray = new ECAColor("gray");
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "color", "to", gray));                    
+                    break;
+
+                case "ColorYellow":
+                    ECAColor yellow = new ECAColor("yellow");
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "color", "to", yellow));
+                    break;
+
+                case "ColorCyan":
+                    ECAColor cyan = new ECAColor("cyan");
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "color", "to", cyan));                    
+                    break;
+
+                case "ColorWhite":
+                    ECAColor white = new ECAColor("white");
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "color", "to", white));
+                    break;
+                case "ColorBlack":
+                    ECAColor black = new ECAColor("black");
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "color", "to", black));
+                    break;
+                    
                 case "WaveHand":
-                    _ruleEngine.Add(new Rule(
-                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
-                        new List<Action>
-                        {
-                            new Action(SelectedObject, "waves","hand", "to", SelectedObject)
-                        }
-                    ));
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "waves","hand", "to", SelectedObject));
                     break;
                 
                 case "Dance":
-                    _ruleEngine.Add(new Rule(
-                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
-                        new List<Action>
-                        {
-                            new Action(SelectedObject, "dance")
-                        }
-                    ));
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "dance"));
                     break;
                 
                 case "TurnOn":
-                    _ruleEngine.Add(new Rule(
-                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
-                        new List<Action>
-                        {
-                            new Action(SelectedObject, "modeON")
-                        }
-                    ));
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "modeON"));
                     break;
                 
                 case "TurnOff":
-                    _ruleEngine.Add(new Rule(
-                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
-                        new List<Action>
-                        {
-                            new Action(SelectedObject, "modeOFF")
-                        }
-                    ));
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "modeOFF"));
                     break;
                 
                 case "Volume":
-                    _ruleEngine.Add(new Rule(
-                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
-                        new List<Action>
-                        {
-                            new Action(SelectedObject, "volume")
-                        }
-                    ));
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "volume"));
                     break;
                 
                 case "Skyboxes":
-                    _ruleEngine.Add(new Rule(
-                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
-                        new List<Action>
-                        {
-                            new Action(SelectedObject, "changes", "skybox", "to", SelectedObject)
-                        }
-                    ));
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "skybox", "to", SelectedObject));
                     break;
                 
                 case "Floors":
-                    _ruleEngine.Add(new Rule(
-                        new Action(GameObject.Find("Player"),"interacts with", SelectedObject),
-                        new List<Action>
-                        {
-                            new Action(SelectedObject, "changes", "floor", "to", SelectedObject)
-                        }
-                    ));
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "floor", "to", SelectedObject));
                     break;
                 
             }

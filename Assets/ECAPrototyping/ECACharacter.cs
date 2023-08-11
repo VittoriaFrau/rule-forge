@@ -39,7 +39,7 @@ namespace ECAPrototyping.RuleEngine
         /// <b>WaveHand</b> makes the character wave its hand. It makes it wave its hand if it is not already.
         /// </summary>
         /// <param name="animator"></param>
-        [Action(typeof(ECAObject), "waves","hand", "to", typeof(Boolean))]
+        [Action(typeof(ECACharacter), "waves hand")]
         public void WaveHand(Animator animator)
         {
             animator.SetBool("isWaving", true);
@@ -49,8 +49,8 @@ namespace ECAPrototyping.RuleEngine
         /// <b>Dancing</b> makes the character dance. It makes it dance if it is not already.
         /// </summary>
         /// <param name="animator"></param>
-        [Action(typeof(ECAObject), "dance", typeof(Boolean))]
-        public void Dancing(Animator animator)
+        [Action(typeof(ECACharacter), "dances")]
+        public void Dance(Animator animator)
         {
             animator.SetBool("isDancing", true);
         }

@@ -1208,6 +1208,10 @@ namespace ECAPrototyping.RuleEngine
         //TODO null action
         private bool ActionEquals(Action action)
         {
+            /*if (action == null)
+            {
+                return true;
+            }*/
             if (!a_subject.Equals(action.GetSubject()))
                 return false;
             if (!a_verb.Equals(action.GetActionMethod()))
@@ -1357,12 +1361,11 @@ namespace ECAPrototyping.RuleEngine
                                 }
                             }
                         }
-                        /*else
+                        else
                             //Se non c'é il suddetto campo popolato significa che é una regola che richiama funzioni, si controlla quindi se la funzione é presente nel
                             //componente, e nel caso si esegue, sempre dopo aver controllato se i tipi sono compatibili
                         {
-                            if (toTest.isActive == true || GetActionMethod() == "activates" &&
-                                !(toTest.isActive == true) && c is ECAObject)
+                            if (GetSubject() != null || GetActionMethod() == "activates" && c is ECAObject)
                             {
                                 // se l'oggetto è attivo oppure l'oggetto è non attivo ma il verbo coincide con activates di ECAObject...
                                 foreach (MethodInfo m in cType.GetMethods())
@@ -1378,8 +1381,7 @@ namespace ECAPrototyping.RuleEngine
                                             {
                                                 if (GetObjectType() != null)
                                                 {
-                                                    if (GetObject() is GameObject && ((GameObject) GetObject())
-                                                        .GetComponent<ECAObject>().isActive)
+                                                    if (GetObject() is GameObject && ((GameObject) GetObject()) != null)
                                                     {
                                                         if (a.ObjectType == GetObjectType())
                                                         {
@@ -1449,7 +1451,7 @@ namespace ECAPrototyping.RuleEngine
                                 if (passive && GetObject() is GameObject)
                                 {
                                     ECAObject actionObject = ((GameObject) GetObject()).GetComponent<ECAObject>();
-                                    if (actionObject != null && actionObject.isActive == true)
+                                    if (actionObject != null && ((GameObject)GetObject()) != null)
                                     {
                                         foreach (Component cPass in ((GameObject) GetObject())
                                             .GetComponents<Component>())
@@ -1488,7 +1490,7 @@ namespace ECAPrototyping.RuleEngine
                                     }
                                 }
                             }
-                        }*/
+                        }
                     }
                 }
             }
@@ -1555,6 +1557,11 @@ namespace ECAPrototyping.RuleEngine
                     saved.Value.ActionPerformed(a);
                 }
             }
+        }
+
+        public void PublishWithoutEvent(Action a)
+        {
+            
         }
 
         ///<summary>

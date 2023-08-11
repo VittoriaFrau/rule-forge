@@ -47,7 +47,8 @@ public class ObjectsMenuController : MonoBehaviour
 
     public void NewCharacter(string characterString)
     {
-        Utils.InstantiateObject(characterString, animalPrefabs, mainCamera, interactables.transform);
+        GameObject character = Utils.InstantiateObject(characterString, animalPrefabs, mainCamera, interactables.transform);
+        character.transform.rotation = Quaternion.Euler(0, 180, 0);
     }
 
     public void NewFood(string food)
