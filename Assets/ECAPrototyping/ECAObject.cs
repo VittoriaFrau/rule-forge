@@ -41,6 +41,7 @@ namespace ECAPrototyping.RuleEngine
         [StateVariable("gravity", ECARules4AllType.Boolean)] 
         public ECABoolean isUsingGravity = new ECABoolean(ECABoolean.BoolType.YES);
         
+        
 
         private void Awake()
         {
@@ -68,6 +69,7 @@ namespace ECAPrototyping.RuleEngine
         [Action(typeof(ECAObject), "hides")]
         public void Hides()
         {
+            
             isVisible.Assign(ECABoolean.BoolType.NO);
             UpdateVisibility();
         }
@@ -86,6 +88,7 @@ namespace ECAPrototyping.RuleEngine
         
         private void UpdateVisibility()
         {
+           
             this.gameObject.SetActive(isVisible);
         }
         
@@ -140,9 +143,9 @@ namespace ECAPrototyping.RuleEngine
         /// </summary>
         /// <param name="obj"> is the object to delete from the scene </param>
         [Action(typeof(ECAObject), "deleted")]
-        public void DeleteObject(GameObject obj)
+        public void DeleteObject()
         {
-            Destroy(obj);
+            Destroy(this.gameObject);
         }
     }
 }

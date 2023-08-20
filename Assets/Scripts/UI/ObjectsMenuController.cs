@@ -101,7 +101,7 @@ public class ObjectsMenuController : MonoBehaviour
         var transform1 = mainCamera.transform;
         var go = Instantiate(Utils.GetPrefabFromString(musicString, musicPrefabs),
             transform1.position + transform1.forward * 2,
-            transform1.rotation * Quaternion.Euler(0f, 180f, 0f));
+            transform1.rotation * Quaternion.Euler(180f, 180f, 0f));
         go.transform.parent = interactables.transform;
         
         //go.GetComponent<Rigidbody>().velocity = Vector3.zero;

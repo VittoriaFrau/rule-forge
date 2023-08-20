@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Security.Cryptography;
 using ECAPrototyping.Utils;
+using Microsoft.MixedReality.Toolkit.Editor;
+using Microsoft.MixedReality.Toolkit.UX;
 using UnityEngine;
 
 namespace ECAPrototyping.RuleEngine
@@ -31,58 +33,58 @@ namespace ECAPrototyping.RuleEngine
         /// <b>isPlaying</b> is a boolean that indicates if the object is reproducing music.
         /// </summary>
         [StateVariable("mode", ECARules4AllType.Boolean)] 
-        public ECABoolean isPlaying = new ECABoolean(ECABoolean.BoolType.ON);
+        public ECABoolean isPlaying = new ECABoolean(ECABoolean.BoolType.OFF);
         
 
         private void Awake()
         {
             gameRenderer = this.gameObject.GetComponents<Renderer>();
             color = gameRenderer[0].material.color;
-            UpdateMode();
-            UpdateVolume();
         }
-        
+
+        private void Update()
+        {
+            if (GameObject.Find("Volume_Slider"))
+            {
+                Volume();
+            }
+        }
 
         /// <summary>
-        /// <b>ModeON</b> turns on the music. 
+        /// <b>TurnON</b> turns on the audio source of the selected object. 
         /// </summary>
-        [Action(typeof(ECAObject), "turnOn")]
+        [Action(typeof(ECAMusic), "TurnON")]
         public void TurnON()
         {
-            isPlaying.Assign(ECABoolean.BoolType.ON);
-            UpdateMode();
+            Debug.Log("TURN ON");
+            //isPlaying.Assign(ECABoolean.BoolType.TRUE);
+            AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+            audioSource.enabled = true;
+            audioSource.Play();
         }
         
         /// <summary>
-        /// <b>ModeOFF</b> turns off the music. 
+        /// <b>TurnOFF</b> turns off the audio source of the selected object. 
         /// </summary>
-        [Action(typeof(ECAObject), "turnOff")]
+        [Action(typeof(ECAMusic), "TurnOFF")]
         public void TurnOFF()
         {
-            isPlaying.Assign(ECABoolean.BoolType.OFF);
-            UpdateMode();
+            AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+            audioSource.enabled = true;
+            audioSource.Pause();
         }
-        
+
         /// <summary>
         /// <b>Volume</b> . 
         /// </summary>
-        [Action(typeof(ECAObject), "volume")]
+        [Action(typeof(ECAMusic), "volume")]
         public void Volume()
         {
-            //TODO
-            UpdateVolume();
+            AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+            Slider volume_slider = GameObject.Find("Volume_Slider").GetComponent<Slider>();
+            audioSource.volume = volume_slider.Value;
         }
-
-
-        private void UpdateMode()
-        {
-            this.gameObject.SetActive(isPlaying);
-        }
-
-        private void UpdateVolume()
-        {
-            //TODO
-        }
+        
 
     }
 }

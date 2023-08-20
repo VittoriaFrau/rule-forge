@@ -7,6 +7,7 @@ using Microsoft.MixedReality.Toolkit.SpatialManipulation;
 using Microsoft.MixedReality.Toolkit.UX;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 using Action = ECAPrototyping.RuleEngine.Action;
 
 namespace UI
@@ -32,8 +33,7 @@ namespace UI
         private Animator _animator;
         private EventBus eventBus;
         private RuleEngine _ruleEngine;
-        public Light light;
-        public Slider _slider;
+        private Light _light;
         public GameObject SelectedObject
         {
             get => selectedObject;
@@ -50,12 +50,9 @@ namespace UI
             radialMenu.SetActive(true);
             _ruleEngine = RuleEngine.GetInstance();
             eventBus = EventBus.GetInstance();
+            _light = GameObject.Find("Directional Light").GetComponent<Light>();
         }
 
-        /*private void Update()
-        {
-            UpdateBrightness();
-        }*/
 
         public void ActivateEditMode()
         {
@@ -134,51 +131,6 @@ namespace UI
             }
         }*/
         
-        public void ShowObject()
-        {
-            selectedObject.SetActive(true);
-        }
-
-        public void HideObject()
-        {
-            selectedObject.SetActive(false);
-        }
-
-        public void DeleteObject()
-        {
-            Destroy(selectedObject);
-            generalUIController.SetDebugText(selectedObject.name + " has been deleted");
-            selectedObject = null;
-        }
-
-        public void WaveHand()
-        {
-            if (selectedObject.GetComponent<Animator>() != null)
-            {
-                _animator = selectedObject.GetComponent<Animator>();
-                _animator.SetBool("isWaving", true);
-                if (_animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !_animator.IsInTransition(0))
-                {
-                    _animator.SetBool("isWaving", false);
-                }
-            }
-            
-        }
-        
-        public void Dancing()
-        {
-            if (selectedObject.GetComponent<Animator>() != null)
-            {
-                _animator = selectedObject.GetComponent<Animator>();
-                _animator.SetBool("isDancing", true);
-                //if the animation isDancing has finished, set the boolean to false
-                if (_animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !_animator.IsInTransition(0))
-                {
-                    _animator.SetBool("isDancing", false);
-                }
-            }
-            
-        }
         
         public void addAccessories(String accessory)
         {
@@ -205,16 +157,25 @@ namespace UI
         }
 
         //TODO: da spostare in ECALight
-        private void UpdateBrightness()
+        public void UpdateBrightness()
         {
-            light.intensity = _slider.Value;
+            //Light light = GameObject.Find("Directional Light").GetComponent<Light>();
+            //Slider _slider = GameObject.Find("LightSlider").GetComponent<Slider>();
+            //light.intensity = _slider.Value;
+            if (GameObject.Find("LightSlider"))
+            {
+                Slider light_slider = GameObject.Find("LightSlider").GetComponent<Slider>();
+                Light light = GameObject.Find("Directional Light").GetComponent<Light>();
+                light.intensity = light_slider.Value;
+                
+            }
         }
-
+        
         /// <summary>
         /// <b> CreateAndPublishAction </b> creates an action and publishes it to the event bus
         /// </summary>
         /// <param name="actionName"></param>
-        public void CreateAndPublishAction(string actionName)
+        public void CreateAndPublishAction(string actionName) 
         {
             switch (actionName)
             {
@@ -257,8 +218,7 @@ namespace UI
                     ECAColor purple = new ECAColor("purple");
                     _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "color", "to", purple));
                     break;
-
-                case "ColorGray":
+                
                 case "ColorGrey":
                     ECAColor gray = new ECAColor("gray");
                     _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "color", "to", gray));                    
@@ -284,7 +244,7 @@ namespace UI
                     break;
                     
                 case "WaveHand":
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "waves","hand", "to", SelectedObject));
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "waves hand"));
                     break;
                 
                 case "Dance":
@@ -292,15 +252,19 @@ namespace UI
                     break;
                 
                 case "TurnOn":
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "modeON"));
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "TurnON"));
                     break;
                 
                 case "TurnOff":
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "modeOFF"));
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "TurnOFF"));
                     break;
                 
                 case "Volume":
                     _ruleEngine.ExecuteAction(new Action(SelectedObject, "volume"));
+                    break;
+                
+                case "Brightness":
+                    _ruleEngine.ExecuteAction(new Action(_light.gameObject, "change brightness"));
                     break;
                 
                 case "Skyboxes":

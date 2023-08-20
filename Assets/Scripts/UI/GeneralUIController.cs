@@ -170,6 +170,11 @@ namespace UI
                 button.SetActive(false);
             }
             
+            foreach (var button in musicButtons)
+            {
+                button.SetActive(false);
+            }
+            
         }
 
         public void resetEditButtons()
