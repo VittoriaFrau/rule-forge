@@ -22,7 +22,7 @@ public class RadialMenu : MonoBehaviour
     [SerializeField]
     List<Image> slices;
     [SerializeField]
-    public float radius = 3.0f;
+    public float radius = 4.0f;
 
     public float startingAngle = 0.0f;
 
@@ -58,7 +58,7 @@ public class RadialMenu : MonoBehaviour
             button.gameObject.SetActive(true);
         }
         Rearrange();
-        InstanceHighlight();
+        //InstanceHighlight();
     }
 
     public void Close()

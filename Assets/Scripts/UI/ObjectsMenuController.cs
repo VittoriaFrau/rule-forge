@@ -20,16 +20,7 @@ public class ObjectsMenuController : MonoBehaviour
     
     public List<GameObject> categoryButtons;
     private GeneralUIController generalUIController;
-    [Header("Skybox")]
-    public Material daySkybox;
-    public Material nightSkybox;
-    public Material sunsetSkybox;
 
-    [Header("Floor")] 
-    public Material grassFloor;
-    public Material rocksFloor; 
-    public Material woodFLoor;
-    
     private Camera mainCamera;
     // Start is called before the first frame update
     void Start()
@@ -61,51 +52,19 @@ public class ObjectsMenuController : MonoBehaviour
         Utils.InstantiateObject(veg, environmentPrefabs, mainCamera, interactables.transform);
     }
 
-    public void NewSkybox(string skybox)
-    {
-        //RenderSettings.skybox = Resources.Load<Material>(path);
-        switch (skybox)
-        {
-            case "Day":
-                RenderSettings.skybox = daySkybox;
-                break;
-            case "Sunset":
-                RenderSettings.skybox = sunsetSkybox;
-                break;
-            case "Night":
-                RenderSettings.skybox = nightSkybox;
-                break;
-        }
-    }
-
-    public void NewPlane(string plane)
-    {
-        Renderer planeRenderer = GameObject.FindGameObjectWithTag("Plane").GetComponent<Renderer>();
-        switch (plane)
-        {
-            case "Grass":
-                planeRenderer.material = grassFloor;
-                break;
-            case "Rocks":
-                planeRenderer.material = rocksFloor;
-                break;
-            case "Wood":
-                planeRenderer.material = woodFLoor;
-                break;
-        }
-    }
-    
-    //TODO: Gador, usa la stessa funzione di NewShape
     public void NewMusic(string musicString)
     {
-        var transform1 = mainCamera.transform;
-        var go = Instantiate(Utils.GetPrefabFromString(musicString, musicPrefabs),
-            transform1.position + transform1.forward * 2,
-            transform1.rotation * Quaternion.Euler(180f, 180f, 0f));
-        go.transform.parent = interactables.transform;
+        GameObject instrument = Utils.InstantiateObject(musicString, musicPrefabs, mainCamera, interactables.transform);
+        switch (musicString)
+        {
+            case "piano":
+                instrument.transform.rotation = Quaternion.Euler(0, 0, 180);
+                break;
+            default:
+                instrument.transform.rotation = Quaternion.Euler(0, 180, 0);
+                break;
+        }
         
-        //go.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        //go.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
     }
     
     public void DeActivateObjectsMenu()

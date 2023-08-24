@@ -9,6 +9,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using Action = ECAPrototyping.RuleEngine.Action;
+using RenderSettings = UnityEngine.RenderSettings;
 
 namespace UI
 {
@@ -34,6 +35,8 @@ namespace UI
         private EventBus eventBus;
         private RuleEngine _ruleEngine;
         private Light _light;
+        private GameObject _skybox;
+        private Renderer plane;
         public GameObject SelectedObject
         {
             get => selectedObject;
@@ -51,6 +54,8 @@ namespace UI
             _ruleEngine = RuleEngine.GetInstance();
             eventBus = EventBus.GetInstance();
             _light = GameObject.Find("Directional Light").GetComponent<Light>();
+            _skybox = GameObject.Find("skybox");
+            plane = GameObject.FindGameObjectWithTag("Plane").GetComponent<Renderer>();
         }
 
 
@@ -155,21 +160,7 @@ namespace UI
                 }
             }
         }
-
-        //TODO: da spostare in ECALight
-        public void UpdateBrightness()
-        {
-            //Light light = GameObject.Find("Directional Light").GetComponent<Light>();
-            //Slider _slider = GameObject.Find("LightSlider").GetComponent<Slider>();
-            //light.intensity = _slider.Value;
-            if (GameObject.Find("LightSlider"))
-            {
-                Slider light_slider = GameObject.Find("LightSlider").GetComponent<Slider>();
-                Light light = GameObject.Find("Directional Light").GetComponent<Light>();
-                light.intensity = light_slider.Value;
-                
-            }
-        }
+        
         
         /// <summary>
         /// <b> CreateAndPublishAction </b> creates an action and publishes it to the event bus
@@ -266,13 +257,29 @@ namespace UI
                 case "Brightness":
                     _ruleEngine.ExecuteAction(new Action(_light.gameObject, "change brightness"));
                     break;
-                
-                case "Skyboxes":
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "skybox", "to", SelectedObject));
+
+                case "Floor_Grass":
+                    _ruleEngine.ExecuteAction(new Action(plane.gameObject, "changes", "floor", "to", "Grass"));
                     break;
                 
-                case "Floors":
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "floor", "to", SelectedObject));
+                case "Floor_Rocks":
+                    _ruleEngine.ExecuteAction(new Action(plane.gameObject, "changes", "floor", "to", "Rocks"));
+                    break;
+                
+                case "Floor_Wood":
+                    _ruleEngine.ExecuteAction(new Action(plane.gameObject, "changes", "floor", "to", "Wood"));
+                    break;
+                
+                case "Skybox_Day":
+                    _ruleEngine.ExecuteAction(new Action(_skybox, "changes skybox","Day"));
+                    break;
+                
+                case "Skybox_Sunset":
+                    _ruleEngine.ExecuteAction(new Action(_skybox, "changes skybox", "Sunset"));
+                    break;
+                
+                case "Skybox_Night":
+                    _ruleEngine.ExecuteAction(new Action(_skybox, "changes skybox", "Night"));
                     break;
                 
             }

@@ -97,10 +97,10 @@ GameObject:
   - component: {fileID: -2594467210226787656}
   - component: {fileID: 7358815230037778059}
   - component: {fileID: -277644523290051036}
-  - component: {fileID: 3338458429997102515}
   - component: {fileID: 3263492572422393619}
   - component: {fileID: -160100463135600703}
   - component: {fileID: 3128583128487002198}
+  - component: {fileID: 6492885444537272490}
   m_Layer: 0
   m_Name: jukebox
   m_TagString: Untagged
@@ -115,7 +115,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4328214096029942401}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4854444, y: 0.4854444, z: 0.4854444}
   m_ConstrainProportionsScale: 0
@@ -124,7 +124,7 @@ Transform:
   - {fileID: 6710308165618271838}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2400747266806887706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,20 +433,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3338458429997102515
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4328214096029942401}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2.12
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.97, z: 0}
 --- !u!54 &3263492572422393619
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -571,6 +557,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aff43d2471064442acf19818299fce5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &6492885444537272490
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4328214096029942401}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.51, z: 0.53}
+  m_Center: {x: 0, y: 0.75, z: 0.06}
 --- !u!1 &5162820104835090806
 GameObject:
   m_ObjectHideFlags: 0

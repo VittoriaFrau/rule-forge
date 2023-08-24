@@ -59,7 +59,7 @@ namespace UI
         }
         
 
-        //Function to check if the object is ECA Food/Character/Environment (only for the fist time I select the object)
+        //Function to check if the object is ECA Music/Character (only for the fist time I select the object)
         public List<GameObject> CheckECAObject(GameObject gameObject)
         {
             while (!action_executed)

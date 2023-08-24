@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: -6544594093604756215}
   - component: {fileID: 3231361439432303858}
   - component: {fileID: 2614018393017214185}
-  - component: {fileID: 5741533681688890436}
   - component: {fileID: 8140283656724398356}
   - component: {fileID: 2889310644055051800}
   - component: {fileID: -1123569639866994742}
@@ -371,20 +370,6 @@ MonoBehaviour:
   color: {r: 0, g: 0, b: 0, a: 0}
   isPlaying:
     choice: 0
---- !u!136 &5741533681688890436
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3208666362003841392}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.18448469
-  m_Height: 1.012247
-  m_Direction: 1
-  m_Center: {x: -0.000000052154064, y: 0.5020301, z: 0.05916088}
 --- !u!114 &8140283656724398356
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,25 +15,37 @@ namespace ECAPrototyping.RuleEngine
     
     public class ECASkybox : MonoBehaviour
     {
-        /// <summary>
-        /// <b>Material</b> is the material of the skybox.
-        /// </summary>
-        private Material _material;
 
+        /// <summary>
+        /// <b>Renderer</b> is the material of the skybox.
+        /// </summary>
+        new Material renderer; 
         private void Awake()
         {
-            _material = RenderSettings.skybox;
-            
+            renderer = RenderSettings.skybox;
+
         }
         
         // <summary>
         /// <b>SkyboxMaterial</b> sets the material of the skybox, defined by a parameter.
         /// </summary>
         /// <param name="material">The new material to set for the skybox. </param>
-        [Action(typeof(ECAObject), "changes", "skybox", "to", typeof(Material))]
-        public void SkyboxMaterial(Material material)
+        [Action(typeof(ECASkybox), "changes skybox", typeof(string))]
+        public void SkyboxMaterial(String skybox)
         {
-           RenderSettings.skybox = material;
+            Debug.Log("SKYBOX MATERIAL");
+            switch (skybox)
+            {
+                case "Day":
+                    RenderSettings.skybox = Resources.Load<Material>("Skyboxes/Material/Skybox_Day");
+                    break;
+                case "Sunset":
+                    RenderSettings.skybox = Resources.Load<Material>("Skyboxes/Material/Skybox_Sunset");
+                    break;
+                case "Night":
+                    RenderSettings.skybox = Resources.Load<Material>("Skyboxes/Material/Skybox_Night");
+                    break;
+            }
         }
         
     }
