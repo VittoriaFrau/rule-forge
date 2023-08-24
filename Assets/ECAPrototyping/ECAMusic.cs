@@ -36,19 +36,20 @@ namespace ECAPrototyping.RuleEngine
         public ECABoolean isPlaying = new ECABoolean(ECABoolean.BoolType.OFF);
         
 
+        
         private void Awake()
         {
             gameRenderer = this.gameObject.GetComponents<Renderer>();
             color = gameRenderer[0].material.color;
         }
-
+/*
         private void Update()
         {
             if (GameObject.Find("Volume_Slider"))
             {
                 Volume();
             }
-        }
+        }*/
 
         /// <summary>
         /// <b>TurnON</b> turns on the audio source of the selected object. 

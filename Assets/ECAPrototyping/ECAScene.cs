@@ -18,7 +18,7 @@ namespace ECAPrototyping.RuleEngine
         /// <summary>
         /// <b>GameRender</b> is the renderer of the object.
         /// </summary>
-        private Renderer[] gameRenderer;
+        private Renderer gameRenderer;
         
         /// <summary>
         /// <b> Color </b> is the color of the object 
@@ -28,8 +28,8 @@ namespace ECAPrototyping.RuleEngine
         
         private void Awake()
         {
-            gameRenderer = this.gameObject.GetComponents<Renderer>();
-            color = gameRenderer[0].material.color;
+            gameRenderer = this.gameObject.GetComponent<Renderer>();
+            color = gameRenderer.material.color;
         }
     }
 }

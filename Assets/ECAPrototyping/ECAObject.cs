@@ -19,7 +19,7 @@ namespace ECAPrototyping.RuleEngine
         /// <summary>
         /// <b>GameRender</b> is the renderer of the object.
         /// </summary>
-        private Renderer[] gameRenderer;
+        private Renderer gameRenderer;
         
         
         /// <summary>
@@ -45,8 +45,10 @@ namespace ECAPrototyping.RuleEngine
 
         private void Awake()
         {
-            gameRenderer = this.gameObject.GetComponents<Renderer>();
-            color = gameRenderer[0].material.color;
+            gameRenderer = this.gameObject.GetComponent<Renderer>();
+            if(gameRenderer == null)
+                gameRenderer = this.gameObject.AddComponent<MeshRenderer>();
+            color = gameRenderer.material.color;
             UpdateVisibility();
             UpdateGravity();
         }
@@ -101,7 +103,7 @@ namespace ECAPrototyping.RuleEngine
         public void ChangesColor(ECAColor inputColor)
         {
             color = inputColor.Color;
-            gameRenderer[0].material.color = color;
+            gameRenderer.material.color = color;
         }
         
         
@@ -109,7 +111,7 @@ namespace ECAPrototyping.RuleEngine
         {
             //convert string to color
             ColorUtility.TryParseHtmlString(newColor, out color);
-            gameRenderer[0].material.color = color;
+            gameRenderer.material.color = color;
         }
         
         /// <summary>

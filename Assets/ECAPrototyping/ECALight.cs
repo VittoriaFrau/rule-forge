@@ -20,21 +20,23 @@ namespace ECAPrototyping.RuleEngine
         private float _intensity;
         private Slider light_slider;
         //Light light;
+        
+       
         private void Awake()
         {
-            directionalLight = GameObject.Find("Directional Light").GetComponent<Light>();
+            directionalLight = gameObject.GetComponent<Light>();
             _intensity = directionalLight.intensity;
         }
         
+        /*
+               public void Update()
+               {
+                   if (GameObject.Find("LightSlider"))
+                   {
+                       UpdateIntensity();
+                   }
 
-        public void Update()
-        {
-            if (GameObject.Find("LightSlider"))
-            {
-                UpdateIntensity();
-            }
-
-        }
+               }*/
 
         [Action(typeof(ECALight), "change brightness")]
         public void UpdateIntensity()

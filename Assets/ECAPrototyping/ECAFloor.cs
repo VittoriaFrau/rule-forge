@@ -22,8 +22,7 @@ namespace ECAPrototyping.RuleEngine
 
         private void Awake()
         {
-            renderer = GameObject.FindGameObjectWithTag("Plane").GetComponent<Renderer>();
-            
+            renderer = gameObject.GetComponent<Renderer>();
         }
         
         /// <summary>

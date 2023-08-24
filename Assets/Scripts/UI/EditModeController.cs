@@ -20,19 +20,11 @@ namespace UI
         private List<GameObject> interactables;
         private GameObject canvas;
         public GameObject radialMenu;
-        /*public GameObject textGo;
-        private TextMeshPro text;
-        public TextMeshPro Text
-        {
-            get => text;
-            set { text = value; }
-        }*/
         private GeneralUIController generalUIController;
         public List<GameObject> colors;
         public GameObject colorPalette;
         private GameObject selectedObject;
         private Animator _animator;
-        private EventBus eventBus;
         private RuleEngine _ruleEngine;
         private Light _light;
         private GameObject _skybox;
@@ -52,7 +44,6 @@ namespace UI
             generalUIController = this.gameObject.GetComponent<GeneralUIController>();
             radialMenu.SetActive(true);
             _ruleEngine = RuleEngine.GetInstance();
-            eventBus = EventBus.GetInstance();
             _light = GameObject.Find("Directional Light").GetComponent<Light>();
             _skybox = GameObject.Find("skybox");
             plane = GameObject.FindGameObjectWithTag("Plane").GetComponent<Renderer>();
