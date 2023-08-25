@@ -6,8 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="8549fefb-f71a-4278-af6b-67427dad7c5d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAFloor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAFloor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECALight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECALight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAMusic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAMusic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/RuleCubeLevelTwo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/RuleCubeLevelTwo.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Prefabs/Guitar_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Prefabs/Guitar_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/piano.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/piano.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/source/jukebox.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/source/jukebox.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/scenaGador.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/scenaGador.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/EditModeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/EditModeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/GlobalPositionDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/GlobalPositionDisplay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,12 +41,9 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/11d97693183d4a6bb35c29ae7882c66b81b600/ab/d19500ee/EditorApplication.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/e2/b5fb9db0/Component.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75633565436c42f0a6426b33f0132ade46a800/50/4bff7216/List`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f8507cae17da4a048c26c1ad6a304248574b88/3b/eb16d276/AttributeTargets.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/DirectionalLightController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/8e/124056b0/InvokableCall`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/a5/9b236dac/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AntLR/ECARulesParser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RepositionRulePlate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.core@8d3eae7b2801/Interactables/StatefulInteractable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.core@8d3eae7b2801/Subsystems/MRTKLifecycleManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -45,16 +52,26 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.spatialmanipulation@a80535c64d68/ObjectManipulator/ObjectManipulator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.spatialmanipulation@a80535c64d68/Solvers/HandConstraintPalmUp.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.uxcore@246ca5810751/FontIcons/FontIconSet.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.uxcore@246ca5810751/Slider/Slider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.recorder@3.0.3/Editor/Sources/Recorders/_Inputs/RenderTextureSampler/RenderTextureSampler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.31/UnityEditor.TestRunner/TestRunner/Messages/RecompileScripts.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/InputFieldEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/Interactables/XRBaseInteractable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/Interactors/XRRayInteractor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/XRInteractionManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.management@4.2.1/Runtime/XRManagerSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.openxr@1.5.3/Runtime/OpenXRRestarter.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2Q9pclvtRc7CEDoHEiOA8cN1AL6" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -83,9 +100,9 @@
   },
   &quot;keyToStringList&quot;: {
     &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\gador\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\gador\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\gador\\AppData\\Local\\Symbols\\src&quot;
+      &quot;C:\\Users\\Vittoria\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Vittoria\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Vittoria\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
 }</component>
@@ -124,10 +141,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="33396">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="16940">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="33396" />
+      <option name="pid" value="16940" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -176,6 +193,11 @@
       <workItem from="1691311225376" duration="2679000" />
       <workItem from="1691394722159" duration="18377000" />
       <workItem from="1691507322975" duration="5045000" />
+      <workItem from="1691760238093" duration="5026000" />
+      <workItem from="1692867729985" duration="590000" />
+      <workItem from="1692869846423" duration="2299000" />
+      <workItem from="1692885794212" duration="1448000" />
+      <workItem from="1692952336999" duration="4096000" />
     </task>
     <task id="LOCAL-00001" summary="checkComponents added">
       <created>1686653774676</created>
@@ -232,7 +254,31 @@
       <option name="project" value="LOCAL" />
       <updated>1690817050616</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="New head modality and improved cubes readability">
+      <option name="closed" value="true" />
+      <created>1691747642131</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1691747642131</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Execute action mechanism">
+      <option name="closed" value="true" />
+      <created>1691765111759</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1691765111759</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Bug fixing">
+      <option name="closed" value="true" />
+      <created>1692886895002</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1692886895002</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +308,10 @@
     <MESSAGE value="Merging cubes" />
     <MESSAGE value="separation material" />
     <MESSAGE value="Rule editor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rule editor changes" />
+    <MESSAGE value="New head modality and improved cubes readability" />
+    <MESSAGE value="Execute action mechanism" />
+    <MESSAGE value="Bug fixing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fixing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -275,7 +324,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs</url>
-          <line>281</line>
+          <line>292</line>
           <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="205" containingFunctionPresentation="Method 'RemoveTextFromCubePosition'" />
           <option name="timeStamp" value="51" />
         </line-breakpoint>
@@ -288,15 +337,112 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
           <line>366</line>
-          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="368" containingFunctionPresentation="Method 'ListActionsAttribute'">
+          <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="368" containingFunctionPresentation="Method 'ListActionsAttribute'" />
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RuleManager.cs</url>
+          <line>86</line>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\RuleEditor\RuleManager.cs" initialLine="86" containingFunctionPresentation="Method 'CalculateRuleText'">
             <startOffsets>
-              <option value="13878" />
+              <option value="3896" />
             </startOffsets>
             <endOffsets>
-              <option value="13879" />
+              <option value="3977" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="80" />
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/CubeContainer.cs</url>
+          <line>99</line>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\RuleEditor\CubeContainer.cs" initialLine="99" containingFunctionPresentation="Method 'OnCollisionExit'">
+            <startOffsets>
+              <option value="4046" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4201" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
+          <line>1367</line>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="1367" containingFunctionPresentation="Method 'GetActionType'">
+            <startOffsets>
+              <option value="51359" />
+            </startOffsets>
+            <endOffsets>
+              <option value="51438" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
+          <line>1377</line>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="1377" containingFunctionPresentation="Method 'GetActionType'">
+            <startOffsets>
+              <option value="52122" />
+            </startOffsets>
+            <endOffsets>
+              <option value="52123" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
+          <line>1450</line>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="1450" containingFunctionPresentation="Method 'GetActionType'">
+            <startOffsets>
+              <option value="56706" />
+            </startOffsets>
+            <endOffsets>
+              <option value="56747" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
+          <line>1214</line>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="1214" containingFunctionPresentation="Method 'ActionEquals'">
+            <startOffsets>
+              <option value="43729" />
+            </startOffsets>
+            <endOffsets>
+              <option value="43772" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/EditModeController.cs</url>
+          <line>245</line>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\EditModeController.cs" initialLine="245" containingFunctionPresentation="Method 'CreateAndPublishAction'">
+            <startOffsets>
+              <option value="9481" />
+            </startOffsets>
+            <endOffsets>
+              <option value="9575" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/ECAMusic.cs</url>
+          <line>54</line>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\ECAPrototyping\ECAMusic.cs" initialLine="54" containingFunctionPresentation="Method 'ChangeVolume'">
+            <startOffsets>
+              <option value="1733" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1762" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="106" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

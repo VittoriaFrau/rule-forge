@@ -26,9 +26,10 @@ namespace UI
         private GameObject selectedObject;
         private Animator _animator;
         private RuleEngine _ruleEngine;
-        private Light _light;
-        private GameObject _skybox;
+        public Light _mainlight;
+        public GameObject _skybox;
         private Renderer plane;
+        public Slider lightSlider, volumeSlider;
         public GameObject SelectedObject
         {
             get => selectedObject;
@@ -44,8 +45,6 @@ namespace UI
             generalUIController = this.gameObject.GetComponent<GeneralUIController>();
             radialMenu.SetActive(true);
             _ruleEngine = RuleEngine.GetInstance();
-            _light = GameObject.Find("Directional Light").GetComponent<Light>();
-            _skybox = GameObject.Find("skybox");
             plane = GameObject.FindGameObjectWithTag("Plane").GetComponent<Renderer>();
         }
 
@@ -157,8 +156,9 @@ namespace UI
         /// <b> CreateAndPublishAction </b> creates an action and publishes it to the event bus
         /// </summary>
         /// <param name="actionName"></param>
-        public void CreateAndPublishAction(string actionName) 
+        public void CreateAndPublishAction(string actionName)
         {
+            if (_ruleEngine == null) return;
             switch (actionName)
             {
                 case "Show":
@@ -234,19 +234,21 @@ namespace UI
                     break;
                 
                 case "TurnOn":
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "TurnON"));
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "turns", ECABoolean.ON));
                     break;
                 
                 case "TurnOff":
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "TurnOFF"));
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "turns", ECABoolean.OFF));
                     break;
                 
                 case "Volume":
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "volume"));
+                    float volumeValue =  volumeSlider.Value;
+                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "volume", "to", volumeValue));
                     break;
                 
                 case "Brightness":
-                    _ruleEngine.ExecuteAction(new Action(_light.gameObject, "change brightness"));
+                    float lightValue =  lightSlider.Value;
+                    _ruleEngine.ExecuteAction(new Action(_mainlight.gameObject, "changes", "intensity", "to", lightValue ));
                     break;
 
                 case "Floor_Grass":

@@ -36,15 +36,12 @@ namespace ECAPrototyping.RuleEngine
             {
               case "Grass":
                   renderer.material = Resources.Load<Material>("Grass_planeTexture/Materials/Stylize_Grass");
-                  Debug.Log(renderer.material.name);
                   break;
               case "Rocks":
                   renderer.material = Resources.Load<Material>("Rocks_planeTexture/Hand Painted Rocks Road (Blocky)");
-                  Debug.Log(renderer.material.name);
                   break;
               case "Wood":
                   renderer.material = Resources.Load<Material>("Wood_planeTexture/Materials/Planks/Planks");
-                  Debug.Log(renderer.material.name);
                   break;
             }
         }

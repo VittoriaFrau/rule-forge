@@ -201,9 +201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218a03a1abd3740449080921581dfdb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0, g: 0, b: 0, a: 0}
   isPlaying:
-    choice: 1
+    choice: 4
 --- !u!23 &4237237050991848050
 MeshRenderer:
   m_ObjectHideFlags: 0

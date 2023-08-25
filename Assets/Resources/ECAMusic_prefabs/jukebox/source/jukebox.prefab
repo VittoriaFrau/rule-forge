@@ -154,9 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218a03a1abd3740449080921581dfdb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0, g: 0, b: 0, a: 0}
   isPlaying:
-    choice: 0
+    choice: 4
 --- !u!114 &-2594467210226787656
 MonoBehaviour:
   m_ObjectHideFlags: 0
