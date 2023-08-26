@@ -94,6 +94,10 @@ namespace ECAPrototyping.Utils
         }
         
         public ECAColor(){}
-        
+
+        public override string ToString()
+        {
+            return name;
+        }
     }
 }

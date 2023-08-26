@@ -1,3 +1,4 @@
+using ECAPrototyping.RuleEngine;
 using UnityEngine;
 
 namespace UI
@@ -11,6 +12,13 @@ namespace UI
         private InteractionCreationController.CategoryObjectSelected typeOfObject;
         private Texture2D _texture;
         private string _subject, _verb, _object;
+        private Action _action;
+
+        public Action Action
+        {
+            get => _action;
+            set => _action = value;
+        }
 
         public ECAEvent(GameObject gameObject, string _verb, string _object)
         {
@@ -18,25 +26,6 @@ namespace UI
             this._verb = _verb;
             this._object = _object;
             this._subject = gameObject.name;
-        }
-        
-        public ECAEvent(GameObject gameObject, string _verb, string _object, Texture2D screenshot)
-        {
-            _gameObject = gameObject;
-            this._verb = _verb;
-            this._object = _object;
-            this._subject = gameObject.name;
-            _texture = screenshot;
-
-        }
-        
-        public ECAEvent(GameObject gameObject, string _verb, Texture2D screenshot)
-        {
-            _gameObject = gameObject;
-            this._verb = _verb;
-            this._subject = gameObject.name;
-            _texture = screenshot;
-
         }
         
         public ECAEvent(GameObject gameObject, InteractionCreationController.Modalities modality, string _event, 
@@ -81,13 +70,35 @@ namespace UI
 
         public override bool Equals(object obj)
         {
-            //Two ECAEvents are the same when they have the same gameObject, modality and event
-            if (obj == null || GetType() != obj.GetType())
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj is not ECAEvent e)
             {
                 return false;
             }
-            return (_gameObject == ((ECAEvent)obj).GameObject && modality == ((ECAEvent)obj).modality && _event == ((ECAEvent)obj)._event);
+
+            if (!ReferenceEquals(_gameObject, e._gameObject))
+            {
+                return false;
+            }
+
+            if (_verb != null && e._verb != null)
+            {
+                if (!ReferenceEquals(_object, e._object))
+                {
+                    return false;
+                }
+
+                return _verb == e._verb;
+            }
+
+            // ModalityEvent:
+            return _gameObject == e.GameObject && modality == e.modality && _event == e._event;
         }
+
 
         public override string ToString()
         {

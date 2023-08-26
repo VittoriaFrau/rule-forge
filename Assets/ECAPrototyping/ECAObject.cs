@@ -33,13 +33,13 @@ namespace ECAPrototyping.RuleEngine
         /// If the object is invisible, it will not be rendered but it will still collide with other objects.
         /// </summary>
         [StateVariable("visible", ECARules4AllType.Boolean)] 
-        public ECABoolean isVisible = new ECABoolean(ECABoolean.BoolType.YES);
+        public ECABoolean isVisible = new (ECABoolean.BoolType.YES);
         
         /// <summary>
         /// <b> Gravity </b> is a boolean that indicates if the object is affected by gravity.
         /// </summary>
         [StateVariable("gravity", ECARules4AllType.Boolean)] 
-        public ECABoolean isUsingGravity = new ECABoolean(ECABoolean.BoolType.YES);
+        public ECABoolean isUsingGravity = new(ECABoolean.BoolType.YES);
         
         
 
@@ -49,8 +49,8 @@ namespace ECAPrototyping.RuleEngine
             if(gameRenderer == null)
                 gameRenderer = this.gameObject.AddComponent<MeshRenderer>();
             color = gameRenderer.material.color;
-            UpdateVisibility();
-            UpdateGravity();
+            /*UpdateVisibility();
+            UpdateGravity();*/
         }
         
 
@@ -137,7 +137,17 @@ namespace ECAPrototyping.RuleEngine
         /// </summary>
         public void UpdateGravity()
         {
-            this.gameObject.GetComponent<Rigidbody>().useGravity = isUsingGravity;
+            Debug.Log("Update gravity" +
+                      "");
+            switch (isUsingGravity.GetBoolType())
+            {
+               case ECABoolean.BoolType.YES:
+                   gameObject.GetComponent<Rigidbody>().useGravity = true;
+                   break;
+               case ECABoolean.BoolType.NO:
+                   gameObject.GetComponent<Rigidbody>().useGravity = false;
+                   break;
+            }
         }
 
         /// <summary>

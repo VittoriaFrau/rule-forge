@@ -10,6 +10,7 @@ using UI.RuleEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
+using Action = ECAPrototyping.RuleEngine.Action;
 using Object = UnityEngine.Object;
 
 namespace UI
@@ -37,7 +38,7 @@ namespace UI
         private EditModeController editModeController;
         public List<GameObject> modalitiesBubbles;
         public GameObject BackButton, RecordButton, StopButton;
-       
+        
         //Touch modality attributes
         private GameObject OpenXRRightHandController, OpenXRLeftHandController;
         private GameObject RightHand, LeftHand;
@@ -282,6 +283,7 @@ namespace UI
 
         public void StopRecording()
         {
+            generalUIController.isRecording = false;
             StopButton.SetActive(false);
             RecordButton.SetActive(true);
             screenshotCamera.SetActive(false);
@@ -336,6 +338,7 @@ namespace UI
 
         public void StartRecording()
         {
+            generalUIController.isRecording = true;
             //Make the record button not interactable
             StopButton.SetActive(true);
             RecordButton.SetActive(false);
@@ -354,64 +357,23 @@ namespace UI
         public void RecordAction()
         {
             generalUIController.SetDebugText("Recording started.");
-
-            List<GameObject> activeButtons = generalUIController.GetActiveButtons();
-            //Remove the record button from this list
-            activeButtons.Remove(activeButtons.FirstOrDefault(x => x.name == "RecordButton"));
             
             _actionEvents.Clear();
             
             screenshotCamera.SetActive(true);
-            
-            //For each other button, add a listener
-            foreach (var button in activeButtons)
-            {
-                AddButtonsListener(button);
-            }
-            
-            AddButtonsListenerToPaintButtons();
         }
 
-        public void AddButtonsListenerToPaintButtons()
+
+        public void RecordActionPressedButton(Action action, GameObject selectedObject)
         {
-            List<GameObject> colors = editModeController.colors;
-            foreach (var color in colors)
+            ECAEvent ecaEvent = Utils.ConvertActionToECAEvent(action);
+            if (!_actionEvents.Contains(ecaEvent))
             {
-                PressableButton pressableButton = color.GetComponent<PressableButton>();
-                
-                pressableButton.OnClicked.AddListener( ()=>
-                {
-                    GameObject selectedObject = editModeController.SelectedObject;
-                    ECAEvent ecaEvent = new ECAEvent(selectedObject, "change color", color.name);
-                    if (!_actionEvents.Contains(ecaEvent))
-                    {
-                        _actionEvents.Add(ecaEvent);
-                        Debug.Log(ecaEvent);
-                        PrepareForActionScreenShot(selectedObject);
-                    }
-                });
+                _actionEvents.Add(ecaEvent);
+                Debug.Log(ecaEvent);
+                generalUIController.SetDebugText(ecaEvent.ToString());
+                PrepareForActionScreenShot(selectedObject);
             }
-        }
-        public void AddButtonsListener(GameObject button)
-        {
-            PressableButton pressableButton = button.GetComponent<PressableButton>();
-            //TODO rimuovere questa oscenità
-            if (button.name != "Paint Button")
-            {
-                pressableButton.OnClicked.AddListener( ()=>
-                {
-                    GameObject selectedObject = editModeController.SelectedObject;
-                    ECAEvent ecaEvent = Utils.GetActionFromButton(button, selectedObject);
-                    if (!_actionEvents.Contains(ecaEvent))
-                    {
-                        _actionEvents.Add(ecaEvent);
-                        Debug.Log(ecaEvent);
-                        generalUIController.SetDebugText(ecaEvent.ToString());
-                        PrepareForActionScreenShot(selectedObject);
-                    }
-                });
-            }
-            
         }
 
         public void RecordRule()

@@ -24,6 +24,7 @@ namespace UI
         private InteractionCreationController _interactionCreationController;
         public RadialMenu radialMenu;
         private Prototypation _prototypation;
+        public bool isRecording = false;
 
         public enum UIState
         {
@@ -51,6 +52,12 @@ namespace UI
         {
             get => text;
             set { text = value; }
+        }
+        
+        public InteractionCreationController InteractionCreationController
+        {
+            get => _interactionCreationController;
+            set => _interactionCreationController = value;
         }
         
         private void Start()

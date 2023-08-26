@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
 using UI;
+using Action = ECAPrototyping.RuleEngine.Action;
 using Object = UnityEngine.Object;
 
 namespace UI
@@ -506,13 +507,140 @@ namespace UI
             }
         }
 
-        public static ECAEvent GetActionFromButton(GameObject button, GameObject selectedGameobject)
+        public static ECAEvent GetActionFromButton(GameObject button, GameObject selectedGameobject, Slider volumeSlider, 
+            Slider lightSlider, GameObject plane, GameObject _skybox, Light _mainlight)
         {
-            //TODO non usare il nome del pulsante hard coded appena gador finisce
-            ECAEvent e = new ECAEvent(selectedGameobject, button.name);
+            //TODO add new Gador actions
+            
+            Action action = GetActionFromString(button.name, selectedGameobject, volumeSlider, lightSlider, plane, _skybox, _mainlight);
+            
+            ECAEvent e = ConvertActionToECAEvent(action);
+            
+            return e;
+        }
+
+        public static ECAEvent ConvertActionToECAEvent(Action action)
+        {
+            ECAEvent e = new ECAEvent(action.GetSubject(), action.GetActionMethod());
+            e.Action = action;
+            switch (action.GetActionType())
+            {
+                case Action.ActionType.INVALID:
+                    Debug.Log("Action INVALID");
+                    break;
+                case Action.ActionType.CHANGES:
+                case Action.ActionType.CUSTOMCHANGE:
+                case Action.ActionType.VALUE:
+                    e.Verb = action.GetActionMethod() + " " + action.GetObject() + " " +  action.GetModifier();
+                    e.Object = action.GetModifierValue().ToString();
+                    break;
+                case Action.ActionType.VERB:
+                    break;
+                case Action.ActionType.OBJECT:
+                    e.Object = action.GetModifierValue().ToString();
+                    break;
+            }
 
             return e;
         }
-        
+
+        public static Action GetActionFromString(string s, GameObject SelectedObject, Slider volumeSlider, 
+            Slider lightSlider, GameObject plane, GameObject _skybox, Light _mainlight)
+        {
+            switch (s)
+            {
+                case "Show":
+                   return new Action(SelectedObject, "shows");
+                
+                case "Hide":
+                    return (new Action(SelectedObject, "hides"));
+                
+                case "Delete":
+                    return (new Action(SelectedObject, "deleted"));
+                
+                case "GravityON":
+                    return (new Action(SelectedObject, "gravityON"));
+                
+                case "GravityOFF":
+                    return (new Action(SelectedObject, "gravityOFF"));
+                
+                case "red":
+                    ECAColor red = new ECAColor("red");
+                    return (new Action(SelectedObject, "changes", "color", "to", red));
+                
+                case "blue":
+                    ECAColor blue = new ECAColor("blue");
+                    return (new Action(SelectedObject, "changes", "color", "to", blue));
+                    
+                case "green":
+                    ECAColor green = new ECAColor("green");
+                    return (new Action(SelectedObject, "changes", "color", "to", green));
+                    
+                case "purple":
+                    ECAColor purple = new ECAColor("purple");
+                    return (new Action(SelectedObject, "changes", "color", "to", purple));
+                
+                case "gray":
+                case "grey":
+                    ECAColor gray = new ECAColor("gray");
+                    return (new Action(SelectedObject, "changes", "color", "to", gray));                    
+                    
+                case "yellow":
+                    ECAColor yellow = new ECAColor("yellow");
+                    return (new Action(SelectedObject, "changes", "color", "to", yellow));
+                    
+                case "cyan":
+                    ECAColor cyan = new ECAColor("cyan");
+                    return (new Action(SelectedObject, "changes", "color", "to", cyan));                    
+                    
+                case "white":
+                    ECAColor white = new ECAColor("white");
+                    return (new Action(SelectedObject, "changes", "color", "to", white));
+                    
+                case "black":
+                    ECAColor black = new ECAColor("black");
+                    return (new Action(SelectedObject, "changes", "color", "to", black));
+                
+                case "WaveHand":
+                    return (new Action(SelectedObject, "waves hand"));
+                
+                case "Dance":
+                    return (new Action(SelectedObject, "dance"));
+                
+                case "TurnOn":
+                    return (new Action(SelectedObject, "turns", ECABoolean.ON));
+                
+                case "TurnOff":
+                    return (new Action(SelectedObject, "turns", ECABoolean.OFF));
+                
+                case "Volume":
+                    float volumeValue =  volumeSlider.Value;
+                    return (new Action(SelectedObject, "changes", "volume", "to", volumeValue));
+                
+                case "Brightness":
+                    float lightValue =  lightSlider.Value;
+                    return (new Action(_mainlight.gameObject, "changes", "intensity", "to", lightValue ));
+                    
+                case "Floor_Grass":
+                    return (new Action(plane, "changes", "floor", "to", "Grass"));
+                
+                case "Floor_Rocks":
+                    return (new Action(plane, "changes", "floor", "to", "Rocks"));
+                
+                case "Floor_Wood":
+                    return (new Action(plane, "changes", "floor", "to", "Wood"));
+                
+                case "Skybox_Day":
+                    return (new Action(_skybox, "changes skybox","Day"));
+                
+                case "Skybox_Sunset":
+                    return (new Action(_skybox, "changes skybox", "Sunset"));
+                
+                case "Skybox_Night":
+                    return (new Action(_skybox, "changes skybox", "Night"));
+            }
+
+            return null;
+        }
     }
 }

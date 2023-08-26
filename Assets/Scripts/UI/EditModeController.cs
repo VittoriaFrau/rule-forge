@@ -159,123 +159,16 @@ namespace UI
         public void CreateAndPublishAction(string actionName)
         {
             if (_ruleEngine == null) return;
-            switch (actionName)
+            if (selectedObject == null) return;
+            Action action = Utils.GetActionFromString(actionName, SelectedObject, volumeSlider, lightSlider, plane.gameObject,
+                _skybox, _mainlight);
+            _ruleEngine.ExecuteAction(action);
+
+            if (generalUIController.isRecording)
             {
-                case "Show":
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "shows"));
-                    break;
-                
-                case "Hide":
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "hides"));
-                    break;
-                
-                case "Delete":
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "deleted"));
-                    break;
-                
-                case "GravityON":
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "gravityON"));
-                    break;
-                
-                case "GravityOFF":
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "gravityOFF"));
-                    break;
-                
-                case "ColorRed":
-                    ECAColor red = new ECAColor("red");
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "color", "to", red));
-                    break;
-                
-                case "ColorBlue":
-                    ECAColor blue = new ECAColor("blue");
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "color", "to", blue));
-                    break;
-
-                case "ColorGreen":
-                    ECAColor green = new ECAColor("green");
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "color", "to", green));
-                    break;
-
-                case "ColorPurple":
-                    ECAColor purple = new ECAColor("purple");
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "color", "to", purple));
-                    break;
-                
-                case "ColorGrey":
-                    ECAColor gray = new ECAColor("gray");
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "color", "to", gray));                    
-                    break;
-
-                case "ColorYellow":
-                    ECAColor yellow = new ECAColor("yellow");
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "color", "to", yellow));
-                    break;
-
-                case "ColorCyan":
-                    ECAColor cyan = new ECAColor("cyan");
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "color", "to", cyan));                    
-                    break;
-
-                case "ColorWhite":
-                    ECAColor white = new ECAColor("white");
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "color", "to", white));
-                    break;
-                case "ColorBlack":
-                    ECAColor black = new ECAColor("black");
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "color", "to", black));
-                    break;
-                    
-                case "WaveHand":
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "waves hand"));
-                    break;
-                
-                case "Dance":
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "dance"));
-                    break;
-                
-                case "TurnOn":
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "turns", ECABoolean.ON));
-                    break;
-                
-                case "TurnOff":
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "turns", ECABoolean.OFF));
-                    break;
-                
-                case "Volume":
-                    float volumeValue =  volumeSlider.Value;
-                    _ruleEngine.ExecuteAction(new Action(SelectedObject, "changes", "volume", "to", volumeValue));
-                    break;
-                
-                case "Brightness":
-                    float lightValue =  lightSlider.Value;
-                    _ruleEngine.ExecuteAction(new Action(_mainlight.gameObject, "changes", "intensity", "to", lightValue ));
-                    break;
-
-                case "Floor_Grass":
-                    _ruleEngine.ExecuteAction(new Action(plane.gameObject, "changes", "floor", "to", "Grass"));
-                    break;
-                
-                case "Floor_Rocks":
-                    _ruleEngine.ExecuteAction(new Action(plane.gameObject, "changes", "floor", "to", "Rocks"));
-                    break;
-                
-                case "Floor_Wood":
-                    _ruleEngine.ExecuteAction(new Action(plane.gameObject, "changes", "floor", "to", "Wood"));
-                    break;
-                
-                case "Skybox_Day":
-                    _ruleEngine.ExecuteAction(new Action(_skybox, "changes skybox","Day"));
-                    break;
-                
-                case "Skybox_Sunset":
-                    _ruleEngine.ExecuteAction(new Action(_skybox, "changes skybox", "Sunset"));
-                    break;
-                
-                case "Skybox_Night":
-                    _ruleEngine.ExecuteAction(new Action(_skybox, "changes skybox", "Night"));
-                    break;
-                
+                generalUIController.InteractionCreationController.RecordActionPressedButton(action, selectedObject);
             }
+            
         }
     }
 }
