@@ -17,6 +17,7 @@ namespace UI
         public List<GameObject> ruleButtons;
         public List<GameObject> characterButtons;
         public List<GameObject> musicButtons;
+        public List<GameObject> lightButtons;
         public GameObject closeButton;
         public GameObject eventHandler;
         private EditModeController _editModeController;
@@ -178,6 +179,11 @@ namespace UI
             }
             
             foreach (var button in musicButtons)
+            {
+                button.SetActive(false);
+            }
+            
+            foreach (var button in lightButtons)
             {
                 button.SetActive(false);
             }

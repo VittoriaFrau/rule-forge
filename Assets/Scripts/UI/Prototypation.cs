@@ -73,6 +73,11 @@ namespace UI
                 {
                     _generalUIController.editingButtonsTMP.AddRange(_generalUIController.musicButtons);
                 }
+
+                if (gameObject.GetComponent<ECALight>() != null)
+                {
+                    _generalUIController.editingButtonsTMP.AddRange(_generalUIController.lightButtons);
+                }
                 action_executed = true;
             }
             return _generalUIController.editingButtonsTMP;

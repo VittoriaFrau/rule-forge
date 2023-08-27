@@ -17,6 +17,7 @@ public class ObjectsMenuController : MonoBehaviour
     public List<GameObject> foodPrefabs;
     public List<GameObject> environmentPrefabs;
     public List<GameObject> musicPrefabs;
+    public List<GameObject> lightPrefabs;
     
     public List<GameObject> categoryButtons;
     private GeneralUIController generalUIController;
@@ -66,7 +67,13 @@ public class ObjectsMenuController : MonoBehaviour
         }
         
     }
-    
+
+    public void NewLight(string light)
+    {
+        GameObject lightObject = Utils.InstantiateObject(light, lightPrefabs, mainCamera, interactables.transform);
+        lightObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+        
+    }
     public void DeActivateObjectsMenu()
     {
         foreach (var button in categoryButtons)

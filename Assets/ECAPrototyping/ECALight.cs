@@ -16,22 +16,39 @@ namespace ECAPrototyping.RuleEngine
     
     public class ECALight : MonoBehaviour
     {
-        private Light directionalLight;
+        private Light _light;
         [StateVariable("intensity", ECARules4AllType.Float)] 
         private float _intensity = 1f;
         private Slider light_slider;
-       
+        public ECABoolean OnOff = new ECABoolean(ECABoolean.BoolType.OFF);
        
         private void Awake()
         {
-            directionalLight = gameObject.GetComponent<Light>();
+            _light = gameObject.GetComponent<Light>();
         }
         
         [Action(typeof(ECALight), "changes", "intensity", "to", typeof(float))]
         public void UpdateIntensity(float intensity)
         {
             _intensity = intensity;
-            directionalLight.intensity = intensity;
+            _light.intensity = intensity;
+        }
+        
+        /// <summary>
+        /// <b>Turn light</b> turns on or off the light of the selected object. 
+        /// </summary>
+        [Action(typeof(ECALight), "turn light", typeof(ECABoolean))]
+        public void Turn(ECABoolean mode)
+        {
+            this.OnOff = mode;
+            if (this.OnOff)
+            {
+                _light.intensity = 1;
+            }
+            else
+            {
+                _light.intensity = 0;
+            }
         }
          
     }
