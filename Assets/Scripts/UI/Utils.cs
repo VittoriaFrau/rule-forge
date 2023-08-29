@@ -424,31 +424,55 @@ namespace UI
 
         public static TextMeshProUGUI[] GetTextLabelsInCube(GameObject cube, string face)
         {
-            
-            GameObject faceGameObject = cube.transform.Find(face).gameObject;
-            TextMeshProUGUI subject = faceGameObject.transform.Find("Subject").transform.Find("Image").GetComponent<TextMeshProUGUI>();
-            TextMeshProUGUI verb = faceGameObject.transform.Find("Verb").transform.Find("Image").GetComponent<TextMeshProUGUI>();
-            Transform objTransform = faceGameObject.transform.Find("Object");
-            if(objTransform == null) return new[] { subject, verb };
-            
-            TextMeshProUGUI obj = objTransform.transform.Find("Image").GetComponent<TextMeshProUGUI>();
+            Transform faceTransform = cube.transform.Find(face);
+            if (faceTransform == null)
+            {
+                Debug.LogWarning("Face not found in the cube.");
+                return new TextMeshProUGUI[0];
+            }
 
-            Transform secondVerb = faceGameObject.transform.Find("SecondVerb");
-            if (secondVerb == null) return new[] { subject, verb, obj };
-            
-            TextMeshProUGUI secondVerbText = secondVerb.transform.Find("Image").GetComponent<TextMeshProUGUI>();
-            Transform meanwhile = faceGameObject.transform.Find("Meanwhile");
-            if (meanwhile == null) return new[] { subject, verb, secondVerbText, obj};
-            TextMeshProUGUI meanwhileText = meanwhile.transform.Find("Image").GetComponent<TextMeshProUGUI>();
-            return new []{subject, verb, meanwhileText, secondVerbText, obj};
+            Transform subjectTransform = faceTransform.Find("Subject/Image");
+            Transform verbTransform = faceTransform.Find("Verb/Image");
+            Transform objTransform = faceTransform.Find("Object/Image");
+            Transform secondVerbTransform = faceTransform.Find("SecondVerb/Image");
+            Transform meanwhileTransform = faceTransform.Find("Meanwhile/Image");
 
+            TextMeshProUGUI subject = subjectTransform?.GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI verb = verbTransform?.GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI obj = objTransform?.GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI secondVerbText = secondVerbTransform?.GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI meanwhileText = meanwhileTransform?.GetComponent<TextMeshProUGUI>();
+
+            if (obj != null && secondVerbText != null && meanwhileText != null)
+            {
+                return new[] { subject, verb, obj,  meanwhileText, secondVerbText };
+            }
+
+            if (obj != null && secondVerbText != null)
+            {
+                return new[] { subject, verb, obj, secondVerbText };
+            }
+
+            if (obj != null)
+            {
+                return new[] { subject, verb, obj };
+            }
+
+            if (secondVerbText != null && meanwhileText != null)
+            {
+                return new[] { subject, verb, meanwhileText, secondVerbText  };
+            }
+
+            return secondVerbText != null ? new[] { subject, verb, secondVerbText } : new[] { subject, verb };
         }
+
         
         public static void FillTextLabelsInMergedCubes(GameObject newCube, ECAEvent [] events)
         {
             // Define the face names and text labels
             string[] faceNames = { "FrontFaceRule", "TopFaceRule" };
-            string[] labelTexts = { events[0].Subject, events[0].Verb + " " + events[0].Event, events[0].Object, events[1].Verb + " " + events[1].Event };
+            //string[] labelTexts = { events[0].Subject, events[0].Verb + " " + events[0].Event, events[0].Object, events[1].Verb + " " + events[1].Event, events[1].Object };
+            string[] labelTexts = { events[0].Subject,  events[0].Event + " " + events[0].Object, "meanwhile", events[1].Event + " " + events[1].Object };
 
             // Loop through each face and fill the text labels
             foreach (string faceName in faceNames)
