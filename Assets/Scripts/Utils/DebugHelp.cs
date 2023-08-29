@@ -10,6 +10,7 @@ namespace UI.RuleEditor
         public GameObject ruleEditorPlate, barriers, radialMenu, obj1, cheese;
         private InteractionCreationController _interactionCreationController;
         private GameObject modalityRuleCubePrefab, cubePlate, actionRuleCubePrefabVariant, actionRuleCubePrefab;
+        private RuleManager _ruleManager;
         private List<ECAEvent> _modalityEvents = new();
         private List<ECAEvent> _actionEvents = new();
         
@@ -39,27 +40,32 @@ namespace UI.RuleEditor
             actionRuleCubePrefabVariant = _interactionCreationController.actionRuleCubePrefabVariant;
             actionRuleCubePrefab = _interactionCreationController.actionRuleCubePrefab;
             cubePlate = _interactionCreationController.cubePlate;
+            _ruleManager = gameObject.GetComponent<RuleManager>();
+            
+            _ruleManager.InitializeVariables();
             
             //Modality events
-            /*ECAEvent ecaEvent1 = new ECAEvent(obj1, InteractionCreationController.Modalities.Headgaze, "Hover Entered", Texture2D.blackTexture);
+            ECAEvent ecaEvent1 = new ECAEvent(obj1, InteractionCreationController.Modalities.Headgaze, "Hover Entered", Texture2D.blackTexture);
             _modalityEvents.Add(ecaEvent1);
 
             ECAEvent ecaEvent2 = new ECAEvent(cheese, InteractionCreationController.Modalities.Touch, "Click", Texture2D.redTexture);
-            _modalityEvents.Add(ecaEvent2);*/
+            _modalityEvents.Add(ecaEvent2);
             
             //Action events
             
-            /*ECAEvent ecaEvent3 = new ECAEvent(obj1, "change color", "blue", Texture2D.grayTexture);
+            ECAEvent ecaEvent3 = new ECAEvent(obj1, "changes color to", "blue");
+            ecaEvent3.Texture = Texture2D.grayTexture;
             _actionEvents.Add(ecaEvent3);
 
-            ECAEvent ecaEvent4 = new ECAEvent(cheese, "Hides", Texture2D.whiteTexture);
-            _actionEvents.Add(ecaEvent4);*/
+            ECAEvent ecaEvent4 = new ECAEvent(cheese, "hides");
+            ecaEvent4.Texture = Texture2D.whiteTexture;
+            _actionEvents.Add(ecaEvent4);
             
             //Microgesture events
-            ECAEvent ecaEvent5 = new ECAEvent(null, InteractionCreationController.Modalities.Microgesture,
+            /*ECAEvent ecaEvent5 = new ECAEvent(null, InteractionCreationController.Modalities.Microgesture,
                 "middle tip", Utils.LoadPNG("Assets/Resources/Icons/Modalities/middle.png"));
             _modalityEvents.Add(ecaEvent5);
-
+*/
             Utils.GenerateCubesFromEventList(_modalityEvents, _actionEvents, modalityRuleCubePrefab, 
                 actionRuleCubePrefab, actionRuleCubePrefabVariant, cubePlate);
             

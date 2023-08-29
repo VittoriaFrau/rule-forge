@@ -201,6 +201,10 @@ namespace UI
                 
             TextMeshProUGUI verbFront = frontFace.transform.Find("Verb").transform.Find("Image").GetComponent<TextMeshProUGUI>();
             string[] verbAndEvent = verbFront.text.Split(' ');
+            if (verbAndEvent.Length == 1)
+            {
+                verbAndEvent = verbFront.text.Split('\n');
+            }
             e.Verb = verbAndEvent[0];
             e.Event = verbAndEvent[1];
                 
@@ -433,7 +437,10 @@ namespace UI
             if (secondVerb == null) return new[] { subject, verb, obj };
             
             TextMeshProUGUI secondVerbText = secondVerb.transform.Find("Image").GetComponent<TextMeshProUGUI>();
-            return new []{subject, verb, obj, secondVerbText};
+            Transform meanwhile = faceGameObject.transform.Find("Meanwhile");
+            if (meanwhile == null) return new[] { subject, verb, secondVerbText, obj};
+            TextMeshProUGUI meanwhileText = meanwhile.transform.Find("Image").GetComponent<TextMeshProUGUI>();
+            return new []{subject, verb, meanwhileText, secondVerbText, obj};
 
         }
         
@@ -461,8 +468,10 @@ namespace UI
             string ruleDescription = "";
             //Front face
             TextMeshProUGUI [] frontFaceR = GetTextLabelsInCube(cube, "FrontFaceRule");
-            ruleDescription +=  "the " + frontFaceR[0].text + " " + frontFaceR[1].text + " " + frontFaceR[2].text; 
-            // + " " + frontFaceR[2].text + " "
+            foreach (var t in frontFaceR)
+            {
+                ruleDescription += t.text + " ";
+            }
 
             return ruleDescription;
         }
@@ -507,6 +516,7 @@ namespace UI
             }
         }
 
+        //TODO: capire dove lo metto
         public static ECAEvent GetActionFromButton(GameObject button, GameObject selectedGameobject, Slider volumeSlider, 
             Slider lightSlider, GameObject plane, GameObject _skybox, Light _mainlight)
         {
