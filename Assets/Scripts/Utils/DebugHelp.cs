@@ -53,13 +53,13 @@ namespace UI.RuleEditor
             
             //Action events
             
-            ECAEvent ecaEvent3 = new ECAEvent(obj1, "changes color to", "blue");
+            /*ECAEvent ecaEvent3 = new ECAEvent(obj1, "changes color to", "blue");
             ecaEvent3.Texture = Texture2D.grayTexture;
             _actionEvents.Add(ecaEvent3);
 
             ECAEvent ecaEvent4 = new ECAEvent(cheese, "hides");
             ecaEvent4.Texture = Texture2D.whiteTexture;
-            _actionEvents.Add(ecaEvent4);
+            _actionEvents.Add(ecaEvent4);*/
             
             //Microgesture events
             /*ECAEvent ecaEvent5 = new ECAEvent(null, InteractionCreationController.Modalities.Microgesture,

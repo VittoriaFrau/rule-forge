@@ -50,6 +50,10 @@ namespace UI
                 
                 if (_generalUIController.UIstate == GeneralUIController.UIState.EditMode)
                 {
+                    foreach (var button in _editModeController.sceneButtonsToClose)
+                    {
+                        if(button) button.SetActive(false);
+                    }
                     _generalUIController.radialMenu.getListButtons(CheckECAObject(_editModeController.SelectedObject), 
                         _interactionCreationController.RecordButton);
                 }

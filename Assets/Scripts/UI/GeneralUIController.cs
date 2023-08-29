@@ -14,6 +14,7 @@ namespace UI
         public List<GameObject> creationButtons;
         public List<GameObject> editingButtons;
         public List<GameObject> editingButtonsTMP;
+        public GameObject editSceneButton;
         public List<GameObject> ruleButtons;
         public List<GameObject> characterButtons;
         public List<GameObject> musicButtons;
@@ -36,13 +37,11 @@ namespace UI
             RuleComposition
         }
         private UIState _uiState;
-
         public UIState UIstate
         {
             get => _uiState;
             set => _uiState = value;
         }
-
         public UIState State
         {
             get => _uiState;
@@ -103,9 +102,10 @@ namespace UI
         public void EditModeState()
         {
             _uiState = UIState.EditMode;
-            text.text = "Please, select an object to continue";
+            text.text = "You can modify the scene properties or select an object to modify";    
             HideOptionsMenu();
-            radialMenu.getListButtons(editingButtons);
+            radialMenu.getListButtons(new List<GameObject>(){editSceneButton});
+            //radialMenu.getListButtons(editingButtons);
         }
 
         public void NewRuleState()

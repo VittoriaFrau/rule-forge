@@ -30,6 +30,7 @@ namespace UI
         public GameObject _skybox;
         private Renderer plane;
         public Slider lightSlider, volumeSlider;
+        public List<GameObject> sceneButtonsToClose;
         public GameObject SelectedObject
         {
             get => selectedObject;
@@ -62,8 +63,6 @@ namespace UI
             EditMode = false;
             UpdateInteractablesList();
             RemoveListenerToInteractables();
-            //RemoveColorEventListener();
-            /*text.text = "Please, select an object to continue";*/
             selectedObject = null;
             radialMenu.SetActive(true);
             colorPalette.SetActive(false);
@@ -154,7 +153,6 @@ namespace UI
         public void CreateAndPublishAction(string actionName)
         {
             if (_ruleEngine == null) return;
-            if (selectedObject == null) return;
             Action action = Utils.GetActionFromString(actionName, SelectedObject, volumeSlider, lightSlider, plane.gameObject,
                 _skybox, _mainlight);
             _ruleEngine.ExecuteAction(action);
