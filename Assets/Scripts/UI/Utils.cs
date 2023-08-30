@@ -376,6 +376,10 @@ namespace UI
             // Define the face names and text labels
             string[] faceNames = { "FrontFaceRule", "TopFaceRule" };
             string[] labelTexts = { e.Subject, e.Verb + " " + e.Event, e.Object };
+            if (e.Event == "stops")
+            {
+                labelTexts[1] = e.Event + " " + e.Verb;
+            }
             if (e.Modality == InteractionCreationController.Modalities.Microgesture)
             {
                 labelTexts[1] = e.Verb;
@@ -553,6 +557,52 @@ namespace UI
             return e;
         }
 
+        //Returns the category of each gameobject. E.g. cube --> shape, cheese --> food
+        public static string GetECALastScriptFromECAObject(GameObject gameObject)
+        {
+            Component [] components = gameObject.GetComponents(typeof(MonoBehaviour));
+            
+            foreach (var component in components)
+            {
+                string componentFullName = component.GetType().ToString();
+                int lastDotIndex = componentFullName.LastIndexOf('.');
+                string componentName = componentFullName.Substring(lastDotIndex + 1);
+                if (componentName.Contains("ECA") && !componentName.Equals("ECAObject"))
+                {
+                    //TODO find the most appropriate category
+                    if (componentName.Equals("ECAScene"))
+                    {
+                        return "Light";
+                    }
+                    return componentName.Substring(3);
+                }
+            }
+
+            return "Shape";
+        }
+
+        public static string GetIconForECACategory(string category)
+        {
+            switch (category)
+            {
+                case "Character":
+                    return "Icon 117";
+                case "shape":
+                case "Shape":
+                    return "Icon 133";
+                case "Food":
+                    return "Icon 54";
+                case "Environment":
+                    return "Icon 4";
+                case "Music":
+                    return "Icon 22";
+                case "Light":
+                    return "Icon 90";
+            }
+            Debug.LogError("Icon null for category "+ category);
+            return null;
+        }
+
         public static ECAEvent ConvertActionToECAEvent(Action action)
         {
             ECAEvent e = new ECAEvent(action.GetSubject(), action.GetActionMethod());
@@ -564,9 +614,12 @@ namespace UI
                     break;
                 case Action.ActionType.CHANGES:
                 case Action.ActionType.CUSTOMCHANGE:
-                case Action.ActionType.VALUE:
                     e.Verb = action.GetActionMethod() + " " + action.GetObject() + " " +  action.GetModifier();
                     e.Object = action.GetModifierValue().ToString();
+                    break;
+                case Action.ActionType.VALUE:
+                    e.Verb = action.GetActionMethod();
+                    e.Object = action.GetObject().ToString();
                     break;
                 case Action.ActionType.VERB:
                     break;

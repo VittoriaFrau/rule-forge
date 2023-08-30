@@ -76,6 +76,9 @@ namespace UI
 
         //Category choice
         public GameObject categoryMenu;
+        public TextMeshProUGUI SingleObjectLabel;
+        public TextMeshProUGUI CategoryLabel;
+        public FontIconSelector CategoryIcon;
         
         //Rule composition
         public GameObject removableBarrier;
@@ -462,31 +465,29 @@ namespace UI
         
         private void AddHeadGazeListener(ObjectManipulator manipulator)
         {
+            GameObject gameObject = manipulator.gameObject;
             gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverEntered.AddListener((GameObject) =>
             {
-                Debug.Log(manipulator.gameObject.name + " Hover entered");
-                //generalUIController.SetDebugText(manipulator.gameObject.name + " Hover Entered" );
-                //TODO non farlo hard coded ma dandogli i nomi giusti (cubo, ...)
-                categoryMenu.SetActive(true);
+                Debug.Log(gameObject.name + " Hover entered");
                 
                 //Note: event should be added before starting the coroutine
-                ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Headgaze, "Hover Entered");
+                //ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Headgaze, "Entered");
+                ECAEvent ecaEvent = new ECAEvent(gameObject, Modalities.Headgaze, "points");
                 if (!_modalityEvents.Contains(ecaEvent))
                 {
                     _modalityEvents.Add(ecaEvent);
-                    PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Headgaze);
+                    PrepareForModalityScreenshot(gameObject, Modalities.Headgaze);
                 }
-                
-                generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
-                //TODO metti un meccanismo che modifica il tipo di evento dandogli la tipologia di oggetto una volta selezionato (cubo, oggetto generico, ...)
-                        
+
+                PrepareCategoryMenu(gameObject);        
             });
             
             gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverExited.AddListener((GameObject) =>
             {
                 Debug.Log(manipulator.gameObject.name + " Hover exited");
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Hover exited");
-                ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Headgaze, "Hover Exited");
+                //ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Headgaze, "Exited");
+                ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Headgaze, "stops");
                 if (!_modalityEvents.Contains(ecaEvent))
                 {
                     _modalityEvents.Add(ecaEvent);
@@ -497,7 +498,7 @@ namespace UI
         
         private void AddLaserListener(ObjectManipulator manipulator)
         {
-
+            GameObject gameObject = manipulator.gameObject;
             manipulator.onHoverEntered.AddListener(interactor =>
             {
                 Debug.Log("Hover entered");
@@ -507,15 +508,14 @@ namespace UI
                 SetLaserPointLineWidth(5.0f);
                 
                 //Note: event should be added before starting the coroutine
-                ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Entered");
+                //ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Laser, "Point Entered");
+                ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Laser, "points");
                 if (!_modalityEvents.Contains(ecaEvent))
                 {
                     _modalityEvents.Add(ecaEvent);
                     PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Laser);
                 }
-
-                generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
-                categoryMenu.SetActive(true);
+                PrepareCategoryMenu(gameObject);
                 
                 
 
@@ -525,19 +525,21 @@ namespace UI
                 Debug.Log(manipulator.gameObject.name +" Hover exited"); 
                 
                 //Note: event should be added before starting the coroutine
-                ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Exited");
+                //ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Exited");
+                ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Laser, "stops");
                 if (!_modalityEvents.Contains(ecaEvent))
                 {
                     _modalityEvents.Add(ecaEvent);
                     PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Laser);
                 }
 
-                //categoryMenu.SetActive(false);
             });
         }
 
         private void AddTouchListener(ObjectManipulator manipulator)
         {
+            GameObject gameObject = manipulator.gameObject;
+
             //attach listener to object manipulator manipulation started event
             UnityAction manipulationStarted = () =>
             {
@@ -552,15 +554,15 @@ namespace UI
                     PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Touch);
                 }
 
-                generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
-                categoryMenu.SetActive(true);
+                PrepareCategoryMenu(gameObject);
             };
             manipulator.OnClicked.AddListener(manipulationStarted);
             manipulator.onSelectEntered.AddListener(interactor =>
             {
                 Debug.Log(manipulator.gameObject.name + " Select entered");
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Select entered");
-                generalUIController.SetDebugText("You are selecting the cube, any object or any shape? By default, the object is a cube.");
+                
+                PrepareCategoryMenu(gameObject);
                 
                 //Note: event should be added before starting the coroutine
                 ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Touch, "Select entered");
@@ -569,9 +571,6 @@ namespace UI
                     _modalityEvents.Add(ecaEvent);
                     PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Touch);
                 }
-                
-                categoryMenu.SetActive(true);
-
 
             });
             manipulator.onSelectExited.AddListener(interactor =>
@@ -580,7 +579,8 @@ namespace UI
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Select exited");
                 //Note: event should be added before starting the coroutine
                 //Add the event only if it doesn't exist already
-                ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Touch, "Select exited");
+                //ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Touch, "Select exited");
+                ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Touch, "stops");
                 if (!_modalityEvents.Contains(ecaEvent))
                 {
                     _modalityEvents.Add(ecaEvent);
@@ -619,6 +619,19 @@ namespace UI
             editModeController.ShowHideRadialMenu(false);
             _screenshotCamera.TakeActionScreenshot(gameObject, _actionEvents.Last());
             editModeController.ShowHideRadialMenu(true);
+        }
+
+        public void PrepareCategoryMenu(GameObject gameObject)
+        {
+            string objectCategory = Utils.GetECALastScriptFromECAObject(gameObject);
+            generalUIController.SetDebugText("Are you selecting the " + gameObject.name + ", any "+ objectCategory +" or any object?");
+            categoryMenu.SetActive(true);
+            
+            CategoryLabel.text = objectCategory;
+            SingleObjectLabel.text = gameObject.name;
+            string icon = Utils.GetIconForECACategory(objectCategory);
+            if(icon!= null)
+                CategoryIcon.CurrentIconName = icon;
         }
 
     }

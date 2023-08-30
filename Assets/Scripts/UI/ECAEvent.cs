@@ -85,6 +85,11 @@ namespace UI
                 return false;
             }
 
+            if (ToString().Equals(e.ToString()))
+            {
+                return true;
+            }
+
             if (_verb != null && e._verb != null)
             {
                 if (!ReferenceEquals(_object, e._object))

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -83,6 +84,16 @@ public class CubeController : MonoBehaviour
                 // Merge the cubes if the minimum join time has passed
                 MergeCubes(collision.gameObject);
             }
+        }
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        if (!isAttached && CheckTags(other.gameObject))
+        {
+            // Reset the countdown if the cubes are no longer colliding
+            timerStarted = false;
+            _ruleManager.DeactivateDebugText();
         }
     }
 
