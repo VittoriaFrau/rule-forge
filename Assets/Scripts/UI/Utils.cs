@@ -676,7 +676,7 @@ namespace UI
                     ECAColor purple = new ECAColor("purple");
                     return (new Action(SelectedObject, "changes", "color", "to", purple));
                 
-                case "gray":
+                //case "gray":
                 case "grey":
                     ECAColor gray = new ECAColor("gray");
                     return (new Action(SelectedObject, "changes", "color", "to", gray));                    
@@ -713,10 +713,24 @@ namespace UI
                     float volumeValue =  volumeSlider.Value;
                     return (new Action(SelectedObject, "changes", "volume", "to", volumeValue));
                 
+                case "TurnOnLight":
+                    return (new Action(SelectedObject, "turn light", ECABoolean.ON));
+                
+                case "TurnOffLight":
+                    return (new Action(SelectedObject, "turn light", ECABoolean.OFF));
+
                 case "Brightness":
                     float lightValue =  lightSlider.Value;
-                    return (new Action(_mainlight.gameObject, "changes", "intensity", "to", lightValue ));
+                    if (SelectedObject != null)
+                    {
+                        return (new Action(SelectedObject, "changes", "intensity", "to", lightValue));
+                    }
+                    else
+                    {
+                        return (new Action(_mainlight.gameObject, "changes", "intensity", "to", lightValue));
+                    }
                     
+                
                 case "Floor_Grass":
                     return (new Action(plane, "changes", "floor", "to", "Grass"));
                 

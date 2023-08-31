@@ -32,6 +32,7 @@ namespace ECAPrototyping.RuleEngine
         {
             _intensity = intensity;
             _light.intensity = intensity;
+            
         }
         
         /// <summary>
@@ -40,6 +41,7 @@ namespace ECAPrototyping.RuleEngine
         [Action(typeof(ECALight), "turn light", typeof(ECABoolean))]
         public void Turn(ECABoolean mode)
         {
+            Debug.Log("Turn light");
             this.OnOff = mode;
             if (this.OnOff)
             {
