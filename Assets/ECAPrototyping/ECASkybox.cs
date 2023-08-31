@@ -33,7 +33,6 @@ namespace ECAPrototyping.RuleEngine
         [Action(typeof(ECASkybox), "changes skybox", typeof(string))]
         public void SkyboxMaterial(String skybox)
         {
-            Debug.Log("SKYBOX MATERIAL");
             switch (skybox)
             {
                 case "Day":

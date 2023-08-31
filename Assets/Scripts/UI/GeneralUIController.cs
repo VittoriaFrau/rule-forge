@@ -107,6 +107,7 @@ namespace UI
             radialMenu.getListButtons(new List<GameObject>(){editSceneButton});
             //radialMenu.getListButtons(editingButtons);
         }
+        
 
         public void NewRuleState()
         {
@@ -202,6 +203,7 @@ namespace UI
             HideEditMenu();
             HideRuleMenu();
             radialMenu.getListButtons(optionButtons);
+            resetEditButtons();
         }
 
         public void RuleComposeStopRecording()

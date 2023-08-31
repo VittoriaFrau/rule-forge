@@ -66,8 +66,8 @@ namespace UI
         //Function to check if the object is ECA Music/Character (only for the fist time I select the object)
         public List<GameObject> CheckECAObject(GameObject gameObject)
         {
-            while (!action_executed)
-            {
+            //while (!action_executed)
+            //{
                 if (gameObject.GetComponent<ECACharacter>() != null)
                 {
                     _generalUIController.editingButtonsTMP.AddRange(_generalUIController.characterButtons);
@@ -83,7 +83,7 @@ namespace UI
                     _generalUIController.editingButtonsTMP.AddRange(_generalUIController.lightButtons);
                 }
                 action_executed = true;
-            }
+            //}
             return _generalUIController.editingButtonsTMP;
         }
 

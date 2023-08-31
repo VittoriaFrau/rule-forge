@@ -103,8 +103,16 @@ namespace ECAPrototyping.RuleEngine
         public void ChangesColor(ECAColor inputColor)
         {
             color = inputColor.Color;
-            gameRenderer.material.color = color;
+            if (this.gameObject.GetComponent<Light>() != null)
+            {
+                this.gameObject.GetComponent<Light>().color = color;
+            }
+            else
+            {
+                gameRenderer.material.color = color;
+            }
         }
+            
         
         
         public void ChangeColor(string newColor)
@@ -158,6 +166,7 @@ namespace ECAPrototyping.RuleEngine
         public void DeleteObject()
         {
             Destroy(this.gameObject);
+            
         }
     }
 }
