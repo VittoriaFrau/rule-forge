@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Microsoft.MixedReality.Toolkit.UX;
 using UI;
@@ -29,27 +30,7 @@ public class RadialMenu : MonoBehaviour
     [SerializeField]
     [HideInInspector]
     private float[] angleList;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    /*void Update()
-    {
-        //Scalo la dimensione degli spicchi 
-        foreach (Image spicchi in slices)
-        {
-            if (spicchi.transform.localScale.x > 2 || spicchi.transform.localScale.y > 2 || spicchi.transform.localScale.z > 2)
-            {
-                spicchi.transform.localScale = new Vector3(1.9f, 1.9f, 1.9f);
-            }
-        }
-    }
-    */
-
+    
     public void Open()
     {
         slices = new List<Image>();
@@ -104,13 +85,13 @@ public class RadialMenu : MonoBehaviour
             }
         }*/
 
-        for (int i = 0; i < numberOfObjects; i++)
-        {
-            float xPos = transform.position.x + radius * Mathf.Sin(angle * Mathf.Deg2Rad);
-            float yPos = transform.position.y + radius * Mathf.Cos(angle * Mathf.Deg2Rad);
+        Vector3 center = transform.position;
+        for(int i = 0; i < numberOfObjects; i++){
+            float xPos = center.x + radius * Mathf.Cos(angle * Mathf.Deg2Rad);
+            float yPos = center.y + radius * Mathf.Sin(angle * Mathf.Deg2Rad);
 
-            pressableButtons[i].transform.position = new Vector3(xPos, yPos, transform.position.z);
-
+            pressableButtons[i].transform.position = new Vector3(xPos, yPos, center.z);
+            
             angle += angleStep;
         }
     }
@@ -169,7 +150,7 @@ public class RadialMenu : MonoBehaviour
         //TODO ripristinare insieme agli spicchi
         Close();
         pressableButtons = buttons;
-        if (recordButton != null)
+        if (recordButton != null && !pressableButtons.Contains(recordButton))
         {
             pressableButtons.Add(recordButton);
         }
