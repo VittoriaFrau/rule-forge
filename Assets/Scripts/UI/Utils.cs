@@ -174,6 +174,12 @@ namespace UI
             var go = Object.Instantiate(GetPrefabFromString(prefabType, prefabList),
                 transform1.position + transform1.forward * 3,
                 Quaternion.identity);
+            if (go.name.Contains("Cube"))
+            {
+                var localPosition = go.transform.localPosition;
+                localPosition = new Vector3(localPosition.x, 1.0011f, localPosition.z);
+                go.transform.localPosition = localPosition;
+            }
     
             go.transform.parent = interactableTransform;
     
@@ -383,6 +389,9 @@ namespace UI
             if (e.Modality == InteractionCreationController.Modalities.Microgesture)
             {
                 labelTexts[1] = e.Verb;
+            }else if (e.Modality == InteractionCreationController.Modalities.Touch)
+            {
+                labelTexts[1] = "touches"; //3rd person for reading
             }
 
             // Loop through each face and fill the text labels
@@ -692,7 +701,7 @@ namespace UI
                     return (new Action(SelectedObject, "waves hand"));
                 
                 case "Dance":
-                    return (new Action(SelectedObject, "dance"));
+                    return (new Action(SelectedObject, "dances"));
                 
                 case "TurnOn":
                     return (new Action(SelectedObject, "turns", ECABoolean.ON));

@@ -126,6 +126,12 @@ namespace UI
                 }
             }
         }
+
+        public void ClearEventLists()
+        {
+            _modalityEvents.Clear();
+            _actionEvents.Clear();
+        }
         
         private void ActivateHeadGazeModality()
         {
@@ -288,12 +294,13 @@ namespace UI
         {
             generalUIController.isRecording = false;
             StopButton.SetActive(false);
-            RecordButton.SetActive(true);
+            if(generalUIController.UIstate != GeneralUIController.UIState.Default)
+                RecordButton.SetActive(true);
             screenshotCamera.SetActive(false);
 
             generalUIController.SetDebugText("Recording stopped.");
             
-            generalUIController.AddCombineRulesButtonToRadialMenu();
+           // generalUIController.AddCombineRulesButtonToRadialMenu();
             
             if(categoryMenu.activeSelf)
                 categoryMenu.SetActive(false);
@@ -318,8 +325,7 @@ namespace UI
                 return;
             }
                 
-            generalUIController.HideDebugPanel();
-            generalUIController.HideRadialMenu();
+            generalUIController.CombineRulesState();
             
             //Set the rule plate visible
             ruleEditorPlate.SetActive(true);
@@ -337,6 +343,25 @@ namespace UI
             _ruleManager.InitializeVariables();
             
             editModeController.ShowHideRadialMenu(false);
+        }
+
+        public void DeActivateRuleComposition()
+        {
+            _ruleManager.NewTask();
+            
+            //Set the rule plate visible
+            ruleEditorPlate.SetActive(false);
+            
+            //Barrier to prevent the cubes from falling
+            removableBarrier.SetActive(false);
+            
+            generalUIController.State = GeneralUIController.UIState.Default;
+            generalUIController.DefaultState();
+            generalUIController.DefaultRM();
+            editModeController.ShowHideRadialMenu(true);
+
+            //Clear events and action queues 
+            ClearEventLists();
         }
 
         public void StartRecording()

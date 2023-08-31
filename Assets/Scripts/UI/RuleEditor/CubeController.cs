@@ -93,7 +93,7 @@ public class CubeController : MonoBehaviour
         {
             // Reset the countdown if the cubes are no longer colliding
             timerStarted = false;
-            _ruleManager.DeactivateDebugText();
+            _ruleManager.DeactivateRuleDebugText();
         }
     }
 
@@ -124,6 +124,7 @@ public class CubeController : MonoBehaviour
 
         // Reset the countdown
         timerStarted = false;
+        _ruleManager.DeactivateRuleDebugText();
     }
 
     private void MergeCubes(GameObject otherCube)
@@ -158,7 +159,7 @@ public class CubeController : MonoBehaviour
         ECAEvent cubeRightEcaEvent = Utils.GetEventFromCube(otherCube);
         
         Utils.FillTextLabelsInMergedCubes(cube, new []{cubeLeftEcaEvent, cubeRightEcaEvent});
-        _ruleManager.DeactivateDebugText();
+        _ruleManager.DeactivateRuleDebugText();
         
         // Destroy both original cubes 
         Destroy(gameObject);

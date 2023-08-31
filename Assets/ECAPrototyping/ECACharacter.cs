@@ -45,24 +45,24 @@ namespace ECAPrototyping.RuleEngine
             Animator _animator = gameObject.GetComponent<Animator>();
             _animator.SetBool("isWaving", true);
             if (_animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !_animator.IsInTransition(0))
-                { 
-                    _animator.SetBool("isWaving", false);
-                }
+            { 
+                _animator.SetBool("isWaving", false);
+            }
         }
 
         /// <summary>
         /// <b>Dancing</b> makes the character dance. It makes it dance if it is not already.
         /// </summary>
         /// <param name="animator"></param>
-        [Action(typeof(ECACharacter), "dance")]
+        [Action(typeof(ECACharacter), "dances")]
         public void Dance()
         {
             Animator _animator = gameObject.GetComponent<Animator>();
             _animator.SetBool("isDancing", true);
             if (_animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !_animator.IsInTransition(0))
-                { 
-                    _animator.SetBool("isDancing", false);
-                }
+            { 
+                _animator.SetBool("isDancing", false);
+            }
             
         }
 

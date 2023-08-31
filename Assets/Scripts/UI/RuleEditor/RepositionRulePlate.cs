@@ -27,7 +27,7 @@ public class RepositionRulePlate : MonoBehaviour
         
         _ruleManager = GameObject.FindGameObjectWithTag("EventHandler").GetComponent<RuleManager>();
         
-        _ruleManager.DeactivateDebugText();
+        _ruleManager.DeactivateRuleDebugText();
         
         GameObject ruleEditorPlate = GameObject.FindGameObjectsWithTag("RuleUtils")
             .ToList().Find(x=>x.name=="RuleEditorPlate");
@@ -59,7 +59,7 @@ public class RepositionRulePlate : MonoBehaviour
             _boundsController.enabled = false;
             _plateState = PlateState.Default;
 
-            _ruleManager.DeactivateDebugText();
+            _ruleManager.DeactivateRuleDebugText();
         }
        
     }

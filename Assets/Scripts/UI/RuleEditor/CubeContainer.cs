@@ -64,6 +64,7 @@ namespace UI.RuleEditor
             if ((collision.gameObject.CompareTag("RuleCubes") || collision.gameObject.CompareTag("ActionRuleCube")) && !isInstantiating)
             {
                 isInstantiating = true;
+                ruleManager.DeactivateRuleDebugText();
                 PositionGameObjectInContainer(collision);
                 
                 CreateSequenceContainer();

@@ -73,11 +73,9 @@ namespace UI
             radialMenu.gameObject.SetActive(true);
         }
 
-        public void Close()
+        public void DeActivatePreviousState()
         {
             var previousState = _uiState;
-            DefaultState();
-            ShowOptionsMenu();
             
             switch (previousState)
             {
@@ -90,17 +88,34 @@ namespace UI
                 case UIState.NewRule:
                     _interactionCreationController.DeActivateNewRule();
                     break;
+                case UIState.RuleComposition:
+                    _interactionCreationController.DeActivateRuleComposition();
+                    break;
             }
+        }
+
+        public void Close()
+        {
+            DeActivatePreviousState();
+            DefaultState();
+
+            if (isRecording)
+                _interactionCreationController.StopRecording();
+            
+            ShowOptionsMenu();
+            
             closeButton.SetActive(false);
         }
 
         public void DefaultState()
         {
             text.text = "Choose if you want to create an object, modify an existing one or create a rule";
+            _uiState = UIState.Default;
         }
         
         public void EditModeState()
         {
+            DeActivatePreviousState();
             _uiState = UIState.EditMode;
             text.text = "You can modify the scene properties or select an object to modify";    
             HideOptionsMenu();
@@ -111,10 +126,20 @@ namespace UI
 
         public void NewRuleState()
         {
+            DeActivatePreviousState();
             _uiState = UIState.NewRule;
             text.text = "Please, grab the modality you want to use to create the rule";
             HideOptionsMenu();
             radialMenu.getListButtons(ruleButtons);
+        }
+
+        public void CombineRulesState()
+        {
+            DeActivatePreviousState();
+            _uiState = UIState.RuleComposition;
+            HideDebugPanel();
+            HideRadialMenu();
+            
         }
 
         public void SelectedObject(string name)
@@ -129,6 +154,7 @@ namespace UI
         
         public void NewObjectState()
         {
+            DeActivatePreviousState();
             _uiState = UIState.NewObject;
             text.text = "Please, select the object you want to create";
             HideOptionsMenu();
@@ -143,7 +169,7 @@ namespace UI
             }
         }
         
-        private void ShowOptionsMenu()
+        public void ShowOptionsMenu()
         {
             foreach (var button in optionButtons)
             {
@@ -208,7 +234,7 @@ namespace UI
 
         public void RuleComposeStopRecording()
         {
-            _uiState = UIState.RuleComposition;
+            //_uiState = UIState.RuleComposition;
             _interactionCreationController.StopRecording();
         }
 

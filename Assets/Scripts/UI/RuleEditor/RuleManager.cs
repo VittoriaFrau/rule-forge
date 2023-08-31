@@ -30,8 +30,13 @@ namespace UI.RuleEditor
         public enum RulePhase { When, Then }
         private List<CubeContainerClass> whenContainers;
         private List<CubeContainerClass> thenContainers;
+        
+        
+        //Tasks
+        public List<GameObject> tasks;
+        private int currentTask=0;
 
-        public GameObject debugText, cubeHelp;
+        public GameObject ruleDebugText, cubeHelp;
 
         //I need a function since it will be called as soon as the rule mode is on
         public void InitializeVariables()
@@ -76,6 +81,14 @@ namespace UI.RuleEditor
                 cubeContainer.id = thenContainers.Count;
             }
            
+        }
+
+        public void NewTask()
+        {
+            currentTask++;
+            //Activate new Task text
+            tasks[currentTask].SetActive(true);
+            tasks[currentTask-1].SetActive(false);
         }
 
         /**
@@ -143,14 +156,14 @@ namespace UI.RuleEditor
         public void ActivateDebugTextWithMessage(string message)
         {
             cubeHelp.SetActive(false);
-            debugText.SetActive(true);
-            debugText.GetComponent<TextMeshProUGUI>().text = message;
+            ruleDebugText.SetActive(true);
+            ruleDebugText.GetComponent<TextMeshProUGUI>().text = message;
         }
         
-        public void DeactivateDebugText()
+        public void DeactivateRuleDebugText()
         {
             cubeHelp.SetActive(true);
-            debugText.SetActive(false);
+            ruleDebugText.SetActive(false);
         }
     }
 }

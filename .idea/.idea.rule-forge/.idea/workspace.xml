@@ -6,18 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="8549fefb-f71a-4278-af6b-67427dad7c5d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAFloor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAFloor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECALight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECALight.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAMusic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAMusic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/RuleCubeLevelTwo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/RuleCubeLevelTwo.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Prefabs/Guitar_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Prefabs/Guitar_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/piano.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/piano.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/source/jukebox.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/source/jukebox.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECACharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECACharacter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/source/lanterna_cinese.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/source/lantern.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/source/lanterna_cinese.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/source/lantern.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Street Lamp/streetLamp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Street Lamp/lamp.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Street Lamp/streetLamp.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Street Lamp/lamp.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Prefabs/Guitar_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Prefabs/guitar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Prefabs/Guitar_01.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Prefabs/guitar.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/scenaGador.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/scenaGador.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/EditModeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/EditModeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/GlobalPositionDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/GlobalPositionDisplay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InteractionCreationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InteractionCreationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/CubeContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/CubeContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/CubeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/CubeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RepositionRulePlate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RepositionRulePlate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RuleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RuleManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +44,104 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/8e/124056b0/InvokableCall`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/a5/9b236dac/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75633565436c42f0a6426b33f0132ade46a800/69/9dee2982/Action.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd2118e7c6674980875dd898708570ac26e00/cb/b3bb2235/Animator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AntLR/ECARulesParser.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Vittoria/RiderProjects/rule-forge/Assets/Scripts/UI/EditModeController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Vittoria/RiderProjects/rule-forge/Assets/Scripts/UI/EditModeController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Vittoria/RiderProjects/rule-forge/Assets/Scripts/UI/RuleEditor/CubeContainer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Vittoria/RiderProjects/rule-forge/Assets/Scripts/UI/RuleEditor/CubeContainer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Vittoria/RiderProjects/rule-forge/Assets/Scripts/UI/RuleEditor/CubeContainer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RepositionRulePlate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.core@8d3eae7b2801/Interactables/StatefulInteractable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.core@8d3eae7b2801/Subsystems/MRTKLifecycleManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -53,13 +151,21 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.spatialmanipulation@a80535c64d68/Solvers/HandConstraintPalmUp.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.uxcore@246ca5810751/FontIcons/FontIconSet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.uxcore@246ca5810751/Slider/Slider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.sprite@1.0.0/Editor/ShapeEditor/ShapeEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.4.4/InputSystem/Editor/ControlPicker/InputControlPathEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.4.4/InputSystem/Plugins/Linux/LinuxSupport.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.recorder@3.0.3/Editor/Sources/Recorders/_Inputs/RenderTextureSampler/RenderTextureSampler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.31/UnityEditor.TestRunner/TestRunner/Messages/RecompileScripts.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.testtools.codecoverage@1.2.2/Samples~/Tutorial/Asteroids/Tests/FXTests.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Editor/TMP_SpriteAssetImporter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/InputFieldEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Inspection/GraphNestEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.core-utils@2.1.0/Editor/ProjectValidation/ProjectValidationDrawer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/Interactables/XRBaseInteractable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/Interactors/XRRayInteractor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/XRInteractionEvents.deprecated.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/XRInteractionManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.management@4.2.1/Runtime/XRManagerSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.openxr@1.5.3/Runtime/OpenXRRestarter.cs" root0="SKIP_HIGHLIGHTING" />
@@ -68,6 +174,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 2
@@ -141,10 +250,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="16940">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="24980">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="16940" />
+      <option name="pid" value="24980" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -197,7 +306,13 @@
       <workItem from="1692867729985" duration="590000" />
       <workItem from="1692869846423" duration="2299000" />
       <workItem from="1692885794212" duration="1448000" />
-      <workItem from="1692952336999" duration="4096000" />
+      <workItem from="1692952336999" duration="5559000" />
+      <workItem from="1692977672436" duration="2799000" />
+      <workItem from="1693038242519" duration="6183000" />
+      <workItem from="1693293028389" duration="9685000" />
+      <workItem from="1693317346972" duration="106000" />
+      <workItem from="1693469052824" duration="6735000" />
+      <workItem from="1693494536557" duration="3026000" />
     </task>
     <task id="LOCAL-00001" summary="checkComponents added">
       <created>1686653774676</created>
@@ -278,7 +393,39 @@
       <option name="project" value="LOCAL" />
       <updated>1692886895002</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Volume and brightness">
+      <option name="closed" value="true" />
+      <created>1692957964597</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1692957964597</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Improved recorded action mechanism">
+      <option name="closed" value="true" />
+      <created>1693043860954</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1693043860954</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Merged cube prefab improved">
+      <option name="closed" value="true" />
+      <created>1693299701573</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1693299701573</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Prototypation of scene in edit mode">
+      <option name="closed" value="true" />
+      <created>1693317405881</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1693317405881</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,101 +458,34 @@
     <MESSAGE value="New head modality and improved cubes readability" />
     <MESSAGE value="Execute action mechanism" />
     <MESSAGE value="Bug fixing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fixing" />
+    <MESSAGE value="Volume and brightness" />
+    <MESSAGE value="Improved recorded action mechanism" />
+    <MESSAGE value="Merged cube prefab improved" />
+    <MESSAGE value="Prototypation of scene in edit mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prototypation of scene in edit mode" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+        <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/MergedCubeController.cs</url>
           <line>63</line>
           <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\RuleEditor\MergedCubeController.cs" initialLine="63" containingFunctionPresentation="Method 'DetachCubes'" />
           <option name="timeStamp" value="46" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+        <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs</url>
-          <line>292</line>
+          <line>303</line>
           <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="205" containingFunctionPresentation="Method 'RemoveTextFromCubePosition'" />
           <option name="timeStamp" value="51" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/CubeController.cs</url>
-          <line>133</line>
-          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\RuleEditor\CubeController.cs" initialLine="132" containingFunctionPresentation="Method 'MergeCubes'" />
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+        <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
           <line>366</line>
           <properties documentPath="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="368" containingFunctionPresentation="Method 'ListActionsAttribute'" />
           <option name="timeStamp" value="80" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RuleManager.cs</url>
-          <line>86</line>
-          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\RuleEditor\RuleManager.cs" initialLine="86" containingFunctionPresentation="Method 'CalculateRuleText'">
-            <startOffsets>
-              <option value="3896" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3977" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/CubeContainer.cs</url>
-          <line>99</line>
-          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\RuleEditor\CubeContainer.cs" initialLine="99" containingFunctionPresentation="Method 'OnCollisionExit'">
-            <startOffsets>
-              <option value="4046" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4201" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
-          <line>1367</line>
-          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="1367" containingFunctionPresentation="Method 'GetActionType'">
-            <startOffsets>
-              <option value="51359" />
-            </startOffsets>
-            <endOffsets>
-              <option value="51438" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="96" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
-          <line>1377</line>
-          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="1377" containingFunctionPresentation="Method 'GetActionType'">
-            <startOffsets>
-              <option value="52122" />
-            </startOffsets>
-            <endOffsets>
-              <option value="52123" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="97" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
-          <line>1450</line>
-          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="1450" containingFunctionPresentation="Method 'GetActionType'">
-            <startOffsets>
-              <option value="56706" />
-            </startOffsets>
-            <endOffsets>
-              <option value="56747" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+        <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
           <line>1214</line>
           <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="1214" containingFunctionPresentation="Method 'ActionEquals'">
@@ -418,20 +498,7 @@
           </properties>
           <option name="timeStamp" value="100" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/EditModeController.cs</url>
-          <line>245</line>
-          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\EditModeController.cs" initialLine="245" containingFunctionPresentation="Method 'CreateAndPublishAction'">
-            <startOffsets>
-              <option value="9481" />
-            </startOffsets>
-            <endOffsets>
-              <option value="9575" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+        <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/ECAMusic.cs</url>
           <line>54</line>
           <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\ECAPrototyping\ECAMusic.cs" initialLine="54" containingFunctionPresentation="Method 'ChangeVolume'">
@@ -443,6 +510,123 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs</url>
+          <line>507</line>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="462" containingFunctionPresentation="Method 'GetRuleDescriptionFromCubePrefab'">
+            <startOffsets>
+              <option value="19695" />
+            </startOffsets>
+            <endOffsets>
+              <option value="19797" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs</url>
+          <line>563</line>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="516" containingFunctionPresentation="Method 'GetActionFromButton'">
+            <startOffsets>
+              <option value="23570" />
+            </startOffsets>
+            <endOffsets>
+              <option value="23615" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs</url>
+          <line>561</line>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="514" containingFunctionPresentation="Method 'GetActionFromButton'">
+            <startOffsets>
+              <option value="23420" />
+            </startOffsets>
+            <endOffsets>
+              <option value="23544" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="119" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs</url>
+          <line>618</line>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="525" containingFunctionPresentation="Method 'ConvertActionToECAEvent'">
+            <startOffsets>
+              <option value="23871" />
+            </startOffsets>
+            <endOffsets>
+              <option value="23902" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs</url>
+          <line>492</line>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="456" containingFunctionPresentation="Method 'FillTextLabelsInMergedCubes'">
+            <startOffsets>
+              <option value="20293" />
+            </startOffsets>
+            <endOffsets>
+              <option value="20363" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs</url>
+          <line>490</line>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="454" containingFunctionPresentation="Method 'FillTextLabelsInMergedCubes'">
+            <startOffsets>
+              <option value="20224" />
+            </startOffsets>
+            <endOffsets>
+              <option value="20262" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="131" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/ECASkybox.cs</url>
+          <line>35</line>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\ECAPrototyping\ECASkybox.cs" initialLine="36" containingFunctionPresentation="Method 'SkyboxMaterial'">
+            <startOffsets>
+              <option value="1014" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1029" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="134" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs</url>
+          <line>732</line>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="670" containingFunctionPresentation="Method 'GetActionFromString'">
+            <startOffsets>
+              <option value="31261" />
+            </startOffsets>
+            <endOffsets>
+              <option value="31318" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/ECACharacter.cs</url>
+          <line>46</line>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\ECAPrototyping\ECACharacter.cs" initialLine="46" containingFunctionPresentation="Method 'WaveHand'">
+            <startOffsets>
+              <option value="1528" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1624" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="143" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
