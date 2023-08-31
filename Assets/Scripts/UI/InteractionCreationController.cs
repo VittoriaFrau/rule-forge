@@ -349,6 +349,8 @@ namespace UI
         {
             _ruleManager.NewTask();
             
+            ruleEditorPlate.transform.localPosition= new Vector3(-14.4f, -119.0f, 774.0f);
+            
             //Set the rule plate visible
             ruleEditorPlate.SetActive(false);
             
@@ -629,6 +631,7 @@ namespace UI
         {
             //Repositioning the plate in case the user has moved it
             ruleEditorPlate.transform.localPosition= new Vector3(-14.4f, -119.0f, 774.0f);
+            
             // Using the original position of the cube, position it again there
             foreach (var k in _originalPositions)
             {

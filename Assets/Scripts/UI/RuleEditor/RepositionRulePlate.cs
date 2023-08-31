@@ -19,6 +19,8 @@ public class RepositionRulePlate : MonoBehaviour
     
     private BoundsControl _boundsController;
     private RuleManager _ruleManager;
+    private Vector3 originalLocalPlatePosition = new (-14.4f, -119.0f, 774.0f);
+    private GameObject ruleEditorPlate;
 
     // Start is called before the first frame update
     void Start()
@@ -29,11 +31,16 @@ public class RepositionRulePlate : MonoBehaviour
         
         _ruleManager.DeactivateRuleDebugText();
         
-        GameObject ruleEditorPlate = GameObject.FindGameObjectsWithTag("RuleUtils")
+        ruleEditorPlate = GameObject.FindGameObjectsWithTag("RuleUtils")
             .ToList().Find(x=>x.name=="RuleEditorPlate");
         _boundsController = ruleEditorPlate.GetComponent<BoundsControl>();
         if(rulePlateManipulator==null) rulePlateManipulator = ruleEditorPlate.GetComponent<ObjectManipulator>();
         
+    }
+
+    public void ResetPlateOriginalPosition()
+    {
+        ruleEditorPlate.transform.localPosition= originalLocalPlatePosition;
     }
 
     public void MovePlate()

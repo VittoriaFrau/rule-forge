@@ -230,6 +230,7 @@ namespace UI
             HideRuleMenu();
             radialMenu.getListButtons(optionButtons);
             resetEditButtons();
+            ShowDebugPanel();
         }
 
         public void RuleComposeStopRecording()
