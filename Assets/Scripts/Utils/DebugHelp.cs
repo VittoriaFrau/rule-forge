@@ -7,7 +7,7 @@ namespace UI.RuleEditor
 {
     public class DebugHelp:MonoBehaviour
     {
-        public GameObject ruleEditorPlate, barriers, radialMenu, obj1, cheese;
+        public GameObject ruleEditorPlate, barriers, radialMenu, cube, cheese;
         private InteractionCreationController _interactionCreationController;
         private GameObject modalityRuleCubePrefab, cubePlate, actionRuleCubePrefabVariant, actionRuleCubePrefab;
         private RuleManager _ruleManager;
@@ -45,11 +45,11 @@ namespace UI.RuleEditor
             _ruleManager.InitializeVariables();
             
             //Modality events
-            ECAEvent ecaEvent1 = new ECAEvent(obj1, InteractionCreationController.Modalities.Headgaze, "Hover Entered", Texture2D.blackTexture);
+            ECAEvent ecaEvent1 = new ECAEvent(cube, InteractionCreationController.Modalities.Headgaze, "Hover Entered", Texture2D.blackTexture);
             _modalityEvents.Add(ecaEvent1);
 
-            ECAEvent ecaEvent2 = new ECAEvent(cheese, InteractionCreationController.Modalities.Touch, "Click", Texture2D.redTexture);
-            _modalityEvents.Add(ecaEvent2);
+            /*ECAEvent ecaEvent2 = new ECAEvent(cheese, InteractionCreationController.Modalities.Touch, "Click", Texture2D.redTexture);
+            _modalityEvents.Add(ecaEvent2);*/
             
             //Action events
             
@@ -62,10 +62,10 @@ namespace UI.RuleEditor
             _actionEvents.Add(ecaEvent4);*/
             
             //Microgesture events
-            /*ECAEvent ecaEvent5 = new ECAEvent(null, InteractionCreationController.Modalities.Microgesture,
+            ECAEvent ecaEvent5 = new ECAEvent(null, InteractionCreationController.Modalities.Microgesture,
                 "middle tip", Utils.LoadPNG("Assets/Resources/Icons/Modalities/middle.png"));
             _modalityEvents.Add(ecaEvent5);
-*/
+            
             Utils.GenerateCubesFromEventList(_modalityEvents, _actionEvents, modalityRuleCubePrefab, 
                 actionRuleCubePrefab, actionRuleCubePrefabVariant, cubePlate);
             

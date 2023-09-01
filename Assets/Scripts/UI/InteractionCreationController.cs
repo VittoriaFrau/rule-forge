@@ -414,6 +414,8 @@ namespace UI
             {
                 Debug.Log("No modality selected");
                 generalUIController.SetDebugText("No modality selected, please select one");
+                StopButton.SetActive(false);
+                RecordButton.SetActive(true);
                 return;
             }
             

@@ -388,7 +388,8 @@ namespace UI
             }
             if (e.Modality == InteractionCreationController.Modalities.Microgesture)
             {
-                labelTexts[1] = e.Verb;
+                labelTexts[1] = e.Verb + " " + e.Event;
+                labelTexts[2] = "microgesture";
             }else if (e.Modality == InteractionCreationController.Modalities.Touch)
             {
                 labelTexts[1] = "touches"; //3rd person for reading

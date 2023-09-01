@@ -160,6 +160,7 @@ public class RadialMenu : MonoBehaviour
 
     public void AddSingleButtonToList(GameObject button)
     {
+        if(pressableButtons.Contains(button)) return;
         Close();
         pressableButtons.Add(button);
         Open();

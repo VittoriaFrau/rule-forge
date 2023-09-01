@@ -107,6 +107,10 @@ namespace UI
 
         public override string ToString()
         {
+            if (modality == InteractionCreationController.Modalities.Microgesture)
+            {
+                return "The user performs " + _event + " microgesture";
+            }
             if(modality!=InteractionCreationController.Modalities.None)
                 return "The user " + modality + " the " + _gameObject.name + " object";
             return _gameObject.name + " " + _verb + " " + _object;
