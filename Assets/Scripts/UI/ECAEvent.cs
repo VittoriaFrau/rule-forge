@@ -111,8 +111,16 @@ namespace UI
             {
                 return "The user performs " + _event + " microgesture";
             }
-            if(modality!=InteractionCreationController.Modalities.None)
-                return "The user " + modality + " the " + _gameObject.name + " object";
+
+            if (modality != InteractionCreationController.Modalities.None)
+            {
+                if (_event != null && _verb != null)
+                {
+                    return "The user " + _event + " " + _verb + " the " + _gameObject.name + " object";
+                }
+                if (_verb != null) return "The user " + _verb + " the " + _gameObject.name + " object";
+                if(_event == null && _verb == null) return "The user " + modality + " the " + _gameObject.name + " object";
+            }
             return _gameObject.name + " " + _verb + " " + _object;
         }
 

@@ -576,7 +576,8 @@ namespace UI
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " On clicked");
                 
                 //Note: event should be added before starting the coroutine
-                ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Touch, "Clicked");
+                //ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Touch, "Clicked");
+                ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Touch, "Select entered");
                 if (!_modalityEvents.Contains(ecaEvent))
                 {
                     _modalityEvents.Add(ecaEvent);
