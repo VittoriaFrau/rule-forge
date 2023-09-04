@@ -66,25 +66,31 @@ namespace UI
         //Function to check if the object is ECA Music/Character (only for the fist time I select the object)
         public List<GameObject> CheckECAObject(GameObject gameObject)
         {
-            //while (!action_executed)
-            //{
-                if (gameObject.GetComponent<ECACharacter>() != null)
+                if (gameObject.GetComponent<ECACharacter>())
                 {
-                    _generalUIController.editingButtonsTMP.AddRange(_generalUIController.characterButtons);
+                    if (!_generalUIController.editingButtonsTMP.Contains(_generalUIController.characterButtons[0]))
+                    {
+                        _generalUIController.editingButtonsTMP.AddRange(_generalUIController.characterButtons);
+                    }
                 }
 
-                if (gameObject.GetComponent<ECAMusic>() != null)
+                if (gameObject.GetComponent<ECAMusic>())
                 {
-                    _generalUIController.editingButtonsTMP.AddRange(_generalUIController.musicButtons);
+                    if (!_generalUIController.editingButtonsTMP.Contains(_generalUIController.musicButtons[0]))
+                    {
+                        _generalUIController.editingButtonsTMP.AddRange(_generalUIController.musicButtons);
+                    }
                 }
 
-                if (gameObject.GetComponent<ECALight>() != null)
+                if (gameObject.GetComponent<ECALight>())
                 {
-                    _generalUIController.editingButtonsTMP.AddRange(_generalUIController.lightButtons);
+                    if (!_generalUIController.editingButtonsTMP.Contains(_generalUIController.lightButtons[0]))
+                    {
+                        _generalUIController.editingButtonsTMP.AddRange(_generalUIController.lightButtons);
+                    }
                 }
-                action_executed = true;
-            //}
-            return _generalUIController.editingButtonsTMP;
+                
+                return _generalUIController.editingButtonsTMP;
         }
 
         public void HidePieUIMenu()

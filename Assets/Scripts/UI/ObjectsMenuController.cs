@@ -72,8 +72,15 @@ public class ObjectsMenuController : MonoBehaviour
     public void NewLight(string light)
     {
         GameObject lightObject = Utils.InstantiateObject(light, lightPrefabs, mainCamera, interactables.transform);
-        lightObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-        
+        switch (light)
+        {
+            case "lamp":
+                lightObject.transform.rotation = Quaternion.Euler(180, 0, 0);
+                break;
+            default:
+                lightObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+                break;
+        }
     }
 
     public void NewEffect(string effect)
