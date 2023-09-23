@@ -43,11 +43,7 @@ namespace ECAPrototyping.RuleEngine
         public void WaveHand()
         {
             Animator _animator = gameObject.GetComponent<Animator>();
-            _animator.SetBool("isWaving", true);
-            if (_animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !_animator.IsInTransition(0))
-            { 
-                _animator.SetBool("isWaving", false);
-            }
+            _animator.SetTrigger("wave");
         }
 
         /// <summary>
@@ -58,11 +54,7 @@ namespace ECAPrototyping.RuleEngine
         public void Dance()
         {
             Animator _animator = gameObject.GetComponent<Animator>();
-            _animator.SetBool("isDancing", true);
-            if (_animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !_animator.IsInTransition(0))
-            { 
-                _animator.SetBool("isDancing", false);
-            }
+            _animator.SetTrigger("dance");
             
         }
 

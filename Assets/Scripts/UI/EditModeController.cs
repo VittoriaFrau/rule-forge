@@ -29,7 +29,7 @@ namespace UI
         public Light _mainlight;
         public GameObject _skybox;
         private Renderer plane;
-        public Slider lightSlider, volumeSlider;
+        public Slider lightSlider, volumeSlider, effectSlider;
         public List<GameObject> sceneButtonsToClose;
         public GameObject SelectedObject
         {
@@ -154,7 +154,7 @@ namespace UI
         public void CreateAndPublishAction(string actionName)
         {
             if (_ruleEngine == null) return;
-            Action action = Utils.GetActionFromString(actionName, SelectedObject, volumeSlider, lightSlider, plane.gameObject,
+            Action action = Utils.GetActionFromString(actionName, SelectedObject, volumeSlider, lightSlider, effectSlider, plane.gameObject,
                 _skybox, _mainlight);
             _ruleEngine.ExecuteAction(action);
 

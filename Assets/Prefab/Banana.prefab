@@ -106,7 +106,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &-4866347298764472916
 CapsuleCollider:
@@ -371,6 +371,8 @@ MonoBehaviour:
   color: {r: 0, g: 0, b: 0, a: 0}
   isVisible:
     choice: 0
+  isUsingGravity:
+    choice: 0
 --- !u!114 &5108522742821183223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,6 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5199a130b9e2458fb51eee29cee14abe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &7513783484851298840
 MonoBehaviour:
   m_ObjectHideFlags: 0

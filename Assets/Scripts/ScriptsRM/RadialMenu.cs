@@ -23,7 +23,9 @@ public class RadialMenu : MonoBehaviour
     [SerializeField]
     List<Image> slices;
     [SerializeField]
-    public float radius = 4.0f;
+    public float radius = 0.067f;
+
+    public float radius2 = 0.08f;
 
     public float startingAngle = 0.0f;
 
@@ -64,6 +66,7 @@ public class RadialMenu : MonoBehaviour
         int numberOfObjects = pressableButtons.Count;
         float angleStep = 360f / numberOfObjects;
         float angle = startingAngle;
+        float xPos, yPos;
         //Da attivare, in caso di utilizzo dell'Highlight
         /*
         if (numberOfObjects == 1) angle = startingAngle;
@@ -87,9 +90,16 @@ public class RadialMenu : MonoBehaviour
 
         Vector3 center = transform.position;
         for(int i = 0; i < numberOfObjects; i++){
-            float xPos = center.x + radius * Mathf.Cos(angle * Mathf.Deg2Rad);
-            float yPos = center.y + radius * Mathf.Sin(angle * Mathf.Deg2Rad);
-
+            if (numberOfObjects > 8)
+            {
+                xPos = center.x + radius2 * Mathf.Cos(angle * Mathf.Deg2Rad);
+                yPos = center.y + radius2 * Mathf.Sin(angle * Mathf.Deg2Rad);
+            }
+            else
+            {
+                xPos = center.x + radius * Mathf.Cos(angle * Mathf.Deg2Rad);
+                yPos = center.y + radius * Mathf.Sin(angle * Mathf.Deg2Rad);
+            }
             pressableButtons[i].transform.position = new Vector3(xPos, yPos, center.z);
             
             angle += angleStep;
@@ -165,5 +175,6 @@ public class RadialMenu : MonoBehaviour
         pressableButtons.Add(button);
         Open();
     }
+    
     
 }

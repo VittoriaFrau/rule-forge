@@ -556,11 +556,11 @@ namespace UI
 
         //TODO: capire dove lo metto
         public static ECAEvent GetActionFromButton(GameObject button, GameObject selectedGameobject, Slider volumeSlider, 
-            Slider lightSlider, GameObject plane, GameObject _skybox, Light _mainlight)
+            Slider lightSlider,Slider effectSlider ,GameObject plane, GameObject _skybox, Light _mainlight)
         {
             //TODO add new Gador actions
             
-            Action action = GetActionFromString(button.name, selectedGameobject, volumeSlider, lightSlider, plane, _skybox, _mainlight);
+            Action action = GetActionFromString(button.name, selectedGameobject, volumeSlider, lightSlider,effectSlider ,plane, _skybox, _mainlight);
             
             ECAEvent e = ConvertActionToECAEvent(action);
             
@@ -642,7 +642,7 @@ namespace UI
         }
 
         public static Action GetActionFromString(string s, GameObject SelectedObject, Slider volumeSlider, 
-            Slider lightSlider, GameObject plane, GameObject _skybox, Light _mainlight)
+            Slider lightSlider, Slider effectSlider,GameObject plane, GameObject _skybox, Light _mainlight)
         {
             switch (s)
             {
@@ -704,12 +704,9 @@ namespace UI
                 case "Dance":
                     return (new Action(SelectedObject, "dances"));
                 
-                case "TurnOn":
+                case "TurnOnOff":
                     return (new Action(SelectedObject, "turns", ECABoolean.ON));
-                
-                case "TurnOff":
-                    return (new Action(SelectedObject, "turns", ECABoolean.OFF));
-                
+
                 case "Volume":
                     float volumeValue =  volumeSlider.Value;
                     return (new Action(SelectedObject, "changes", "volume", "to", volumeValue));
@@ -730,7 +727,6 @@ namespace UI
                     {
                         return (new Action(_mainlight.gameObject, "changes", "intensity", "to", lightValue));
                     }
-                    
                 
                 case "Floor_Grass":
                     return (new Action(plane, "changes", "floor", "to", "Grass"));
@@ -741,6 +737,9 @@ namespace UI
                 case "Floor_Wood":
                     return (new Action(plane, "changes", "floor", "to", "Wood"));
                 
+                case "Floor_Sand":
+                    return (new Action(plane, "changes", "floor", "to", "Sand"));
+                
                 case "Skybox_Day":
                     return (new Action(_skybox, "changes skybox","Day"));
                 
@@ -749,6 +748,11 @@ namespace UI
                 
                 case "Skybox_Night":
                     return (new Action(_skybox, "changes skybox", "Night"));
+                
+                case "Intensity":
+                    float intensity_value =  effectSlider.Value;
+                    return (new Action(SelectedObject, "changes intensity", intensity_value));
+
             }
 
             return null;

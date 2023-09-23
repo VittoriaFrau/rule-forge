@@ -90,6 +90,14 @@ namespace UI
                     }
                 }
                 
+                if (gameObject.GetComponent<ECAEffect>())
+                {
+                    if (!_generalUIController.editingButtonsTMP.Contains(_generalUIController.effectButtons[0]))
+                    {
+                        _generalUIController.editingButtonsTMP.AddRange(_generalUIController.effectButtons);
+                    }
+                }
+                
                 return _generalUIController.editingButtonsTMP;
         }
 

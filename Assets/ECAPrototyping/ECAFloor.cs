@@ -43,6 +43,9 @@ namespace ECAPrototyping.RuleEngine
               case "Wood":
                   renderer.material = Resources.Load<Material>("Wood_planeTexture/Materials/Planks/Planks");
                   break;
+              case "Sand":
+                  renderer.material = Resources.Load<Material>("Sand_material/Material/Sand");
+                  break;
             }
         }
         

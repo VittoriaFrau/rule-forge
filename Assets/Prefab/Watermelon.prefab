@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 7370245131267735685}
   - component: {fileID: 7370245131268866629}
   - component: {fileID: -4394789962984766287}
-  - component: {fileID: -2002343271877312295}
   - component: {fileID: -5722123845805973475}
   - component: {fileID: 2142899950573441033}
   - component: {fileID: 5103833319159262170}
   - component: {fileID: 8269637973027759754}
   - component: {fileID: 5646047971436311354}
+  - component: {fileID: 6211179391475049641}
   m_Layer: 0
   m_Name: Watermelon
   m_TagString: Untagged
@@ -108,22 +108,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
---- !u!136 &-2002343271877312295
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7370245131271134341}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.34535435
-  m_Height: 0.2954241
-  m_Direction: 1
-  m_Center: {x: 0.0000013411045, y: 0.14771205, z: -0.000000007450581}
 --- !u!114 &-5722123845805973475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,6 +359,8 @@ MonoBehaviour:
   color: {r: 0, g: 0, b: 0, a: 0}
   isVisible:
     choice: 0
+  isUsingGravity:
+    choice: 0
 --- !u!114 &8269637973027759754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,6 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5199a130b9e2458fb51eee29cee14abe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &5646047971436311354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,3 +386,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aff43d2471064442acf19818299fce5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &6211179391475049641
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7370245131271134341}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6907087, y: 0.2954241, z: 0.32987684}
+  m_Center: {x: 0.0000013411045, y: 0.14771205, z: -0.000000007450581}

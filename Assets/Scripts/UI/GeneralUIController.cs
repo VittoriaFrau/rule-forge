@@ -3,6 +3,7 @@ using ECAPrototyping.RuleEngine;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace UI
 {
@@ -19,6 +20,9 @@ namespace UI
         public List<GameObject> characterButtons;
         public List<GameObject> musicButtons;
         public List<GameObject> lightButtons;
+        public List<GameObject> effectButtons;
+        public List<GameObject> editSceneButtons;
+        public List<GameObject> stateDependentButtons;
         public GameObject closeButton;
         public GameObject eventHandler;
         private EditModeController _editModeController;
@@ -120,7 +124,7 @@ namespace UI
             text.text = "You can modify the scene properties or select an object to modify";    
             HideOptionsMenu();
             radialMenu.getListButtons(new List<GameObject>(){editSceneButton});
-            //radialMenu.getListButtons(editingButtons);
+
         }
         
 
@@ -215,6 +219,24 @@ namespace UI
                 button.SetActive(false);
             }
             
+            foreach (var button in effectButtons)
+            {
+                button.SetActive(false);
+            }
+            
+            foreach (var button in stateDependentButtons)
+            {
+                button.SetActive(false);
+            }
+            
+            foreach (var button in editSceneButtons)
+            {
+                button.SetActive(false);
+            }
+            
+            closeButton.SetActive(false);
+            editSceneButton.SetActive(false);
+            
         }
 
         public void resetEditButtons()
@@ -222,6 +244,7 @@ namespace UI
             editingButtonsTMP.Clear();
             editingButtonsTMP.AddRange(editingButtons);
         }
+        
         public void DefaultRM()
         {
             HideOptionsMenu();
@@ -266,5 +289,58 @@ namespace UI
                 radialMenu.AddSingleButtonToList(combineButton);
             else Debug.LogError("Combine button not found");
         }
+
+        public void SwitchButtonTo (string name)
+        {
+            switch (name)
+            {
+                case "Show":
+                    ChangeButton("Show");
+                    break;
+                case "Hide":
+                    ChangeButton("Hide");
+                    break;
+                case "Stop":
+                    ChangeButton("Stop");
+                    break;
+                case "Play":
+                    ChangeButton("Play");
+                    break;
+                case "GravityOFF":
+                    ChangeButton("GravityON");
+                    break;
+                case "GravityON":
+                    ChangeButton("GravityOFF");
+                    break;
+                case "TurnOn":
+                    ChangeButton("TurnOn");
+                    break;
+                case "TurnOff":
+                    ChangeButton("TurnOff");
+                    break;
+            }
+        }
+        public void ChangeButton(string name)
+        {
+            foreach (var buttons in stateDependentButtons)
+            {
+                if (buttons.name.Equals(name))
+                    buttons.SetActive(true);
+            }
+            string currentBotton = EventSystem.current.currentSelectedGameObject.name;
+            GameObject obj = GameObject.Find(currentBotton);
+            GameObject obj2 = GameObject.Find(name);
+            int index = radialMenu.PressableButtons.IndexOf(obj);
+            radialMenu.PressableButtons[index] = obj2;
+            obj.SetActive(false);
+            radialMenu.getListButtons(radialMenu.PressableButtons);
+        }
+
+        public void ShowEditSceneMenu()
+        {
+            radialMenu.getListButtons(editSceneButtons);
+            text.text = "You can modify the scene properties"; 
+        }
+
     }
 }

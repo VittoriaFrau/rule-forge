@@ -41,21 +41,12 @@ namespace ECAPrototyping.RuleEngine
         [Action(typeof(ECALight), "turn light", typeof(ECABoolean))]
         public void Turn(ECABoolean mode)
         {
-            if (gameObject.GetComponentInChildren<Light>())
-            {
-                Debug.Log("Has light");
-            }
-            else
-            {
-                Debug.Log("Has no light");
-            }
-            
             this.OnOff = mode;
             if (this.OnOff && gameObject.GetComponentInChildren<Light>() != null)
             {
                 foreach (Light light in gameObject.GetComponentsInChildren<Light>())
                 {
-                    light.intensity = 1;
+                    light.intensity = 3;
                 }
             }
             else if(gameObject.GetComponentInChildren<Light>() != null && !this.OnOff)

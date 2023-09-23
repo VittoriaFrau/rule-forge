@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 1865691263051154956}
   - component: {fileID: 1865691263050155212}
   - component: {fileID: 1303769176765602619}
-  - component: {fileID: -2064731499476211054}
   - component: {fileID: -1096061023494818084}
   - component: {fileID: 900588186146411117}
   - component: {fileID: 1796483604483565212}
   - component: {fileID: 6914335211911831355}
   - component: {fileID: 6823715208646560404}
+  - component: {fileID: 580963584629342423}
   m_Layer: 0
   m_Name: Hamburger
   m_TagString: Untagged
@@ -109,22 +109,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
---- !u!136 &-2064731499476211054
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865691263047899660}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.29
-  m_Height: 0
-  m_Direction: 1
-  m_Center: {x: -0.02, y: 0.12, z: -0.03}
 --- !u!114 &-1096061023494818084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,3 +387,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aff43d2471064442acf19818299fce5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &580963584629342423
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865691263047899660}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.52258265, y: 0.28791663, z: 0.51557946}
+  m_Center: {x: 0, y: 0.14395829, z: -0.000000014901161}

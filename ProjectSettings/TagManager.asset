@@ -17,6 +17,12 @@ TagManager:
   - RuleUtils
   - ActionRuleCube
   - MainLight
+  - Show
+  - Hide
+  - Play
+  - Stop
+  - GravityON
+  - GravityOFF
   layers:
   - Default
   - TransparentFX

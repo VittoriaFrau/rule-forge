@@ -26,7 +26,7 @@ namespace ECAPrototyping.RuleEngine
         public ECABoolean isPlaying = new ECABoolean(ECABoolean.BoolType.OFF);
 
         private AudioSource _audioSource;
-
+        private bool musicPaused = true;
         private void Start()
         {
             _audioSource = gameObject.GetComponent<AudioSource>();
@@ -38,12 +38,13 @@ namespace ECAPrototyping.RuleEngine
         [Action(typeof(ECAMusic), "turns", typeof(ECABoolean))]
         public void Turn(ECABoolean isPlaying)
         {
-            this.isPlaying.Assign(isPlaying);
-            _audioSource.enabled = isPlaying;
-            if(this.isPlaying)
-                _audioSource.Play();
-            else
+            musicPaused = !musicPaused;
+
+            if(musicPaused){
                 _audioSource.Pause();
+            } else{
+                _audioSource.Play();
+            }
         }
 
         /// <summary>

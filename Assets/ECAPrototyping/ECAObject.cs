@@ -21,7 +21,6 @@ namespace ECAPrototyping.RuleEngine
         /// </summary>
         private Renderer gameRenderer;
         
-        
         /// <summary>
         /// <b> Color </b> is the color of the object 
         /// </summary>
@@ -49,8 +48,6 @@ namespace ECAPrototyping.RuleEngine
             if(gameRenderer == null)
                 gameRenderer = this.gameObject.AddComponent<MeshRenderer>();
             color = gameRenderer.material.color;
-            /*UpdateVisibility();
-            UpdateGravity();*/
         }
         
 
@@ -60,6 +57,15 @@ namespace ECAPrototyping.RuleEngine
         [Action(typeof(ECAObject), "shows")]
         public void Shows()
         {
+            //check if the object is already visible
+            /*if (this.gameObject.activeInHierarchy)
+            {
+                isVisible.Assign(ECABoolean.BoolType.YES);
+            }
+            else
+            {
+                isVisible.Assign(ECABoolean.BoolType.NO);
+            }*/
             isVisible.Assign(ECABoolean.BoolType.YES);
             UpdateVisibility();
         }
@@ -71,7 +77,6 @@ namespace ECAPrototyping.RuleEngine
         [Action(typeof(ECAObject), "hides")]
         public void Hides()
         {
-            
             isVisible.Assign(ECABoolean.BoolType.NO);
             UpdateVisibility();
         }
@@ -145,8 +150,6 @@ namespace ECAPrototyping.RuleEngine
         /// </summary>
         public void UpdateGravity()
         {
-            Debug.Log("Update gravity" +
-                      "");
             switch (isUsingGravity.GetBoolType())
             {
                case ECABoolean.BoolType.YES:

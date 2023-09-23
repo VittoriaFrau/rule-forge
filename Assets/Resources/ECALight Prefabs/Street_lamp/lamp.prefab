@@ -709,7 +709,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.9389999, b: 0, a: 1}
-  m_Intensity: 3
+  m_Intensity: 0
   m_Range: 2.6
   m_SpotAngle: 59
   m_InnerSpotAngle: 21.80208
@@ -803,7 +803,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.9389999, b: 0, a: 1}
-  m_Intensity: 3
+  m_Intensity: 0
   m_Range: 2.6
   m_SpotAngle: 75
   m_InnerSpotAngle: 21.80208
@@ -929,7 +929,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.9389999, b: 0, a: 1}
-  m_Intensity: 5
+  m_Intensity: 0
   m_Range: 2
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1170,7 +1170,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.9389999, b: 0, a: 1}
-  m_Intensity: 5
+  m_Intensity: 0
   m_Range: 2
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1397,7 +1397,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1587921846558465543
 MonoBehaviour:
