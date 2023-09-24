@@ -20,18 +20,11 @@ namespace ECAPrototyping.RuleEngine
         /// </summary>
         private Renderer[] gameRenderer;
         
-        /// <summary>
-        /// <b> Color </b> is the color of the object 
-        /// </summary>
-        [StateVariable("color", ECARules4AllType.Color)] 
-        public Color color;
-
         private ParticleSystem[] effect;
         private void Awake()
         {
             gameRenderer = this.gameObject.GetComponents<Renderer>();
-            color = gameRenderer[0].material.color;
-            effect = gameObject.GetComponents<ParticleSystem>();
+            effect = this.gameObject.GetComponentsInChildren<ParticleSystem>();
         }
         
         [Action(typeof(ECAEffect), "changes intensity", typeof(float))]
@@ -40,7 +33,7 @@ namespace ECAPrototyping.RuleEngine
             foreach (var particleSystem in effect)
             {
                 var main = particleSystem.main;
-                main.startSize = intensity;
+                main.maxParticles = (int) intensity;
             }
             
         }

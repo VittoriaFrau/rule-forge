@@ -18,7 +18,7 @@ namespace ECAPrototyping.RuleEngine
     {
         private Light _light;
         [StateVariable("intensity", ECARules4AllType.Float)] 
-        private float _intensity = 1f;
+        private float _intensity;
         private Slider light_slider;
         public ECABoolean OnOff = new ECABoolean(ECABoolean.BoolType.OFF);
        

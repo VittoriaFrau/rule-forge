@@ -750,8 +750,8 @@ namespace UI
                     return (new Action(_skybox, "changes skybox", "Night"));
                 
                 case "Intensity":
-                    float intensity_value =  effectSlider.Value;
-                    return (new Action(SelectedObject, "changes intensity", intensity_value));
+                    float intensityValue =  effectSlider.Value;
+                    return (new Action(SelectedObject, "changes intensity", intensityValue));
 
             }
 
