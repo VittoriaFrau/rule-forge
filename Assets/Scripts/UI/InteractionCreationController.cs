@@ -23,7 +23,8 @@ namespace UI
             Headgaze,
             Touch,
             Laser,
-            Microgesture
+            Microgesture,
+            Speech
         }
 
         public enum CategoryObjectSelected
@@ -116,6 +117,9 @@ namespace UI
                case Modalities.Touch:
                    ActivateTouchModality();
                    break;
+               case Modalities.Speech:
+                   ActivateSpeechModality();
+                   break;
             }
 
             if (WsClient.IsRecording)
@@ -172,6 +176,9 @@ namespace UI
                     break;
                 case Modalities.Touch:
                     DeActivateTouchModality();
+                    break;
+                case Modalities.Speech:
+                    DeActivateSpeechModality();
                     break;
             }
             //Remove the listeners
@@ -252,6 +259,17 @@ namespace UI
             WsClient.StopSocket();
         }
 
+        public void ActivateSpeechModality()
+        {
+            
+        }
+
+        public void DeActivateSpeechModality()
+        {
+            
+        }
+        
+        
         public void HideModalitiesBubbles()
         {
             foreach (var go in modalitiesBubbles)
