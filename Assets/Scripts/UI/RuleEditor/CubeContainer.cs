@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-using Microsoft.MixedReality.Toolkit.SpatialManipulation;
+using MixedReality.Toolkit.SpatialManipulation;
 using TMPro;
 using UnityEngine;
 

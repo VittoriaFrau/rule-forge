@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.MixedReality.Toolkit.SpatialManipulation;
+using MixedReality.Toolkit.SpatialManipulation;
 using TMPro;
 using UI;
 using UI.RuleEditor;

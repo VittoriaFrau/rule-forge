@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using MixedReality.Toolkit;
+using MixedReality.Toolkit.Subsystems;
 using UnityEngine;
 
 namespace UI.RuleEditor
@@ -29,7 +31,7 @@ namespace UI.RuleEditor
         }
         private void Start()
         {
-            ruleEditorPlate.SetActive(true);
+            /*ruleEditorPlate.SetActive(true);
 
 
             barriers.SetActive(false);
@@ -42,11 +44,11 @@ namespace UI.RuleEditor
             cubePlate = _interactionCreationController.cubePlate;
             _ruleManager = gameObject.GetComponent<RuleManager>();
             
-            _ruleManager.InitializeVariables();
+            _ruleManager.InitializeVariables();*/
             
             //Modality events
-            ECAEvent ecaEvent1 = new ECAEvent(cube, InteractionCreationController.Modalities.Headgaze, "Hover Entered", Texture2D.blackTexture);
-            _modalityEvents.Add(ecaEvent1);
+            /*ECAEvent ecaEvent1 = new ECAEvent(cube, InteractionCreationController.Modalities.Headgaze, "Hover Entered", Texture2D.blackTexture);
+            _modalityEvents.Add(ecaEvent1);*/
 
             /*ECAEvent ecaEvent2 = new ECAEvent(cheese, InteractionCreationController.Modalities.Touch, "Click", Texture2D.redTexture);
             _modalityEvents.Add(ecaEvent2);*/
@@ -62,7 +64,7 @@ namespace UI.RuleEditor
             _actionEvents.Add(ecaEvent4);*/
             
             //Microgesture events
-            ECAEvent ecaEvent5 = new ECAEvent(null, InteractionCreationController.Modalities.Microgesture,
+            /*ECAEvent ecaEvent5 = new ECAEvent(null, InteractionCreationController.Modalities.Microgesture,
                 "middle tip", Utils.LoadPNG("Assets/Resources/Icons/Modalities/middle.png"));
             _modalityEvents.Add(ecaEvent5);
             
@@ -70,7 +72,17 @@ namespace UI.RuleEditor
                 actionRuleCubePrefab, actionRuleCubePrefabVariant, cubePlate);
             
             ruleEditorPlate.transform.localPosition = new Vector3(ruleEditorPlate.transform.localPosition.x,
-                ruleEditorPlate.transform.localPosition.y, 350);
+                ruleEditorPlate.transform.localPosition.y, 350);*/
+            
+            // Get the first running phrase recognition subsystem.
+            var keywordRecognitionSubsystem = XRSubsystemHelpers.GetFirstRunningSubsystem<KeywordRecognitionSubsystem>();
+
+            // If we found one...
+            if (keywordRecognitionSubsystem != null)
+            {
+                // Register a keyword and its associated action with the subsystem
+                keywordRecognitionSubsystem.CreateOrGetEventForKeyword("hello").AddListener(() => Debug.Log("Keyword recognized"));
+            }
         }
     }
 }

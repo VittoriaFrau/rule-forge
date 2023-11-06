@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using ECAPrototyping.RuleEngine;
 using ECAPrototyping.Utils;
-using Microsoft.MixedReality.Toolkit.UX;
+using MixedReality.Toolkit.UX;
 using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;

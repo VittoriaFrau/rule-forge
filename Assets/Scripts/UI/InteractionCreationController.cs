@@ -2,9 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.MixedReality.Toolkit.Input;
-using Microsoft.MixedReality.Toolkit.SpatialManipulation;
-using Microsoft.MixedReality.Toolkit.UX;
+using MixedReality.Toolkit.Input;
+using MixedReality.Toolkit.SpatialManipulation;
+using MixedReality.Toolkit.UX;
 using TMPro;
 using UI.RuleEditor;
 using UnityEngine;
@@ -478,13 +478,13 @@ namespace UI
                     gazeInteractor.GetComponent<FuzzyGazeInteractor>().hoverExited.RemoveAllListeners();
                     break;
                 case Modalities.Laser:
-                    manipulator.onHoverEntered.RemoveAllListeners();
-                    manipulator.onHoverExited.RemoveAllListeners();
+                    manipulator.hoverEntered.RemoveAllListeners();
+                    manipulator.hoverExited.RemoveAllListeners();
                     break;
                 case Modalities.Touch:
                     manipulator.OnClicked.RemoveAllListeners();
-                    manipulator.onSelectEntered.RemoveAllListeners();
-                    manipulator.onSelectExited.RemoveAllListeners();
+                    manipulator.selectEntered.RemoveAllListeners();
+                    manipulator.selectExited.RemoveAllListeners();
                     break;
             }
         }
@@ -546,7 +546,7 @@ namespace UI
         private void AddLaserListener(ObjectManipulator manipulator)
         {
             GameObject gameObject = manipulator.gameObject;
-            manipulator.onHoverEntered.AddListener(interactor =>
+            manipulator.hoverEntered.AddListener(interactor =>
             {
                 Debug.Log("Hover entered");
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Hover entered");
@@ -567,7 +567,7 @@ namespace UI
                 
 
             });
-            manipulator.onHoverExited.AddListener(interactor =>
+            manipulator.hoverExited.AddListener(interactor =>
             {
                 Debug.Log(manipulator.gameObject.name +" Hover exited"); 
                 
@@ -605,7 +605,7 @@ namespace UI
                 PrepareCategoryMenu(gameObject);
             };
             manipulator.OnClicked.AddListener(manipulationStarted);
-            manipulator.onSelectEntered.AddListener(interactor =>
+            manipulator.selectEntered.AddListener(interactor =>
             {
                 Debug.Log(manipulator.gameObject.name + " Select entered");
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Select entered");
@@ -621,7 +621,7 @@ namespace UI
                 }
 
             });
-            manipulator.onSelectExited.AddListener(interactor =>
+            manipulator.selectExited.AddListener(interactor =>
             {
                 Debug.Log(manipulator.gameObject.name + " Select exited");
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Select exited");

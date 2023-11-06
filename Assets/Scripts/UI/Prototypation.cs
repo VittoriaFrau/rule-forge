@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using ECAPrototyping.RuleEngine;
-using Microsoft.MixedReality.Toolkit.SpatialManipulation;
+using MixedReality.Toolkit.SpatialManipulation;
 using Unity.VisualScripting;
 using UnityEditorInternal;
 using UnityEngine;

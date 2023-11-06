@@ -64,7 +64,7 @@ namespace ECAPrototyping
             }
             catch (FormatException e)
             {
-                Debug.LogError("Can't read last session ID!");
+                Debug.LogError("Can't read last session ID!" + e.Message);
             }
 
             return -1;

@@ -2,8 +2,6 @@ using System;
 using System.Collections;
 using System.Security.Cryptography;
 using ECAPrototyping.Utils;
-using Microsoft.MixedReality.Toolkit.Editor;
-using Microsoft.MixedReality.Toolkit.UX;
 using UnityEngine;
 
 namespace ECAPrototyping.RuleEngine

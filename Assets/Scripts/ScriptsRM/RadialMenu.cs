@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Microsoft.MixedReality.Toolkit.UX;
+using MixedReality.Toolkit.UX;
 using UI;
 using UnityEngine;
 using UnityEngine.UI;

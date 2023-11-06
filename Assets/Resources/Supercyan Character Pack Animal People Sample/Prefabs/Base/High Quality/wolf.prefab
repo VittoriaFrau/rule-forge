@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 5862077421946812769}
     m_Modifications:
     - target: {fileID: 8108339070808963241, guid: 12318cbff4065d342a786caeb2c4e568, type: 3}
@@ -60,12 +61,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12318cbff4065d342a786caeb2c4e568, type: 3}
+--- !u!4 &6613926705748243200 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8920869726159987219, guid: 12318cbff4065d342a786caeb2c4e568, type: 3}
+  m_PrefabInstance: {fileID: 2307013489569992979}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5263389606313241789
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 5862077421946812769}
     m_Modifications:
     - target: {fileID: 5111508070880938774, guid: d8cb8658819f03d4189f2ae35a5bac2a, type: 3}
@@ -121,12 +131,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8cb8658819f03d4189f2ae35a5bac2a, type: 3}
+--- !u!4 &337552111499640081 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5594712286441165228, guid: d8cb8658819f03d4189f2ae35a5bac2a, type: 3}
+  m_PrefabInstance: {fileID: 5263389606313241789}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6255765028772208266
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9312126e574e97047b72657b5431e12a, type: 3}
@@ -186,6 +205,42 @@ PrefabInstance:
       value: wolf
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9312126e574e97047b72657b5431e12a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6613926705748243200}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9312126e574e97047b72657b5431e12a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 337552111499640081}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9312126e574e97047b72657b5431e12a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5048982667677511191}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9312126e574e97047b72657b5431e12a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 536048797114285255}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9312126e574e97047b72657b5431e12a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6712789933885994379}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9312126e574e97047b72657b5431e12a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1595969889546942702}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9312126e574e97047b72657b5431e12a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 581544697959280712}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9312126e574e97047b72657b5431e12a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1238547484312277113}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9312126e574e97047b72657b5431e12a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2325489616010504024}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9312126e574e97047b72657b5431e12a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6006502913922766374}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9312126e574e97047b72657b5431e12a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6880780028200935896}
   m_SourcePrefab: {fileID: 100100000, guid: 9312126e574e97047b72657b5431e12a, type: 3}
 --- !u!4 &5862077421946812769 stripped
 Transform:
@@ -204,10 +259,21 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6490136728237138907}
-  serializedVersion: 2
+  serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -221,8 +287,17 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6490136728237138907}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
+  serializedVersion: 2
   m_Radius: 0.3
   m_Height: 0.96579504
   m_Direction: 1
@@ -289,6 +364,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &581544697959280712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,7 +400,15 @@ MonoBehaviour:
     m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
+  m_FocusMode: 1
   m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
   m_FirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -349,6 +433,18 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
   m_Activated:
     m_PersistentCalls:
       m_Calls: []
@@ -357,6 +453,7 @@ MonoBehaviour:
       m_Calls: []
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
   m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -465,7 +562,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   disabledInteractorTypes:
-  - reference: Microsoft.MixedReality.Toolkit.IPokeInteractor, Microsoft.MixedReality.Toolkit.Core
+  - reference: MixedReality.Toolkit.IPokeInteractor, MixedReality.Toolkit.Core
+  - reference: MixedReality.Toolkit.IPokeInteractor, MixedReality.Toolkit.Core
   <ToggleMode>k__BackingField: 0
   <SelectThreshold>k__BackingField: 0.9
   <DeselectThreshold>k__BackingField: 0.1
@@ -477,6 +575,7 @@ MonoBehaviour:
   allowSelectByVoice: 1
   speechRecognitionKeyword: select
   <VoiceRequiresFocus>k__BackingField: 1
+  <SelectRequiresHover>k__BackingField: 0
   <IsToggled>k__BackingField:
     active: 0
     onEntered:
@@ -506,8 +605,8 @@ MonoBehaviour:
   rotationAnchorFar: 1
   releaseBehavior: 3
   transformSmoothingLogicType:
-    reference: Microsoft.MixedReality.Toolkit.SpatialManipulation.DefaultTransformSmoothingLogic,
-      Microsoft.MixedReality.Toolkit.SpatialManipulation
+    reference: MixedReality.Toolkit.SpatialManipulation.DefaultTransformSmoothingLogic,
+      MixedReality.Toolkit.SpatialManipulation
   smoothingFar: 1
   smoothingNear: 1
   moveLerpTime: 0.001
@@ -517,12 +616,11 @@ MonoBehaviour:
   constraintsManager: {fileID: 0}
   manipulationLogicTypes:
     moveLogicType:
-      reference: Microsoft.MixedReality.Toolkit.SpatialManipulation.MoveLogic, Microsoft.MixedReality.Toolkit.SpatialManipulation
+      reference: MixedReality.Toolkit.SpatialManipulation.MoveLogic, MixedReality.Toolkit.SpatialManipulation
     rotateLogicType:
-      reference: Microsoft.MixedReality.Toolkit.SpatialManipulation.RotateLogic,
-        Microsoft.MixedReality.Toolkit.SpatialManipulation
+      reference: MixedReality.Toolkit.SpatialManipulation.RotateLogic, MixedReality.Toolkit.SpatialManipulation
     scaleLogicType:
-      reference: Microsoft.MixedReality.Toolkit.SpatialManipulation.ScaleLogic, Microsoft.MixedReality.Toolkit.SpatialManipulation
+      reference: MixedReality.Toolkit.SpatialManipulation.ScaleLogic, MixedReality.Toolkit.SpatialManipulation
 --- !u!114 &2325489616010504024
 MonoBehaviour:
   m_ObjectHideFlags: 0

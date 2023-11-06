@@ -684,7 +684,6 @@ namespace ECAPrototyping.RuleEngine
 
         public override bool Evaluate()
         {
-            bool res;
             bool temp = Op == ConditionType.AND ? true : false;
 
             foreach (Condition c in children)

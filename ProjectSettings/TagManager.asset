@@ -3,31 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Canvas
-  - debugText
-  - handController
-  - EventHandler
-  - MetalicCube1
-  - MetalicCube2
-  - MagneticTrap
-  - RuleCubes
-  - RuleText
-  - Plane
-  - RuleUtils
-  - ActionRuleCube
-  - MainLight
-  - Show
-  - Hide
-  - Play
-  - Stop
-  - GravityON
-  - GravityOFF
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Floor
+  - 
   - Water
   - UI
   - 
