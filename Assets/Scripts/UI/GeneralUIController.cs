@@ -31,6 +31,7 @@ namespace UI
         public RadialMenu radialMenu;
         private Prototypation _prototypation;
         public bool isRecording = false;
+        
 
         public enum UIState
         {
@@ -295,45 +296,63 @@ namespace UI
             switch (name)
             {
                 case "Show":
-                    ChangeButton("Show");
+                    ChangeButton("Hide","Show");
                     break;
                 case "Hide":
-                    ChangeButton("Hide");
+                    ChangeButton("Show", "Hide");
                     break;
                 case "Stop":
-                    ChangeButton("Stop");
+                    ChangeButton("Play", "Stop");
                     break;
                 case "Play":
-                    ChangeButton("Play");
+                    ChangeButton("Stop", "Play");
                     break;
                 case "GravityOFF":
-                    ChangeButton("GravityON");
+                    ChangeButton("GravityON","GravityOFF");
                     break;
                 case "GravityON":
-                    ChangeButton("GravityOFF");
+                    ChangeButton("GravityOFF", "GravityON");
                     break;
                 case "TurnOn":
-                    ChangeButton("TurnOn");
+                    ChangeButton("TurnOff","TurnOn");
                     break;
                 case "TurnOff":
-                    ChangeButton("TurnOff");
+                    ChangeButton("TurnOn","TurnOff");
                     break;
             }
         }
-        public void ChangeButton(string name)
+        public void ChangeButton(string prevButtonName, string newButtonName)
         {
-            foreach (var buttons in stateDependentButtons)
+            GameObject newButton = null, prevButton = null;
+            foreach (var button in stateDependentButtons)
             {
-                if (buttons.name.Equals(name))
-                    buttons.SetActive(true);
+                if (button.name.Equals(newButtonName))
+                {
+                    newButton = button;
+                    button.SetActive(true);
+                }
+                else if (button.name.Equals(prevButtonName))
+                {
+                    prevButton = button;
+                    button.SetActive(false);
+                }
+                    
             }
-            string currentBotton = EventSystem.current.currentSelectedGameObject.name;
-            GameObject obj = GameObject.Find(currentBotton);
+            
+            if(newButton==null || prevButton==null) return;
+            int indexButtonToBeRemoved = radialMenu.PressableButtons.IndexOf(prevButton);
+            //Substitute with the new one
+            radialMenu.PressableButtons[indexButtonToBeRemoved] = newButton;
+            radialMenu.getListButtons(radialMenu.PressableButtons);
+            
+            /*string currentButton = EventSystem.current.currentSelectedGameObject.name;
+           
+            GameObject obj = GameObject.Find(currentButton);
             GameObject obj2 = GameObject.Find(name);
             int index = radialMenu.PressableButtons.IndexOf(obj);
             radialMenu.PressableButtons[index] = obj2;
             obj.SetActive(false);
-            radialMenu.getListButtons(radialMenu.PressableButtons);
+            radialMenu.getListButtons(radialMenu.PressableButtons);*/
         }
 
         public void ShowEditSceneMenu()

@@ -9,6 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Bubble_blue
   m_Shader: {fileID: 4800000, guid: 0f5715eafead83647953f743064c5774, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -17,6 +19,7 @@ Material:
   m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs: []
@@ -34,5 +37,5 @@ Material:
     - _ColorShiftBand: {r: 0.34277225, g: 0.27503693, b: 0.37425387, a: 0}
     - _ColorShiftNoise: {r: 0.144, g: 0.61, b: 1.35, a: 0}
     - _ColorShiftPeak: {r: 0.8277851, g: 0.5155494, b: 0.18712693, a: 0}
-    - _MainColor: {r: 1, g: 1, b: 1, a: 0.7607843}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 0.1882353}
   m_BuildTextureStacks: []
