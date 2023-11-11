@@ -74,7 +74,38 @@ namespace UI
         {
             foreach (var interactable in interactables)
             {
+                //Caso speciale per test:
+                if(interactable.name.Equals("Door") || interactable.name.Equals("Door_doorway")) return;
+                
                 ObjectManipulator _objectManipulator = interactable.GetComponent<ObjectManipulator>();
+                if (_objectManipulator == null)
+                {
+                    _objectManipulator = interactable.GetComponentInChildren<ObjectManipulator>();
+                }
+                //Caso speciale per test 2:
+                if(interactable.name.Equals("Old_Door_Closed"))
+                {
+                    GameObject[] children = { interactable.transform.GetChild(0).gameObject, interactable.transform.GetChild(1).gameObject };
+                    Prototypation prototypationScript = interactable.transform.GetChild(1).gameObject.GetComponent<Prototypation>();;
+                    foreach (var child in children)
+                    {
+                        if (child.name.Equals("Door"))
+                        {
+                            _objectManipulator = child.GetComponent<ObjectManipulator>();
+                            prototypationScript = child.GetComponent<Prototypation>();
+                        }
+                            
+                    }
+
+                    if (_objectManipulator == null)
+                    {
+                        _objectManipulator = interactable.transform.GetChild(1).gameObject.GetComponent<ObjectManipulator>();
+                    }
+                    
+                    _objectManipulator.OnClicked.AddListener(() => prototypationScript.ShowPieUIMenu());
+                    return;
+                }
+                
                 _objectManipulator.OnClicked.AddListener(() => interactable.GetComponent<Prototypation>().ShowPieUIMenu());
             }
         }
@@ -84,6 +115,9 @@ namespace UI
             if(interactables.Count==0) return;
             foreach (var interactable in interactables)
             {
+                //Test 
+                if (interactable.name.Equals("Door") || interactable.name.Equals("Door_doorway")
+                                                     || interactable.name.Equals("Old_Door_Closed")) break;
                 ObjectManipulator _objectManipulator = interactable.GetComponent<ObjectManipulator>();
                 _objectManipulator.OnClicked.RemoveAllListeners();
             }

@@ -7,8 +7,7 @@ using UnityEngine;
 namespace ECAPrototyping.RuleEngine
 {
     /// <summary>
-    /// A <b>Character</b> is a type of ECAObject, it represents an animal, a humanoid, a robot or a generic creature.
-    /// A Character can be autonomous or controlled by the player.
+    /// A <b>ECAEnvironment</b> is a type of ECAObject, it represents an environment object.
     /// </summary>
     [DisallowMultipleComponent]
     [ECARules4All("environment")]

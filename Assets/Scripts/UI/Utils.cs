@@ -184,6 +184,7 @@ namespace UI
             go.transform.parent = interactableTransform;
     
             Rigidbody rigidbody = go.GetComponent<Rigidbody>();
+            if(rigidbody == null) rigidbody = go.GetComponentInChildren<Rigidbody>();
             
             rigidbody.useGravity = true;
             
@@ -752,6 +753,11 @@ namespace UI
                 case "Intensity":
                     float intensityValue =  effectSlider.Value;
                     return (new Action(SelectedObject, "changes intensity", intensityValue));
+                
+                case "OpenDoor":
+                    return (new Action(SelectedObject, "opens"));
+                case "CloseDoor":
+                    return (new Action(SelectedObject, "closes"));
 
             }
 

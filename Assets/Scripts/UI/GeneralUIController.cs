@@ -22,6 +22,7 @@ namespace UI
         public List<GameObject> lightButtons;
         public List<GameObject> effectButtons;
         public List<GameObject> editSceneButtons;
+        public List<GameObject> doorButtons;
         public List<GameObject> stateDependentButtons;
         public GameObject closeButton;
         public GameObject eventHandler;
@@ -235,6 +236,11 @@ namespace UI
                 button.SetActive(false);
             }
             
+            foreach (var button in doorButtons)
+            {
+                button.SetActive(false);
+            }
+            
             closeButton.SetActive(false);
             editSceneButton.SetActive(false);
             
@@ -319,6 +325,12 @@ namespace UI
                 case "TurnOff":
                     ChangeButton("TurnOn","TurnOff");
                     break;
+                case "OpenDoor":
+                    ChangeButton("CloseDoor","OpenDoor");
+                    break;
+                case "CloseDoor":
+                    ChangeButton("OpenDoor","CloseDoor");
+                    break;
             }
         }
         public void ChangeButton(string prevButtonName, string newButtonName)
@@ -344,15 +356,6 @@ namespace UI
             //Substitute with the new one
             radialMenu.PressableButtons[indexButtonToBeRemoved] = newButton;
             radialMenu.getListButtons(radialMenu.PressableButtons);
-            
-            /*string currentButton = EventSystem.current.currentSelectedGameObject.name;
-           
-            GameObject obj = GameObject.Find(currentButton);
-            GameObject obj2 = GameObject.Find(name);
-            int index = radialMenu.PressableButtons.IndexOf(obj);
-            radialMenu.PressableButtons[index] = obj2;
-            obj.SetActive(false);
-            radialMenu.getListButtons(radialMenu.PressableButtons);*/
         }
 
         public void ShowEditSceneMenu()

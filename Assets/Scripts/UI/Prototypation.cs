@@ -97,6 +97,14 @@ namespace UI
                         _generalUIController.editingButtonsTMP.AddRange(_generalUIController.effectButtons);
                     }
                 }
+
+                if (gameObject.GetComponent<ECADoor>())
+                {
+                    if (!_generalUIController.editingButtonsTMP.Contains(_generalUIController.doorButtons[0]))
+                    {
+                        _generalUIController.editingButtonsTMP.AddRange(_generalUIController.doorButtons);
+                    }
+                }
                 
                 return _generalUIController.editingButtonsTMP;
         }

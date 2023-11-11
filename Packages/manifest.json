@@ -12,7 +12,7 @@
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.9.1",
     "com.unity.xr.openxr": "1.8.2",
-    "org.mixedrealitytoolkit.core": "file:MixedReality/org.mixedrealitytoolkit.core-3.0.0.tgz",
+    "org.mixedrealitytoolkit.core": "file:MixedReality/org.mixedrealitytoolkit.core-3.0.0-pre.18.tgz",
     "org.mixedrealitytoolkit.input": "file:MixedReality/org.mixedrealitytoolkit.input-3.0.0.tgz",
     "org.mixedrealitytoolkit.spatialmanipulation": "file:MixedReality/org.mixedrealitytoolkit.spatialmanipulation-3.0.0.tgz",
     "org.mixedrealitytoolkit.standardassets": "file:MixedReality/org.mixedrealitytoolkit.standardassets-3.0.0.tgz",
@@ -50,6 +50,7 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0"
+    "com.unity.modules.xr": "1.0.0",
+    "org.mixedrealitytoolkit.accessibility": "file:MixedReality/org.mixedrealitytoolkit.accessibility-1.0.0-pre.18.tgz"
   }
 }

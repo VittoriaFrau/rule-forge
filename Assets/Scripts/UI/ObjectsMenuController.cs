@@ -19,6 +19,7 @@ public class ObjectsMenuController : MonoBehaviour
     public List<GameObject> musicPrefabs;
     public List<GameObject> lightPrefabs;
     public List<GameObject> effectPrefabs;
+    public List<GameObject> doorPrefabs;
 
     public List<GameObject> categoryButtons;
     private GeneralUIController generalUIController;
@@ -87,6 +88,14 @@ public class ObjectsMenuController : MonoBehaviour
     {
         GameObject effectGameObject = Utils.InstantiateObject(effect, effectPrefabs, mainCamera, interactables.transform);
         effectGameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
+
+    public void NewDoor(string door)
+    {
+        GameObject doorGameObject = Utils.InstantiateObject(door, doorPrefabs, mainCamera, interactables.transform);
+        doorGameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+        GameObject doorChild = doorGameObject.transform.Find("Door").gameObject;
+        doorChild.transform.rotation = Quaternion.Euler(-90, 0, 0);
     }
     
     public void DeActivateObjectsMenu()

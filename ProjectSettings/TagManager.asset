@@ -3,7 +3,22 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - EventHandler
+  - GravityOFF
+  - RuleUtils
+  - Stop
+  - Canvas
+  - GravityON
+  - Play
+  - Show
+  - RuleText
+  - Plane
+  - Hide
+  - RuleCubes
+  - ActionRuleCube
+  - debugText
+  - handController
   layers:
   - Default
   - TransparentFX
