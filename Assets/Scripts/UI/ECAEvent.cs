@@ -121,6 +121,8 @@ namespace UI
                 if (_verb != null) return "The user " + _verb + " the " + _gameObject.name + " object";
                 if(_event == null && _verb == null) return "The user " + modality + " the " + _gameObject.name + " object";
             }
+            if(_object == null) return _gameObject.name + " " + _verb;
+            
             return _gameObject.name + " " + _verb + " " + _object;
         }
 

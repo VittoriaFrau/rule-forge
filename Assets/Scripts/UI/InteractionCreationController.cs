@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using ECAPrototyping.RuleEngine;
 using MixedReality.Toolkit.Input;
 using MixedReality.Toolkit.SpatialManipulation;
 using MixedReality.Toolkit.UX;
@@ -39,6 +40,7 @@ namespace UI
         private EditModeController editModeController;
         public List<GameObject> modalitiesBubbles;
         public GameObject BackButton, RecordButton, StopButton;
+        private RuleEngine _ruleEngine;
         
         //Touch modality attributes
         private GameObject OpenXRRightHandController, OpenXRLeftHandController;
@@ -67,6 +69,8 @@ namespace UI
         //Recording
         private List<ECAEvent> _modalityEvents = new();
         private List<ECAEvent> _actionEvents = new();
+        //Opposite action events are used to revert the action when we go back to the previous state
+        private List<Action> _oppositeActionEvents = new();
         public GameObject ruleEditorPlate;
         public GameObject modalityRuleCubePrefab;
         public GameObject actionRuleCubePrefab;
@@ -98,6 +102,7 @@ namespace UI
                 == "MRTK LeftHand Controller");
             _screenshotCamera =screenshotCamera.GetComponent<ScreenshotCamera>();
             _ruleManager = this.gameObject.GetComponent<RuleManager>();
+            _ruleEngine = RuleEngine.GetInstance();
         }
 
         public void SelectModality(string modality)
@@ -135,6 +140,7 @@ namespace UI
         {
             _modalityEvents.Clear();
             _actionEvents.Clear();
+            _oppositeActionEvents.Clear();
         }
         
         private void ActivateHeadGazeModality()
@@ -333,6 +339,12 @@ namespace UI
             DeActivateCurrentModality();
             HideModalitiesBubbles();
 
+            //The changes during the recording have to be reverted
+            foreach (var action in _oppositeActionEvents)
+            {
+                _ruleEngine.ExecuteAction(action);
+            }
+
         }
 
         public void ActivateCombineRulesMode()
@@ -407,8 +419,10 @@ namespace UI
             generalUIController.SetDebugText("Recording started.");
             
             _actionEvents.Clear();
+            _oppositeActionEvents.Clear();
             
-            screenshotCamera.SetActive(true);
+            //TEST:se la attivo me la da come main, quindi momentaneamente la disattivo
+            //screenshotCamera.SetActive(true);
         }
 
 
@@ -417,9 +431,12 @@ namespace UI
             ECAEvent ecaEvent = Utils.ConvertActionToECAEvent(action);
             if (!_actionEvents.Contains(ecaEvent))
             {
+                Action oppositeAction = Utils.GetOppositeAction(action, ecaEvent);
+                _oppositeActionEvents.Add(oppositeAction);
                 _actionEvents.Add(ecaEvent);
                 Debug.Log(ecaEvent);
                 generalUIController.SetDebugText(ecaEvent.ToString());
+                //TEST: tolto perchè la screenshot camera non sta funzionando
                 PrepareForActionScreenShot(selectedObject);
             }
         }
@@ -444,7 +461,7 @@ namespace UI
             WsClient.IsRecording = true;
 
             //Activate screenshot camera
-            screenshotCamera.SetActive(true);
+            //screenshotCamera.SetActive(true);
 
             foreach (var go in interactables.transform.GetComponentsInChildren<ObjectManipulator>())
             {
@@ -523,6 +540,7 @@ namespace UI
                 if (!_modalityEvents.Contains(ecaEvent))
                 {
                     _modalityEvents.Add(ecaEvent);
+                    //TEST: Tolto perchè non sta funzionando la screenshot camera
                     PrepareForModalityScreenshot(gameObject, Modalities.Headgaze);
                 }
 
@@ -538,6 +556,7 @@ namespace UI
                 if (!_modalityEvents.Contains(ecaEvent))
                 {
                     _modalityEvents.Add(ecaEvent);
+                    //TEST: Tolto perchè non sta funzionando la screenshot camera
                     PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Headgaze);
                 }
             });
@@ -560,6 +579,7 @@ namespace UI
                 if (!_modalityEvents.Contains(ecaEvent))
                 {
                     _modalityEvents.Add(ecaEvent);
+                    //TEST: Tolto perchè non sta funzionando la screenshot camera
                     PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Laser);
                 }
                 PrepareCategoryMenu(gameObject);
@@ -577,6 +597,7 @@ namespace UI
                 if (!_modalityEvents.Contains(ecaEvent))
                 {
                     _modalityEvents.Add(ecaEvent);
+                    //TEST: Tolto perchè non sta funzionando la screenshot camera
                     PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Laser);
                 }
 
@@ -599,6 +620,7 @@ namespace UI
                 if (!_modalityEvents.Contains(ecaEvent))
                 {
                     _modalityEvents.Add(ecaEvent);
+                    //TEST: Tolto perchè non sta funzionando la screenshot camera
                     PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Touch);
                 }
 
@@ -617,6 +639,7 @@ namespace UI
                 if (!_modalityEvents.Contains(ecaEvent))
                 {
                     _modalityEvents.Add(ecaEvent);
+                    //TEST: Tolto perchè non sta funzionando la screenshot camera
                     PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Touch);
                 }
 
@@ -632,6 +655,7 @@ namespace UI
                 if (!_modalityEvents.Contains(ecaEvent))
                 {
                     _modalityEvents.Add(ecaEvent);
+                    //TEST: tolto perchè la screenshot camera non sta funzionando
                     PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Touch);
                 }
                 //categoryMenu.SetActive(false);

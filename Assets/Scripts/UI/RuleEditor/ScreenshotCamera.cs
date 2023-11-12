@@ -48,8 +48,10 @@ namespace UI.RuleEditor
         {
             GetInteractableGameObjects();
             HideOtherGameobjects(gameObject);
+            secondaryCamera.gameObject.SetActive(true);
             PositionSecondaryCameraInFrontOfObject(gameObject, secondaryCamera, mainCamera);
             CaptureImageFromCamera(secondaryCamera, ecaEvent);
+            secondaryCamera.gameObject.SetActive(false);
             ShowGameobjects(gameObject);
         }
 
@@ -121,6 +123,7 @@ namespace UI.RuleEditor
         
         private void CaptureImageFromCamera(Camera camera, ECAEvent ecaEvent)
         {
+            camera.gameObject.SetActive(true);
             // Take screenshot
             RenderTexture rt = new RenderTexture(resWidth, resHeight, 24);
             camera.targetTexture = rt;
@@ -133,6 +136,7 @@ namespace UI.RuleEditor
             RenderTexture.active = null;
             Destroy(rt);
             ecaEvent.Texture = screenShot;
+            camera.gameObject.SetActive(false);
         }
 
         /**
@@ -140,12 +144,20 @@ namespace UI.RuleEditor
          */
         public void GetInteractableGameObjects()
         {
+            if(interactableGameObjects==null) SetUpCamera();
             interactableGameObjects.Clear();
             for (int i = 0; i < interactablesContainer.transform.childCount; i++)
             {
                 GameObject child = interactablesContainer.transform.GetChild(i).gameObject;
                 interactableGameObjects.Add(child);
             }
+        }
+
+        private void SetUpCamera()
+        {
+            secondaryCamera = this.GetComponent<Camera>();
+            mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+            interactableGameObjects = new List<GameObject>();
         }
     }
 }

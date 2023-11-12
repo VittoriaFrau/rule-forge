@@ -642,6 +642,24 @@ namespace UI
             return e;
         }
 
+        public static Action GetOppositeAction(Action action, ECAEvent ecaEvent)
+        {
+            //TEST TODO inserire tutti gli altri
+            switch (ecaEvent.Verb)
+            {
+                case "opens":
+                    return new Action(action.GetSubject(), "closes");  
+                case "closes":
+                    return new Action(action.GetSubject(), "opens");
+                case "gravityON":
+                    return new Action(action.GetSubject(), "gravityOFF");
+                case "gravityOFF":
+                    return new Action(action.GetSubject(), "gravityON");
+            }
+
+            return null;
+        }
+
         public static Action GetActionFromString(string s, GameObject SelectedObject, Slider volumeSlider, 
             Slider lightSlider, Slider effectSlider,GameObject plane, GameObject _skybox, Light _mainlight)
         {
@@ -763,5 +781,7 @@ namespace UI
 
             return null;
         }
+        
+        
     }
 }

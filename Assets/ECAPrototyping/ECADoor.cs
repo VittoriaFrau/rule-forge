@@ -86,6 +86,13 @@ namespace ECAPrototyping.RuleEngine
                 if( !rotating )
                     StartCoroutine( Rotate( rotation, 1, objectToRotate ) ) ;
             }
+            
+            private System.Collections.IEnumerator ResetInstantiation()
+            {
+                yield return new WaitForSeconds(2f);
+                
+            }
+
         }
     
 }
