@@ -336,14 +336,19 @@ namespace UI
             
             _modalityEvents.AddRange(WsClient.MicrogestureEvents);
 
-            DeActivateCurrentModality();
-            HideModalitiesBubbles();
-
-            //The changes during the recording have to be reverted
-            foreach (var action in _oppositeActionEvents)
+            if (generalUIController.UIstate == GeneralUIController.UIState.NewRule)
             {
-                _ruleEngine.ExecuteAction(action);
+                DeActivateCurrentModality();
+                HideModalitiesBubbles();
+            } else if (generalUIController.UIstate == GeneralUIController.UIState.EditMode)
+            {
+                //The changes during the recording have to be reverted
+                foreach (var action in _oppositeActionEvents)
+                {
+                    _ruleEngine.ExecuteAction(action);
+                }
             }
+
 
         }
 

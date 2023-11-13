@@ -1,4 +1,5 @@
 using System.Collections;
+using UI;
 using UnityEngine;
 
 namespace ECAPrototyping.RuleEngine
@@ -17,10 +18,14 @@ namespace ECAPrototyping.RuleEngine
             /// <b>isOpen</b> represents the state of the door.
             /// By default, the door is closed.
             /// </summary>
-            public bool isOpen;
-            private bool rotating;
+            public bool isOpen = false;
+            private bool rotating = false;
             private Transform _doorTransform;
             private GameObject _doorChild;
+            private const float rotationDuration = 1.0f;
+            
+            //Event to notify when the notation is ended
+            public event System.Action DoorOpened;
         
             /// <summary>
             /// <b> Color </b> is the color of the object 
@@ -41,13 +46,32 @@ namespace ECAPrototyping.RuleEngine
             [Action(typeof(ECADoor), "opens")]
             public void OpenDoor()
             {
-                isOpen = true;
+                /*isOpen = true;
                 //Deactivate component HingeJoint
                 HingeJoint hingeJoint = gameObject.GetComponent<HingeJoint>();
                 Destroy(hingeJoint);
                 //Rotate the door with time.deltatime
-                StartRotation(gameObject, new Vector3(0, 50, 0));
+                StartRotation(gameObject, new Vector3(0, 50, 0));*/
 
+                if (!isOpen && !rotating)
+                {
+                    isOpen = true;
+                    HingeJoint hingeJoint = gameObject.GetComponent<HingeJoint>();
+                    Destroy(hingeJoint);
+
+                    // Usa StartCoroutine per attendere che la rotazione sia completata
+                    StartCoroutine(Rotate(new Vector3(0, 50, 0), gameObject, () =>
+                    {
+                        GameObject eventHandler = GameObject.FindWithTag("EventHandler");
+                        GeneralUIController generalUIController = eventHandler.GetComponent<GeneralUIController>();
+                        if (generalUIController.isRecording)
+                        {
+                            Action action = new Action(this.gameObject, "opens");
+                            generalUIController.InteractionCreationController.RecordActionPressedButton(action, this.gameObject);
+                        }
+
+                    }));
+                }
             }
             
             /// <summary>
@@ -63,29 +87,54 @@ namespace ECAPrototyping.RuleEngine
                 if(hingeJoint)
                     Destroy(hingeJoint);
                 //Rotate the door with time.deltatime
-                StartRotation(gameObject, new Vector3(0, -50, 0));
+                StartCoroutine(Rotate(new Vector3(0, -50, 0), gameObject, () =>
+                {
+                    GameObject eventHandler = GameObject.FindWithTag("EventHandler");
+                    GeneralUIController generalUIController = eventHandler.GetComponent<GeneralUIController>();
+                    if (generalUIController.isRecording)
+                    {
+                        Action action = new Action(this.gameObject, "closes");
+                        generalUIController.InteractionCreationController.RecordActionPressedButton(action, this.gameObject);
+                    }
+                    
+                }));
 
             }
             
-            private IEnumerator Rotate( Vector3 angles, float duration, GameObject objectToRotate )
+            private IEnumerator Rotate( Vector3 angles, GameObject objectToRotate, System.Action onComplete )
             {
                 rotating = true ;
                 Quaternion startRotation = objectToRotate.transform.rotation ;
                 Quaternion endRotation = Quaternion.Euler( angles ) * startRotation ;
-                for( float t = 0 ; t < duration ; t+= Time.deltaTime )
+                for( float t = 0 ; t < rotationDuration ; t+= Time.deltaTime )
                 {
-                    objectToRotate.transform.rotation = Quaternion.Lerp( startRotation, endRotation, t / duration ) ;
+                    objectToRotate.transform.rotation = Quaternion.Lerp( startRotation, endRotation, t / rotationDuration ) ;
                     yield return null;
                 }
                 objectToRotate.transform.rotation = endRotation  ;
                 rotating = false;
+                if (onComplete != null)
+                {
+                    onComplete.Invoke();
+                }
             }
 
-            public void StartRotation(GameObject objectToRotate, Vector3 rotation)
+            /*public void StartRotation(GameObject objectToRotate, Vector3 rotation)
             {
-                if( !rotating )
-                    StartCoroutine( Rotate( rotation, 1, objectToRotate ) ) ;
+                if (!rotating)
+                {
+                    StartCoroutine( Rotate( rotation, objectToRotate ) ) ;
+                    
+                }
+                    
+            }*/
+            
+            private System.Collections.IEnumerator RotateCoroutine()
+            {
+                yield return new WaitForSeconds(2f);
+                
             }
+
             
             private System.Collections.IEnumerator ResetInstantiation()
             {

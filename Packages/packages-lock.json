@@ -283,8 +283,18 @@
       },
       "url": "https://packages.unity.com"
     },
+    "org.mixedrealitytoolkit.accessibility": {
+      "version": "file:MixedReality/org.mixedrealitytoolkit.accessibility-1.0.0-pre.18.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.microsoft.mrtk.graphicstools.unity": "0.5.12",
+        "org.mixedrealitytoolkit.core": "3.0.0-pre.18",
+        "com.unity.textmeshpro": "3.0.6"
+      }
+    },
     "org.mixedrealitytoolkit.core": {
-      "version": "file:MixedReality/org.mixedrealitytoolkit.core-3.0.0.tgz",
+      "version": "file:MixedReality/org.mixedrealitytoolkit.core-3.0.0-pre.18.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {

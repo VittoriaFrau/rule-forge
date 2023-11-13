@@ -84,7 +84,7 @@ namespace UI.RuleEditor
             for (int i = 0; i < interactableGameObjects.Count; i++)
             {
                 GameObject child = interactableGameObjects[i];
-                if (child != gameObject)
+                if (child != gameObject && child != gameObject.transform.parent.gameObject)
                 {
                     child.SetActive(false);
                 }

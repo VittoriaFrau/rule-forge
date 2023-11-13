@@ -184,22 +184,27 @@ namespace UI
                 }
             }
         }
-        
+
         public void CreateAndPublishAction(string actionName)
         {
             if (_ruleEngine == null) return;
-            Action action = Utils.GetActionFromString(actionName, SelectedObject, volumeSlider, lightSlider, effectSlider, plane.gameObject,
+            Action action = Utils.GetActionFromString(actionName, SelectedObject, volumeSlider, lightSlider,
+                effectSlider, plane.gameObject,
                 _skybox, _mainlight);
-            _ruleEngine.ExecuteAction(action);
+            //TEST
+            if (selectedObject.name.Equals("Door") && generalUIController.isRecording)
+            {
+                //Nella ExecuteAction della porta c'è anche l'azione per lo screenshot
+                _ruleEngine.ExecuteAction(action);
+                return;
+            }
 
             if (generalUIController.isRecording)
             {
                 generalUIController.InteractionCreationController.RecordActionPressedButton(action, selectedObject);
             }
-            
+
         }
-        
-       
-        
+
     }
 }
