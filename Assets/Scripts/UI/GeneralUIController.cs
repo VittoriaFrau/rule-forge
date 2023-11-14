@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using ECAPrototyping.RuleEngine;
 using TMPro;
@@ -32,6 +33,9 @@ namespace UI
         public RadialMenu radialMenu;
         private Prototypation _prototypation;
         public bool isRecording = false;
+        
+        // Test poop just to make it work
+        public Boolean test = true;
         
 
         public enum UIState
@@ -355,7 +359,7 @@ namespace UI
             int indexButtonToBeRemoved = radialMenu.PressableButtons.IndexOf(prevButton);
             //Substitute with the new one
             radialMenu.PressableButtons[indexButtonToBeRemoved] = newButton;
-            radialMenu.getListButtons(radialMenu.PressableButtons);
+            radialMenu.getListButtons(radialMenu.PressableButtons, isRecording);
         }
 
         public void ShowEditSceneMenu()

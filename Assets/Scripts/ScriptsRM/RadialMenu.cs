@@ -32,7 +32,10 @@ public class RadialMenu : MonoBehaviour
     [SerializeField]
     [HideInInspector]
     private float[] angleList;
+
+    public GameObject recordButton;
     
+
     public void Open()
     {
         slices = new List<Image>();
@@ -41,6 +44,8 @@ public class RadialMenu : MonoBehaviour
             button.gameObject.SetActive(true);
         }
         Rearrange();
+        
+       
         //InstanceHighlight();
     }
 
@@ -155,14 +160,19 @@ public class RadialMenu : MonoBehaviour
     }
 
     
-    public void getListButtons(List<GameObject> buttons, GameObject recordButton = null)
+    public void getListButtons(List<GameObject> buttons, Boolean isRecording = false, Boolean addRecordButton = false)
     {
         //TODO ripristinare insieme agli spicchi
         Close();
         pressableButtons = buttons;
-        if (recordButton != null && !pressableButtons.Contains(recordButton))
+        if (recordButton != null && !pressableButtons.Contains(recordButton) && !isRecording && addRecordButton)
         {
             pressableButtons.Add(recordButton);
+        }
+
+        {
+        if (isRecording)
+            pressableButtons.Remove(recordButton);
         }
         Open();
         

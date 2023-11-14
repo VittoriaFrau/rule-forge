@@ -3,6 +3,7 @@ using System.Collections;
 using System.Security.Cryptography;
 using ECAPrototyping.Utils;
 using MixedReality.Toolkit.UX;
+using TMPro;
 using UnityEngine;
 
 namespace ECAPrototyping.RuleEngine
@@ -38,7 +39,7 @@ namespace ECAPrototyping.RuleEngine
         /// <summary>
         /// <b>Turn light</b> turns on or off the light of the selected object. 
         /// </summary>
-        [Action(typeof(ECALight), "turn light", typeof(ECABoolean))]
+        [Action(typeof(ECALight), "turns", typeof(ECABoolean))]
         public void Turn(ECABoolean mode)
         {
             this.OnOff = mode;
@@ -56,6 +57,19 @@ namespace ECAPrototyping.RuleEngine
                     light.intensity = 0;
                 }
             }
+            
+            //TEST
+            if (gameObject.name.Equals("torch")) {
+                if (mode)
+                {
+                    gameObject.GetComponentInChildren<ParticleSystem>().Play();
+                }
+                else
+                {
+                    gameObject.GetComponentInChildren<ParticleSystem>().Stop();
+                }
+            }
+                       
         }
          
     }

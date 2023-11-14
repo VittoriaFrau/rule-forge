@@ -642,9 +642,9 @@ namespace UI
             return e;
         }
 
-        public static Action GetOppositeAction(Action action, ECAEvent ecaEvent)
+        public static Action GetOppositeAction(Action action, ECAEvent ecaEvent, GameObject SelectedObject)
         {
-            //TEST TODO inserire tutti gli altri
+            // TODO inserire tutti gli altri
             switch (ecaEvent.Verb)
             {
                 case "opens":
@@ -655,6 +655,12 @@ namespace UI
                     return new Action(action.GetSubject(), "gravityOFF");
                 case "gravityOFF":
                     return new Action(action.GetSubject(), "gravityON");
+                case "turns":
+                    string modifier = action.GetObject().ToString();
+                    string oppositeModifier = modifier.Equals("on") ? "on" : "off" ;
+                    return new Action(action.GetSubject(), "turns", oppositeModifier);
+                case "changes":
+                    return new Action(action.GetSubject(), "changes", action.GetModifier(), "to", action.GetModifierValue());
             }
 
             return null;
@@ -731,10 +737,10 @@ namespace UI
                     return (new Action(SelectedObject, "changes", "volume", "to", volumeValue));
                 
                 case "TurnOnLight":
-                    return (new Action(SelectedObject, "turn light", ECABoolean.ON));
+                    return (new Action(SelectedObject, "turns", ECABoolean.ON));
                 
                 case "TurnOffLight":
-                    return (new Action(SelectedObject, "turn light", ECABoolean.OFF));
+                    return (new Action(SelectedObject, "turns", ECABoolean.OFF));
 
                 case "Brightness":
                     float lightValue =  lightSlider.Value;

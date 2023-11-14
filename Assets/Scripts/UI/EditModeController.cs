@@ -74,16 +74,20 @@ namespace UI
         {
             foreach (var interactable in interactables)
             {
-                //Caso speciale per test:
-                if(interactable.name.Equals("Door") || interactable.name.Equals("Door_doorway")) return;
+                //Test:
+                if (generalUIController.test)
+                {
+                    if(interactable.name.Equals("Door") || interactable.name.Equals("Door_doorway") 
+                                                        || interactable.name.Equals("flame")) return;
+                }
                 
                 ObjectManipulator _objectManipulator = interactable.GetComponent<ObjectManipulator>();
                 if (_objectManipulator == null)
                 {
                     _objectManipulator = interactable.GetComponentInChildren<ObjectManipulator>();
                 }
-                //Caso speciale per test 2:
-                if(interactable.name.Equals("Old_Door_Closed"))
+                //TEST:
+                if(generalUIController.test && interactable.name.Equals("Old_Door_Closed"))
                 {
                     GameObject[] children = { interactable.transform.GetChild(0).gameObject, interactable.transform.GetChild(1).gameObject };
                     Prototypation prototypationScript = interactable.transform.GetChild(1).gameObject.GetComponent<Prototypation>();;
@@ -103,10 +107,8 @@ namespace UI
                     }
                     
                     _objectManipulator.OnClicked.AddListener(() => prototypationScript.ShowPieUIMenu());
-                    return;
                 }
-                
-                _objectManipulator.OnClicked.AddListener(() => interactable.GetComponent<Prototypation>().ShowPieUIMenu());
+                else _objectManipulator.OnClicked.AddListener(() => interactable.GetComponent<Prototypation>().ShowPieUIMenu());
             }
         }
         
@@ -116,8 +118,12 @@ namespace UI
             foreach (var interactable in interactables)
             {
                 //Test 
-                if (interactable.name.Equals("Door") || interactable.name.Equals("Door_doorway")
-                                                     || interactable.name.Equals("Old_Door_Closed")) break;
+                if (generalUIController.test)
+                {
+                    if (interactable.name.Equals("Door") || interactable.name.Equals("Door_doorway")
+                                                         || interactable.name.Equals("Old_Door_Closed")) break; 
+                }
+                
                 ObjectManipulator _objectManipulator = interactable.GetComponent<ObjectManipulator>();
                 _objectManipulator.OnClicked.RemoveAllListeners();
             }
@@ -191,15 +197,11 @@ namespace UI
             Action action = Utils.GetActionFromString(actionName, SelectedObject, volumeSlider, lightSlider,
                 effectSlider, plane.gameObject,
                 _skybox, _mainlight);
+            _ruleEngine.ExecuteAction(action);
+            
             //TEST
-            if (selectedObject.name.Equals("Door") && generalUIController.isRecording)
-            {
-                //Nella ExecuteAction della porta c'è anche l'azione per lo screenshot
-                _ruleEngine.ExecuteAction(action);
-                return;
-            }
-
-            if (generalUIController.isRecording)
+            //Azione da fare se sto registrando e non è la porta 
+            if (generalUIController.isRecording && !selectedObject.name.Equals("Door") )
             {
                 generalUIController.InteractionCreationController.RecordActionPressedButton(action, selectedObject);
             }

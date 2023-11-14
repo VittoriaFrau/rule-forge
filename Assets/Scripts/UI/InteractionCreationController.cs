@@ -90,6 +90,8 @@ namespace UI
         private Dictionary<GameObject, Vector3> _originalPositions = new(); //positions of the cubes to easily revert it
         public TextMeshProUGUI whenText, thenText;
         private RuleManager _ruleManager;
+        
+        
 
         private void Start()
         {
@@ -127,13 +129,17 @@ namespace UI
                    break;
             }
 
-            if (WsClient.IsRecording)
+            if (!generalUIController.test)
             {
-                foreach (var go in interactables.transform.GetComponentsInChildren<ObjectManipulator>())
+                if (WsClient.IsRecording)
                 {
-                    AddListener(go);
+                    foreach (var go in interactables.transform.GetComponentsInChildren<ObjectManipulator>())
+                    {
+                        AddListener(go);
+                    }
                 }
             }
+            
         }
 
         public void ClearEventLists()
@@ -222,7 +228,11 @@ namespace UI
             HideModalitiesBubble("Touch");
             
             //Microgesture listener
-            WsClient.StartSocket();
+            if (!generalUIController.test)
+            {
+                WsClient.StartSocket();
+            }
+            
         }
 
         private void ActivateLaserModality()
@@ -262,7 +272,11 @@ namespace UI
             RightHand.GetComponent<SkinnedMeshRenderer>().material = normalTouchMaterial;
             LeftHand.GetComponent<SkinnedMeshRenderer>().material = normalTouchMaterial;
 
-            WsClient.StopSocket();
+            if (!generalUIController.test)
+            {
+                WsClient.StopSocket();
+            }
+            
         }
 
         public void ActivateSpeechModality()
@@ -328,13 +342,23 @@ namespace UI
             
             if(categoryMenu.activeSelf)
                 categoryMenu.SetActive(false);
-            WsClient.IsRecording= false;
-            if (WsClient.ServerOpen)
+
+            if (!generalUIController.test)
             {
-                WsClient.StopSocket();
+                WsClient.IsRecording= false;
+                if (WsClient.ServerOpen)
+                {
+                    WsClient.StopSocket();
+                }
             }
             
-            _modalityEvents.AddRange(WsClient.MicrogestureEvents);
+            
+            if(!generalUIController.test)
+                _modalityEvents.AddRange(WsClient.MicrogestureEvents);
+            else _modalityEvents.Add(new ECAEvent(null, Modalities.Microgesture, "index-tip", 
+                Utils.LoadPNG("Assets/Resources/Icons/Modalities/tip.png")));
+            
+            //TODO trovare un modo per farlo solo con il primo task
 
             if (generalUIController.UIstate == GeneralUIController.UIState.NewRule)
             {
@@ -426,7 +450,6 @@ namespace UI
             _actionEvents.Clear();
             _oppositeActionEvents.Clear();
             
-            //TEST:se la attivo me la da come main, quindi momentaneamente la disattivo
             //screenshotCamera.SetActive(true);
         }
 
@@ -436,12 +459,11 @@ namespace UI
             ECAEvent ecaEvent = Utils.ConvertActionToECAEvent(action);
             if (!_actionEvents.Contains(ecaEvent))
             {
-                Action oppositeAction = Utils.GetOppositeAction(action, ecaEvent);
+                Action oppositeAction = Utils.GetOppositeAction(action, ecaEvent, selectedObject);
                 _oppositeActionEvents.Add(oppositeAction);
                 _actionEvents.Add(ecaEvent);
                 Debug.Log(ecaEvent);
                 generalUIController.SetDebugText(ecaEvent.ToString());
-                //TEST: tolto perchè la screenshot camera non sta funzionando
                 PrepareForActionScreenShot(selectedObject);
             }
         }
@@ -463,7 +485,8 @@ namespace UI
             _modalityEvents.Clear();
             
             //Alert WsClient that we are recording
-            WsClient.IsRecording = true;
+            if(!generalUIController.test)
+                WsClient.IsRecording = true;
 
             //Activate screenshot camera
             //screenshotCamera.SetActive(true);
@@ -545,7 +568,6 @@ namespace UI
                 if (!_modalityEvents.Contains(ecaEvent))
                 {
                     _modalityEvents.Add(ecaEvent);
-                    //TEST: Tolto perchè non sta funzionando la screenshot camera
                     PrepareForModalityScreenshot(gameObject, Modalities.Headgaze);
                 }
 
@@ -561,7 +583,6 @@ namespace UI
                 if (!_modalityEvents.Contains(ecaEvent))
                 {
                     _modalityEvents.Add(ecaEvent);
-                    //TEST: Tolto perchè non sta funzionando la screenshot camera
                     PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Headgaze);
                 }
             });
@@ -584,7 +605,6 @@ namespace UI
                 if (!_modalityEvents.Contains(ecaEvent))
                 {
                     _modalityEvents.Add(ecaEvent);
-                    //TEST: Tolto perchè non sta funzionando la screenshot camera
                     PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Laser);
                 }
                 PrepareCategoryMenu(gameObject);
@@ -602,7 +622,6 @@ namespace UI
                 if (!_modalityEvents.Contains(ecaEvent))
                 {
                     _modalityEvents.Add(ecaEvent);
-                    //TEST: Tolto perchè non sta funzionando la screenshot camera
                     PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Laser);
                 }
 
@@ -625,7 +644,6 @@ namespace UI
                 if (!_modalityEvents.Contains(ecaEvent))
                 {
                     _modalityEvents.Add(ecaEvent);
-                    //TEST: Tolto perchè non sta funzionando la screenshot camera
                     PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Touch);
                 }
 
@@ -644,7 +662,6 @@ namespace UI
                 if (!_modalityEvents.Contains(ecaEvent))
                 {
                     _modalityEvents.Add(ecaEvent);
-                    //TEST: Tolto perchè non sta funzionando la screenshot camera
                     PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Touch);
                 }
 
@@ -660,7 +677,6 @@ namespace UI
                 if (!_modalityEvents.Contains(ecaEvent))
                 {
                     _modalityEvents.Add(ecaEvent);
-                    //TEST: tolto perchè la screenshot camera non sta funzionando
                     PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Touch);
                 }
                 //categoryMenu.SetActive(false);

@@ -54,8 +54,7 @@ namespace UI
                     {
                         if(button) button.SetActive(false);
                     }
-                    _generalUIController.radialMenu.getListButtons(CheckECAObject(_editModeController.SelectedObject), 
-                        _interactionCreationController.RecordButton);
+                    _generalUIController.radialMenu.getListButtons(CheckECAObject(_editModeController.SelectedObject), false, true);
                 }
                 else _generalUIController.radialMenu.getListButtons(CheckECAObject(_editModeController.SelectedObject));
                 _generalUIController.radialMenu.gameObject.SetActive(true);
