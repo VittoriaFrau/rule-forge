@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using ECAPrototyping.RuleEngine;
+using MixedReality.Toolkit;
 using MixedReality.Toolkit.Input;
 using MixedReality.Toolkit.SpatialManipulation;
+using MixedReality.Toolkit.Subsystems;
 using MixedReality.Toolkit.UX;
 using TMPro;
 using UI.RuleEditor;
@@ -91,7 +93,11 @@ namespace UI
         public TextMeshProUGUI whenText, thenText;
         private RuleManager _ruleManager;
         
-        
+        //Speech
+        public GameObject MRTKSpeech;
+        public GameObject microphone;
+        private List<string> keywords = new() { "incendio", "leviosa" };
+
 
         private void Start()
         {
@@ -104,6 +110,8 @@ namespace UI
                 == "MRTK LeftHand Controller");
             _screenshotCamera =screenshotCamera.GetComponent<ScreenshotCamera>();
             _ruleManager = this.gameObject.GetComponent<RuleManager>();
+            if(MRTKSpeech.activeSelf) MRTKSpeech.SetActive(false);
+            if(microphone.activeSelf) microphone.SetActive(false);
             _ruleEngine = RuleEngine.GetInstance();
         }
 
@@ -281,12 +289,34 @@ namespace UI
 
         public void ActivateSpeechModality()
         {
+            MRTKSpeech.SetActive(true);
+            microphone.SetActive(true);
             
+            HideModalitiesBubble("Speech");
+
+            generalUIController.SetDebugText("Speak to the microphone");
+            
+            
+            // Get the first running phrase recognition subsystem.
+            var keywordRecognitionSubsystem = XRSubsystemHelpers.GetFirstRunningSubsystem<KeywordRecognitionSubsystem>();
+
+            // If we found one...
+            if (keywordRecognitionSubsystem != null)
+            {
+                // Register a keyword and its associated action with the subsystem
+                foreach (var keyword in keywords)
+                {
+                    keywordRecognitionSubsystem.CreateOrGetEventForKeyword(keyword).
+                        AddListener(() => { generalUIController.SetDebugText("You said " + keyword); });
+                }
+            }
         }
 
         public void DeActivateSpeechModality()
         {
+            MRTKSpeech.SetActive(false);
             
+            microphone.SetActive(false);
         }
         
         
@@ -440,6 +470,7 @@ namespace UI
                 case GeneralUIController.UIState.EditMode:
                     RecordAction();
                     break;
+                
             }
         }
 
@@ -470,7 +501,11 @@ namespace UI
 
         public void RecordRule()
         {
-            generalUIController.SetDebugText("Recording started. Please, interact with an object");
+            if (_modality == Modalities.Speech)
+            {
+                generalUIController.SetDebugText("Recording started. Please, speak to the microphone");
+            }
+            else generalUIController.SetDebugText("Recording started. Please, interact with an object");
             
             if (_modality == Modalities.None)
             {
@@ -509,6 +544,9 @@ namespace UI
                     break;
                 case Modalities.Touch:
                     AddTouchListener(manipulator);
+                    break;
+                case Modalities.Speech:
+                    AddSpeechListener();
                     break;
             }
             
@@ -681,6 +719,34 @@ namespace UI
                 }
                 //categoryMenu.SetActive(false);
             });
+        }
+
+        private void AddSpeechListener()
+        {
+            // Get the first running phrase recognition subsystem.
+            var keywordRecognitionSubsystem = XRSubsystemHelpers.GetFirstRunningSubsystem<KeywordRecognitionSubsystem>();
+
+            // If we found one...
+            if (keywordRecognitionSubsystem != null)
+            {
+                // Register a keyword and its associated action with the subsystem
+                foreach (var keyword in keywords)
+                {
+                    keywordRecognitionSubsystem.CreateOrGetEventForKeyword(keyword).
+                        AddListener(() =>
+                        {
+                            generalUIController.SetDebugText("You said " + keyword);
+                            if (generalUIController.isRecording)
+                            {
+                                //Generate ecaevent
+                                ECAEvent ecaEvent = new ECAEvent(null, Modalities.Speech, keyword, 
+                                    Utils.LoadPNG("Assets/Resources/Icons/microphone.png"));
+                                _modalityEvents.Add(ecaEvent);    
+                            }
+                        });
+                    
+                }
+            }
         }
 
         public void PrepareForModalityScreenshot(GameObject gameObject, Modalities modality)

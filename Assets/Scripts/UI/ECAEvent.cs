@@ -111,10 +111,14 @@ namespace UI
             {
                 return "The user performs " + _event + " microgesture";
             }
+            if(modality == InteractionCreationController.Modalities.Speech)
+            {
+                return "The user says " + _event;
+            }
 
             if (modality != InteractionCreationController.Modalities.None)
             {
-                if (_event != null && _verb != null)
+                if (_event != null && _verb != null && _event != null)
                 {
                     return "The user " + _event + " " + _verb + " the " + _gameObject.name + " object";
                 }
@@ -129,15 +133,20 @@ namespace UI
         private void SetModalityRule()
         {
             _subject = "user";
-            if (modality == InteractionCreationController.Modalities.Microgesture)
+            switch (modality)
             {
-                _verb = "performs";
-                _object = _event;
-            }
-            else
-            {
-                _verb = modality.ToString();
-                _object = _gameObject.name;
+                case InteractionCreationController.Modalities.Microgesture:
+                    _verb = "performs";
+                    _object = _event;
+                    break;
+                case InteractionCreationController.Modalities.Speech:
+                    _verb = "says";
+                    _object = _event;
+                    break;
+                default:   
+                    _verb = modality.ToString();
+                    _object = _gameObject.name;
+                    break;
             }
         }
         

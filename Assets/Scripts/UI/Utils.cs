@@ -395,6 +395,11 @@ namespace UI
             {
                 labelTexts[1] = "touches"; //3rd person for reading
             }
+            else if (e.Modality == InteractionCreationController.Modalities.Speech)
+            {
+                labelTexts[1] = "says"; //3rd person for reading
+                labelTexts[2] = e.Event; //keyword
+            }
 
             // Loop through each face and fill the text labels
             foreach (string faceName in faceNames)
