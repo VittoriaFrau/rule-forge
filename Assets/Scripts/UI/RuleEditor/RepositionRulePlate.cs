@@ -21,6 +21,9 @@ public class RepositionRulePlate : MonoBehaviour
     private RuleManager _ruleManager;
     private Vector3 originalLocalPlatePosition = new (-14.4f, -119.0f, 774.0f);
     private GameObject ruleEditorPlate;
+    
+    //All the buttons but the reposition plate one
+    public List<GameObject> ruleEditorButtons;
 
     // Start is called before the first frame update
     void Start()
@@ -51,10 +54,12 @@ public class RepositionRulePlate : MonoBehaviour
             _boundsController.enabled = true;
             _plateState = PlateState.Moving;
             _ruleManager.ActivateDebugTextWithMessage("Moving the plate, click again the moving button to stop moving.");
+            ChangeButtonAppearence(false);
         }
         else
         {
             StopMoving();
+            ChangeButtonAppearence(true);
         }
     }
 
@@ -69,5 +74,13 @@ public class RepositionRulePlate : MonoBehaviour
             _ruleManager.DeactivateRuleDebugText();
         }
        
+    }
+
+    public void ChangeButtonAppearence(bool active)
+    {
+        foreach (var button in ruleEditorButtons)
+        {
+            Utils.SetStatusButton(active, button);
+        }
     }
 }

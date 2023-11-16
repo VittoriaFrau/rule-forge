@@ -232,6 +232,14 @@ namespace UI
             GameObject cube = Object.Instantiate(cubePrefab, position, Quaternion.Euler(0f,0f,0f), parent);
             cube.transform.rotation = Quaternion.identity;
             cube.transform.localScale = new Vector3(25, 25, 25);
+            
+            //TEST
+            Test testScript = GameObject.FindGameObjectsWithTag("EventHandler").FirstOrDefault(x => x.name == "EventHandler").GetComponent<Test>();
+
+            if (testScript != null)
+            {
+                cube.transform.localPosition = testScript.GetFixedPosition();
+            }
                 
             //Material using screenshot
             
@@ -662,7 +670,7 @@ namespace UI
                     return new Action(action.GetSubject(), "gravityON");
                 case "turns":
                     string modifier = action.GetObject().ToString();
-                    string oppositeModifier = modifier.Equals("on") ? "on" : "off" ;
+                    ECABoolean oppositeModifier = modifier.Equals("on") ? ECABoolean.OFF : ECABoolean.ON ;
                     return new Action(action.GetSubject(), "turns", oppositeModifier);
                 case "changes":
                     return new Action(action.GetSubject(), "changes", action.GetModifier(), "to", action.GetModifierValue());
@@ -792,7 +800,21 @@ namespace UI
 
             return null;
         }
-        
+
+
+        public static void SetStatusButton(bool active, GameObject button)
+        {
+            GameObject frontPlate = button.transform.Find("Frontplate").gameObject;
+            GameObject animatedContent = frontPlate.transform.Find("AnimatedContent").gameObject;
+            TextMeshProUGUI textMeshProUGUI = animatedContent.transform.Find("Text").GetComponent<TextMeshProUGUI>();
+            var color = textMeshProUGUI.color;
+            color.a = active ? 1 : 0.5f;
+            textMeshProUGUI.color = color;
+            TextMeshProUGUI icon = animatedContent.transform.Find("Icon").gameObject.transform.Find("UIButtonFontIcon").GetComponent<TextMeshProUGUI>();
+            var iconColor = icon.color;
+            iconColor.a = active ? 1 : 0.5f;
+            icon.color = iconColor;
+        }
         
     }
 }

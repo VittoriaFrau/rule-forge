@@ -80,6 +80,8 @@ namespace UI
         public GameObject cubePlate;
         public GameObject screenshotCamera;
         private ScreenshotCamera _screenshotCamera;
+        public GameObject _RadialMenuGameObject;
+        private RadialMenu _radialMenu;
 
         //Category choice
         public GameObject categoryMenu;
@@ -98,6 +100,8 @@ namespace UI
         public GameObject microphone;
         private List<string> keywords = new() { "incendio", "leviosa" };
 
+        private Test testScript;
+
 
         private void Start()
         {
@@ -112,6 +116,8 @@ namespace UI
             _ruleManager = this.gameObject.GetComponent<RuleManager>();
             if(MRTKSpeech.activeSelf) MRTKSpeech.SetActive(false);
             if(microphone.activeSelf) microphone.SetActive(false);
+            testScript = this.gameObject.GetComponent<Test>();
+            _radialMenu = _RadialMenuGameObject.GetComponent<RadialMenu>();
             _ruleEngine = RuleEngine.GetInstance();
         }
 
@@ -361,9 +367,13 @@ namespace UI
         public void StopRecording()
         {
             generalUIController.isRecording = false;
-            StopButton.SetActive(false);
-            if(generalUIController.UIstate != GeneralUIController.UIState.Default)
-                RecordButton.SetActive(true);
+
+            if (generalUIController.UIstate != GeneralUIController.UIState.Default)
+            {
+                _radialMenu.AddSingleButtonToList(RecordButton);
+                _radialMenu.RemoveSingleButtonToList(StopButton);
+            }
+                
             screenshotCamera.SetActive(false);
 
             generalUIController.SetDebugText("Recording stopped.");
@@ -381,12 +391,11 @@ namespace UI
                     WsClient.StopSocket();
                 }
             }
-            
-            
-            if(!generalUIController.test)
+
+
+            if (!generalUIController.test)
                 _modalityEvents.AddRange(WsClient.MicrogestureEvents);
-            else _modalityEvents.Add(new ECAEvent(null, Modalities.Microgesture, "index-tip", 
-                Utils.LoadPNG("Assets/Resources/Icons/Modalities/tip.png")));
+            else testScript.AddMicrogestureTask(_modalityEvents);
             
             //TODO trovare un modo per farlo solo con il primo task
 
@@ -459,8 +468,10 @@ namespace UI
         {
             generalUIController.isRecording = true;
             //Make the record button not interactable
-            StopButton.SetActive(true);
-            RecordButton.SetActive(false);
+            //StopButton.SetActive(true);
+            //RecordButton.SetActive(false);
+            _radialMenu.AddSingleButtonToList(StopButton);
+            _radialMenu.RemoveSingleButtonToList(RecordButton);
             
             switch (generalUIController.UIstate)
             {
@@ -511,8 +522,10 @@ namespace UI
             {
                 Debug.Log("No modality selected");
                 generalUIController.SetDebugText("No modality selected, please select one");
-                StopButton.SetActive(false);
-                RecordButton.SetActive(true);
+                //StopButton.SetActive(false);
+                //RecordButton.SetActive(true);
+                _radialMenu.AddSingleButtonToList(RecordButton);
+                _radialMenu.RemoveSingleButtonToList(StopButton);
                 return;
             }
             
@@ -580,9 +593,12 @@ namespace UI
             // Nascondere bolle se presenti
             HideModalitiesBubbles();
             // Nascondere opzioni menu
-            BackButton.SetActive(false);
-            RecordButton.SetActive(false);
-            StopButton.SetActive(false);
+            //BackButton.SetActive(false);
+            //RecordButton.SetActive(false);
+            //StopButton.SetActive(false);
+            _radialMenu.RemoveSingleButtonToList(BackButton);
+            _radialMenu.RemoveSingleButtonToList(RecordButton);
+            _radialMenu.RemoveSingleButtonToList(StopButton);
         }
 
         IEnumerator TakeScreenShot(List<ECAEvent> _events)
@@ -761,6 +777,14 @@ namespace UI
 
         public void ResetCubePositions()
         {
+            if (testScript != null)
+            {
+                testScript.ResetForTest(ruleEditorPlate.transform, _originalPositions.Keys.ToList());
+                Utils.ClearTextDescription(whenText, thenText);
+
+                Utils.ResetCubeContainers();
+                return;
+            }
             //Repositioning the plate in case the user has moved it
             ruleEditorPlate.transform.localPosition= new Vector3(-14.4f, -119.0f, 774.0f);
             
@@ -792,6 +816,11 @@ namespace UI
             string icon = Utils.GetIconForECACategory(objectCategory);
             if(icon!= null)
                 CategoryIcon.CurrentIconName = icon;
+        }
+
+        public void AutomaticCubePosition()
+        {
+            
         }
 
     }

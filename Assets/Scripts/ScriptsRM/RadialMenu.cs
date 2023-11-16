@@ -35,6 +35,7 @@ public class RadialMenu : MonoBehaviour
 
     public GameObject recordButton;
     
+    
 
     public void Open()
     {
@@ -164,7 +165,13 @@ public class RadialMenu : MonoBehaviour
     {
         //TODO ripristinare insieme agli spicchi
         Close();
-        pressableButtons = buttons;
+        
+        //Remove duplicates from buttons gameobjects with hashset
+        HashSet<GameObject> setSenzaDuplicati = new HashSet<GameObject>(buttons);
+        // Converti nuovamente il set in una lista se necessario
+        List<GameObject> listaSenzaDuplicati = new List<GameObject>(setSenzaDuplicati);
+        
+        pressableButtons = listaSenzaDuplicati;
         if (recordButton != null && !pressableButtons.Contains(recordButton) && !isRecording && addRecordButton)
         {
             pressableButtons.Add(recordButton);
@@ -174,8 +181,8 @@ public class RadialMenu : MonoBehaviour
         if (isRecording)
             pressableButtons.Remove(recordButton);
         }
-        Open();
         
+        Open();
     }
 
     public void AddSingleButtonToList(GameObject button)
@@ -183,6 +190,15 @@ public class RadialMenu : MonoBehaviour
         if(pressableButtons.Contains(button)) return;
         Close();
         pressableButtons.Add(button);
+        Open();
+       
+    }
+
+    public void RemoveSingleButtonToList(GameObject button)
+    {
+        Close();
+        button.SetActive(false);
+        pressableButtons.Remove(button);
         Open();
     }
     

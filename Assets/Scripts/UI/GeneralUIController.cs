@@ -114,7 +114,8 @@ namespace UI
             
             ShowOptionsMenu();
             
-            closeButton.SetActive(false);
+            //closeButton.SetActive(false);
+            radialMenu.RemoveSingleButtonToList(closeButton);
         }
 
         public void DefaultState()
@@ -267,11 +268,7 @@ namespace UI
             ShowDebugPanel();
         }
 
-        public void RuleComposeStopRecording()
-        {
-            //_uiState = UIState.RuleComposition;
-            _interactionCreationController.StopRecording();
-        }
+        
 
         public void HideDebugPanel()
         {

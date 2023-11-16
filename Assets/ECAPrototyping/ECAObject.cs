@@ -159,6 +159,18 @@ namespace ECAPrototyping.RuleEngine
                    gameObject.GetComponent<Rigidbody>().useGravity = false;
                    break;
             }
+
+            //TEST
+            if (gameObject.name.Equals("feather"))
+            {
+                Test test = GameObject.FindGameObjectWithTag("EventHandler").GetComponent<Test>();
+                if (test != null)
+                {
+                    if (isUsingGravity.GetBoolType() == ECABoolean.BoolType.YES)
+                        test.StopLeviosa();
+                    else test.StartLeviosa();
+                }
+            }
         }
 
         /// <summary>

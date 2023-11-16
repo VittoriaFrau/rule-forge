@@ -41,18 +41,21 @@ namespace UI.RuleEditor
                     break;
             }
 
-            ShowGameobjects(gameObject);
+            //TEST --> disattivato per il test perchè mostro un gameobject alla volta
+            //ShowGameobjects(gameObject);
         }
 
         public void TakeActionScreenshot(GameObject gameObject, ECAEvent ecaEvent)
         {
             GetInteractableGameObjects();
-            HideOtherGameobjects(gameObject);
+            //TEST --> disattivato per il test perchè mostro un gameobject alla volta
+            //HideOtherGameobjects(gameObject);
             secondaryCamera.gameObject.SetActive(true);
             PositionSecondaryCameraInFrontOfObject(gameObject, secondaryCamera, mainCamera);
             CaptureImageFromCamera(secondaryCamera, ecaEvent);
             secondaryCamera.gameObject.SetActive(false);
-            ShowGameobjects(gameObject);
+            //TEST --> disattivato per il test perchè mostro un gameobject alla volta
+            //ShowGameobjects(gameObject);
         }
 
         public static void PositionSecondaryCameraInFrontOfObject(GameObject gameObject, Camera secondaryCamera, Camera mainCamera)
