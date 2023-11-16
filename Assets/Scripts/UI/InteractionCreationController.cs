@@ -127,21 +127,33 @@ namespace UI
                 _modality = (Modalities) System.Enum.Parse(typeof(Modalities), modality);
             generalUIController.SetDebugText("Selected modality: " + _modality 
                                                                    + " use your modality to interact with any object in the scene");
-            switch (_modality)
+
+            //Se non sta registrando devo attivare la modality con i listener normali
+            /*if (!generalUIController.isRecording)
+            {*/
+                switch (_modality)
+                {
+                    case Modalities.Headgaze:
+                        ActivateHeadGazeModality();
+                        break;
+                    case Modalities.Laser:
+                        ActivateLaserModality();
+                        break;
+                    case Modalities.Touch:
+                        ActivateTouchModality();
+                        break;
+                    case Modalities.Speech:
+                        ActivateSpeechModality();
+                        break;
+                }
+            /*}*/
+            
+            //Se ho selezionato la modalità e sono in modalità registrazione, devo attivare i listener per registrare
+            if (generalUIController.isRecording)
             {
-               case Modalities.Headgaze:
-                   ActivateHeadGazeModality();
-                   break;
-               case Modalities.Laser:
-                   ActivateLaserModality();
-                     break;
-               case Modalities.Touch:
-                   ActivateTouchModality();
-                   break;
-               case Modalities.Speech:
-                   ActivateSpeechModality();
-                   break;
+                RecordRule();
             }
+            
 
             if (!generalUIController.test)
             {
@@ -301,7 +313,6 @@ namespace UI
             HideModalitiesBubble("Speech");
 
             generalUIController.SetDebugText("Speak to the microphone");
-            
             
             // Get the first running phrase recognition subsystem.
             var keywordRecognitionSubsystem = XRSubsystemHelpers.GetFirstRunningSubsystem<KeywordRecognitionSubsystem>();
@@ -529,8 +540,7 @@ namespace UI
                 return;
             }
             
-            //Clean the event list
-            _modalityEvents.Clear();
+            
             
             //Alert WsClient that we are recording
             if(!generalUIController.test)

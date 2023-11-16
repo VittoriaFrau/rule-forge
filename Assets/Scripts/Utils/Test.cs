@@ -26,12 +26,23 @@ public class Test : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PopulatePositions();
+        UpdateTaskLabel();
+        HideGameObjects();
+        
+        
+    }
+
+    public void PopulatePositions()
+    {
         localPositions.Add(new Vector3(-15.0f, 90.0f, -13.61364f));
         localPositions.Add(new Vector3(-15.0f, 30.0f, -13.61364f));
         localPositions.Add(new Vector3(-15.0f, -30.0f, -13.61364f));
         localPositions.Add(new Vector3(-15.0f, -90.0f, -13.61364f));
-        UpdateTaskLabel();
-        HideGameObjects();
+        localPositions.Add(new Vector3(20.0f, 90.0f, -13.61364f));
+        localPositions.Add(new Vector3(20.0f, 30.0f, -13.61364f));
+        localPositions.Add(new Vector3(20.0f, -30.0f, -13.61364f));
+        localPositions.Add(new Vector3(20.0f, -90.0f, -13.61364f));
     }
 
     public void AddMicrogestureTask(List<ECAEvent> _modalityEvents)
@@ -81,7 +92,7 @@ public class Test : MonoBehaviour
                 break;
             case 4:
                 taskLabel.text =
-                    "When the user says Leviosa MEANWHILE laser-points the door, THEN the feather gravity is off";
+                    "When the user says Leviosa MEANWHILE laser-points the feather, THEN the feather gravity is off";
                 break;
         }
     }
@@ -103,6 +114,7 @@ public class Test : MonoBehaviour
     //ho dovuto fare questa cagata per il test, riposizionando il ruleplate le posizioni dei cubi erano tutte sfalsate
     public Vector3 GetFixedPosition()
     {
+        if (localPositions.Count == 0) PopulatePositions();
         lastPosition++;
         return localPositions[lastPosition];
         

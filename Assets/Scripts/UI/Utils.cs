@@ -213,7 +213,11 @@ namespace UI
                 verbAndEvent = verbFront.text.Split('\n');
             }
             e.Verb = verbAndEvent[0];
-            e.Event = verbAndEvent[1];
+            if (verbAndEvent.Length > 1)
+            {
+                e.Event = verbAndEvent[1];
+            }
+            
                 
             TextMeshProUGUI objectFront = frontFace.transform.Find("Object").transform.Find("Image").GetComponent<TextMeshProUGUI>();
             e.Object = objectFront.text;
@@ -808,11 +812,11 @@ namespace UI
             GameObject animatedContent = frontPlate.transform.Find("AnimatedContent").gameObject;
             TextMeshProUGUI textMeshProUGUI = animatedContent.transform.Find("Text").GetComponent<TextMeshProUGUI>();
             var color = textMeshProUGUI.color;
-            color.a = active ? 1 : 0.5f;
+            color.a = active ? 1 : 0.2f;
             textMeshProUGUI.color = color;
             TextMeshProUGUI icon = animatedContent.transform.Find("Icon").gameObject.transform.Find("UIButtonFontIcon").GetComponent<TextMeshProUGUI>();
             var iconColor = icon.color;
-            iconColor.a = active ? 1 : 0.5f;
+            iconColor.a = active ? 1 : 0.2f;
             icon.color = iconColor;
         }
         

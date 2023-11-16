@@ -31,7 +31,7 @@ namespace UI.RuleEditor
         }
         private void Start()
         {
-            /*ruleEditorPlate.SetActive(true);
+            ruleEditorPlate.SetActive(true);
 
 
             barriers.SetActive(false);
@@ -44,14 +44,20 @@ namespace UI.RuleEditor
             cubePlate = _interactionCreationController.cubePlate;
             _ruleManager = gameObject.GetComponent<RuleManager>();
             
-            _ruleManager.InitializeVariables();*/
+            _ruleManager.InitializeVariables();
             
             //Modality events
-            /*ECAEvent ecaEvent1 = new ECAEvent(cube, InteractionCreationController.Modalities.Headgaze, "Hover Entered", Texture2D.blackTexture);
-            _modalityEvents.Add(ecaEvent1);*/
+            ECAEvent ecaEvent1 = new ECAEvent(null, InteractionCreationController.Modalities.Speech, "leviosa", Utils.LoadPNG("Assets/Resources/Icons/microphone.png"));
+            _modalityEvents.Add(ecaEvent1);
 
-            /*ECAEvent ecaEvent2 = new ECAEvent(cheese, InteractionCreationController.Modalities.Touch, "Click", Texture2D.redTexture);
-            _modalityEvents.Add(ecaEvent2);*/
+            ECAEvent ecaEvent2 = new ECAEvent(GameObject.Find("feather"), InteractionCreationController.Modalities.Laser, "points", Texture2D.redTexture);
+            _modalityEvents.Add(ecaEvent2);
+            
+            Utils.GenerateCubesFromEventList(_modalityEvents, _actionEvents, modalityRuleCubePrefab, 
+                actionRuleCubePrefab, actionRuleCubePrefabVariant, cubePlate);
+            
+            ruleEditorPlate.transform.localPosition = new Vector3(ruleEditorPlate.transform.localPosition.x,
+                ruleEditorPlate.transform.localPosition.y, 80);
             
             //Action events
             
@@ -73,16 +79,6 @@ namespace UI.RuleEditor
             
             ruleEditorPlate.transform.localPosition = new Vector3(ruleEditorPlate.transform.localPosition.x,
                 ruleEditorPlate.transform.localPosition.y, 350);*/
-            
-            // Get the first running phrase recognition subsystem.
-            var keywordRecognitionSubsystem = XRSubsystemHelpers.GetFirstRunningSubsystem<KeywordRecognitionSubsystem>();
-
-            // If we found one...
-            if (keywordRecognitionSubsystem != null)
-            {
-                // Register a keyword and its associated action with the subsystem
-                keywordRecognitionSubsystem.CreateOrGetEventForKeyword("hello").AddListener(() => Debug.Log("Keyword recognized"));
-            }
         }
     }
 }
