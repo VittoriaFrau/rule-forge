@@ -13,8 +13,6 @@ namespace UI.RuleEditor
         private InteractionCreationController _interactionCreationController;
         private GameObject modalityRuleCubePrefab, cubePlate, actionRuleCubePrefabVariant, actionRuleCubePrefab;
         private RuleManager _ruleManager;
-        private List<ECAEvent> _modalityEvents = new();
-        private List<ECAEvent> _actionEvents = new();
         
         /*
         private ScreenshotCamera _screenshotCamera;
@@ -44,30 +42,46 @@ namespace UI.RuleEditor
             cubePlate = _interactionCreationController.cubePlate;
             _ruleManager = gameObject.GetComponent<RuleManager>();
             
+            
             _ruleManager.InitializeVariables();
             
             //Modality events
             ECAEvent ecaEvent1 = new ECAEvent(null, InteractionCreationController.Modalities.Speech, "leviosa", Utils.LoadPNG("Assets/Resources/Icons/microphone.png"));
-            _modalityEvents.Add(ecaEvent1);
+            _interactionCreationController.ModalityEvents.Add(ecaEvent1);
 
             ECAEvent ecaEvent2 = new ECAEvent(GameObject.Find("feather"), InteractionCreationController.Modalities.Laser, "points", Texture2D.redTexture);
-            _modalityEvents.Add(ecaEvent2);
+            _interactionCreationController.ModalityEvents.Add(ecaEvent2);
             
-            Utils.GenerateCubesFromEventList(_modalityEvents, _actionEvents, modalityRuleCubePrefab, 
-                actionRuleCubePrefab, actionRuleCubePrefabVariant, cubePlate);
+            ECAEvent ecaEvent3 = new ECAEvent(GameObject.Find("feather"), InteractionCreationController.Modalities.Headgaze, "points", Texture2D.grayTexture);
+            _interactionCreationController.ModalityEvents.Add(ecaEvent3);
+            
+            ECAEvent ecaEvent4 = new ECAEvent(GameObject.Find("feather"), InteractionCreationController.Modalities.Touch, "touch", Texture2D.whiteTexture);
+            _interactionCreationController.ModalityEvents.Add(ecaEvent4);
+            
             
             ruleEditorPlate.transform.localPosition = new Vector3(ruleEditorPlate.transform.localPosition.x,
                 ruleEditorPlate.transform.localPosition.y, 80);
             
             //Action events
             
-            /*ECAEvent ecaEvent3 = new ECAEvent(obj1, "changes color to", "blue");
-            ecaEvent3.Texture = Texture2D.grayTexture;
-            _actionEvents.Add(ecaEvent3);
+            ECAEvent actionEvent1 = new ECAEvent(GameObject.Find("Canvas"), "changes color to", "blue");
+            actionEvent1.Texture = Texture2D.grayTexture;
+            _interactionCreationController.ActionEvents.Add(actionEvent1);
 
-            ECAEvent ecaEvent4 = new ECAEvent(cheese, "hides");
-            ecaEvent4.Texture = Texture2D.whiteTexture;
-            _actionEvents.Add(ecaEvent4);*/
+            ECAEvent actionEvent2 = new ECAEvent(GameObject.Find("Canvas"), "hides");
+            actionEvent2.Texture = Texture2D.redTexture;
+            _interactionCreationController.ActionEvents.Add(actionEvent2);
+            
+            ECAEvent actionEvent3 = new ECAEvent(GameObject.Find("Canvas"), "gravityON");
+            actionEvent3.Texture = Texture2D.blackTexture;
+            _interactionCreationController.ActionEvents.Add(actionEvent3);
+            
+            ECAEvent actionEvent4 = new ECAEvent(GameObject.Find("Canvas"), "shows");
+            actionEvent4.Texture = Texture2D.normalTexture;
+            _interactionCreationController.ActionEvents.Add(actionEvent4);
+            
+            Utils.GenerateCubesFromEventList(_interactionCreationController.ModalityEvents, _interactionCreationController.ActionEvents, modalityRuleCubePrefab, 
+                actionRuleCubePrefab, actionRuleCubePrefabVariant, cubePlate);
             
             //Microgesture events
             /*ECAEvent ecaEvent5 = new ECAEvent(null, InteractionCreationController.Modalities.Microgesture,

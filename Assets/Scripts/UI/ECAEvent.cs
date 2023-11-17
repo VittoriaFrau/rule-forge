@@ -13,6 +13,22 @@ namespace UI
         private Texture2D _texture;
         private string _subject, _verb, _object;
         private Action _action;
+        private int _index;
+        private string cubeID; //Per recuperare il cubo generato
+
+        public int Index
+        {
+            get => _index;
+            set => _index = value;
+        }
+
+        public string CubeID
+        {
+            get => cubeID;
+            set => cubeID = value;
+        }
+
+        private static int _counter = 0;
 
         public Action Action
         {
@@ -26,6 +42,8 @@ namespace UI
             this._verb = _verb;
             this._object = _object;
             this._subject = gameObject.name;
+            _index = _counter;
+            _counter++;
         }
         
         public ECAEvent(GameObject gameObject, InteractionCreationController.Modalities modality, string _event, 
@@ -37,6 +55,8 @@ namespace UI
             typeOfObject = InteractionCreationController.CategoryObjectSelected.GameObject; //By default
             _texture = screenshot;
             SetModalityRule();
+            _index = _counter;
+            _counter++;
         }
         
         public ECAEvent(GameObject gameObject, InteractionCreationController.Modalities modality, string _event)
@@ -47,11 +67,15 @@ namespace UI
             typeOfObject = InteractionCreationController.CategoryObjectSelected.GameObject; //By default
             _texture = null;
             SetModalityRule();
+            _index = _counter;
+            _counter++;
         }
 
         public ECAEvent(GameObject gameObject)
         {
             _gameObject = gameObject;
+            _index = _counter;
+            _counter++;
         }
         
         public ECAEvent(GameObject gameObject, string verb)
@@ -59,6 +83,8 @@ namespace UI
             _gameObject = gameObject;
             _verb = verb;
             _subject = gameObject.name;
+            _index = _counter;
+            _counter++;
         }
 
         

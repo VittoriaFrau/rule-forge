@@ -162,6 +162,7 @@ namespace UI
                     position, cubePlate.transform, new Texture[] { e.Texture });
 
                 result.Add(cube, position);
+                e.CubeID = cube.GetInstanceID().ToString();
                 FillTextLabelsInCube(e, cube);
             }
 

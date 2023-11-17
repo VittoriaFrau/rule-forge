@@ -70,6 +70,19 @@ namespace UI
         
         //Recording
         private List<ECAEvent> _modalityEvents = new();
+
+        public List<ECAEvent> ModalityEvents
+        {
+            get => _modalityEvents;
+            set => _modalityEvents = value;
+        }
+
+        public List<ECAEvent> ActionEvents
+        {
+            get => _actionEvents;
+            set => _actionEvents = value;
+        }
+
         private List<ECAEvent> _actionEvents = new();
         //Opposite action events are used to revert the action when we go back to the previous state
         private List<Action> _oppositeActionEvents = new();
@@ -830,7 +843,63 @@ namespace UI
 
         public void AutomaticCubePosition()
         {
+            //Modality events
+            //Find all the gameobjects with tag RuleCubes and save to modalityCubes if the name contains "Modality"
+            List<GameObject> modalityCubes = GameObject.FindGameObjectsWithTag("RuleCubes").Where(obj => obj.name.Contains("Modality")).ToList();
+            //Position of the first cube container
+            Vector3 firstCubeContainerWhenLocalPosition = new Vector3(144f, 18f,-18f);
+            //Lista con i gameobject e l'indice che ne determina l'ordine di creazione dei cubi
+            List<Tuple<int, GameObject>> modalityCubesTuple = new();
             
+            foreach (ECAEvent modality in _modalityEvents)
+            {
+                foreach (GameObject cube in modalityCubes)
+                {
+                    if(modality.CubeID == cube.GetInstanceID().ToString())
+                        modalityCubesTuple.Add(new Tuple<int, GameObject>(modality.Index, cube));
+                }
+            }
+            
+            //Scorro la lista di tuple e ordino i cubi in base all'indice
+            modalityCubesTuple = modalityCubesTuple.OrderBy(x => x.Item1).ToList();
+            
+            float xOffsetBetweenCubes = 50f; // Distanza fissa tra i cubi lungo l'asse x
+
+            
+            //Posiziono il primo cubo in firstCubeContainerLocalPosition e i successivi in base alla posizione del precedente
+            for (int i = 0; i < modalityCubesTuple.Count; i++)
+            {
+                GameObject cube = modalityCubesTuple[i].Item2;
+                cube.transform.localPosition = firstCubeContainerWhenLocalPosition + new Vector3(i * xOffsetBetweenCubes, 0, 0);
+            }
+            
+            //Action events
+            //Find all the gameobjects with tag RuleCubes and save to modalityCubes if the name contains "Action"
+            List<GameObject> actionCubes = GameObject.FindGameObjectsWithTag("ActionRuleCube").Where(obj => obj.name.Contains("Action")).ToList();
+            //Position of the first cube container
+            Vector3 firstCubeContainerThenLocalPosition = new Vector3(144f, -83f,-21f);
+            //Lista con i gameobject e l'indice che ne determina l'ordine di creazione dei cubi
+            List<Tuple<int, GameObject>> actionCubesTuple = new();
+            
+
+            foreach (ECAEvent action in _actionEvents)
+            {
+                foreach (GameObject cube in actionCubes)
+                {
+                    if(action.CubeID == cube.GetInstanceID().ToString())
+                        actionCubesTuple.Add(new Tuple<int, GameObject>(action.Index, cube));
+                }
+            }
+            
+            //Scorro la lista di tuple e ordino i cubi in base all'indice
+            actionCubesTuple = actionCubesTuple.OrderBy(x => x.Item1).ToList();
+            
+            //Posiziono il primo cubo in firstCubeContainerLocalPosition e i successivi in base alla posizione del precedente
+            for (int i = 0; i < actionCubesTuple.Count; i++)
+            {
+                GameObject cube = actionCubesTuple[i].Item2;
+                cube.transform.localPosition = firstCubeContainerThenLocalPosition + new Vector3(i * xOffsetBetweenCubes, 0, 0);
+            }
         }
 
     }
