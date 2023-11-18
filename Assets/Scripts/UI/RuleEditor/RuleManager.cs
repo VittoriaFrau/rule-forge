@@ -27,9 +27,10 @@ namespace UI.RuleEditor
         private GameObject whenSequentialRow, whenEquivalenceRow;
         private GameObject thenSequentialRow, thenEquivalenceRow;
         public enum ContainerType { Equivalence, Sequential }
-        public enum RulePhase { When, Then }
+        public enum RulePhase { When, Then, None }
         private List<CubeContainerClass> whenContainers;
         private List<CubeContainerClass> thenContainers;
+        public GameObject modalityContainerPrefab, actionContainerPrefab;
         
         
         //Tasks
@@ -62,7 +63,7 @@ namespace UI.RuleEditor
             //GameObject firstWhenCube = firstWhenContainer.GetComponent<CubeContainer>().currentCube;
             AddContainer(RulePhase.When, firstWhenContainer);
             thenContainers = new List<CubeContainerClass>();
-            GameObject firstThenContainer = whenSequentialRow.transform.Find("CubeContainer").gameObject;
+            GameObject firstThenContainer = thenSequentialRow.transform.Find("ActionCubeContainer").gameObject;
             //GameObject firstThenCube = firstThenContainer.GetComponent<CubeContainer>().currentCube;
             AddContainer(RulePhase.Then, firstThenContainer );
         }

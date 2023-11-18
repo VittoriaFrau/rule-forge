@@ -129,6 +129,11 @@ public class CubeController : MonoBehaviour
 
     private void MergeCubes(GameObject otherCube)
     {
+        //if one of the cubes has the tag action cube, return
+        if (gameObject.CompareTag("ActionRuleCube") || otherCube.CompareTag("ActionRuleCube"))
+        {
+            return;
+        }
         // Prevent further collisions while the cubes are being merged
         isAttached = true;
 
