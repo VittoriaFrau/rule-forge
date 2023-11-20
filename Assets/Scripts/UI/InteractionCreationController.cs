@@ -754,21 +754,25 @@ namespace UI
                 }
 
             });
-            manipulator.selectExited.AddListener(interactor =>
+            if (!generalUIController.test)
             {
-                Debug.Log(manipulator.gameObject.name + " Select exited");
-                //generalUIController.SetDebugText(manipulator.gameObject.name + " Select exited");
-                //Note: event should be added before starting the coroutine
-                //Add the event only if it doesn't exist already
-                //ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Touch, "Select exited");
-                ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Touch, "stops");
-                if (!_modalityEvents.Contains(ecaEvent))
+                manipulator.selectExited.AddListener(interactor =>
                 {
-                    _modalityEvents.Add(ecaEvent);
-                    PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Touch);
-                }
-                //categoryMenu.SetActive(false);
-            });
+                    Debug.Log(manipulator.gameObject.name + " Select exited");
+                    //generalUIController.SetDebugText(manipulator.gameObject.name + " Select exited");
+                    //Note: event should be added before starting the coroutine
+                    //Add the event only if it doesn't exist already
+                    //ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Touch, "Select exited");
+                    ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Touch, "stops");
+                    if (!_modalityEvents.Contains(ecaEvent))
+                    {
+                        _modalityEvents.Add(ecaEvent);
+                        PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Touch);
+                    }
+                    //categoryMenu.SetActive(false);
+                });
+            }
+            
         }
 
         private void AddSpeechListener()
