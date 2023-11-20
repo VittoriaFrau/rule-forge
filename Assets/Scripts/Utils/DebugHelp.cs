@@ -46,7 +46,19 @@ namespace UI.RuleEditor
             _ruleManager.InitializeVariables();
             
             //Modality events
-            ECAEvent ecaEvent1 = new ECAEvent(null, InteractionCreationController.Modalities.Speech, "leviosa", Utils.LoadPNG("Assets/Resources/Icons/microphone.png"));
+            /*ECAEvent ecaEvent1 = new ECAEvent(null, InteractionCreationController.Modalities.Speech, "leviosa", Utils.LoadPNG("Assets/Resources/Icons/microphone.png"));
+            _interactionCreationController.ModalityEvents.Add(ecaEvent1);
+
+            ECAEvent ecaEvent2 = new ECAEvent(GameObject.Find("feather"), InteractionCreationController.Modalities.Laser, "points", Texture2D.redTexture);
+            _interactionCreationController.ModalityEvents.Add(ecaEvent2);
+            
+            ECAEvent ecaEvent3 = new ECAEvent(GameObject.Find("feather"), InteractionCreationController.Modalities.Headgaze, "points", Texture2D.grayTexture);
+            _interactionCreationController.ModalityEvents.Add(ecaEvent3);
+            
+            ECAEvent ecaEvent4 = new ECAEvent(GameObject.Find("feather"), InteractionCreationController.Modalities.Touch, "touch", Texture2D.whiteTexture);
+            _interactionCreationController.ModalityEvents.Add(ecaEvent4);*/
+            
+            ECAEvent ecaEvent1 = new ECAEvent(GameObject.Find("Cube"), InteractionCreationController.Modalities.Laser, "leviosa", Utils.LoadPNG("Assets/Resources/Icons/microphone.png"));
             _interactionCreationController.ModalityEvents.Add(ecaEvent1);
 
             ECAEvent ecaEvent2 = new ECAEvent(GameObject.Find("feather"), InteractionCreationController.Modalities.Laser, "points", Texture2D.redTexture);

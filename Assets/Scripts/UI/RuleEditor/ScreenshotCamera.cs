@@ -30,14 +30,14 @@ namespace UI.RuleEditor
             {
                 case InteractionCreationController.Modalities.Headgaze:
                     //Use the main camera
-                    CaptureImageFromCamera(mainCamera, ecaEvent);
+                    CaptureImageFromCamera(secondaryCamera, ecaEvent);
                     break;
                 case InteractionCreationController.Modalities.Laser:
                     PositionSecondaryCameraInFrontOfObject(gameObject, secondaryCamera, mainCamera);
                     CaptureImageFromCamera(secondaryCamera, ecaEvent);
                     break;
                 case InteractionCreationController.Modalities.Touch:
-                    CaptureImageFromCamera(mainCamera, ecaEvent);
+                    CaptureImageFromCamera(secondaryCamera, ecaEvent);
                     break;
             }
 

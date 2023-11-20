@@ -111,7 +111,7 @@ namespace UI
         //Speech
         public GameObject MRTKSpeech;
         public GameObject microphone;
-        private List<string> keywords = new() { "incendio", "leviosa" };
+        private List<string> keywords = new() { "incendio", "leviosa", "change"};
 
         private Test testScript;
 
@@ -485,7 +485,10 @@ namespace UI
             editModeController.ShowHideRadialMenu(true);
 
             //Clear events and action queues 
-            ClearEventLists();
+            if (!generalUIController.test)
+            {
+                ClearEventLists();
+            }
         }
 
         public void StartRecording()
@@ -512,9 +515,12 @@ namespace UI
         public void RecordAction()
         {
             generalUIController.SetDebugText("Recording started.");
+
+            if (!generalUIController.test)
+            {
+                ClearEventLists();
+            }
             
-            _actionEvents.Clear();
-            _oppositeActionEvents.Clear();
             
             //screenshotCamera.SetActive(true);
         }
@@ -689,20 +695,25 @@ namespace UI
                 
 
             });
-            manipulator.hoverExited.AddListener(interactor =>
-            {
-                Debug.Log(manipulator.gameObject.name +" Hover exited"); 
-                
-                //Note: event should be added before starting the coroutine
-                //ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Exited");
-                ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Laser, "stops");
-                if (!_modalityEvents.Contains(ecaEvent))
-                {
-                    _modalityEvents.Add(ecaEvent);
-                    PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Laser);
-                }
 
-            });
+            if (!generalUIController.test)
+            {
+                manipulator.hoverExited.AddListener(interactor =>
+                {
+                    Debug.Log(manipulator.gameObject.name +" Hover exited"); 
+                
+                    //Note: event should be added before starting the coroutine
+                    //ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Laser, "Hover Exited");
+                    ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Laser, "stops");
+                    if (!_modalityEvents.Contains(ecaEvent))
+                    {
+                        _modalityEvents.Add(ecaEvent);
+                        PrepareForModalityScreenshot(manipulator.gameObject, Modalities.Laser);
+                    }
+
+                });
+            }
+           
         }
 
         private void AddTouchListener(ObjectManipulator manipulator)

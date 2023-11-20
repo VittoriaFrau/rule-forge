@@ -665,6 +665,8 @@ namespace UI
             // TODO inserire tutti gli altri
             switch (ecaEvent.Verb)
             {
+                case "hides":
+                    return new Action(action.GetSubject(), "shows");
                 case "opens":
                     return new Action(action.GetSubject(), "closes");  
                 case "closes":
