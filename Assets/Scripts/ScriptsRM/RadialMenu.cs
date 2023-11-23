@@ -95,19 +95,14 @@ public class RadialMenu : MonoBehaviour
         }*/
 
         Vector3 center = transform.position;
+        float zPosition = center.z;
         for(int i = 0; i < numberOfObjects; i++){
-            if (numberOfObjects > 8)
-            {
-                xPos = center.x + radius2 * Mathf.Cos(angle * Mathf.Deg2Rad);
-                yPos = center.y + radius2 * Mathf.Sin(angle * Mathf.Deg2Rad);
-            }
-            else
-            {
-                xPos = center.x + radius * Mathf.Cos(angle * Mathf.Deg2Rad);
-                yPos = center.y + radius * Mathf.Sin(angle * Mathf.Deg2Rad);
-            }
-            pressableButtons[i].transform.position = new Vector3(xPos, yPos, center.z);
-            
+            xPos = center.x + (numberOfObjects > 8 ? radius2 : radius) * Mathf.Cos(angle * Mathf.Deg2Rad);
+            yPos = center.y + (numberOfObjects > 8 ? radius2 : radius) * Mathf.Sin(angle * Mathf.Deg2Rad);
+
+            pressableButtons[i].transform.position = new Vector3(xPos, yPos, zPosition);
+            /*pressableButtons[i].transform.localPosition = 
+                new Vector3(pressableButtons[i].transform.localPosition.x, pressableButtons[i].transform.localPosition.y, 0.0f);*/
             angle += angleStep;
         }
     }
