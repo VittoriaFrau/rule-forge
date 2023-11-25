@@ -93,7 +93,7 @@ namespace UI.RuleEditor
             _interactionCreationController.ActionEvents.Add(actionEvent4);
             
             Utils.GenerateCubesFromEventList(_interactionCreationController.ModalityEvents, _interactionCreationController.ActionEvents, modalityRuleCubePrefab, 
-                actionRuleCubePrefab, actionRuleCubePrefabVariant, cubePlate);
+                actionRuleCubePrefab, actionRuleCubePrefabVariant, cubePlate, new List<ECAEvent>());
             
             //Microgesture events
             /*ECAEvent ecaEvent5 = new ECAEvent(null, InteractionCreationController.Modalities.Microgesture,

@@ -70,6 +70,9 @@ namespace UI
         
         //Recording
         private List<ECAEvent> _modalityEvents = new();
+        
+        //TEST
+        
 
         public List<ECAEvent> ModalityEvents
         {
@@ -107,12 +110,14 @@ namespace UI
         private Dictionary<GameObject, Vector3> _originalPositions = new(); //positions of the cubes to easily revert it
         public TextMeshProUGUI whenText, thenText;
         private RuleManager _ruleManager;
-        
+        private List<ECAEvent> cubeCreatedEvents = new();
+
         //Speech
         public GameObject MRTKSpeech;
         public GameObject microphone;
         private List<string> keywords = new() { "incendio", "leviosa", "change"};
 
+        //TEST
         private Test testScript;
 
 
@@ -458,20 +463,24 @@ namespace UI
             //Generate the cubes using the list of events
             _originalPositions.Clear();
             _originalPositions = Utils.GenerateCubesFromEventList(_modalityEvents, _actionEvents, 
-                modalityRuleCubePrefab, actionRuleCubePrefab, actionRuleCubePrefabVariant, cubePlate);
+                modalityRuleCubePrefab, actionRuleCubePrefab, actionRuleCubePrefabVariant, cubePlate, cubeCreatedEvents);
 
             removableBarrier.SetActive(false);
             
             _ruleManager.InitializeVariables();
             
             editModeController.ShowHideRadialMenu(false);
+            
+            //Add to the list of created cubes, the cubes that are already in the scene
+            cubeCreatedEvents.AddRange(_modalityEvents);
+            cubeCreatedEvents.AddRange(_actionEvents);
         }
 
         public void DeActivateRuleComposition()
         {
-            _ruleManager.NewTask();
             
-            ruleEditorPlate.transform.localPosition= new Vector3(-14.4f, -119.0f, 774.0f);
+            
+            /*ruleEditorPlate.transform.localPosition= new Vector3(-14.4f, -119.0f, 774.0f);*/
             
             //Set the rule plate visible
             ruleEditorPlate.SetActive(false);
@@ -680,7 +689,7 @@ namespace UI
                 //generalUIController.SetDebugText(manipulator.gameObject.name + " Hover entered");
                 
                 //Set the laser pointer line width for the screenshot
-                SetLaserPointLineWidth(5.0f);
+                SetLaserPointLineWidth(30.0f);
                 
                 //Note: event should be added before starting the coroutine
                 //ECAEvent ecaEvent = new ECAEvent(manipulator.gameObject, Modalities.Laser, "Point Entered");

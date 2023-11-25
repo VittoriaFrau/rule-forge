@@ -134,7 +134,7 @@ namespace UI
         
         public static Dictionary<GameObject, Vector3> GenerateCubesFromEventList(List<ECAEvent> _modalityEvents, 
             List<ECAEvent> _actionEvents, GameObject modalityCubePrefab, GameObject actionCubePrefab, 
-            GameObject actionCubePrefabVariant, GameObject cubePlate)
+            GameObject actionCubePrefabVariant, GameObject cubePlate, List<ECAEvent> cubeCreatedEvents)
         {
             Dictionary<GameObject, Vector3> result = new Dictionary<GameObject, Vector3>();
 
@@ -147,6 +147,7 @@ namespace UI
             float previousZ = 1.41f;
             foreach (var e in allEvents)
             {
+                if(cubeCreatedEvents.Contains(e)) continue;
                 Vector3 position = CalculatePositionInPlate(previousZ, allEvents.IndexOf(e));
                 previousZ = position.z;
                 GameObject cube;

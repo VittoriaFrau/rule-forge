@@ -83,14 +83,7 @@ namespace UI.RuleEditor
             }
            
         }
-
-        public void NewTask()
-        {
-            currentTask++;
-            //Activate new Task text
-            tasks[currentTask].SetActive(true);
-            tasks[currentTask-1].SetActive(false);
-        }
+        
 
         /**
          * cube: the cube that has been moved (in or out)
