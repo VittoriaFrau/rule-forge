@@ -116,7 +116,7 @@ public class CubeController : MonoBehaviour
         while (countdownTime > 0)
         {
             // Update the UI Text to show the countdown
-            _ruleManager.ActivateDebugTextWithMessage("Merging in " + Mathf.CeilToInt(countdownTime) + " seconds");
+            //_ruleManager.ActivateDebugTextWithMessage("Merging in " + Mathf.CeilToInt(countdownTime) + " seconds");
             //ruleDebugText.text = "Merging in " + Mathf.CeilToInt(countdownTime) + " seconds";
             yield return null;
             countdownTime -= Time.deltaTime;

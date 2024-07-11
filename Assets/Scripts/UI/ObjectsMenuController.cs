@@ -78,6 +78,7 @@ public class ObjectsMenuController : MonoBehaviour
             case "lamp":
                 lightObject.transform.rotation = Quaternion.Euler(180, 0, 0);
                 break;
+                
             default:
                 lightObject.transform.rotation = Quaternion.Euler(0, 0, 0);
                 break;
@@ -94,6 +95,8 @@ public class ObjectsMenuController : MonoBehaviour
     {
         GameObject doorGameObject = Utils.InstantiateObject(door, doorPrefabs, mainCamera, interactables.transform);
         doorGameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+        doorGameObject.transform.position =
+            new Vector3(doorGameObject.transform.position.x, 0f, doorGameObject.transform.position.z);
         GameObject doorChild = doorGameObject.transform.Find("Door").gameObject;
         doorChild.transform.rotation = Quaternion.Euler(-90, 0, 0);
     }

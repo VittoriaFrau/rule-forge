@@ -41,7 +41,9 @@ namespace ECAPrototyping.RuleEngine
                   renderer.material = Resources.Load<Material>("Rocks_planeTexture/Hand Painted Rocks Road (Blocky)");
                   break;
               case "Wood":
-                  renderer.material = Resources.Load<Material>("Wood_planeTexture/Materials/Planks/Planks");
+                  Renderer plane2 = GameObject.Find("Plane (1)").GetComponent<Renderer>();
+                  renderer.material = Resources.Load<Material>("Wood_planeTexture/Materials/Square/Square");
+                  plane2.material = Resources.Load<Material>("Wood_planeTexture/Materials/Square/Square");
                   break;
               case "Sand":
                   renderer.material = Resources.Load<Material>("Sand_material/Material/Sand");

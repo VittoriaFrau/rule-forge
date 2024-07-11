@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using ECAPrototyping.RuleEngine;
 using MixedReality.Toolkit.SpatialManipulation;
 using Unity.VisualScripting;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;

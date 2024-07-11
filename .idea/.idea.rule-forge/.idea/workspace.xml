@@ -5,22 +5,449 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8549fefb-f71a-4278-af6b-67427dad7c5d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/ActionCubeBackMaterial.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/ActionCubeBackMaterial.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/ActionCubeMaterial.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/ActionCubeMaterial.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/InteractionCubeMaterial.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/InteractionCubeMaterial.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/figures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/figures/ActionRuleCube.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/figures/ActionRuleCube.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/figures/BananaGravity.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/figures/BananaGravity.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/figures/BananaLaser.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/figures/BananaLaser.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/figures/InteractionRuleCube.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/figures/InteractionRuleCube.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/figures/MeanwhileCube.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/figures/MeanwhileCube.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/figures/banana_gravity_off.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/figures/banana_gravity_off.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/figures/blue-glasses.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/figures/blue-glasses.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/figures/laser_point_banana.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/figures/laser_point_banana.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/figures/touch-glasses-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/figures/touch-glasses-2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/torch.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/torch.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Preview.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Preview.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/Materials/microphone.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/Materials/microphone.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/torch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Icons/torch.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/MRTK Items/MixedRealityShaderUtils.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/MRTK Items/MixedRealityShaderUtils.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/CHI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/CHI/Demo.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/CHI/Demo.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Demo.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Demo/Demo.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Demo/Demo.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Demo/PreviewVideo.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Demo/PreviewVideo.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Demo/RulePlateOnly.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Demo/RulePlateOnly.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.rule-forge.dir/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.rule-forge.dir/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.rule-forge.dir/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.rule-forge.dir/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.rule-forge/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECACharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECACharacter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/source/lanterna_cinese.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/source/lantern.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/source/lanterna_cinese.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/source/lantern.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Street Lamp/streetLamp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Street Lamp/lamp.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Street Lamp/streetLamp.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Street Lamp/lamp.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Prefabs/Guitar_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Prefabs/guitar.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Prefabs/Guitar_01.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Prefabs/guitar.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAFloor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECAFloor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ECAPrototyping/ECASkybox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ECAPrototyping/ECASkybox.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MRTK/Shaders/MixedRealityStandard.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MRTK/Shaders/MixedRealityStandard.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Arms/Arms.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Arms/Arms.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Arms/Tex/SeaTurtle_UVs_Arm_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Arms/Tex/SeaTurtle_UVs_Arm_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Arms/Tex/SeaTurtle_UVs_Arm_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Arms/Tex/SeaTurtle_UVs_Arm_Normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Eyes/Eyes.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Eyes/Eyes.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Feet/Feet.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Feet/Feet.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Feet/Tex/SeaTurtle_UVs_Feet_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Feet/Tex/SeaTurtle_UVs_Feet_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Feet/Tex/SeaTurtle_UVs_Feet_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Feet/Tex/SeaTurtle_UVs_Feet_Normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Head/Tex/SeaTurtle_UVs_Head_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Head/Tex/SeaTurtle_UVs_Head_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Head/Tex/SeaTurtle_UVs_Head_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Head/Tex/SeaTurtle_UVs_Head_Normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Head/Turtle-Head.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Head/Turtle-Head.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Shell/Shell.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Shell/Shell.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Shell/Tex/SeaTurtle_UVs_Shell_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Shell/Tex/SeaTurtle_UVs_Shell_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Shell/Tex/SeaTurtle_UVs_Shell_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Shell/Tex/SeaTurtle_UVs_Shell_Normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Tail/Tail.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Tail/Tail.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Tail/Tex/SeaTurtle_UVs_Tail_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Tail/Tex/SeaTurtle_UVs_Tail_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Tail/Tex/SeaTurtle_UVs_Tail_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Animals/Materials/Turtle/Tail/Tex/SeaTurtle_UVs_Tail_Normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Base.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Base.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Boat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Boat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/BoatShadow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/BoatShadow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Chest Shadow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Chest Shadow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Chest.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Chest.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Glass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Glass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Lock Shadow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Lock Shadow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Lock.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Lock.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/OrangeCoral.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/OrangeCoral.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/PinkTube.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/PinkTube.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/PurpleCoral.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/PurpleCoral.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/PurpleGrass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/PurpleGrass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Rock-Brown.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Rock-Brown.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Rock-DarkStone.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Rock-DarkStone.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Rock-Stone.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Rock-Stone.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Sand.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/Sand.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/SeaGrass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Aquarium/Materials/SeaGrass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/ButtonIcons/SeaTurtle.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/ButtonIcons/SeaTurtle.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NuGet/Resources/defaultIcon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NuGet/Resources/defaultIcon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Banana.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Banana.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Laser.3ds.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Laser.3ds.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/glasses OBJ.OBJ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/glasses OBJ.OBJ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/AN Interactive Physical Door Pack/FBX/CloseDoor.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AN Interactive Physical Door Pack/FBX/CloseDoor.FBX.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/AN Interactive Physical Door Pack/FBX/Key.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AN Interactive Physical Door Pack/FBX/Key.FBX.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/AN Interactive Physical Door Pack/FBX/OpenDoor.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AN Interactive Physical Door Pack/FBX/OpenDoor.FBX.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/AN Interactive Physical Door Pack/FBX/Rub.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AN Interactive Physical Door Pack/FBX/Rub.FBX.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/AN Interactive Physical Door Pack/FBX/Vorota.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AN Interactive Physical Door Pack/FBX/Vorota.FBX.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/AN Interactive Physical Door Pack/Materials/Hero.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AN Interactive Physical Door Pack/Materials/Hero.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Materials/Blue Block.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Materials/Blue Block.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Materials/Bubbles/Bubble_blue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Materials/Bubbles/Bubble_blue.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Materials/Bubbles/Bubble_green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Materials/Bubbles/Bubble_green.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Materials/Bubbles/Bubble_red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Materials/Bubbles/Bubble_red.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Materials/Green Block.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Materials/Green Block.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Materials/Ground.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Materials/Ground.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Materials/Logo.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Materials/Logo.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Materials/Red Block.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Materials/Red Block.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Materials/Skybox.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Materials/Skybox.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Materials/Splash.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Materials/Splash.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Textures/Logo.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Textures/Logo.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Textures/splash.tga.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BubbleR/Example scene/Textures/splash.tga.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Boots.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Boots.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Fabric 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Fabric 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Fabric 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Fabric 2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Fabric 3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Fabric 3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Hair 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Hair 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Hair 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Hair 2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Hair 3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Hair 3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Hair 4.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Hair 4.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Skin 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Skin 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Skin 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Skin 2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Skin 3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Distant Lands Free Characters/Contents/Materials/Skin 3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAEffects prefabs/Smoke/Smoke_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAEffects prefabs/Smoke/Smoke_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAEffects prefabs/Smoke/smoke_texture.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAEffects prefabs/Smoke/smoke_texture.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/Materials/gold_m_BaseColor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/Materials/gold_m_BaseColor.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/Materials/handle_BaseColor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/Materials/handle_BaseColor.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/Materials/inner_Roughness.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/Materials/inner_Roughness.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/Materials/main_m_BaseColor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/Materials/main_m_BaseColor.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/source/lantern.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/source/lantern.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/gold_m_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/gold_m_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/gold_m_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/gold_m_Normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/gold_m_Roughness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/gold_m_Roughness.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/handle_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/handle_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/handle_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/handle_Normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/handle_Roughness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/handle_Roughness.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/inner_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/inner_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/inner_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/inner_Normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/inner_Roughness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/inner_Roughness.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/main_m_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/main_m_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/main_m_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/main_m_Normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/main_m_Roughness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Lanterna_cinese/textures/main_m_Roughness.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Street_lamp/lamp.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECALight Prefabs/Street_lamp/lamp.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Materials/guitar_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Materials/guitar_01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Textures/guitar_01_AO.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Textures/guitar_01_AO.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Textures/guitar_01_AlbedoTransparency.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Textures/guitar_01_AlbedoTransparency.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Textures/guitar_01_MetallicSmoothness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Textures/guitar_01_MetallicSmoothness.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Textures/guitar_01_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Acoustic Guitar/Textures/guitar_01_Normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/Image_0.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/Image_0.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/Image_1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/Image_1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/Image_2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/Image_2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/piano.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/Piano/piano.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/Materials/Glass_Base_Color.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/Materials/Glass_Base_Color.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/Materials/Glass_Mixed_AO.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/Materials/Glass_Mixed_AO.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/Materials/Glass_Opacity.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/Materials/Glass_Opacity.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/Materials/Glass_Roughness.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/Materials/Glass_Roughness.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/Materials/UV_Jukebox_BaseColor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/Materials/UV_Jukebox_BaseColor.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/Materials/UV_Jukebox_Height.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/Materials/UV_Jukebox_Height.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/Materials/UV_Jukebox_Metallic.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/Materials/UV_Jukebox_Metallic.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/Materials/UV_Jukebox_Normal.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/Materials/UV_Jukebox_Normal.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/Materials/UV_Jukebox_Roughness.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/Materials/UV_Jukebox_Roughness.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/source/SM_Jukebox.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/source/SM_Jukebox.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/textures/Glass_Base_Color.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/textures/Glass_Base_Color.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/textures/Glass_Mixed_AO.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/textures/Glass_Mixed_AO.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/textures/Glass_Opacity.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/textures/Glass_Opacity.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/textures/Glass_Roughness.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/textures/Glass_Roughness.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/textures/UV_Jukebox_BaseColor.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/textures/UV_Jukebox_BaseColor.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/textures/UV_Jukebox_Height.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/textures/UV_Jukebox_Height.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/textures/UV_Jukebox_Metallic.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/textures/UV_Jukebox_Metallic.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/textures/UV_Jukebox_Normal.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/textures/UV_Jukebox_Normal.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/textures/UV_Jukebox_Roughness.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ECAMusic_prefabs/jukebox/textures/UV_Jukebox_Roughness.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND GRADIENT.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND GRADIENT.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND3 (NEGATIVEZ).mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND3 (NEGATIVEZ).mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND4.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND4.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND5 - Copia.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND5 - Copia.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND5.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND5.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND6.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/EXAMPLE HAND6.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Built-In Render Pipeline/Ghostly Hands For Built-In Renderer.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Hands.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/Hands.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/GhostlyHand/URP/Ghostly Hands For URP.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Materials/Stylize_Grass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Materials/Stylize_Grass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Materials/Stylize_Grass_diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Materials/Stylize_Grass_diffuse.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Textures/Vol_42_1_Ambient_Occlusion.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Textures/Vol_42_1_Ambient_Occlusion.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Textures/Vol_42_1_Base_Color.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Textures/Vol_42_1_Base_Color.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Textures/Vol_42_1_Height.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Textures/Vol_42_1_Height.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Textures/Vol_42_1_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Textures/Vol_42_1_Normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Textures/Vol_42_1_Roughness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Grass_planeTexture/Textures/Vol_42_1_Roughness.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/Modalities/base.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/Modalities/base.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/Modalities/gaze.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/Modalities/gaze.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/Modalities/hand.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/Modalities/hand.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/Modalities/laser.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/Modalities/laser.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/Modalities/middle.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/Modalities/middle.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/Modalities/tip.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/Modalities/tip.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/arrows.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/arrows.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/automatic.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/automatic.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/background.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/background.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/backpack (2).png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/backpack (2).png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/banana.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/banana.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/beanie 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/beanie 1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/block.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/block.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/brightness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/brightness.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/burger.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/burger.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/bye.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/bye.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/capsule.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/capsule.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/cheese.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/cheese.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/circle.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/circle.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/color.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/color.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/cube-icon-container.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/cube-icon-container.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/cube-icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/cube-icon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/cube.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/cube.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/cylinder.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/cylinder.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/door-opened.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/door-opened.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/door.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/door.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/effects.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/effects.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/fire.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/fire.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/floor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/floor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/fork.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/fork.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/grass.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/grass.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/guitar.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/guitar.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/intensity.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/intensity.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/jukebox.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/jukebox.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/lantern.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/lantern.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/leaf.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/leaf.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/lightbulb.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/lightbulb.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/mushrooms.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/mushrooms.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/night-mode.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/night-mode.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/no-bag 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/no-bag 1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/palm-tree.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/palm-tree.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/party-people.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/party-people.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/pause.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/pause.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/paws.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/paws.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/piano.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/piano.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/radio.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/radio.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/rock.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/rock.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/sand.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/sand.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/sign.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/sign.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/smoke.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/smoke.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/sphere.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/sphere.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/street-lamp.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/street-lamp.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/sun.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/sun.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/sunglasses.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/sunglasses.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/sunset-.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/sunset-.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/tree.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/tree.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/turnOFF.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/turnOFF.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/watermelon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/watermelon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icons/wood.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icons/wood.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/MRTK Items/Coffee.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/MRTK Items/Coffee.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/MRTK Items/CoffeeCup 1.fbm/5.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/MRTK Items/CoffeeCup 1.fbm/5.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/MRTK Items/CoffeeCup 1.fbm/7.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/MRTK Items/CoffeeCup 1.fbm/7.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/MRTK Items/ColorButtonProximity.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/MRTK Items/ColorButtonProximity.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/MRTK Items/HolographicBackPlate.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/MRTK Items/HolographicBackPlate.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/MRTK Items/HolographicButtonIconFontMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/MRTK Items/HolographicButtonIconFontMaterial.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/MRTK Items/MRTK_PressableInteractablesButtonBox.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/MRTK Items/MRTK_PressableInteractablesButtonBox.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/MRTK Items/Materials/CoffeeFoam.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/MRTK Items/Materials/CoffeeFoam.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/MRTK Items/PianoKeyWhite.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/MRTK Items/PianoKeyWhite.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/MRTK Items/PianoKeys.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/MRTK Items/PianoKeys.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials/MRTK_RedRay.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/MRTK_RedRay.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials/Record_Button_MRTK_Backplate_12mm_Gradient.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Record_Button_MRTK_Backplate_12mm_Gradient.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials/eyeglasses.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/eyeglasses.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Mg3D_Food/Banana.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Mg3D_Food/Banana.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Mg3D_Food/Cheese.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Mg3D_Food/Cheese.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Mg3D_Food/Cherry.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Mg3D_Food/Cherry.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Mg3D_Food/Hamburger.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Mg3D_Food/Hamburger.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Mg3D_Food/Hotdog.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Mg3D_Food/Hotdog.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Mg3D_Food/Olive.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Mg3D_Food/Olive.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Mg3D_Food/Watermelon.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Mg3D_Food/Watermelon.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Microphone/Materials/Microphone.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Microphone/Materials/Microphone.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Microphone/Materials/Microphone.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Microphone/Materials/Microphone.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Microphone/Textures/Ghost Pack SUBSTANCE_Microphone_AO.bmp.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Microphone/Textures/Ghost Pack SUBSTANCE_Microphone_AO.bmp.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Microphone/Textures/Ghost Pack SUBSTANCE_Microphone_AlbedoTransparency.bmp.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Microphone/Textures/Ghost Pack SUBSTANCE_Microphone_AlbedoTransparency.bmp.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Microphone/Textures/Ghost Pack SUBSTANCE_Microphone_MetallicSmoothness.bmp.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Microphone/Textures/Ghost Pack SUBSTANCE_Microphone_MetallicSmoothness.bmp.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Microphone/Textures/Ghost Pack SUBSTANCE_Microphone_Normal.bmp.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Microphone/Textures/Ghost Pack SUBSTANCE_Microphone_Normal.bmp.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Old Torch/Material/Flame_Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Old Torch/Material/Flame_Material.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Old Torch/Material/Old Torch (high poly).mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Old Torch/Material/Old Torch (high poly).mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Old Torch/Material/Old Torch (low poly).mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Old Torch/Material/Old Torch (low poly).mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/Flame_frame.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/Flame_frame.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/HD Render Pipeline 1024x1024/TorchLow_Torch.001_BaseMap.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/HD Render Pipeline 1024x1024/TorchLow_Torch.001_BaseMap.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/HD Render Pipeline 1024x1024/TorchLow_Torch.001_MaskMap.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/HD Render Pipeline 1024x1024/TorchLow_Torch.001_MaskMap.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/HD Render Pipeline 1024x1024/TorchLow_Torch.001_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/HD Render Pipeline 1024x1024/TorchLow_Torch.001_Normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/HD Render Pipeline 2048x2048/TorchHigh_Torch_BaseMap.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/HD Render Pipeline 2048x2048/TorchHigh_Torch_BaseMap.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/HD Render Pipeline 2048x2048/TorchHigh_Torch_MaskMap.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/HD Render Pipeline 2048x2048/TorchHigh_Torch_MaskMap.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/HD Render Pipeline 2048x2048/TorchHigh_Torch_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/HD Render Pipeline 2048x2048/TorchHigh_Torch_Normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/Universal Render Pipeline 1024x1024/TorchLow_AlbedoTransparency.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/Universal Render Pipeline 1024x1024/TorchLow_AlbedoTransparency.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/Universal Render Pipeline 1024x1024/TorchLow_MetallicSmoothness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/Universal Render Pipeline 1024x1024/TorchLow_MetallicSmoothness.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/Universal Render Pipeline 1024x1024/TorchLow_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/Universal Render Pipeline 1024x1024/TorchLow_Normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/Universal Render Pipeline 2048x2048/TorchHigh_Torch_AlbedoTransparency.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/Universal Render Pipeline 2048x2048/TorchHigh_Torch_AlbedoTransparency.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/Universal Render Pipeline 2048x2048/TorchHigh_Torch_MetallicSmoothness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/Universal Render Pipeline 2048x2048/TorchHigh_Torch_MetallicSmoothness.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/Universal Render Pipeline 2048x2048/TorchHigh_Torch_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Old Torch/Texture/Universal Render Pipeline 2048x2048/TorchHigh_Torch_Normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Rocks_planeTexture/Hand Painted Rocks Road (Blocky).mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Rocks_planeTexture/Hand Painted Rocks Road (Blocky).mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Rocks_planeTexture/road_rocks_blocky.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Rocks_planeTexture/road_rocks_blocky.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Rocks_planeTexture/road_rocks_blocky_NRM.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Rocks_planeTexture/road_rocks_blocky_NRM.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sand_material/Material/Sand.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sand_material/Material/Sand.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sand_material/Textures/Sand_ambientOcclusion.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sand_material/Textures/Sand_ambientOcclusion.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sand_material/Textures/Sand_baseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sand_material/Textures/Sand_baseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sand_material/Textures/Sand_height.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sand_material/Textures/Sand_height.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sand_material/Textures/Sand_metallic.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sand_material/Textures/Sand_metallic.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sand_material/Textures/Sand_normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sand_material/Textures/Sand_normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sand_material/Textures/Sand_roughness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sand_material/Textures/Sand_roughness.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Material/Skybox_8.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Material/Skybox_8.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Material/Skybox_Day.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Material/Skybox_Day.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Material/Skybox_Night.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Material/Skybox_Night.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Material/Skybox_Sunset.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Material/Skybox_Sunset.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Texture/Sky-1.hdr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Texture/Sky-1.hdr.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Texture/Sky-2.hdr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Texture/Sky-2.hdr.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Texture/Skybox_5.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Texture/Skybox_5.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Texture/Skybox_8.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skyboxes/Texture/Skybox_8.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Pie 3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Pie 3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Pie 4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Pie 4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Pie.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Pie.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Pie2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Pie2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/door-preview.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/door-preview.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/fox.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/fox.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/kid.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/kid.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/ring.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/ring.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/zombie.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/zombie.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Materials/High Quality/animal_people_backpack_material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Materials/High Quality/animal_people_backpack_material.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Materials/High Quality/animal_people_beanie_material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Materials/High Quality/animal_people_beanie_material.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Materials/High Quality/animal_people_wolf_supercyan_material_body.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Materials/High Quality/animal_people_wolf_supercyan_material_body.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Materials/High Quality/animal_people_wolf_supercyan_material_head.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Materials/High Quality/animal_people_wolf_supercyan_material_head.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Materials/Mobile/animal_people_backpack_material_low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Materials/Mobile/animal_people_backpack_material_low.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Materials/Mobile/animal_people_beanie_material_low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Materials/Mobile/animal_people_beanie_material_low.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Materials/Mobile/animal_people_wolf_supercyan_material_body_low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Materials/Mobile/animal_people_wolf_supercyan_material_body_low.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Materials/Mobile/animal_people_wolf_supercyan_material_head_low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Materials/Mobile/animal_people_wolf_supercyan_material_head_low.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Textures/Supercyan Sample/animal_people_wolf_supercyan_texture_body.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Textures/Supercyan Sample/animal_people_wolf_supercyan_texture_body.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Textures/Supercyan Sample/animal_people_wolf_supercyan_texture_body.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Textures/Supercyan Sample/animal_people_wolf_supercyan_texture_body.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Textures/Supercyan Sample/animal_people_wolf_texture_head.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Textures/Supercyan Sample/animal_people_wolf_texture_head.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Textures/Supercyan Sample/animal_people_wolf_texture_head.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Textures/Supercyan Sample/animal_people_wolf_texture_head.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Textures/backpack/animal_people_backbag_1_texture.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Textures/backpack/animal_people_backbag_1_texture.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Textures/backpack/animal_people_backbag_1_texture.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Textures/backpack/animal_people_backbag_1_texture.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Textures/beanie/animal_people_beanie_texture.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Textures/beanie/animal_people_beanie_texture.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Textures/beanie/animal_people_beanie_texture.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Animal People Sample/Textures/beanie/animal_people_beanie_texture.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Materials/High Quality/free_male_1_body.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Materials/High Quality/free_male_1_body.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Materials/High Quality/free_male_1_body.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Materials/High Quality/free_male_1_body.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Materials/High Quality/free_male_1_head.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Materials/High Quality/free_male_1_head.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Materials/High Quality/free_male_1_head.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Materials/High Quality/free_male_1_head.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Materials/Mobile/free_male_1_body_low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Materials/Mobile/free_male_1_body_low.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Materials/Mobile/free_male_1_body_low.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Materials/Mobile/free_male_1_body_low.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Materials/Mobile/free_male_1_head_low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Materials/Mobile/free_male_1_head_low.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Materials/Mobile/free_male_1_head_low.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Materials/Mobile/free_male_1_head_low.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Textures/Legacy/free_shadowRamp.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Textures/Legacy/free_shadowRamp.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Textures/free_male_1_body_diffuse.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Textures/free_male_1_body_diffuse.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Textures/free_male_1_head_diffuse.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/Textures/free_male_1_head_diffuse.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat/Materials/Propeller_hat_BaseColor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat/Materials/Propeller_hat_BaseColor.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat/textures/Propeller_hat_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat/textures/Propeller_hat_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat/textures/Propeller_hat_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat/textures/Propeller_hat_Normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat/textures/Propeller_hat_Roughness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Free Sample/hat/textures/Propeller_hat_Roughness.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Zombie Sample/Materials/High Quality/free_zombie_body.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Zombie Sample/Materials/High Quality/free_zombie_body.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Zombie Sample/Materials/High Quality/free_zombie_head.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Zombie Sample/Materials/High Quality/free_zombie_head.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Zombie Sample/Materials/Mobile/free_zombie_body_low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Zombie Sample/Materials/Mobile/free_zombie_body_low.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Zombie Sample/Materials/Mobile/free_zombie_head_low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Zombie Sample/Materials/Mobile/free_zombie_head_low.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Zombie Sample/Textures/Ramp/Legacy/sharedTexture_shadowRamp.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Zombie Sample/Textures/Ramp/Legacy/sharedTexture_shadowRamp.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Zombie Sample/Textures/free_zombie_body_diffuse.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Zombie Sample/Textures/free_zombie_body_diffuse.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Zombie Sample/Textures/free_zombie_head_diffuse.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Character Pack Zombie Sample/Textures/free_zombie_head_diffuse.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Foliage/forestpack_foliage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Foliage/forestpack_foliage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Foliage/forestpack_foliage.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Foliage/forestpack_foliage.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/SignAndBridge/forestpack_roadSignAndBridge.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/SignAndBridge/forestpack_roadSignAndBridge.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/SignAndBridge/forestpack_roadSignAndBridge.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/SignAndBridge/forestpack_roadSignAndBridge.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Skybox/forestpack_skybox_lighter.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Skybox/forestpack_skybox_lighter.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Skybox/forestpack_skybox_night.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Skybox/forestpack_skybox_night.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Stone/forestpack_stone.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Stone/forestpack_stone.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Stone/forestpack_stone.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Stone/forestpack_stone.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Tree/forestpack_treeStumpAndRoot.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Tree/forestpack_treeStumpAndRoot.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Tree/forestpack_treeStumpAndRoot.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Tree/forestpack_treeStumpAndRoot.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Tree/forestpack_tree_fir.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Tree/forestpack_tree_fir.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Tree/forestpack_tree_fir.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Tree/forestpack_tree_fir.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Tree/forestpack_tree_leaf.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Tree/forestpack_tree_leaf.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Tree/forestpack_tree_leaf.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/High Quality/Tree/forestpack_tree_leaf.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/Foliage/forestpack_foliage_low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/Foliage/forestpack_foliage_low.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/Foliage/forestpack_foliage_low.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/Foliage/forestpack_foliage_low.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/SignAndBridge/forestpack_roadSignAndBridge_low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/SignAndBridge/forestpack_roadSignAndBridge_low.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/SignAndBridge/forestpack_roadSignAndBridge_low.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/SignAndBridge/forestpack_roadSignAndBridge_low.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/Stone/forestpack_stone_low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/Stone/forestpack_stone_low.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/Stone/forestpack_stone_low.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/Stone/forestpack_stone_low.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/Tree/forestpack_treeStumpAndRoot_low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/Tree/forestpack_treeStumpAndRoot_low.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/Tree/forestpack_treeStumpAndRoot_low.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/Tree/forestpack_treeStumpAndRoot_low.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/Tree/forestpack_tree_fir_low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/Tree/forestpack_tree_fir_low.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/Tree/forestpack_tree_fir_low.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/Tree/forestpack_tree_fir_low.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/Tree/forestpack_tree_leaf_low.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/Tree/forestpack_tree_leaf_low.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/Tree/forestpack_tree_leaf_low.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Materials/Mobile/Tree/forestpack_tree_leaf_low.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Palm Tree/Materials/tree_diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Palm Tree/Materials/tree_diffuse.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Palm Tree/Meshes/Materials/No Name.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Palm Tree/Meshes/Materials/No Name.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Palm Tree/Prefabs/Palm_Tree.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Palm Tree/Prefabs/Palm_Tree.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Palm Tree/Textures/tree_diffuse.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Palm Tree/Textures/tree_diffuse.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Foliage/forestpack_foliage_diffuse.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Foliage/forestpack_foliage_diffuse.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Ground/forestpack_moss_light_tile_diffuse.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Ground/forestpack_moss_light_tile_diffuse.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Ground/forestpack_road_tile_diffuse.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Ground/forestpack_road_tile_diffuse.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Ground/forestpack_texture_rock_tile_diffuse.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Ground/forestpack_texture_rock_tile_diffuse.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Ramp/sharedTexture_shadowRamp.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Ramp/sharedTexture_shadowRamp.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/SignAndBridge/forestpack_roadSignAndBridge_diffuse.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/SignAndBridge/forestpack_roadSignAndBridge_diffuse.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Skybox/nx.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Skybox/nx.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Skybox/ny.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Skybox/ny.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Skybox/nz.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Skybox/nz.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Skybox/px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Skybox/px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Skybox/py.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Skybox/py.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Skybox/pz.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Skybox/pz.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Stone/forestpack_stone_diffuse.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Stone/forestpack_stone_diffuse.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Tree/Fir/forestpack_tree_fir_diffuse.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Tree/Fir/forestpack_tree_fir_diffuse.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Tree/Leaf/forestpack_tree_leaf_diffuse.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Tree/Leaf/forestpack_tree_leaf_diffuse.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Tree/Treestump/forestpack_treeStumpAndRoot_diffuse.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Supercyan Free Forest Sample/Textures/Tree/Treestump/forestpack_treeStumpAndRoot_diffuse.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Textures/glasses ambient occlusion map.tif.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Textures/glasses ambient occlusion map.tif.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Textures/glasses baked texture map.tif.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Textures/glasses baked texture map.tif.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Textures/glasses cavity map.tif.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Textures/glasses cavity map.tif.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Textures/glasses displace map.tif.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Textures/glasses displace map.tif.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Textures/glasses normal map.tif.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Textures/glasses normal map.tif.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Textures/glasses texture map.tif.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Textures/glasses texture map.tif.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Materials.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Materials.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Materials/Planks.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Materials/Planks.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Materials/Planks/Planks.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Materials/Planks/Planks.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Materials/Planks/Planks.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Materials/Planks/Planks.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks/Wood_Planks_ambientocclusion.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks/Wood_Planks_ambientocclusion.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks/Wood_Planks_basecolor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks/Wood_Planks_basecolor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks/Wood_Planks_height.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks/Wood_Planks_height.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks/Wood_Planks_metallic.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks/Wood_Planks_metallic.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks/Wood_Planks_normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Wood_planeTexture/Textures/Planks/Wood_Planks_normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/low-poly-fireplace/source/FIREPLACE.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/low-poly-fireplace/source/FIREPLACE.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/plane.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/plane.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/plane2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/plane2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EmptyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/EmptyScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InteractionCreationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InteractionCreationController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/CubeContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/CubeContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ObjectsMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ObjectsMenuController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Prototypation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Prototypation.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/CubeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/CubeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RepositionRulePlate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RepositionRulePlate.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RuleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RuleManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/DebugHelp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/DebugHelp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +455,37 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/usability-fixes" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="usability-fixes" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -44,131 +502,22 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/8e/124056b0/InvokableCall`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/a5/9b236dac/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75633565436c42f0a6426b33f0132ade46a800/69/9dee2982/Action.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd2118e7c6674980875dd898708570ac26e00/cb/b3bb2235/Animator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/30adf90198bc4c4b83910c6fb1877998174000/37/36660a94/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AntLR/ECARulesParser.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Vittoria/RiderProjects/rule-forge/Assets/Scripts/UI/EditModeController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Vittoria/RiderProjects/rule-forge/Assets/Scripts/UI/EditModeController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Vittoria/RiderProjects/rule-forge/Assets/Scripts/UI/RuleEditor/CubeContainer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Vittoria/RiderProjects/rule-forge/Assets/Scripts/UI/RuleEditor/CubeContainer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Vittoria/RiderProjects/rule-forge/Assets/Scripts/UI/RuleEditor/CubeContainer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Preview.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vitto/RiderProjects/rule-forge/Assets/Resources/MRTK Items/CoffeeCup 1.fbm/5.png.meta" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RuleEditor/RepositionRulePlate.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.core@8d3eae7b2801/Interactables/StatefulInteractable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.core@8d3eae7b2801/Subsystems/MRTKLifecycleManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.spatialmanipulation@a80535c64d68/BoundsControl/Visuals/SqueezableBoxVisuals.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.spatialmanipulation@a80535c64d68/ObjectManipulator/MoveLogics/ScaleLogic.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.spatialmanipulation@a80535c64d68/ObjectManipulator/ObjectManipulator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.spatialmanipulation@a80535c64d68/Solvers/HandConstraintPalmUp.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.uxcore@246ca5810751/FontIcons/FontIconSet.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.microsoft.mrtk.uxcore@246ca5810751/Slider/Slider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.sprite@1.0.0/Editor/ShapeEditor/ShapeEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.4.4/InputSystem/Editor/ControlPicker/InputControlPathEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.4.4/InputSystem/Plugins/Linux/LinuxSupport.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.recorder@3.0.3/Editor/Sources/Recorders/_Inputs/RenderTextureSampler/RenderTextureSampler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.31/UnityEditor.TestRunner/TestRunner/Messages/RecompileScripts.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.testtools.codecoverage@1.2.2/Samples~/Tutorial/Asteroids/Tests/FXTests.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@2.2.0/Editor/PlasticSCM/PlasticApp.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.9/Runtime/2D/UTess2D/Tessellator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Editor/TMP_SpriteAssetImporter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/AspectRatioFitterEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/InputFieldEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Inspection/GraphNestEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.core-utils@2.1.0/Editor/ProjectValidation/ProjectValidationDrawer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/Interactables/XRBaseInteractable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/Interactors/XRRayInteractor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/XRInteractionEvents.deprecated.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/XRInteractionManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.management@4.2.1/Runtime/XRManagerSettings.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.openxr@1.5.3/Runtime/OpenXRRestarter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/EventSystem/SelectableTests.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.openxr@1.8.2/Runtime/OpenXRProjectValidation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/org.mixedrealitytoolkit.core@b62d60687f8c/Subsystems/Speech/KeywordRecognitionSubsystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/org.mixedrealitytoolkit.spatialmanipulation@7e88bb47473f/ObjectManipulator/MoveLogics/ScaleLogic.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -189,35 +538,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.31478262&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Discover.Launch.Via.Unity": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TODO_SCOPE": "All Places",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.31478262",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Vittoria\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Vittoria\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Vittoria\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\vitto\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\vitto\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\vitto\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.16f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -225,7 +574,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.16f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\gador\Desktop\UniCa\Tirocinio\rule-forge" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -250,10 +599,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="24980">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="24980" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -313,6 +662,11 @@
       <workItem from="1693317346972" duration="106000" />
       <workItem from="1693469052824" duration="6735000" />
       <workItem from="1693494536557" duration="3026000" />
+      <workItem from="1712149352367" duration="900000" />
+      <workItem from="1712230461590" duration="5792000" />
+      <workItem from="1712304677961" duration="6600000" />
+      <workItem from="1720700311173" duration="2339000" />
+      <workItem from="1720704675066" duration="286000" />
     </task>
     <task id="LOCAL-00001" summary="checkComponents added">
       <created>1686653774676</created>
@@ -435,11 +789,38 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/usability-fixes" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/usability-fixes" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -488,144 +869,67 @@
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/RuleEngine.cs</url>
           <line>1214</line>
-          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="1214" containingFunctionPresentation="Method 'ActionEquals'">
-            <startOffsets>
-              <option value="43729" />
-            </startOffsets>
-            <endOffsets>
-              <option value="43772" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\ECAPrototyping\RuleEngine.cs" initialLine="1214" containingFunctionPresentation="Method 'ActionEquals'" />
           <option name="timeStamp" value="100" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/ECAMusic.cs</url>
           <line>54</line>
-          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\ECAPrototyping\ECAMusic.cs" initialLine="54" containingFunctionPresentation="Method 'ChangeVolume'">
-            <startOffsets>
-              <option value="1733" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1762" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\ECAPrototyping\ECAMusic.cs" initialLine="54" containingFunctionPresentation="Method 'ChangeVolume'" />
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs</url>
           <line>507</line>
-          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="462" containingFunctionPresentation="Method 'GetRuleDescriptionFromCubePrefab'">
-            <startOffsets>
-              <option value="19695" />
-            </startOffsets>
-            <endOffsets>
-              <option value="19797" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="462" containingFunctionPresentation="Method 'GetRuleDescriptionFromCubePrefab'" />
           <option name="timeStamp" value="110" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs</url>
           <line>563</line>
-          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="516" containingFunctionPresentation="Method 'GetActionFromButton'">
-            <startOffsets>
-              <option value="23570" />
-            </startOffsets>
-            <endOffsets>
-              <option value="23615" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="516" containingFunctionPresentation="Method 'GetActionFromButton'" />
           <option name="timeStamp" value="118" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs</url>
           <line>561</line>
-          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="514" containingFunctionPresentation="Method 'GetActionFromButton'">
-            <startOffsets>
-              <option value="23420" />
-            </startOffsets>
-            <endOffsets>
-              <option value="23544" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="514" containingFunctionPresentation="Method 'GetActionFromButton'" />
           <option name="timeStamp" value="119" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs</url>
           <line>618</line>
-          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="525" containingFunctionPresentation="Method 'ConvertActionToECAEvent'">
-            <startOffsets>
-              <option value="23871" />
-            </startOffsets>
-            <endOffsets>
-              <option value="23902" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="525" containingFunctionPresentation="Method 'ConvertActionToECAEvent'" />
           <option name="timeStamp" value="122" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs</url>
           <line>492</line>
-          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="456" containingFunctionPresentation="Method 'FillTextLabelsInMergedCubes'">
-            <startOffsets>
-              <option value="20293" />
-            </startOffsets>
-            <endOffsets>
-              <option value="20363" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="456" containingFunctionPresentation="Method 'FillTextLabelsInMergedCubes'" />
           <option name="timeStamp" value="129" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs</url>
           <line>490</line>
-          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="454" containingFunctionPresentation="Method 'FillTextLabelsInMergedCubes'">
-            <startOffsets>
-              <option value="20224" />
-            </startOffsets>
-            <endOffsets>
-              <option value="20262" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="454" containingFunctionPresentation="Method 'FillTextLabelsInMergedCubes'" />
           <option name="timeStamp" value="131" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/ECASkybox.cs</url>
           <line>35</line>
-          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\ECAPrototyping\ECASkybox.cs" initialLine="36" containingFunctionPresentation="Method 'SkyboxMaterial'">
-            <startOffsets>
-              <option value="1014" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1029" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\ECAPrototyping\ECASkybox.cs" initialLine="36" containingFunctionPresentation="Method 'SkyboxMaterial'" />
           <option name="timeStamp" value="134" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Utils.cs</url>
           <line>732</line>
-          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="670" containingFunctionPresentation="Method 'GetActionFromString'">
-            <startOffsets>
-              <option value="31261" />
-            </startOffsets>
-            <endOffsets>
-              <option value="31318" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\Scripts\UI\Utils.cs" initialLine="670" containingFunctionPresentation="Method 'GetActionFromString'" />
           <option name="timeStamp" value="137" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/ECAPrototyping/ECACharacter.cs</url>
           <line>46</line>
-          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\ECAPrototyping\ECACharacter.cs" initialLine="46" containingFunctionPresentation="Method 'WaveHand'">
-            <startOffsets>
-              <option value="1528" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1624" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\Vittoria\RiderProjects\rule-forge\Assets\ECAPrototyping\ECACharacter.cs" initialLine="46" containingFunctionPresentation="Method 'WaveHand'" />
           <option name="timeStamp" value="143" />
         </line-breakpoint>
       </breakpoints>

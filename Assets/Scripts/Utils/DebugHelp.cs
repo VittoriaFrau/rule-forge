@@ -9,26 +9,20 @@ namespace UI.RuleEditor
 {
     public class DebugHelp:MonoBehaviour
     {
-        public GameObject ruleEditorPlate, barriers, radialMenu, cube, cheese;
+        public GameObject ruleEditorPlate, barriers;
         private InteractionCreationController _interactionCreationController;
-        private GameObject modalityRuleCubePrefab, cubePlate, actionRuleCubePrefabVariant, actionRuleCubePrefab;
+        private GameObject modalityRuleCubePrefab, cubePlate, actionRuleCubePrefab;
         private RuleManager _ruleManager;
         
         /*
         private ScreenshotCamera _screenshotCamera;
         */
         
-        [SerializeField]
-        private bool deectivateRadialMenu = true;
 
-        // Metodo chiamato quando il valore dell'attributo cambia nell'editor di Unity
-        private void OnValidate()
-        {
-            // Controlla se il GameObject deve essere attivato o disattivato
-            radialMenu.SetActive(deectivateRadialMenu);
-        }
+        
         private void Start()
         {
+            /*
             ruleEditorPlate.SetActive(true);
 
 
@@ -46,17 +40,6 @@ namespace UI.RuleEditor
             _ruleManager.InitializeVariables();
             
             //Modality events
-            /*ECAEvent ecaEvent1 = new ECAEvent(null, InteractionCreationController.Modalities.Speech, "leviosa", Utils.LoadPNG("Assets/Resources/Icons/microphone.png"));
-            _interactionCreationController.ModalityEvents.Add(ecaEvent1);
-
-            ECAEvent ecaEvent2 = new ECAEvent(GameObject.Find("feather"), InteractionCreationController.Modalities.Laser, "points", Texture2D.redTexture);
-            _interactionCreationController.ModalityEvents.Add(ecaEvent2);
-            
-            ECAEvent ecaEvent3 = new ECAEvent(GameObject.Find("feather"), InteractionCreationController.Modalities.Headgaze, "points", Texture2D.grayTexture);
-            _interactionCreationController.ModalityEvents.Add(ecaEvent3);
-            
-            ECAEvent ecaEvent4 = new ECAEvent(GameObject.Find("feather"), InteractionCreationController.Modalities.Touch, "touch", Texture2D.whiteTexture);
-            _interactionCreationController.ModalityEvents.Add(ecaEvent4);*/
             
             ECAEvent ecaEvent1 = new ECAEvent(GameObject.Find("Cube"), InteractionCreationController.Modalities.Laser, "leviosa", Utils.LoadPNG("Assets/Resources/Icons/microphone.png"));
             _interactionCreationController.ModalityEvents.Add(ecaEvent1);
@@ -96,15 +79,22 @@ namespace UI.RuleEditor
                 actionRuleCubePrefab, actionRuleCubePrefabVariant, cubePlate, new List<ECAEvent>());
             
             //Microgesture events
-            /*ECAEvent ecaEvent5 = new ECAEvent(null, InteractionCreationController.Modalities.Microgesture,
-                "middle tip", Utils.LoadPNG("Assets/Resources/Icons/Modalities/middle.png"));
-            _modalityEvents.Add(ecaEvent5);
+            */
+            VideoPreview();
+        }
+
+        private void VideoPreview()
+        {
+
+            _interactionCreationController = GetComponent<InteractionCreationController>();
             
-            Utils.GenerateCubesFromEventList(_modalityEvents, _actionEvents, modalityRuleCubePrefab, 
-                actionRuleCubePrefab, actionRuleCubePrefabVariant, cubePlate);
+            modalityRuleCubePrefab = _interactionCreationController.modalityRuleCubePrefab;
+            actionRuleCubePrefab = _interactionCreationController.actionRuleCubePrefab;
             
-            ruleEditorPlate.transform.localPosition = new Vector3(ruleEditorPlate.transform.localPosition.x,
-                ruleEditorPlate.transform.localPosition.y, 350);*/
+            _ruleManager.InitializeVariables();
+            
+            
+            
         }
     }
 }

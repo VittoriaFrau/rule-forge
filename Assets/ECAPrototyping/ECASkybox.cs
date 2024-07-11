@@ -44,6 +44,9 @@ namespace ECAPrototyping.RuleEngine
                 case "Night":
                     RenderSettings.skybox = Resources.Load<Material>("Skyboxes/Material/Skybox_Night");
                     break;
+                case "Storm":
+                    RenderSettings.skybox = Resources.Load<Material>("Skyboxes/Material/DarkStorm");
+                    break;
             }
         }
         
